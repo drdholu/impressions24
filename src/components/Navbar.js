@@ -1,20 +1,18 @@
 import React from 'react';
-import { Box, Flex, Link, Spacer, Text } from '@chakra-ui/react';
+import { Routes, Route, Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <Box bg="gray.800" color="white" px={4} py={2} position="fixed" width="100%" zIndex="1000">
-      <Flex alignItems="center">
-        <Text fontSize="xl" fontWeight="bold">Logo</Text>
-        <Spacer />
-        <Flex>
-          <Link href="#about" mx={2}>About</Link>
-          <Link href="#events" mx={2}>Events</Link>
-          <Link href="#memories" mx={2}>Memories</Link>
-        </Flex>
-      </Flex>
-    </Box>
+    <nav className="z-50 w-full px-4 py-2 text-white bg-gray-800">
+      <div className="flex items-center justify-between">
+        <div className="text-xl font-bold">Logo</div>
+        <div className="flex space-x-4">
+          {/* <a href="#about" className="hover:text-gray-400">About</a> */}
+          <Link to="/coordinator-form" className="hover:text-gray-400">Coordinator Forms</Link>
+        </div>
+      </div>
+    </nav>
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

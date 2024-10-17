@@ -1,23 +1,16 @@
 import React from 'react';
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, Text } from '@chakra-ui/react';
 
-const EventModal = ({ isOpen, onClose, event }) => {
+const EventModal = ({ event, onClose }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>{event.title}</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          <Text>{event.description}</Text>
-        </ModalBody>
-        <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
-            Close
-          </Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+      <div className="bg-white p-4 rounded-md">
+        <h2 className="text-xl font-bold">{event.title}</h2>
+        <p className="mt-2">{event.description}</p>
+        <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md" onClick={onClose}>
+          Close
+        </button>
+      </div>
+    </div>
   );
 };
 

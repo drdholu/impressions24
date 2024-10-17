@@ -1,14 +1,20 @@
 import React from 'react';
-import { Box, Heading, Text, VStack } from '@chakra-ui/react';
+import ImpressionsLogo from "../images/logo.png";
+import AboutUs from '../components/AboutUs'
+import Events from './Events';
+import Memories from './Memories'
 
 const LandingPage = () => {
   return (
-    <Box height="100vh" display="flex" alignItems="center" justifyContent="center" bg="gray.700" color="white">
-      <VStack spacing={4}>
-        <Heading as="h1" size="2xl">Impressions</Heading>
-        <Text fontSize="xl">For the artist, by the artist</Text>
-      </VStack>
-    </Box>
+    <div>
+      <div className="flex flex-col items-center justify-center h-screen text-center text-white bg-black">
+        <img src={ImpressionsLogo} alt="Impressions Logo" className="h-32 mx-auto mb-4 md:h-40" />
+        <p className="text-xl">For the artist, by the artist</p>
+      </div>
+      <AboutUs/>
+      <Events />
+      <Memories />
+    </div>
   );
 };
 

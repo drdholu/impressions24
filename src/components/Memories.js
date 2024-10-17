@@ -1,5 +1,4 @@
 import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -31,16 +30,16 @@ const Memories = () => {
   };
 
   return (
-    <Box id="memories" py={16} px={8} bg="gray.100">
-      <Text fontSize="2xl" mb={8} textAlign="center">Memories</Text>
+    <div id="memories" className="py-16 px-8 bg-gray-100">
+      <h2 className="text-2xl mb-8 text-center">Memories</h2>
       <Carousel responsive={responsive}>
         {images.map((src, index) => (
-          <Box key={index} p={2}>
-            <img src={src} alt={`Memory ${index + 1}`} style={{ width: '100%', borderRadius: '8px' }} />
-          </Box>
+          <div key={index} className="p-2">
+            <img src={src} alt={`Memory ${index + 1}`} className="w-full rounded-md" />
+          </div>
         ))}
       </Carousel>
-    </Box>
+    </div>
   );
 };
 

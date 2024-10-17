@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Heading, VStack, FormControl, FormLabel, Input, Button, Text, useToast } from '@chakra-ui/react';
 
 const Form = ({ scriptURL }) => {
   const [formData, setFormData] = useState({
@@ -15,7 +14,6 @@ const Form = ({ scriptURL }) => {
 
   const [responseMessage, setResponseMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const toast = useToast();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -40,6 +38,15 @@ const Form = ({ scriptURL }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check if any field is empty
+    for (const key in formData) {
+      if (formData[key].trim() === '') {
+        setResponseMessage('All fields are mandatory.');
+        return;
+      }
+    }
+
     setIsSubmitting(true);
     setResponseMessage('');
 
@@ -55,33 +62,11 @@ const Form = ({ scriptURL }) => {
         setResponseMessage(data.message || 'An error occurred. Please try again.');
         if (data.result === 'success') {
           clearForm();
-          toast({
-            title: 'Success',
-            description: data.message,
-            status: 'success',
-            duration: 5000,
-            isClosable: true,
-          });
-        } else {
-          toast({
-            title: 'Error',
-            description: data.message,
-            status: 'error',
-            duration: 5000,
-            isClosable: true,
-          });
         }
       })
       .catch((error) => {
         setIsSubmitting(false);
         setResponseMessage('An error occurred. Please try again.');
-        toast({
-          title: 'Error',
-          description: 'An error occurred. Please try again.',
-          status: 'error',
-          duration: 5000,
-          isClosable: true,
-        });
       });
   };
 
@@ -91,107 +76,118 @@ const Form = ({ scriptURL }) => {
   ];
 
   return (
-    <div>
-      <Heading as="h1" size="xl" textAlign="center" marginBottom={6}>
-        Impressions Registration
-      </Heading>
+    <div className="max-w-md p-8 m-10 mx-auto bg-white rounded-md shadow-md">
+      <h2 className="mb-4 text-2xl text-center">Register</h2>
       <form onSubmit={handleSubmit}>
-        <VStack spacing={4}>
-          <FormControl isRequired>
-            <FormLabel>MIS</FormLabel>
-            <Input
-              name="mis"
-              value={formData.mis}
-              onChange={handleInputChange}
-              placeholder="Enter your MIS"
-            />
-          </FormControl>
-          <FormControl isRequired>
-            <FormLabel>Name</FormLabel>
-            <Input
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              placeholder="Enter your name"
-            />
-          </FormControl>
-          <FormControl isRequired>
-            <FormLabel>College Email</FormLabel>
-            <Input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              placeholder="Enter your college email"
-            />
-          </FormControl>
-          <FormControl isRequired>
-            <FormLabel>Preference 1</FormLabel>
-            <Input
-              as="select"
-              name="pref1"
-              value={formData.pref1}
-              onChange={handleInputChange}
-            >
-              <option value="">Select Preference 1</option>
-              {options.map((option) => (
-                <option key={option} value={option}>{option}</option>
-              ))}
-            </Input>
-          </FormControl>
-          <FormControl isRequired>
-            <FormLabel>Preference 2</FormLabel>
-            <Input
-              as="select"
-              name="pref2"
-              value={formData.pref2}
-              onChange={handleInputChange}
-            >
-              <option value="">Select Preference 2</option>
-              {options.map((option) => (
-                <option key={option} value={option}>{option}</option>
-              ))}
-            </Input>
-          </FormControl>
-          <FormControl isRequired>
-            <FormLabel>Preference 3</FormLabel>
-            <Input
-              as="select"
-              name="pref3"
-              value={formData.pref3}
-              onChange={handleInputChange}
-            >
-              <option value="">Select Preference 3</option>
-              {options.map((option) => (
-                <option key={option} value={option}>{option}</option>
-              ))}
-            </Input>
-          </FormControl>
-          <FormControl isRequired>
-            <FormLabel>Why do you want to join impressions?</FormLabel>
-            <Input
-              as="textarea"
-              name="reason"
-              value={formData.reason}
-              onChange={handleInputChange}
-              placeholder="Enter your reason"
-            />
-          </FormControl>
-          <FormControl isRequired>
-            <FormLabel>Part of any other fest?</FormLabel>
-            <Input
-              name="otherFest"
-              value={formData.otherFest}
-              onChange={handleInputChange}
-              placeholder="Enter if you are part of any other fest"
-            />
-          </FormControl>
-          <Button type="submit" isLoading={isSubmitting}>
-            {isSubmitting ? 'Submitting...' : 'Submit'}
-          </Button>
-        </VStack>
+        <div className="mb-4">
+          <label className="block text-gray-700">MIS</label>
+          <input
+            type="text"
+            name="mis"
+            value={formData.mis}
+            onChange={handleInputChange}
+            className="w-full p-2 border rounded-md"
+            placeholder="Enter your MIS"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700">Name</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            className="w-full p-2 border rounded-md"
+            placeholder="Enter your name"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700">College Email</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            className="w-full p-2 border rounded-md"
+            placeholder="Enter your college email"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700">Preference 1</label>
+          <select
+            name="pref1"
+            value={formData.pref1}
+            onChange={handleInputChange}
+            className="w-full p-2 border rounded-md"
+          >
+            <option value="">Select Preference 1</option>
+            {options.map((option) => (
+              <option key={option} value={option}>{option}</option>
+            ))}
+          </select>
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700">Preference 2</label>
+          <select
+            name="pref2"
+            value={formData.pref2}
+            onChange={handleInputChange}
+            className="w-full p-2 border rounded-md"
+          >
+            <option value="">Select Preference 2</option>
+            {options.map((option) => (
+              <option key={option} value={option}>{option}</option>
+            ))}
+          </select>
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700">Preference 3</label>
+          <select
+            name="pref3"
+            value={formData.pref3}
+            onChange={handleInputChange}
+            className="w-full p-2 border rounded-md"
+          >
+            <option value="">Select Preference 3</option>
+            {options.map((option) => (
+              <option key={option} value={option}>{option}</option>
+            ))}
+          </select>
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700">Why do you want to join impressions?</label>
+          <textarea
+            name="reason"
+            value={formData.reason}
+            onChange={handleInputChange}
+            className="w-full p-2 border rounded-md"
+            placeholder="Enter your reason"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700">Part of any other fest?</label>
+          <input
+            type="text"
+            name="otherFest"
+            value={formData.otherFest}
+            onChange={handleInputChange}
+            className="w-full p-2 border rounded-md"
+            placeholder="Enter if you are part of any other fest"
+          />
+        </div>
+        <button
+          type="submit"
+          className={`w-full p-2 bg-green-500 text-white rounded-md ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-600'}`}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Submitting...' : 'Submit'}
+        </button>
       </form>
-      {responseMessage && <Text mt={4} color={responseMessage.includes('successfully') ? 'green.500' : 'red.500'}>{responseMessage}</Text>}
+      {responseMessage && (
+        <p className={`mt-4 ${responseMessage.includes('successfully') ? 'text-green-500' : 'text-red-500'}`}>
+          {responseMessage}
+        </p>
+      )}
     </div>
   );
 };

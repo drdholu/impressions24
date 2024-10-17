@@ -1,19 +1,14 @@
 import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
 
 const EventCard = ({ event, onClick }) => {
   return (
-    <Box
-      p={4}
-      borderWidth="1px"
-      borderRadius="md"
+    <div
+      className="p-4 border rounded-md cursor-pointer hover:bg-gray-100"
       onClick={onClick}
-      cursor="pointer"
-      _hover={{ bg: 'gray.100' }}
     >
-      <Text fontSize="xl" fontWeight="bold">{event.title}</Text>
-      <Text mt={2}>{event.description}</Text>
-    </Box>
+      <h3 className="text-xl font-bold">{event.title}</h3>
+      <p className="mt-2">{event.description}</p>
+    </div>
   );
 };
 

@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { Box, SimpleGrid, Text, useDisclosure } from '@chakra-ui/react';
 import EventCard from './EventCard';
 import EventModal from './EventModal';
 
 const Events = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const events = [
@@ -17,19 +15,18 @@ const Events = () => {
 
   const handleCardClick = (event) => {
     setSelectedEvent(event);
-    onOpen();
   };
 
   return (
-    <Box id="events" py={16} px={8} bg="white">
-      <Text fontSize="2xl" mb={8} textAlign="center">Events</Text>
-      <SimpleGrid columns={[1, null, 3]} spacing={8}>
+    <div id="events" className="py-16 px-8 bg-white">
+      <h2 className="text-2xl mb-8 text-center">Events</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {events.map((event) => (
           <EventCard key={event.id} event={event} onClick={() => handleCardClick(event)} />
         ))}
-      </SimpleGrid>
-      {selectedEvent && <EventModal isOpen={isOpen} onClose={onClose} event={selectedEvent} />}
-    </Box>
+      </div>
+      {selectedEvent && <EventModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />}
+    </div>
   );
 };
 
