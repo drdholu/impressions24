@@ -1,26 +1,43 @@
 .hero-section {
     height: 100vh;
-    background-image: url('../images/Pinterest-.jpg');
-    background-size: cover;
-    background-position: center;
+    
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
+  .hero-section video {
+    position: fixed;
+    width: 100vw;
+    height: 100vh; 
+    z-index: -1;   
+    object-fit: cover;
+}
+
   .overlay {
     position: absolute;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 400px;
+    z-index: 1;
+    opacity: 1;
   }
   
   .fest-logo {
     width: 100%;
-    animation: float 6s ease-in-out infinite;
-  }
+    animation: fadeIn 6s ease-in forwards, float 6s ease-in-out 3s infinite;
+    }
   
+  .sub-txt {
+    font-family: 'Poppins', sans-serif; /* Use a font of your choice */
+    font-size: 15px; 
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    animation: fadeIn 6s ease-in forwards, float1 6s ease-in-out 3s infinite;
+  }
+
   @keyframes float {
     0% {
       transform:translateY(0);
@@ -30,6 +47,27 @@
     }
     100% {
       transform:translateY(0);
+    }
+  }
+
+  @keyframes float1 {
+    0% {
+      transform:translateY(0);
+    }
+    50% {
+      transform:translateY(10px);
+    }
+    100% {
+      transform:translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
   }
   

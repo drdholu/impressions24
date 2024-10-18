@@ -1,8 +1,7 @@
 // App.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Form from './Form';
+import Form from './components/Form';
 import LandingPage from './components/LandingPage'; // Adjust if this path is incorrect
 
 const App = () => {
@@ -10,7 +9,6 @@ const App = () => {
 
   return (
     <div>
-      <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/coordinator-form" element={<Form scriptURL={scriptURL} />} />

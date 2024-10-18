@@ -1,13 +1,16 @@
 import React from 'react';
 import './mainlogo.css';
 import festLogo from '../images/logo.png';
-
-const Mainlogo=()=> {
+import vid from '../images/fire3.mp4'
+const Mainlogo =()=> {
   return (
     <div className="hero-section">
-      <div className="overlay">
-        <img src={festLogo} alt="Fest Logo" className="fest-logo" />
-      </div>
+        <video autoPlay loop muted src={vid}>
+        </video>
+        <div className="overlay">
+            <img src={festLogo} alt="Fest Logo" className="fest-logo" />
+            <div className="sub-txt">BY THE ARTIST,FOR THE ARTIST</div>
+        </div>
     </div>
   );
 }

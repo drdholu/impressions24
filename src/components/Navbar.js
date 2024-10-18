@@ -14,7 +14,7 @@ const Navbar=() =>{
       <div className="navbar-right">
         <a href="#aboutus" className="nav-link">About Us</a>
         <a href="#events" className="nav-link">Events</a>
-        <Link to="/coordinator-form" className="nav-link">Coordinator Forms</Link>
+        <Link to="/coordinator-form" className="nav-link" id='ind'>Coordinator Forms</Link>
       </div>
     </nav>
   );
