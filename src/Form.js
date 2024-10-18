@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
-const Form = ({ scriptURL }) => {
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwZXp9KBQFOhYxWahFfjqzSvMBjpwSlNTEN8qsCGxfpvu95y5KNH2GsSLjo-njTqPZXug/exec';
+const Form = () => {
   const [formData, setFormData] = useState({
     mis: '',
     name: '',
