@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
@@ -34,6 +35,7 @@ const Navbar = () => {
       {/* Overlay for background blur */}
       <div className={`overlay ${isOpen ? 'active' : ''}`}></div>
     </div>
+
   );
 }
 
