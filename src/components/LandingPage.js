@@ -2,6 +2,7 @@ import React from 'react';
 import Mainlogo from './mainlogo';
 import Navbar from './Navbar'
 import Events from './Events'
+import AboutUs from './AboutUs'
 const LandingPage = () => {
   return (
     <div>
