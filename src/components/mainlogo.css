@@ -27,7 +27,7 @@
   
   .fest-logo {
     width: 100%;
-    animation: fadeIn 6s ease-in forwards, float 6s ease-in-out 3s infinite;
+    animation: fadeIn 8s ease-in forwards, float 6s ease-in-out 3s infinite;
     }
   
   .sub-txt {
@@ -35,7 +35,7 @@
     font-size: 15px; 
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
-    animation: fadeIn 6s ease-in forwards, float1 6s ease-in-out 3s infinite;
+    animation: fadeIn 8s ease-in forwards, float1 6s ease-in-out 3s infinite;
   }
 
   @keyframes float {
