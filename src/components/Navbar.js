@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import smallLogo from '../images/z.png';
@@ -36,6 +37,7 @@ const Navbar = () => {
       {/* Overlay for background blur */}
       <div className={`absolute inset-0 bg-black transition-opacity duration-300 ${isOpen ? 'backdrop-blur-md opacity-100' : 'opacity-0'}`}></div>
     </div>
+
   );
 };
 

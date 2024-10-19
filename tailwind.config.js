@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
+    
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
