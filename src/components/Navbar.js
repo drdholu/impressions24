@@ -1,41 +1,22 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
 import smallLogo from '../images/z.png';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Toggle the menu open/close state
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <div className={`navbar-container ${isOpen ? 'menu-open' : ''}`}>
-      <nav className="navbar">
-        <div className="navbar-left">
-          <img src={smallLogo} alt="Small Logo" className="small-logo" />
-        </div>
+      <nav className="z-10 sticky top-0 flex items-center justify-between w-full px-5 h-[10vh] bg-black text-white">
+        <Link to="/" className='flex flex-row items-center gap-3'>
+          <img src={smallLogo} alt="Small Logo" className="h-20" />
+          Impressions 24
+        </Link>
 
-        {/* Hamburger icon */}
-        <button className="hamburger" onClick={toggleMenu}>
-          &#9776;
-        </button>
-
-        {/* Navigation links */}
-        <div className={`navbar-right ${isOpen ? 'active' : ''}`}>
-          <a href="#aboutus" className="nav-link">About Us</a>
-          <a href="#events" className="nav-link">Events</a>
-          <Link to="/coordinator-form" className="nav-link" id="ind">Coordinator Forms</Link>
+        <div className="flex items-center gap-5">
+          {/* <a href="#about" className="text-white no-underline hover:underline">About Us</a> */}
+          {/* <a href="#events" className="text-white no-underline hover:underline">Events</a> */}
+          {/* <a href="#memories" className="text-white no-underline hover:underline">Memories</a> */}
+          <Link to="/coordinator-form" className="text-white no-underline hover:underline" id="ind">Coordinator Forms</Link>
         </div>
       </nav>
-      
-      {/* Overlay for background blur */}
-      <div className={`overlay ${isOpen ? 'active' : ''}`}></div>
-    </div>
-
   );
 }
 
