@@ -1,10 +1,11 @@
-
 import React, { useState } from 'react';
-import { AlertCircle, CheckCircle2 } from 'lucide-react';
-import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AlertCircle, CheckCircle2 } from 'lucide-react';
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxpOjvfD3S3UTRe3dWX1X_kk4xpVc_3tLpuQ1ieQLouPjUKyZCI0Jhe0zgAD8j3kMydbw/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz87cAXjyGkAmnTgfsgf53omOjRnjZEI1jCspzey7GlMVRWWlKtU69xpyTxp-6hKUiUWQ/exec';
+
 const CoordinatorForm = () => {
   const [formData, setFormData] = useState({
     mis: '',
@@ -15,7 +16,7 @@ const CoordinatorForm = () => {
     pref3: '',
     reason: '',
     otherFest: '',
-    portfolio: '',  // Added portfolio field
+    portfolio: '',
   });
 
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const CoordinatorForm = () => {
       pref3: '',
       reason: '',
       otherFest: '',
-      
+      portfolio: '',
     });
   };
 
@@ -70,12 +71,12 @@ const CoordinatorForm = () => {
         setResponseMessage(data.message || 'An error occurred. Please try again.');
         if (data.result === 'success') {
           clearForm();
-          // toast.success('Form submitted successfully!', {
-          //   position: toast.POSITION.BOTTOM_RIGHT,
-          // });
+          toast.success('Form submitted successfully!', {
+            position: toast.POSITION.BOTTOM_RIGHT,
+          });
           setTimeout(() => {
             navigate('/');
-          }, 2000);
+          }, 3000); // Redirect after 3 seconds
         }
       })
       .catch((error) => {
@@ -89,13 +90,23 @@ const CoordinatorForm = () => {
     'Finance', 'Marketing', 'Media', 'PR', 'Prints and Purchase', 'Production', 'VFX', 'Web'
   ];
 
+  const options2 = [
+    'None', 'Accounts', 'COG', 'Decor', 'Design', 'Documentation', 'Events & Proshows',
+    'Finance', 'Marketing', 'Media', 'PR', 'Prints and Purchase', 'Production', 'VFX', 'Web'
+  ];
+
   const inputClass = "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200";
   const labelClass = "block text-sm font-medium text-gray-700 mb-1";
   const selectClass = "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none appearance-none bg-white";
 
+  const getFilteredOptions = (currentPref) => {
+    const selectedPrefs = [formData.pref1, formData.pref2, formData.pref3].filter(pref => pref !== currentPref);
+    return options.filter(option => !selectedPrefs.includes(option));
+  };
 
   return (
     <div className="min-h-[90vh] py-10 bg-gray-50 sm:px-6 lg:px-8">
+      <ToastContainer />
       <div className="max-w-xl p-8 mx-auto bg-white shadow-lg rounded-xl">
         {responseMessage && (
           <div className={`mb-3 p-4 rounded-lg flex items-center gap-2 ${
@@ -109,7 +120,7 @@ const CoordinatorForm = () => {
             <p>{responseMessage}</p>
           </div>
         )}
-        <h2 className="mt-4 mb-8 text-3xl font-bold text-center text-gray-800">Coords Form</h2>
+        <h2 className="mt-4 mb-8 text-3xl font-bold text-center text-gray-800">Coordinator Form</h2>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -160,24 +171,30 @@ const CoordinatorForm = () => {
                   className={selectClass}
                 >
                   <option value="">Select</option>
-                  {options.map((option) => (
+                  {getFilteredOptions(formData[`pref${num}`]).map((option) => (
                     <option key={option} value={option}>{option}</option>
                   ))}
                 </select>
               </div>
             ))}
           </div>
+
+          
+
           <div>
             <label className={labelClass}>Your portfolio as volunteer</label>
-            <input
-              type="text"
+            <select
               name="portfolio"
               value={formData.portfolio}
               onChange={handleInputChange}
-              className={inputClass}
-              placeholder="Enter your portfolio, or 'none'"
-            />
+              className={selectClass}
+            >
+              {options2.map((option) => (
+                <option key={option} value={option}>{option}</option>
+              ))}
+            </select>
           </div>
+
           <div>
             <label className={labelClass}>Why do you want to join impressions?</label>
             <textarea
