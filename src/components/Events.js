@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import EventCard from './EventCard';
-import EventModal from './EventModal';
+import EventCard from './ui/EventCard';
+import EventModal from './ui/EventModal';
 
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -18,9 +18,9 @@ const Events = () => {
   };
 
   return (
-    <div id="events" className="py-16 px-8 bg-white">
-      <h2 className="text-2xl mb-8 text-center">Events</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div id="events" className="px-8 py-16 bg-white">
+      <h2 className="mb-8 text-2xl text-center">Events</h2>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {events.map((event) => (
           <EventCard key={event.id} event={event} onClick={() => handleCardClick(event)} />
         ))}

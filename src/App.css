@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
   .App{
     display: flex;
@@ -16,3 +19,6 @@
     text-decoration: none;
   }
   
+  * {
+    scroll-behavior: smooth;
+  }
