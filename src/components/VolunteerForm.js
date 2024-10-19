@@ -1,9 +1,11 @@
 
 import React, { useState } from 'react';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwZXp9KBQFOhYxWahFfjqzSvMBjpwSlNTEN8qsCGxfpvu95y5KNH2GsSLjo-njTqPZXug/exec';
-const Form = () => {
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzaQoSHq-xyF7jiUnI7cPWT2pD-Uibiel0E9dsBM5_4PtEsjNBljLqOgD6ElZXlTawx/exec';
+const VolunteerForm = () => {
   const [formData, setFormData] = useState({
     mis: '',
     name: '',
@@ -15,6 +17,7 @@ const Form = () => {
     otherFest: '',
   });
 
+  const navigate = useNavigate();
   const [responseMessage, setResponseMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -65,6 +68,12 @@ const Form = () => {
         setResponseMessage(data.message || 'An error occurred. Please try again.');
         if (data.result === 'success') {
           clearForm();
+          // toast.success('Form submitted successfully!', {
+          //   position: toast.POSITION.BOTTOM_RIGHT,
+          // });
+          setTimeout(() => {
+            navigate('/');
+          }, 2000);
         }
       })
       .catch((error) => {
@@ -98,7 +107,7 @@ const Form = () => {
             <p>{responseMessage}</p>
           </div>
         )}
-        {/* <h2 className="mt-4 mb-8 text-3xl font-bold text-center text-gray-800">Registration Form</h2> */}
+        <h2 className="mt-4 mb-8 text-3xl font-bold text-center text-gray-800">Vols Form</h2>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -197,4 +206,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default VolunteerForm;
