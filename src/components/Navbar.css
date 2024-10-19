@@ -33,5 +33,54 @@
   
   .nav-link:hover {
     text-decoration: underline;
-  }
-  
+  }.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    /* Hide the navigation links */
+    .navbar-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 20vh;
+        left: 0;
+        background-color: none;
+        padding: 10px 0;
+    }
+
+    .navbar-right.active {
+        display: flex;
+    }
+
+    .nav-link {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Show the hamburger menu */
+    .hamburger {
+        display: block;
+    }
+}
+
+
+.overlay.active {
+  backdrop-filter: blur(10px);  /* Apply blur */
+  opacity: 1;
+  transition: backdrop-filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Ensure content under overlay is still interactable when menu is closed */
+.navbar-container.menu-open {
+  position: relative;
+  z-index: 100;
+}

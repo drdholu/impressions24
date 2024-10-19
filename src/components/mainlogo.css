@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 60vw;
     z-index: 1;
     opacity: 1;
   }
