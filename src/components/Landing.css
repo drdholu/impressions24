@@ -1,0 +1,32 @@
+/* Container styling (optional) */
+.logo-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Full viewport height */
+    width: 100vw;
+    background-image: url('../images/back.jpg');
+    background-size:auto; /* Scales the image to fit inside the container */
+    background-position: center; /* Centers the image in the container */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+  }
+  
+  /* Floating effect */
+  .mainlogo {
+    width: 40vw; /* Adjust the size of the logo */
+    animation: float 5s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
