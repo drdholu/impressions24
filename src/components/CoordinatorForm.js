@@ -4,12 +4,12 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbz87cAXjyGkAmnTgfsgf53omOjRnjZEI1jCspzey7GlMVRWWlKtU69xpyTxp-6hKUiUWQ/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzWUgTV3ID3iOEFhxCgB7-uSftZPLihQ0dNlXsRdSHOqwrVWL2Kxx49nIVsNJG9wB9uBQ/exec';
 
 const CoordinatorForm = () => {
   const [formData, setFormData] = useState({
     mis: '',
-    name: '',
+    name: '', 
     email: '',
     pref1: '',
     pref2: '',
@@ -47,14 +47,14 @@ const CoordinatorForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const emailDomain = '@coeptech.ac.in';
-    if (!formData.email.endsWith(emailDomain)) {
-      setResponseMessage(`Email must end with ${emailDomain}`);
+    
+    if (!formData.email.endsWith('@coeptech.ac.in')) {
+      setResponseMessage(`Email must end with @coeptech.ac.in`);
       return;
     }
-    // Check if any field is empty
+
     for (const key in formData) {
-      if (formData[key].trim() === '' && key !== 'portfolio') {
+      if (formData[key].trim() === '' && key !== 'portfolio' && key !== 'image') {
         setResponseMessage('All fields are mandatory.');
         return;
       }
@@ -63,32 +63,29 @@ const CoordinatorForm = () => {
     setIsSubmitting(true);
     setResponseMessage('');
 
-    const params = new URLSearchParams(formData).toString();
-    const urlWithParams = `${scriptURL}?${params}`;
+    console.log(formData);
 
-    fetch(urlWithParams, {
+    fetch(scriptURL, {
       method: 'POST',
+      body: JSON.stringify(formData),
+      // mode: "no-cors"
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         setIsSubmitting(false);
         setResponseMessage(data.message || 'An error occurred. Please try again.');
         if (data.result === 'success') {
           clearForm();
-          toast.success('Form submitted successfully!', {
-            position: "bottom-right",
-          });
-          setTimeout(() => {
-            navigate('/');
-          }, 3000); // Redirect after 3 seconds
+          toast.success('Form submitted successfully!');
+          setTimeout(() => navigate('/'), 3000);
         }
       })
-      .catch((error) => {
+      .catch(error => {
         setIsSubmitting(false);
         setResponseMessage('An error occurred. Please try again.');
       });
   };
-
+  
   const options = [
     'Accounts', 'COG', 'Decor', 'Design', 'Documentation', 'Events & Proshows',
     'Finance', 'Marketing', 'Media', 'PR', 'Prints and Purchase', 'Production', 'VFX', 'Web'
@@ -187,24 +184,25 @@ const CoordinatorForm = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                {[1, 2, 3].map((num) => (
-                  <div key={num}>
-                    <label className={labelClass}>Preference {num}</label>
-                    <select
-                      name={`pref${num}`}
-                      value={formData[`pref${num}`]}
-                      onChange={handleInputChange}
-                      className={selectClass}
-                    >
-                      <option value="">Select</option>
-                      {getFilteredOptions(formData[`pref${num}`]).map((option) => (
-                        <option key={option} value={option}>{option}</option>
-                      ))}
-                    </select>
-                  </div>
-                ))}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {[1, 2, 3].map((num) => (
+              <div key={num}>
+                <label className={labelClass}>Preference {num}</label>
+                <select
+                  name={`pref${num}`}
+                  value={formData[`pref${num}`]}
+                  onChange={handleInputChange}
+                  className={selectClass}
+                >
+                  {getFilteredOptions(formData[`pref${num}`]).map((option) => (
+                    <option key={option} value={option}>{option}</option>
+                  ))}
+                </select>
               </div>
+            ))}
+          </div>
+
+          
 
               <div>
                 <label className={labelClass}>Your portfolio as a volunteer in impressions'23,  Not compulsory</label>
@@ -231,17 +229,40 @@ const CoordinatorForm = () => {
                 />
               </div>
 
-              <div>
-                <label className={labelClass}>Part of any other fest?</label>
-                <input
-                  type="text"
-                  name="otherFest"
-                  value={formData.otherFest}
-                  onChange={handleInputChange}
-                  className={inputClass}
-                  placeholder="Enter if you are part of any other fest"
-                />
-              </div>
+          <div>
+            <label className={labelClass}>Part of any other fest?</label>
+            <input
+              type="text"
+              name="otherFest"
+              value={formData.otherFest}
+              onChange={handleInputChange}
+              className={inputClass}
+              placeholder="Enter if you are part of any other fest"
+            />
+          </div>
+
+          <div>
+            <label className={labelClass}>Upload Screenshot (Under25 RSVP Email Screenshot)</label>
+            <input
+              type="file"
+              name="file"
+              accept='image/*'
+              onChange={(e) => {
+                let file = e.target.files[0];
+                let fr = new FileReader();
+                fr.addEventListener('loadend', () => {
+                  let res = fr.result;
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    image: res
+                  }));
+                });
+                fr.readAsDataURL(file);
+              }}
+              className={inputClass}
+            />
+            {formData.image && <img src={formData.image} alt="Uploaded" />}
+          </div>
 
               <button
                 type="submit"

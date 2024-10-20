@@ -4,7 +4,7 @@ import { AlertCircle, CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { toast,ToastContainer } from 'react-toastify';
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzaQoSHq-xyF7jiUnI7cPWT2pD-Uibiel0E9dsBM5_4PtEsjNBljLqOgD6ElZXlTawx/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbx9szIikBSjvDCouXnQfNYcokijKTfRlNtjXd28ckSMR47PmU8c4-oIYtc_nh7tDnuF/exec';
 const VolunteerForm = () => {
   const [formData, setFormData] = useState({
     mis: '',
@@ -59,14 +59,14 @@ const VolunteerForm = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const emailDomain = '@coeptech.ac.in';
-    if (!formData.email.endsWith(emailDomain)) {
-      setResponseMessage(`Email must end with ${emailDomain}`);
+    
+    if (!formData.email.endsWith('@coeptech.ac.in')) {
+      setResponseMessage(`Email must end with @coeptech.ac.in`);
       return;
     }
-    // Check if any field is empty
+
     for (const key in formData) {
-      if (formData[key].trim() === '') {
+      if (formData[key].trim() === '' && key !== 'portfolio' && key !== 'image') {
         setResponseMessage('All fields are mandatory.');
         return;
       }
@@ -75,27 +75,24 @@ const VolunteerForm = () => {
     setIsSubmitting(true);
     setResponseMessage('');
 
-    const params = new URLSearchParams(formData).toString();
-    const urlWithParams = `${scriptURL}?${params}`;
+    console.log(formData);
 
-    fetch(urlWithParams, {
+    fetch(scriptURL, {
       method: 'POST',
+      body: JSON.stringify(formData),
+      // mode: "no-cors"
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         setIsSubmitting(false);
         setResponseMessage(data.message || 'An error occurred. Please try again.');
         if (data.result === 'success') {
           clearForm();
-          toast.success('Form submitted successfully!', {
-            position: "bottom-right",
-          });
-          setTimeout(() => {
-            navigate('/');
-          }, 2000);
+          toast.success('Form submitted successfully!');
+          setTimeout(() => navigate('/'), 3000);
         }
       })
-      .catch((error) => {
+      .catch(error => {
         setIsSubmitting(false);
         setResponseMessage('An error occurred. Please try again.');
       });
@@ -208,17 +205,40 @@ const VolunteerForm = () => {
                 />
               </div>
 
-              <div>
-                <label className={labelClass}>Part of any other fest?</label>
-                <input
-                  type="text"
-                  name="otherFest"
-                  value={formData.otherFest}
-                  onChange={handleInputChange}
-                  className={inputClass}
-                  placeholder="Enter if you are part of any other fest"
-                />
-              </div>
+          <div>
+            <label className={labelClass}>Part of any other fest?</label>
+            <input
+              type="text"
+              name="otherFest"
+              value={formData.otherFest}
+              onChange={handleInputChange}
+              className={inputClass}
+              placeholder="Enter if you are part of any other fest"
+            />
+          </div>
+
+          <div>
+            <label className={labelClass}>Upload Screenshot (Under25 RSVP Email Screenshot)</label>
+            <input
+              type="file"
+              name="file"
+              accept='image/*'
+              onChange={(e) => {
+                let file = e.target.files[0];
+                let fr = new FileReader();
+                fr.addEventListener('loadend', () => {
+                  let res = fr.result;
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    image: res
+                  }));
+                });
+                fr.readAsDataURL(file);
+              }}
+              className={inputClass}
+            />
+            {formData.image && <img src={formData.image} alt="Uploaded" />}
+          </div>
 
               <button
                 type="submit"
