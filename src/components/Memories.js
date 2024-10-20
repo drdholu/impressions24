@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import image1 from '../images/memories/5.webp';
 import image2 from '../images/memories/6.webp';
 import image3 from '../images/memories/7.webp';
@@ -9,18 +9,21 @@ const Memories = () => {
   const images = [image1, image2, image3, image4, image5];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
+  // Memoize the nextSlide function
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const prevSlide = () => {
+  // Memoize the prevSlide function
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
+  }, [images.length]);
 
+  // useEffect to auto-slide the images
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
-  }, [nextSlide]);
+  }, [nextSlide]); // Add nextSlide as a dependency
 
   return (
     <div id="memories" className="px-8 py-16 bg-gradient-to-b from-gray-50 to-gray-100">

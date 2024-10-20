@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 const BackToTop = () => {
   const [showScroll, setShowScroll] = useState(false);
 
-  const checkScrollTop = () => {
+  const checkScrollTop = useCallback(() => {
     if (!showScroll && window.scrollY > window.innerHeight) {
       setShowScroll(true);
     } else if (showScroll && window.scrollY <= window.innerHeight) {
       setShowScroll(false);
     }
-  };
+  }, [showScroll]);
 
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -20,7 +20,7 @@ const BackToTop = () => {
     return () => {
       window.removeEventListener('scroll', checkScrollTop);
     };
-  }, [showScroll]);
+  }, [checkScrollTop]);
 
   return (
     showScroll && (
