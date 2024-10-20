@@ -19,7 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/coordinator-form" element={<CoordinatorForm />} />
-        <Route path="/volunteer-form" element={<VolunteerForm />} />
+        {/* <Route path="/volunteer-form" element={<VolunteerForm />} /> */}
       </Routes>
       <BackToTop />
       <Footer />
