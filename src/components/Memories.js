@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import image1 from '../images/memories/image1.webp';
-import image2 from '../images/memories/image2.webp';
-import image3 from '../images/memories/image3.webp';
-import image4 from '../images/memories/image4.webp';
+import image1 from '../images/memories/5.webp';
+import image2 from '../images/memories/6.webp';
+import image3 from '../images/memories/7.webp';
+import image4 from '../images/memories/8.webp';
 import image5 from '../images/memories/sabali7.webp';
 
 const Memories = () => {
