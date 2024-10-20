@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import image1 from '../images/memories/5.webp';
 import image2 from '../images/memories/6.webp';
@@ -10,9 +10,9 @@ const Memories = () => {
   const images = [image1, image2, image3, image4, image5];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  }, [images.length]);
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
@@ -21,7 +21,7 @@ const Memories = () => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextSlide]); // Include nextSlide in the dependency array
 
   return (
     <div id="memories" className="px-8 py-16 bg-gradient-to-b from-gray-50 to-gray-100">
