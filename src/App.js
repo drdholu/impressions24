@@ -6,6 +6,7 @@ import VolunteerForm from './components/VolunteerForm';
 import LandingPage from './components/LandingPage'; // Adjust if this path is incorrect
 import Navbar from './components/Navbar';
 import BackToTop from "./components/ui/BackToTop"
+import Footer from './components/ui/Footer';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/volunteer-form" element={<VolunteerForm />} />
       </Routes>
       <BackToTop />
+      <Footer />
     </div>
   );
 };

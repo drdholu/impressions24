@@ -54,7 +54,7 @@ const CoordinatorForm = () => {
     }
     // Check if any field is empty
     for (const key in formData) {
-      if (formData[key].trim() === '' && key!='portfolio') {
+      if (formData[key].trim() === '' && key !== 'portfolio') {
         setResponseMessage('All fields are mandatory.');
         return;
       }
