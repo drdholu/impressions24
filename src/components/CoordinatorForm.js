@@ -47,10 +47,14 @@ const CoordinatorForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    const emailDomain = '@coeptech.ac.in';
+    if (!formData.email.endsWith(emailDomain)) {
+      setResponseMessage(`Email must end with ${emailDomain}`);
+      return;
+    }
     // Check if any field is empty
     for (const key in formData) {
-      if (formData[key].trim() === '') {
+      if (formData[key].trim() === '' && key!='portfolio') {
         setResponseMessage('All fields are mandatory.');
         return;
       }
@@ -69,10 +73,12 @@ const CoordinatorForm = () => {
       .then((data) => {
         setIsSubmitting(false);
         setResponseMessage(data.message || 'An error occurred. Please try again.');
+        console.log(data.result);
         if (data.result === 'success') {
+          // console.log("Form submission successful. Clearing form...");
           clearForm();
           toast.success('Form submitted successfully!', {
-            position: toast.POSITION.BOTTOM_RIGHT,
+            position: "bottom-right",
           });
           setTimeout(() => {
             navigate('/');
@@ -81,6 +87,8 @@ const CoordinatorForm = () => {
       })
       .catch((error) => {
         setIsSubmitting(false);
+        // console.log("here");
+        // console.log("Fetch error:", error);
         setResponseMessage('An error occurred. Please try again.');
       });
   };
@@ -182,7 +190,7 @@ const CoordinatorForm = () => {
           
 
           <div>
-            <label className={labelClass}>Your portfolio as volunteer</label>
+            <label className={labelClass}>Your portfolio as volunteer,Not compulsary</label>
             <select
               name="portfolio"
               value={formData.portfolio}
