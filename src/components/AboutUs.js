@@ -1,9 +1,10 @@
 import React from 'react';
 import { Palette } from 'lucide-react';
 import photo1 from '../images/impressions_campus_shot.webp'
+import Cleo from '../images/Cleo.png'
 const AboutUs = () => {
   return (
-    <section id="about" className="px-4 py-24 bg-gradient-to-b from-gray-50 to-gray-100">
+    <section id="about" className="relative px-4 py-24 bg-gradient-to-b from-gray-50 to-gray-100">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -21,7 +22,19 @@ const AboutUs = () => {
               className="object-cover w-full rounded-lg shadow-lg h-80"
             />
             <div className="absolute bottom-0 left-0 w-full rounded-b-lg h-1/3 bg-gradient-to-t from-black/30 to-transparent" />
+              <img 
+                src={Cleo} 
+                alt="" 
+                className="absolute h-[8em] -bottom-5 right-0
+                         sm:h-[12em] sm:-bottom-10 sm:right-0
+                         md:h-[18em] md:-bottom-28 md:left-[-8%]
+                         lg:left-[-15%]
+                         xl:left-[-20%]" 
+              />
           </div>
+          {/* <div>
+            <img src={Cleo} alt="" className='absolute md:h-[20em] bottom-4 md:left-10 right-0 h-[10em]' />
+          </div> */}
           
           <div className="w-full md:w-1/2">
             <p className="text-lg leading-relaxed text-gray-700 md:text-xl">

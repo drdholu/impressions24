@@ -1,21 +1,57 @@
-import React from 'react';
-// import Mainlogo from './mainlogo';
-// import Navbar from './Navbar';
+import React, { useState, useEffect } from 'react';
 import Events from './Events';
 import AboutUs from './AboutUs';
 import Memories from './Memories';
 import vid from '../images/fire3.mp4';
-import logo from '../images/Logos/Name Logo filled.png'
+import logo from '../images/Logos/Name Logo filled.png';
 
 const LandingPage = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      setMousePosition({
+        x: event.clientX,
+        y: event.clientY,
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  const calculateTransform = (intensity = 1) => {
+    const { x, y } = mousePosition;
+    const offsetX = (x / window.innerWidth - 0.5) * 10 * intensity;
+    const offsetY = (y / window.innerHeight - 0.5) * 10 * intensity;
+    return `translate(${offsetX}px, ${offsetY}px)`;
+  };
 
   return (
     <div>
       <div className="relative flex items-center justify-center h-[90vh]">
         <video autoPlay loop muted src={vid} className="w-full h-full object-cover z-[-1]"></video>
         <div className="absolute flex flex-col items-center justify-center w-3/5 opacity-100">
-          <img src={logo} alt="Fest Logo" className="w-full animate-fadeInFloat" />
-          <div className="text-sm text-white text-shadow-md animate-fadeIn">BY THE ARTIST, FOR THE ARTIST</div>
+          {/* <div className="absolute" style={{ transform: 'scale(1)' }}>
+            <img
+              src={logo}
+              alt="Background Fest Logo"
+              className="w-full opacity-50"
+              style={{ transform: calculateTransform(0.5) }} 
+            />
+          </div> */}
+          <img
+            src={logo}
+            alt="Foreground Fest Logo"
+            className="relative w-full animate-fadeIn"
+            style={{ transform: calculateTransform(1) }}
+          />
+          <div className="relative z-10 text-sm text-white text-shadow-md animate-fadeIn">
+            BY THE ARTIST, FOR THE ARTIST
+          </div>
         </div>
       </div>
       <AboutUs />
