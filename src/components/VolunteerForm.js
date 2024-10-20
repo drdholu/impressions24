@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast,ToastContainer } from 'react-toastify';
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzaQoSHq-xyF7jiUnI7cPWT2pD-Uibiel0E9dsBM5_4PtEsjNBljLqOgD6ElZXlTawx/exec';
 const VolunteerForm = () => {
@@ -44,7 +44,11 @@ const VolunteerForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    const emailDomain = '@coeptech.ac.in';
+    if (!formData.email.endsWith(emailDomain)) {
+      setResponseMessage(`Email must end with ${emailDomain}`);
+      return;
+    }
     // Check if any field is empty
     for (const key in formData) {
       if (formData[key].trim() === '') {
@@ -68,9 +72,9 @@ const VolunteerForm = () => {
         setResponseMessage(data.message || 'An error occurred. Please try again.');
         if (data.result === 'success') {
           clearForm();
-          // toast.success('Form submitted successfully!', {
-          //   position: toast.POSITION.BOTTOM_RIGHT,
-          // });
+          toast.success('Form submitted successfully!', {
+            position: "bottom-right",
+          });
           setTimeout(() => {
             navigate('/');
           }, 2000);
@@ -99,6 +103,7 @@ const VolunteerForm = () => {
 
   return (
     <div className="min-h-[90vh] py-10 bg-gray-50 sm:px-6 lg:px-8">
+      <ToastContainer />
       <div className="max-w-xl p-8 mx-auto bg-white shadow-lg rounded-xl">
         {responseMessage && (
           <div className={`mb-3 p-4 rounded-lg flex items-center gap-2 ${

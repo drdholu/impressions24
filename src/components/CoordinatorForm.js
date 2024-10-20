@@ -190,7 +190,7 @@ const CoordinatorForm = () => {
           
 
           <div>
-            <label className={labelClass}>Your portfolio as volunteer,Not compulsary</label>
+            <label className={labelClass}>Your portfolio as a volunteer in impressions'23,  Not compulsary</label>
             <select
               name="portfolio"
               value={formData.portfolio}
