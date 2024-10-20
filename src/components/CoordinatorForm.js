@@ -53,12 +53,12 @@ const CoordinatorForm = () => {
       return;
     }
 
-    for (const key in formData) {
-      if (formData[key].trim() === '' && key !== 'portfolio' && key !== 'image') {
-        setResponseMessage('All fields are mandatory.');
-        return;
-      }
-    }
+    // for (const key in formData) {
+    //   if (formData[key].trim() === '' && key !== 'portfolio' && key !== 'image') {
+    //     setResponseMessage('All fields are mandatory.');
+    //     return;
+    //   }
+    // }
 
     setIsSubmitting(true);
     setResponseMessage('');
@@ -103,7 +103,7 @@ const CoordinatorForm = () => {
     Design: "Handles the visual elements, including digital and print designs.",
     Documentation: "Keeps official records and manages documents related to the fest.",
     "Events & Proshows": "Coordinates and manages events and professional shows.",
-    Finance: "Oversees budget planning, expenditure tracking, and fund allocation.",
+    "Finance & Sponsorships": "Oversees budget planning, expenditure tracking, and fund allocation.",
     Marketing: "Responsible for promoting the fest and attracting sponsorships.",
     Media: "Manages photography, videography, and media relations.",
     PR: "Public relations team, responsible for external communications.",
@@ -140,7 +140,20 @@ const CoordinatorForm = () => {
         )}
         
         {/* Responsive Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+
+          {/* Portfolio Information Section */}
+          <div className="mt-12 lg:mt-0">
+            <h3 className="mb-6 text-2xl font-semibold text-gray-700">Portfolio Information</h3>
+            <div className="space-y-4">
+              {Object.entries(portfolioInfo).map(([portfolio, info]) => (
+                <div key={portfolio}>
+                  <h4 className="text-xl font-semibold text-blue-600">{portfolio}:</h4>
+                  <p className="text-gray-700">{info}</p>
+                </div>
+              ))}
+            </div>
+          </div>
           
           {/* Form Section */}
           <div>
@@ -150,6 +163,7 @@ const CoordinatorForm = () => {
               <div>
                 <label className={labelClass}>MIS</label>
                 <input
+                  required
                   type="number"
                   name="mis"
                   value={formData.mis}
@@ -163,6 +177,7 @@ const CoordinatorForm = () => {
                 <div>
                   <label className={labelClass}>Name</label>
                   <input
+                    required
                     type="text"
                     name="name"
                     value={formData.name}
@@ -174,6 +189,7 @@ const CoordinatorForm = () => {
                 <div>
                   <label className={labelClass}>College Email</label>
                   <input
+                    required
                     type="email"
                     name="email"
                     value={formData.email}
@@ -194,6 +210,7 @@ const CoordinatorForm = () => {
                   onChange={handleInputChange}
                   className={selectClass}
                 >
+                  <option value="" key="">-</option>
                   {getFilteredOptions(formData[`pref${num}`]).map((option) => (
                     <option key={option} value={option}>{option}</option>
                   ))}
@@ -205,7 +222,7 @@ const CoordinatorForm = () => {
           
 
               <div>
-                <label className={labelClass}>Your portfolio as a volunteer in impressions'23,  Not compulsory</label>
+                <label className={labelClass}>(Not mandatory) Your portfolio as a volunteer in impressions'23</label>
                 <select
                   name="portfolio"
                   value={formData.portfolio}
@@ -226,12 +243,14 @@ const CoordinatorForm = () => {
                   onChange={handleInputChange}
                   className={`${inputClass} min-h-[100px] resize-y`}
                   placeholder="Enter your reason"
+                  required
                 />
               </div>
 
           <div>
             <label className={labelClass}>Part of any other fest?</label>
             <input
+              required
               type="text"
               name="otherFest"
               value={formData.otherFest}
@@ -242,7 +261,7 @@ const CoordinatorForm = () => {
           </div>
 
           <div>
-            <label className={labelClass}>Upload Screenshot (Under25 RSVP Email Screenshot)</label>
+            <label className={labelClass}>(Not mandatory) Upload Screenshot (Under25 RSVP Email Screenshot)</label>
             <input
               type="file"
               name="file"
@@ -276,19 +295,6 @@ const CoordinatorForm = () => {
                 {isSubmitting ? 'Submitting...' : 'Submit Application'}
               </button>
             </form>
-          </div>
-
-          {/* Portfolio Information Section */}
-          <div className="mt-12 lg:mt-0">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-6">Portfolio Information</h3>
-            <div className="space-y-4">
-              {Object.entries(portfolioInfo).map(([portfolio, info]) => (
-                <div key={portfolio}>
-                  <h4 className="text-xl font-semibold text-blue-600">{portfolio}:</h4>
-                  <p className="text-gray-700">{info}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
