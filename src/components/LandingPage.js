@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Events from './Events';
 import AboutUs from './AboutUs';
 import Memories from './Memories';
-import vid from '../images/fire3.mp4';
+import vid from '../images/fire3.3gp';
 import logo from '../images/Logos/Name Logo filled.png';
 
 const LandingPage = () => {
