@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import image1 from '../images/memories/5.webp';
-import image2 from '../images/memories/6.webp';
-import image3 from '../images/memories/7.webp';
-import image4 from '../images/memories/8.webp';
+import image1 from '../images/memories/image1.webp';
+import image2 from '../images/memories/image2.webp';
+import image3 from '../images/memories/image3.webp';
+import image4 from '../images/memories/image4.webp';
 import image5 from '../images/memories/sabali7.webp';
 
 const Memories = () => {
@@ -21,7 +20,7 @@ const Memories = () => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextSlide]);
 
   return (
     <div id="memories" className="px-8 py-16 bg-gradient-to-b from-gray-50 to-gray-100">
@@ -37,43 +36,16 @@ const Memories = () => {
                   : 'opacity-0 scale-105'
               }`}
             >
-              <img
-                src={src}
-                alt={`Memory ${index + 1}`}
-                className="absolute block object-cover w-full h-full"
-              />
-              <div className="absolute inset-0 bg-black/20" />
+              <img src={src} alt={`Memory ${index + 1}`} className="object-cover w-full h-full rounded-xl" />
             </div>
           ))}
         </div>
-
-        <button
-          onClick={prevSlide}
-          className="absolute p-3 transition-all duration-200 -translate-y-1/2 bg-white rounded-full shadow-lg top-1/2 -left-4 md:-left-6 hover:bg-gray-50 hover:scale-110"
-        >
-          <ChevronLeft className="w-6 h-6 text-gray-800" />
+        <button onClick={prevSlide} className="absolute left-0 p-2 transition transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full shadow-md top-1/2 hover:bg-opacity-100">
+          &#10094;
         </button>
-
-        <button
-          onClick={nextSlide}
-          className="absolute p-3 transition-all duration-200 -translate-y-1/2 bg-white rounded-full shadow-lg top-1/2 -right-4 md:-right-6 hover:bg-gray-50 hover:scale-110"
-        >
-          <ChevronRight className="w-6 h-6 text-gray-800" />
+        <button onClick={nextSlide} className="absolute right-0 p-2 transition transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full shadow-md top-1/2 hover:bg-opacity-100">
+          &#10095;
         </button>
-
-        <div className="absolute flex gap-3 -translate-x-1/2 bottom-4 left-1/2">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'bg-white w-8' 
-                  : 'bg-white/60 hover:bg-white/80'
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </div>
   );
