@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import image1 from '../images/memories/5.webp';
 import image2 from '../images/memories/6.webp';
 import image3 from '../images/memories/7.webp';
@@ -18,20 +19,22 @@ const Memories = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000); // Auto-advance every 5 seconds
+    const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div id="memories" className="px-8 py-16 bg-gray-100">
-      <h2 className="mb-8 text-2xl text-center">Memories</h2>
-      <div className="relative w-full max-w-3xl mx-auto">
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <div id="memories" className="px-8 py-16 bg-gradient-to-b from-gray-50 to-gray-100">
+      <h2 className="mb-12 text-3xl font-bold text-center text-gray-800">Our Memories</h2>
+      <div className="relative w-full max-w-4xl mx-auto shadow-2xl rounded-xl">
+        <div className="relative h-64 md:h-[32rem] overflow-hidden rounded-xl">
           {images.map((src, index) => (
             <div
               key={index}
-              className={`absolute w-full h-full transition-opacity duration-500 ease-in-out ${
-                index === currentIndex ? 'opacity-100' : 'opacity-0'
+              className={`absolute w-full h-full transition-all duration-700 ease-in-out transform ${
+                index === currentIndex 
+                  ? 'opacity-100 scale-100' 
+                  : 'opacity-0 scale-105'
               }`}
             >
               <img
@@ -39,32 +42,34 @@ const Memories = () => {
                 alt={`Memory ${index + 1}`}
                 className="absolute block object-cover w-full h-full"
               />
+              <div className="absolute inset-0 bg-black/20" />
             </div>
           ))}
         </div>
+
         <button
           onClick={prevSlide}
-          className="absolute p-2 text-white -translate-y-1/2 bg-black bg-opacity-50 rounded-full top-1/2 left-4 hover:bg-opacity-75 focus:outline-none"
+          className="absolute p-3 transition-all duration-200 -translate-y-1/2 bg-white rounded-full shadow-lg top-1/2 -left-4 md:-left-6 hover:bg-gray-50 hover:scale-110"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
+          <ChevronLeft className="w-6 h-6 text-gray-800" />
         </button>
+
         <button
           onClick={nextSlide}
-          className="absolute p-2 text-white -translate-y-1/2 bg-black bg-opacity-50 rounded-full top-1/2 right-4 hover:bg-opacity-75 focus:outline-none"
+          className="absolute p-3 transition-all duration-200 -translate-y-1/2 bg-white rounded-full shadow-lg top-1/2 -right-4 md:-right-6 hover:bg-gray-50 hover:scale-110"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          <ChevronRight className="w-6 h-6 text-gray-800" />
         </button>
-        <div className="absolute flex space-x-2 transform -translate-x-1/2 bottom-4 left-1/2">
+
+        <div className="absolute flex gap-3 -translate-x-1/2 bottom-4 left-1/2">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full ${
-                index === currentIndex ? 'bg-white' : 'bg-white bg-opacity-50'
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? 'bg-white w-8' 
+                  : 'bg-white/60 hover:bg-white/80'
               }`}
             />
           ))}

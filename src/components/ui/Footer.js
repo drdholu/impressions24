@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="py-6 text-white bg-black">
       <div className="container mx-auto text-center">
-        <p className="mb-4">Made with ❤️ by Impressions 24 Web Team</p>
+        <p className="mb-4 text-sm md:text-lg">Made with ❤️ by Impressions 24 Web Team</p>
         <div className="flex justify-center space-x-6">
           {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
