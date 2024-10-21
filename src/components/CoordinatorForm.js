@@ -115,10 +115,10 @@ const CoordinatorForm = () => {
   return (
     <div className="min-h-[90vh] py-10 bg-gray-50 sm:px-6 lg:px-8">
       <ToastContainer />
-      {/* <div className="text-cente ">
-        <h1 className="text-4xl font-bold text-indigo-600">Impressions Coordinator Induction</h1>
-        <p className="text-xl text-gray-600">COEP Technological University Cultural Festival</p>
-      </div> */}
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-red-600">Impressions Coordinator Induction</h1>
+        {/* <p className="text-xl text-gray-600">COEP Technological University Cultural Festival</p> */}
+      </div>
       
       <Details />
 

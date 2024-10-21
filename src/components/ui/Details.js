@@ -120,7 +120,7 @@ const portfolios = [
 
   const PortfolioCard = ({ title, description, contacts }) => (
     <div className="p-4 mb-4 transition-all duration-300 transform bg-white rounded-lg shadow-md sm:p-6 hover:shadow-lg hover:-translate-y-1">
-      <h3 className="mb-3 text-lg font-bold text-red-600 sm:text-xl line-clamp-2">{title}</h3>
+      <h3 className="mb-3 text-lg font-bold text-red-500 sm:text-xl line-clamp-2">{title}</h3>
       <p className="mb-4 text-sm text-gray-600 sm:text-base line-clamp-4 hover:line-clamp-none">{description}</p>
       <div className="space-y-2">
         {contacts.map((contact, index) => (
@@ -142,7 +142,7 @@ const portfolios = [
             <p className="flex items-center"><span className="mr-2">📅</span> Dates: 23rd & 25th October</p>
             <p className="flex items-center"><span className="mr-2">⏰</span> Timing: 4:30 pm onwards</p>
             <p className="flex items-center"><span className="mr-2">📍</span> Venue: Academic Complex</p>
-            <p className="flex items-center"><span className="mr-2">⚠️</span> Deadline: 23rd October, 11 a.m.</p>
+            {/* <p className="flex items-center"><span className="mr-2">⚠️</span> Deadline: 23rd October, 11 a.m.</p> */}
           </div>
         </div>
   
