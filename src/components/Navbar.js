@@ -1,11 +1,36 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import smallLogo from '../images/z.png';
-
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const titleRef = useRef();
+  useLayoutEffect(() => {
+    const title = titleRef.current;
+    
+    // Initially hide the text
+    gsap.set(title, {
+      yPercent: -100,
+      opacity: 0
+    });
+  
+    // Reveal on scroll
+    gsap.to(title, {
+      yPercent: 0,
+      opacity: 1,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: document.body,
+        start: "100px top",
+        toggleActions: "play none none reverse"
+      }
+    });
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,7 +41,7 @@ const Navbar = () => {
       <div className="h-[10vh] flex items-center justify-between px-5">
         <Link to="/" className="flex items-center gap-3">
           <img src={smallLogo} alt="Logo" className="w-auto h-20" />
-          <span className="text-xl font-semibold">Impressions 24</span>
+          <span ref={titleRef} className="text-xl font-semibold">Impressions 24</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -50,7 +75,7 @@ const Navbar = () => {
           </Link>
           {/* <Link
             to="/volunteer-form"
-            className="bolck text-white no-underline hover:underline"
+            className="text-white no-underline bolck hover:underline"
             onClick={toggleMenu}
           >
             Volunteer Forms

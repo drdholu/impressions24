@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Events from './Events';
 import AboutUs from './AboutUs';
 import Memories from './Memories';
@@ -7,29 +8,29 @@ import logo from '../images/Logos/Name Logo filled.png';
 import canvas from '../images/background.webp'
 
 const LandingPage = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePosition({
-        x: event.clientX,
-        y: event.clientY,
-      });
-    };
+  // useEffect(() => {
+  //   const handleMouseMove = (event) => {
+  //     setMousePosition({
+  //       x: event.clientX,
+  //       y: event.clientY,
+  //     });
+  //   };
 
-    window.addEventListener('mousemove', handleMouseMove);
+  //   window.addEventListener('mousemove', handleMouseMove);
 
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('mousemove', handleMouseMove);
+  //   };
+  // }, []);
 
-  const calculateTransform = (intensity = 1) => {
-    const { x, y } = mousePosition;
-    const offsetX = (x / window.innerWidth - 0.5) * 10 * intensity;
-    const offsetY = (y / window.innerHeight - 0.5) * 10 * intensity;
-    return `translate(${offsetX}px, ${offsetY}px)`;
-  };
+  // const calculateTransform = (intensity = 1) => {
+  //   const { x, y } = mousePosition;
+  //   const offsetX = (x / window.innerWidth - 0.5) * 10 * intensity;
+  //   const offsetY = (y / window.innerHeight - 0.5) * 10 * intensity;
+  //   return `translate(${offsetX}px, ${offsetY}px)`;
+  // };
 
   return (
     <div>
@@ -49,7 +50,7 @@ const LandingPage = () => {
             src={logo}
             alt="Foreground Fest Logo"
             className="relative w-full"
-            style={{ transform: calculateTransform(0.45) }}
+            // style={{ transform: calculateTransform(0.45) }}
           />
           <div className="relative text-sm text-white text-shadow-md">
             BY THE ARTIST, FOR THE ARTIST
