@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
@@ -19,6 +19,8 @@ const CoordinatorForm = () => {
     otherFest: '',
     portfolio: '',
   });
+
+  const formRef = useRef();
 
   const navigate = useNavigate();
   const [responseMessage, setResponseMessage] = useState('');
@@ -112,6 +114,12 @@ const CoordinatorForm = () => {
     return options.filter(option => !selectedPrefs.includes(option));
   };
 
+  const scrollToContainer = () => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-[90vh] py-10 bg-gray-50 sm:px-6 lg:px-8">
       <ToastContainer />
@@ -120,6 +128,7 @@ const CoordinatorForm = () => {
         {/* <p className="text-xl text-gray-600">COEP Technological University Cultural Festival</p> */}
       </div>
       
+      <p className="flex items-center justify-center pt-2"><button onClick={scrollToContainer} className='text-red-400 animate-pulse'>Scroll To Forms</button></p>
       <Details />
 
       <div className="max-w-5xl p-8 mx-auto bg-white shadow-lg rounded-xl">
@@ -138,7 +147,7 @@ const CoordinatorForm = () => {
         
         <div className="">
           
-          <div>
+          <div ref={formRef}>
             <h2 className="mb-8 text-3xl font-bold text-center text-gray-800">Coordinator Form</h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">
