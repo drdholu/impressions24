@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Events from './Events';
 import AboutUs from './AboutUs';
 import Memories from './Memories';
-import vid from '../images/fire3.3gp';
+// import vid from '../images/fire3.3gp';
 import logo from '../images/Logos/Name Logo filled.png';
+import canvas from '../images/background.webp'
 
 const LandingPage = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -33,7 +34,8 @@ const LandingPage = () => {
   return (
     <div>
       <div className="relative flex items-center justify-center h-[90vh]">
-        <video autoPlay loop muted src={vid} className="w-full h-full object-cover z-[-1]"></video>
+        {/* <video autoPlay loop muted src={vid} className="w-full h-full object-cover z-[-1]"></video> */}
+        <img src={canvas} alt="" className='w-full h-full object-cover z-[-1] brightness-50'/>
         <div className="absolute flex flex-col items-center justify-center w-3/5 opacity-100">
           {/* <div className="absolute" style={{ transform: 'scale(1)' }}>
             <img
@@ -46,10 +48,10 @@ const LandingPage = () => {
           <img
             src={logo}
             alt="Foreground Fest Logo"
-            className="relative w-full animate-fadeIn"
-            style={{ transform: calculateTransform(0.35) }}
+            className="relative w-full"
+            style={{ transform: calculateTransform(0.45) }}
           />
-          <div className="relative z-10 text-sm text-white text-shadow-md animate-fadeIn">
+          <div className="relative text-sm text-white text-shadow-md">
             BY THE ARTIST, FOR THE ARTIST
           </div>
         </div>
