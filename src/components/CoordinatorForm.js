@@ -4,7 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzWUgTV3ID3iOEFhxCgB7-uSftZPLihQ0dNlXsRdSHOqwrVWL2Kxx49nIVsNJG9wB9uBQ/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycby1dPWip9T5iwC1ANC0g3fiH3CcUoCphHyaPGGpn0VTPIPiht8tiF7rL8zO7ojcBDV62Q/exec';
 
 const CoordinatorForm = () => {
   const [formData, setFormData] = useState({
@@ -49,16 +49,18 @@ const CoordinatorForm = () => {
     e.preventDefault();
     
     if (!formData.email.endsWith('@coeptech.ac.in')) {
+      toast.error('Email must end with @coeptech.ac.in');
       setResponseMessage(`Email must end with @coeptech.ac.in`);
       return;
     }
 
-    // for (const key in formData) {
-    //   if (formData[key].trim() === '' && key !== 'portfolio' && key !== 'image') {
-    //     setResponseMessage('All fields are mandatory.');
-    //     return;
-    //   }
-    // }
+    for (const key in formData) {
+      if (formData[key].trim() === '' && key !== 'portfolio' && key !== 'image') {
+        toast.error("Please fill all manditory fields");
+        setResponseMessage('All fields are mandatory.');
+        return;
+      }
+    }
 
     setIsSubmitting(true);
     setResponseMessage('');
@@ -74,6 +76,9 @@ const CoordinatorForm = () => {
       .then(data => {
         setIsSubmitting(false);
         setResponseMessage(data.message || 'An error occurred. Please try again.');
+        if(data.message==="MIS already exists!"){
+          toast.error("MIS already exists!");
+        }
         if (data.result === 'success') {
           clearForm();
           toast.success('Form submitted successfully!');
@@ -82,6 +87,7 @@ const CoordinatorForm = () => {
       })
       .catch(error => {
         setIsSubmitting(false);
+        toast.error('An error occurred. Please try again.');
         setResponseMessage('An error occurred. Please try again.');
       });
   };
