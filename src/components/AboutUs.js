@@ -8,10 +8,10 @@ const AboutUs = () => {
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Palette className="text-blue-600" size={28} />
+            <Palette className="text-red-600" size={28} />
             <h2 className="text-3xl font-bold text-gray-900">About Impressions</h2>
           </div>
-          <p className="text-xl font-medium text-blue-600">By the Artist, For the Artist</p>
+          <p className="text-xl font-medium text-red-500">By the Artist, For the Artist</p>
         </div>
         
         <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:items-start">

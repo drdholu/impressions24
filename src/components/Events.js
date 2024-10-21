@@ -40,30 +40,60 @@ const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const events = [
-    { id: 1, title: 'Event 1', description: 'Details about Event 1' },
-    { id: 2, title: 'Event 2', description: 'Details about Event 2' },
-    { id: 3, title: 'Event 3', description: 'Details about Event 3' },
-    { id: 4, title: 'Event 4', description: 'Details about Event 4' },
-    { id: 5, title: 'Event 5', description: 'Details about Event 5' },
-  ];
+    {
+      "id": "SW",
+      "title": "Swa(g)Desi",
+      "description": "A high-energy Bollywood group dance competition showcasing choreography and cultural expression"
+    },
+    {
+      "id": "HC",
+      "title": "High Current",
+      "description": "A battle of bands competition featuring live performances with diverse musical instruments and original compositions"
+    },
+    {
+      "id": "PO",
+      "title": "Poona-०५",
+      "description": "A dynamic rap competition featuring freestyle performances and knockout battles between emerging artists"
+    },
+    {
+      "id": "KK",
+      "title": "ComiKing",
+      "description": "A stand-up comedy competition celebrating original humor in Hindi, English, or Marathi"
+    },
+    {
+      "id": "SVwest",
+      "title": "Saavani Western",
+      "description": "A solo singing competition focused on English songs across multiple rounds of performance"
+    },
+    {
+      "id": "SVbolly",
+      "title": "Saavani Bollywood",
+      "description": "A solo singing competition featuring Hindi and Marathi songs from Bollywood"
+    },
+    {
+      "id": "SVclassic",
+      "title": "Saavani Classical",
+      "description": "A solo singing competition celebrating Indian classical music traditions"
+    }
+  ]
 
   return (
     <div id="events" className="px-4 py-16 mx-auto max-w-7xl">
-      <h2 className="mb-8 text-3xl font-bold text-center">Events</h2>
+      <h2 className="mb-8 text-3xl font-bold text-center">Our Past Events</h2>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {events.map((event) => (
           <EventCard 
             key={event.id} 
             event={event} 
-            onClick={() => setSelectedEvent(event)} 
+            // onClick={() => setSelectedEvent(event)} 
           />
         ))}
       </div>
-      <EventModal 
+      {/* <EventModal 
         event={selectedEvent} 
         onClose={() => setSelectedEvent(null)}
         open={!!selectedEvent}
-      />
+      /> */}
     </div>
   );
 };

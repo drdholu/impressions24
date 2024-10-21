@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
+import Details from "./ui/Details"
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycby1dPWip9T5iwC1ANC0g3fiH3CcUoCphHyaPGGpn0VTPIPiht8tiF7rL8zO7ojcBDV62Q/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw3nT70e18UZh0pjp6gHaxStm2jnu2qMqdasqRRX4qW4lUCYOohjuzxJesJsq1bT0nf1g/exec';
 
 const CoordinatorForm = () => {
   const [formData, setFormData] = useState({
@@ -102,23 +103,6 @@ const CoordinatorForm = () => {
     'Finance', 'Marketing', 'Media', 'PR', 'Prints and Purchase', 'Production', 'VFX', 'Web'
   ];
 
-  const portfolioInfo = {
-    Accounts: "Responsible for managing the finances and keeping records of transactions.",
-    COG: "COG stands for Core Operations Group, managing event logistics and flow.",
-    Decor: "In charge of the aesthetics and decorations for the fest.",
-    Design: "Handles the visual elements, including digital and print designs.",
-    Documentation: "Keeps official records and manages documents related to the fest.",
-    "Events & Proshows": "Coordinates and manages events and professional shows.",
-    "Finance & Sponsorships": "Oversees budget planning, expenditure tracking, and fund allocation.",
-    Marketing: "Responsible for promoting the fest and attracting sponsorships.",
-    Media: "Manages photography, videography, and media relations.",
-    PR: "Public relations team, responsible for external communications.",
-    "Prints and Purchase": "In charge of procuring materials and handling print media.",
-    Production: "Takes care of audio-visual setups, stages, and lighting.",
-    VFX: "Works on visual effects for digital and stage-based performances.",
-    Web: "Develops and maintains the fest website and handles online systems."
-  };
-
   const inputClass = "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200";
   const labelClass = "block text-sm font-medium text-gray-700 mb-1";
   const selectClass = "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none appearance-none bg-white";
@@ -131,6 +115,13 @@ const CoordinatorForm = () => {
   return (
     <div className="min-h-[90vh] py-10 bg-gray-50 sm:px-6 lg:px-8">
       <ToastContainer />
+      {/* <div className="text-cente ">
+        <h1 className="text-4xl font-bold text-indigo-600">Impressions Coordinator Induction</h1>
+        <p className="text-xl text-gray-600">COEP Technological University Cultural Festival</p>
+      </div> */}
+      
+      <Details />
+
       <div className="max-w-5xl p-8 mx-auto bg-white shadow-lg rounded-xl">
         {responseMessage && (
           <div className={`mb-3 p-4 rounded-lg flex items-center gap-2 ${
@@ -145,23 +136,8 @@ const CoordinatorForm = () => {
           </div>
         )}
         
-        {/* Responsive Grid Layout */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-
-          {/* Portfolio Information Section */}
-          <div className="mt-12 lg:mt-0">
-            <h3 className="mb-6 text-2xl font-semibold text-gray-700">Portfolio Information</h3>
-            <div className="space-y-4">
-              {Object.entries(portfolioInfo).map(([portfolio, info]) => (
-                <div key={portfolio}>
-                  <h4 className="text-xl font-semibold text-blue-600">{portfolio}:</h4>
-                  <p className="text-gray-700">{info}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="">
           
-          {/* Form Section */}
           <div>
             <h2 className="mb-8 text-3xl font-bold text-center text-gray-800">Coordinator Form</h2>
             
@@ -294,7 +270,7 @@ const CoordinatorForm = () => {
                 className={`w-full py-3 px-4 rounded-lg text-white font-medium transition duration-200 ${
                   isSubmitting 
                     ? 'bg-blue-400 cursor-not-allowed' 
-                    : 'bg-blue-600 hover:bg-blue-700 active:bg-blue-800'
+                    : 'bg-blue-600 hover:bg-red-700 active:bg-red-800'
                 }`}
                 disabled={isSubmitting}
               >

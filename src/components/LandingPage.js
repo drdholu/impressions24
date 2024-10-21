@@ -47,7 +47,7 @@ const LandingPage = () => {
             src={logo}
             alt="Foreground Fest Logo"
             className="relative w-full animate-fadeIn"
-            style={{ transform: calculateTransform(1) }}
+            style={{ transform: calculateTransform(0.35) }}
           />
           <div className="relative z-10 text-sm text-white text-shadow-md animate-fadeIn">
             BY THE ARTIST, FOR THE ARTIST
