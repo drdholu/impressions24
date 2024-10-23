@@ -150,7 +150,7 @@ const AboutUs = () => {
     <section 
       ref={containerRef}
       id="about" 
-      className="relative px-4 py-24 bg-gradient-to-b from-gray-50 to-gray-100"
+      className="relative px-4 py-24"
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center">
