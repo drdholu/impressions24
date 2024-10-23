@@ -18,7 +18,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/coordinator-form" element={<CoordinatorForm />} />
+        {/* <Route path="/coordinator-form" element={<CoordinatorForm />} /> */}
         {/* <Route path="/volunteer-form" element={<VolunteerForm />} /> */}
       </Routes>
       <BackToTop />
