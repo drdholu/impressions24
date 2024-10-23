@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import smallLogo from '../images/z.png';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { urls } from '../url';
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
@@ -60,13 +61,10 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
 
-  const navbarItems = [
-    // {url: '/coordinator-form', name: 'Coordinator Forms'},
-  ]
 
   return (
     <>
-      <nav className="sticky top-0 z-30 bg-black/15 backdrop-blur-sm h-[10vh]">
+      <nav className="sticky top-0 z-30 bg-black backdrop-blur-sm h-[10vh]">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between px-5">
             <Link 
@@ -84,7 +82,7 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex md:items-center md:space-x-8">
-              {navbarItems.map((e, idx) => (
+              {urls.map((e, idx) => (
                 <NavLink to={e.url} mobile={true} onClick={toggleMenu} key={idx}>
                   {e.name}
                 </NavLink>
@@ -137,7 +135,7 @@ const Navbar = () => {
                   className="absolute z-30 w-full md:hidden bg-black/95 backdrop-blur-sm"
                 >
                   <div className="px-5 py-4 space-y-4">
-                  {navbarItems.map((e, idx) => (
+                  {urls.map((e, idx) => (
                     <NavLink to={e.url} mobile={true} onClick={toggleMenu} key={idx}>
                       {e.name}
                     </NavLink>
