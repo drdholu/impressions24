@@ -9,7 +9,7 @@ import BackToTop from "./components/ui/BackToTop"
 import Footer from './components/ui/Footer';
 
 // import VolunteerForm from './components/VolunteerForm';
-import CoordinatorForm from './components/CoordinatorForm';
+// import CoordinatorForm from './components/CoordinatorForm';
 import LandingPage from './components/LandingPage';
 
 const App = () => {
