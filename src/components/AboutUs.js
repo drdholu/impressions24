@@ -68,7 +68,7 @@ const AboutUs = () => {
   useGSAP(() => {
     // Parallax effect for the main photo
     gsap.to(photo1Ref.current, {
-      yPercent: -18,
+      yPercent: -5,
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
@@ -80,7 +80,7 @@ const AboutUs = () => {
 
     // Parallax effect for Cleo with different speed and direction
     gsap.to(cleoRef.current, {
-      yPercent: 10,
+      yPercent: 20,
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
@@ -135,7 +135,7 @@ const AboutUs = () => {
 
     gsap.from(spans, {
       fontWeight: 400,
-      color: '#374151', // text-gray-700
+      // color: '#ffffff',
       stagger: 0.1,
       scrollTrigger: {
         trigger: description,
@@ -156,7 +156,7 @@ const AboutUs = () => {
         <div className="mb-12 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Palette className="text-red-600" size={28} />
-            <h2 className="text-3xl font-bold text-gray-900">About Impressions</h2>
+            <h2 className="text-3xl font-bold">About Impressions</h2>
           </div>
           <p className="text-xl font-medium text-red-500">By the Artist, For the Artist</p>
         </div>
@@ -201,7 +201,7 @@ const AboutUs = () => {
           </div> */}
 
           <div className="w-full md:w-1/2">
-            <p ref={descriptionRef} className="text-lg leading-relaxed text-gray-700 md:text-xl">
+            <p ref={descriptionRef} className="text-lg leading-relaxed md:text-xl">
               <span>Created by artists who </span>
               <span className="font-bold text-red-600">understand the journey</span>
               <span>, Impressions is your platform to </span>

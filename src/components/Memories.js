@@ -25,7 +25,7 @@ const Memories = () => {
 
   return (
     <div id="memories" className="px-8 py-16">
-      <h2 className="mb-12 text-3xl font-bold text-center text-gray-800">Our Memories</h2>
+      <h2 className="mb-12 text-3xl font-bold text-center">Our Memories</h2>
       <div className="relative w-full max-w-4xl mx-auto shadow-2xl rounded-xl">
         <div className="relative h-64 md:h-[32rem] overflow-hidden rounded-xl">
           {images.map((src, index) => (
