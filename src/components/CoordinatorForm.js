@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
 import Details from "./ui/Details"
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbw3nT70e18UZh0pjp6gHaxStm2jnu2qMqdasqRRX4qW4lUCYOohjuzxJesJsq1bT0nf1g/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxeqgX7J2C2nADN8j9MD-C-MmzTdbVuICh3S6B2tFg06haEMZU-Ss0br_xbCJqHUrOdDg/exec';
 
 const CoordinatorForm = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +19,7 @@ const CoordinatorForm = () => {
     reason: '',
     otherFest: '',
     portfolio: '',
+    contact:'',
   });
 
   const formRef = useRef();
@@ -46,6 +47,7 @@ const CoordinatorForm = () => {
       reason: '',
       otherFest: '',
       portfolio: '',
+      contact:'',
     });
   };
 
@@ -59,8 +61,9 @@ const CoordinatorForm = () => {
     }
 
     for (const key in formData) {
-      if (formData[key].trim() === '' && key !== 'portfolio' && key !== 'image') {
+      if (formData[key].trim() === '' && key !== 'portfolio' && key!=='contact') {
         toast.error("Please fill all manditory fields");
+        console.log(key);
         setResponseMessage('All fields are mandatory.');
         return;
       }
@@ -79,6 +82,7 @@ const CoordinatorForm = () => {
       .then(response => response.json())
       .then(data => {
         setIsSubmitting(false);
+        console.log(data);
         setResponseMessage(data.message || 'An error occurred. Please try again.');
         if(data.message==="MIS already exists!"){
           toast.error("MIS already exists!");
@@ -253,26 +257,17 @@ const CoordinatorForm = () => {
           </div>
 
           <div>
-            <label className={labelClass}>(Not mandatory) Upload Screenshot (Under25 RSVP Email Screenshot)</label>
-            <input
-              type="file"
-              name="file"
-              accept='image/*'
-              onChange={(e) => {
-                let file = e.target.files[0];
-                let fr = new FileReader();
-                fr.addEventListener('loadend', () => {
-                  let res = fr.result;
-                  setFormData((prevData) => ({
-                    ...prevData,
-                    image: res
-                  }));
-                });
-                fr.readAsDataURL(file);
-              }}
-              className={inputClass}
-            />
-            {formData.image && <img src={formData.image} alt="Uploaded" />}
+              <label className={labelClass}>Your Contact Number</label>
+              <input
+                  type="tel"  // 'tel' type is appropriate for phone numbers
+                  name="contact"
+                  placeholder="Enter your contact number"
+                  className={inputClass}
+                  pattern="[0-9]{10}"  // Ensures 10-digit phone numbers, modify as needed
+                  onChange={handleInputChange}
+                  required
+
+              />
           </div>
 
               <button
