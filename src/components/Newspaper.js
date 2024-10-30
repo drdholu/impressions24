@@ -3,7 +3,8 @@ import { Clock, Instagram, Linkedin } from 'lucide-react';
 import image1 from '../images/memories/6.webp'
 import overlay from '../images/overlay2.png'
 import overlay2 from '../images/overlay3.jpg'
-
+import shalu from '../images/3.webp'
+import dance from '../images/dance.webp'
 const CountdownTimer = () => {
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
@@ -31,9 +32,9 @@ const CountdownTimer = () => {
     }, []);
 
     return (
-        <div className="flex items-center justify-center gap-4 p-4 text-gray-100 transition-colors duration-300 bg-black hover:bg-gray-800">
+        <div className="flex items-center justify-center gap-4 p-4 text-gray-100 transition-colors duration-300 bg-black hover:bg-gray-800 group">
             <Clock className="w-6 h-6" />
-            <div className="flex gap-4">
+            <div className="flex gap-4 group-hover:animate-vibrate">
                 <div className="text-center">
                     <div className="text-2xl font-bold">{timeLeft.days}</div>
                     <div className="text-xs">DAYS</div>
@@ -68,7 +69,7 @@ const EventCard = ({ title, content, image }) => (
                 {/* Overlay Image */}
             </div>
         )}
-        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-black group-hover:text-white">
+        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-black group-hover:text-white animate-float">
             {title}
         </h4>
         <p className="text-gray-800">{content}</p>
@@ -101,7 +102,7 @@ const ImpressionsNewspaper = () => {
                     className="absolute top-0 left-0 object-cover w-full h-full"
                     style={{ mixBlendMode: 'color-dodge', pointerEvents: 'none' }}
                 />
-                <h1 className="mb-8 text-5xl text-center transition-colors duration-300 font-paperHeader hover:text-gray-700">
+                <h1 className="mb-8 text-5xl text-center transition-colors duration-300 font-paperHeader hover:text-gray-700 animate-float hover-glow">
                     The Impressions Times
                 </h1>
 
@@ -122,9 +123,9 @@ const ImpressionsNewspaper = () => {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                     <div className="md:col-span-2">
                         <p className="mb-4">
-                            The cultural heartbeat of Pune is set to quicken as COEP Technological University announces the return of Impressions,
+                            The cultural heartbeat of Pune is set to quicken as <span className='animate-float'>COEP Technological University</span> announces the return of <span className='animate-glow'>Impressions</span>,
                             the prestigious cultural festival that has been a cornerstone of artistic expression for decades. Under the motto
-                            'By The Artist, For The Artist,' this year's festival promises to be an unprecedented celebration of talent,
+                            <span className='animate-glow'>'By The Artist, For The Artist,'</span> this year's festival promises to be an unprecedented celebration of talent,
                             creativity, and cultural diversity.
                         </p>
                         <p>
@@ -138,7 +139,7 @@ const ImpressionsNewspaper = () => {
                         <EventCard
                             title="Grand Stage Performances"
                             content="Last year's grand finale performance drew crowds from across the country"
-                            image={image1}
+                            image={shalu}
                         />
                     </div>
                 </div>
@@ -189,7 +190,7 @@ const ImpressionsNewspaper = () => {
                     <EventCard
                         title="Classical Dance Evening"
                         content="Experience the magic of classical dance forms from across India"
-                        image={image1}
+                        image={dance}
                     />
                     <EventCard
                         title="Rock Concert"
