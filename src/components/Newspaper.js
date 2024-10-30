@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Clock } from 'lucide-react';
 import image1 from '../images/memories/6.webp'
+// import overlay from '../images/overlay.jpg'
 
 const CrumpledPaperBackground = () => (
     <svg className="fixed top-0 left-0 w-full h-full -z-10" xmlns="http://www.w3.org/2000/svg">
@@ -77,12 +78,20 @@ const CountdownTimer = () => {
 const EventCard = ({ title, content, image }) => (
     <div className="cursor-pointer group">
         {image && (
-            <div className="overflow-hidden">
+            <div className="relative overflow-hidden">
+                {/* Main Image */}
                 <img
                     src={image}
                     alt={title}
                     className="object-cover w-full h-64 mb-2 transition-all duration-300 transform border border-black filter grayscale hover:grayscale-0 group-hover:scale-105"
                 />
+                {/* Overlay Image */}
+                {/* <img
+                    src={overlay}
+                    alt=""
+                    className="absolute top-0 left-0 w-full h-full transition-all duration-300 group-hover:scale-105"
+                    style={{ mixBlendMode: 'overlay', pointerEvents: 'none' }}
+                /> */}
             </div>
         )}
         <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-black group-hover:text-white">
@@ -94,7 +103,7 @@ const EventCard = ({ title, content, image }) => (
 
 const FeatureBox = ({ title, content, isHighlight = false }) => (
     <div className={`border-t border-black pt-4 group ${isHighlight ? 'hover:bg-gray-100' : ''} transition-colors duration-300`}>
-        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-black group-hover:text-white">
+        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-black group-hover:text-white">
             {title}
         </h4>
         {content}
@@ -106,7 +115,7 @@ const ImpressionsNewspaper = () => {
         <div className='flex items-center justify-center'>
             <div className="max-w-6xl p-8 m-5 font-serif shadow-2xl bg-gray-50">
                 <CrumpledPaperBackground />
-                <h1 className="mb-8 text-5xl text-center transition-colors duration-300 font-customFont hover:text-gray-700">
+                <h1 className="mb-8 text-5xl text-center transition-colors duration-300 font-paperHeader hover:text-gray-700">
                     The Impressions Times
                 </h1>
 
@@ -120,7 +129,7 @@ const ImpressionsNewspaper = () => {
 
                 <CountdownTimer />
 
-                <h2 className="mt-8 mb-4 text-4xl italic transition-colors duration-300 font-playfair hover:text-gray-700">
+                <h2 className="mt-8 mb-4 text-4xl transition-colors duration-300 font-paperSubHead hover:text-gray-700">
                     Impressions Returns: COEP's Cultural Extravaganza Set to Dazzle Once Again
                 </h2>
 
@@ -176,7 +185,7 @@ const ImpressionsNewspaper = () => {
                     />
 
                     <div className="p-4 transition-colors duration-300 border-2 border-black cursor-pointer hover:bg-black hover:text-white">
-                        <h4 className="mb-2 text-xl font-bold">Registration Open</h4>
+                        <h4 className="mb-2 text-xl font-bold font-paperSubHead">Registration Open</h4>
                         <p>
                             Early bird registrations are now open! Secure your spot in this grand celebration of art and culture.
                             Special discounts for student groups and early registrations.

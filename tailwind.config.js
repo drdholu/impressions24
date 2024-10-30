@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        customFont: ['"Pirata One"', "sans-serif"]
+        paperHeader: ['"Pirata One"', "sans-serif"],
+        paperSubHead: ['"IM Fell French Canon"']
       },
       animation: {
         float: 'float 5s ease-in-out infinite',

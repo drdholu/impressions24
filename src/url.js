@@ -1,6 +1,6 @@
 // import CoordinatorForm from "./components/CoordinatorForm";
 import ErrorPage from "./components/ErrorPage";
-import LandingPage from "./components/LandingPage";
+// import LandingPage from "./components/LandingPage";
 import ImpressionsNewspaper from "./components/Newspaper";
 // import VolunteerForm from "./components/VolunteerForm";
 

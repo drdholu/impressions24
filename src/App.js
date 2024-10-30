@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 // import CoordinatorForm from './components/CoordinatorForm';
 // import VolunteerForm from './components/VolunteerForm';
 // import LandingPage from './components/LandingPage'; 
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import BackToTop from "./components/ui/BackToTop"
 // import Footer from './components/ui/Footer';
 
@@ -15,14 +15,13 @@ import ErrorPage from './components/ErrorPage';
 // import gsap from 'gsap';
 // import Preloader from './components/ui/Preloader';
 import TransitionWrapper from './components/ui/TransitionWrapper';
-import ImpressionsNewspaper from './components/Newspaper';
 // import AnimatedBackground from './components/ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';
 
 const App = () => {
   return (
     // <Preloader>
-      <div className='font-sans'>
+      <div className=''>
         {/* <Navbar /> */}
         <TransitionWrapper>
           <Routes>
