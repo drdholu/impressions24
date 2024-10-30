@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock } from 'lucide-react';
+import { Clock, Instagram, Linkedin } from 'lucide-react';
 import image1 from '../images/memories/6.webp'
 import overlay from '../images/overlay2.png'
 import overlay2 from '../images/overlay3.jpg'
@@ -87,7 +87,7 @@ const FeatureBox = ({ title, content, isHighlight = false }) => (
 const ImpressionsNewspaper = () => {
     return (
         <div className='flex items-center justify-center'>
-            <div className="max-w-6xl p-8 m-5 font-serif shadow-2xl bg-gray-50">
+            <div className="max-w-6xl p-8 m-5 font-serif">
                 {/* <CrumpledPaperBackground /> */}
                 <img
                     src={overlay}
@@ -171,14 +171,16 @@ const ImpressionsNewspaper = () => {
                     />
 
                     <div className="p-4 transition-colors duration-300 border-2 border-black cursor-pointer hover:bg-black hover:text-white">
-                        <h4 className="mb-2 text-xl font-bold font-paperSubHead">Registration Open</h4>
-                        <p>
-                            Early bird registrations are now open! Secure your spot in this grand celebration of art and culture.
-                            Special discounts for student groups and early registrations.
-                        </p>
-                        <button className="px-4 py-2 mt-4 transition-colors duration-300 border border-current hover:bg-white hover:text-black">
-                            Register Now
-                        </button>
+                        <h4 className="mb-2 text-xl font-bold font-paperSubHead">Connect With Us</h4>
+                        <p>Stay updated by following us on social media.</p>
+                        <div className="flex mt-4 space-x-4">
+                            <a href="https://www.instagram.com/impressions_coep/" target="_blank" rel="noopener noreferrer">
+                                <Instagram className="w-6 h-6 transition-colors duration-300 hover:text-gray-500" />
+                            </a>
+                            <a href="https://www.linkedin.com/company/impressions-coep/" target="_blank" rel="noopener noreferrer">
+                                <Linkedin className="w-6 h-6 transition-colors duration-300 hover:text-gray-500" />
+                            </a>
+                        </div>
                     </div>
                 </div>
 
