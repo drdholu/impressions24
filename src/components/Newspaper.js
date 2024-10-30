@@ -4,27 +4,6 @@ import image1 from '../images/memories/6.webp'
 import overlay from '../images/overlay2.png'
 import overlay2 from '../images/overlay3.jpg'
 
-const CrumpledPaperBackground = () => (
-    <svg className="fixed top-0 left-0 w-full h-full -z-10" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <pattern id="crumpled-paper" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-                <rect width="200" height="200" fill="#f9f5eb" />
-                <path d="M0 0l25 15q15-5 25-15l15 10q10-5 20-10l15 15q10-10 25-15l25 15q15-5 25-15l25 15v-15H0"
-                    fill="none" stroke="#e8e1d5" stroke-width="0.5" opacity="0.5" />
-                <path d="M0 40l25 15q15-5 25-15l15 10q10-5 20-10l15 15q10-10 25-15l25 15q15-5 25-15l25 15v-15H0"
-                    fill="none" stroke="#e8e1d5" stroke-width="0.5" opacity="0.3" />
-                <path d="M0 80l25 15q15-5 25-15l15 10q10-5 20-10l15 15q10-10 25-15l25 15q15-5 25-15l25 15v-15H0"
-                    fill="none" stroke="#e8e1d5" stroke-width="0.5" opacity="0.4" />
-                <path d="M0 120l25 15q15-5 25-15l15 10q10-5 20-10l15 15q10-10 25-15l25 15q15-5 25-15l25 15v-15H0"
-                    fill="none" stroke="#e8e1d5" stroke-width="0.5" opacity="0.3" />
-                <path d="M0 160l25 15q15-5 25-15l15 10q10-5 20-10l15 15q10-10 25-15l25 15q15-5 25-15l25 15v-15H0"
-                    fill="none" stroke="#e8e1d5" stroke-width="0.5" opacity="0.5" />
-            </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#crumpled-paper)" />
-    </svg>
-);
-
 const CountdownTimer = () => {
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
