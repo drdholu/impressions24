@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Clock } from 'lucide-react';
 import image1 from '../images/memories/6.webp'
-// import overlay from '../images/overlay.jpg'
+import overlay from '../images/overlay2.png'
+import overlay2 from '../images/overlay3.jpg'
 
 const CrumpledPaperBackground = () => (
     <svg className="fixed top-0 left-0 w-full h-full -z-10" xmlns="http://www.w3.org/2000/svg">
@@ -86,12 +87,6 @@ const EventCard = ({ title, content, image }) => (
                     className="object-cover w-full h-64 mb-2 transition-all duration-300 transform border border-black filter grayscale hover:grayscale-0 group-hover:scale-105"
                 />
                 {/* Overlay Image */}
-                {/* <img
-                    src={overlay}
-                    alt=""
-                    className="absolute top-0 left-0 w-full h-full transition-all duration-300 group-hover:scale-105"
-                    style={{ mixBlendMode: 'overlay', pointerEvents: 'none' }}
-                /> */}
             </div>
         )}
         <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-black group-hover:text-white">
@@ -114,7 +109,19 @@ const ImpressionsNewspaper = () => {
     return (
         <div className='flex items-center justify-center'>
             <div className="max-w-6xl p-8 m-5 font-serif shadow-2xl bg-gray-50">
-                <CrumpledPaperBackground />
+                {/* <CrumpledPaperBackground /> */}
+                <img
+                    src={overlay}
+                    alt=""
+                    className="absolute top-0 left-0 object-cover w-full h-full"
+                    style={{ mixBlendMode: 'darken', pointerEvents: 'none' }}
+                />
+                <img
+                    src={overlay2}
+                    alt=""
+                    className="absolute top-0 left-0 object-cover w-full h-full"
+                    style={{ mixBlendMode: 'color-dodge', pointerEvents: 'none' }}
+                />
                 <h1 className="mb-8 text-5xl text-center transition-colors duration-300 font-paperHeader hover:text-gray-700">
                     The Impressions Times
                 </h1>
