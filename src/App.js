@@ -15,15 +15,15 @@ import ErrorPage from './components/ErrorPage';
 // import gsap from 'gsap';
 // import Preloader from './components/ui/Preloader';
 import TransitionWrapper from './components/ui/TransitionWrapper';
+import ImpressionsNewspaper from './components/Newspaper';
 // import AnimatedBackground from './components/ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';
-
 
 const App = () => {
   return (
     // <Preloader>
-      <div className='font-sans text-white bg-black'>
-        <Navbar />
+      <div className='font-sans'>
+        {/* <Navbar /> */}
         <TransitionWrapper>
           <Routes>
             {urls.map((url, idx) => {
@@ -36,7 +36,9 @@ const App = () => {
         </TransitionWrapper>
         <BackToTop /> 
         {/* <Footer />  */}
-      </div> 
+      </div>
+
+
     // </Preloader>
   );
 };

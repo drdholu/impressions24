@@ -44,8 +44,8 @@ const TransitionWrapper = ({ children }) => {
         ref={overlayRef}
         className="fixed top-0 left-0 z-50 flex flex-col items-center justify-center w-full h-full bg-gray-900"
       >
-        <h1 className='text-3xl md:text-5xl'>BY THE ARTIST</h1>
-        <h1 className='text-3xl md:text-5xl'>FOR THE ARTIST</h1>
+        <h1 className='text-3xl text-white md:text-5xl'>BY THE ARTIST</h1>
+        <h1 className='text-3xl text-white md:text-5xl'>FOR THE ARTIST</h1>
       </div>
       <div ref={contentRef} className="">
         {children}
