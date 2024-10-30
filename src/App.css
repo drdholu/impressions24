@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+
   *{
     box-sizing: border-box;
     margin: 0;
