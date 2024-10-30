@@ -52,7 +52,7 @@ const ThreeScene = () => {
       scene.add(imageMesh);
     });
 
-    const mouseLight = new THREE.PointLight(0xFFFFFF, 5, 20);
+    const mouseLight = new THREE.PointLight(0xFFFFFF, 0, 20);
     mouseLight.position.set(0, 0, 5);
     scene.add(mouseLight);
     mouseLightRef.current = mouseLight;
@@ -127,6 +127,7 @@ const ThreeScene = () => {
         light1.intensity = THREE.MathUtils.lerp(light1.intensity, targetIntensity, intensitySpeed);
         helpleft.intensity = THREE.MathUtils.lerp(helpleft.intensity, targetIntensity, intensitySpeed);
         helpright.intensity = THREE.MathUtils.lerp(helpright.intensity, targetIntensity, intensitySpeed);
+        mouseLight.intensity=5;
         lightOval.visible = false;
         lightOval1.visible = false;
       }
