@@ -52,7 +52,7 @@ const eventDescriptions = {
 const Tooltip = ({ text, position }) => {
     return (
         <div
-            className="fixed z-50 px-4 py-2 text-sm text-white bg-black rounded shadow-lg pointer-events-none"
+            className="fixed z-50 px-4 py-2 text-sm text-white bg-black rounded shadow-2xl pointer-events-none"
             style={{
                 left: `${position.x + 10}px`,
                 top: `${position.y + 10}px`,
@@ -95,8 +95,8 @@ const FeatureBox = ({ title, content, isHighlight = false }) => {
 
     if (title === "Event Highlights") {
         return (
-            <div className={`border-t border-black pt-4 group ${isHighlight ? 'hover:bg-gray-100' : ''} transition-colors duration-300 relative`}>
-                <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-black group-hover:text-white">
+            <div className={`border-t border-red-800 pt-4 group ${isHighlight ? 'hover:bg-gray-100' : ''} transition-colors duration-300 relative`}>
+                <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-red-800 group-hover:text-white">
                     {title}
                 </h4>
                 <ul className="pl-4 list-disc">
@@ -121,8 +121,8 @@ const FeatureBox = ({ title, content, isHighlight = false }) => {
     }
 
     return (
-        <div className={`border-t border-black pt-4 group ${isHighlight ? 'hover:bg-gray-100' : ''} transition-colors duration-300`}>
-            <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-black group-hover:text-white">
+        <div className={`border-t border-red-900 pt-4 group ${isHighlight ? 'hover:bg-red-50' : ''} transition-colors duration-300`}>
+            <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-red-900 group-hover:text-white">
                 {title}
             </h4>
             {content}
@@ -157,7 +157,7 @@ const CountdownTimer = () => {
     // }, []);
 
     return (
-        <div className="flex items-center justify-center gap-4 p-4 text-gray-100 transition-colors duration-300 bg-black hover:bg-gray-800 group">
+        <div className="flex items-center justify-center gap-4 p-4 text-gray-100 transition-colors duration-300 bg-gradient-to-r from-red-900 to-black">
             {/* <Clock className="w-6 h-6" />
             <div className="flex gap-4 group-hover:animate-vibrate">
                 <div className="text-center">
@@ -191,9 +191,10 @@ const EventCard = ({ title, content, image }) => (
                     alt={title}
                     className="object-cover w-full h-64 mb-2 transition-all duration-300 transform border border-black filter grayscale hover:grayscale-0 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 overflow-hidden transition-opacity duration-300 opacity-100 bg-gradient-to-t from-red-900/20 to-transparent group-hover:opacity-0 group-hover:hidden"></div>
             </div>
         )}
-        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-black group-hover:text-white animate-float">
+        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-black group-hover:text-white animate-float bg-slate-100">
             {title}
         </h4>
         <p className="text-gray-800">{content}</p>
@@ -209,8 +210,8 @@ const ImpressionsNewspaper = () => {
     });
 
     return (
-        <div className='flex items-center justify-center'>
-            <div className="max-w-6xl p-8 m-5 font-serif">
+        <div className='flex items-center justify-center bg-[#fff1f1]'>
+            <div className="max-w-6xl p-8 m-5 font-serif bg-white shadow-xl">
                 <img
                     src={overlay}
                     alt=""
@@ -223,11 +224,11 @@ const ImpressionsNewspaper = () => {
                     className="absolute top-0 left-0 object-cover w-full h-full"
                     style={{ mixBlendMode: 'color-dodge', pointerEvents: 'none' }}
                 />
-                <h1 className="mb-8 text-5xl text-center transition-colors duration-300 font-paperHeader hover:text-gray-700 animate-float hover-glow">
+                <h1 className="mb-8 text-5xl text-center text-red-900 transition-colors duration-300 font-paperHeader hover:text-black animate-float hover-glow">
                     The Impressions Times
                 </h1>
 
-                <div className="py-2 mb-8 transition-colors duration-300 border-black border-y-2 hover:bg-gray-100">
+                <div className="py-2 mb-8 transition-colors duration-300 border-black border-y-2 hover:bg-red-50">
                     <div className="flex items-center justify-between py-2 border-black border-y">
                         <div className="flex-1 text-center">Issue #23</div>
                         <div className="flex-1 text-center">{today}</div>
@@ -238,7 +239,7 @@ const ImpressionsNewspaper = () => {
                 <CountdownTimer />
                 {/* <EndlessScrollNews /> */}
 
-                <h2 className="mt-8 mb-4 text-4xl transition-colors duration-300 font-paperSubHead">
+                <h2 className="mt-8 mb-4 text-4xl text-red-900 transition-colors duration-300 font-paperSubHead">
                     Impressions Returns: COEP's Cultural Extravaganza Set to Dazzle Once Again
                 </h2>
 
@@ -271,11 +272,11 @@ const ImpressionsNewspaper = () => {
                         title="Event Highlights"
                         content={
                             <ul className="pl-4 list-disc">
-                                <li>Swa(g)Desi</li>
-                                <li>High Current</li>
-                                <li>Poona-०५</li>
-                                <li>ComiKing</li>
-                                <li>Saavani</li>
+                                <li className="hover:text-red-800">Swa(g)Desi</li>
+                                <li className="hover:text-red-800">High Current</li>
+                                <li className="hover:text-red-800">Poona-०५</li>
+                                <li className="hover:text-red-800">ComiKing</li>
+                                <li className="hover:text-red-800">Saavani</li>
                             </ul>
                         }
                         isHighlight={true}
@@ -284,22 +285,22 @@ const ImpressionsNewspaper = () => {
                     <FeatureBox
                         title="About Impressions"
                         content={
-                            <p>
+                            <p className="text-gray-700">
                                 COEP Impressions is a dynamic cultural fest celebrating talent through dance, rapping, singing, drama, art, and DJ events. Experience a vibrant mix of performances, creativity, and entertainment that brings culture to life.
                             </p>
                         }
                         isHighlight={true}
                     />
 
-                    <div className="p-4 transition-colors duration-300 border-2 border-black cursor-pointer hover:bg-black hover:text-white">
+                    <div className="p-4 transition-colors duration-300 border-2 border-red-900 cursor-pointer hover:bg-red-900 hover:text-white">
                         <h4 className="mb-2 text-xl font-bold font-paperSubHead">Connect With Us</h4>
                         <p>Stay updated by following us on social media.</p>
                         <div className="flex mt-4 space-x-4">
                             <a href="https://www.instagram.com/impressions_coep/" target="_blank" rel="noopener noreferrer">
-                                <Instagram className="w-6 h-6 transition-colors duration-300 hover:text-gray-500" />
+                                <Instagram className="w-6 h-6 transition-colors duration-300 hover:text-red-200" />
                             </a>
                             <a href="https://www.linkedin.com/company/impressions-coep/" target="_blank" rel="noopener noreferrer">
-                                <Linkedin className="w-6 h-6 transition-colors duration-300 hover:text-gray-500" />
+                                <Linkedin className="w-6 h-6 transition-colors duration-300 hover:text-red-200" />
                             </a>
                         </div>
                     </div>
