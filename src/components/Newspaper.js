@@ -1,39 +1,164 @@
-import React, { useState, useEffect } from 'react';
-import { Clock, Instagram, Linkedin } from 'lucide-react';
+// import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Instagram, Linkedin } from 'lucide-react';
+// import { Clock, Instagram, Linkedin } from 'lucide-react';
 import image1 from '../images/memories/6.webp'
 import overlay from '../images/overlay2.png'
 import overlay2 from '../images/overlay3.jpg'
 import shalu from '../images/3.webp'
 import dance from '../images/dance.webp'
+
+
+// const EndlessScrollNews = () => {
+//     const newsItems = [
+//         "Is Impressions really back?",
+//         "Behind the scenes of Impressions 2024.",
+//         "Exclusive interviews with the organizers.",
+//         "New events to look out for.",
+//         "How to participate this year.",
+//         "Artist spotlight: Meet the performers.",
+//         "Volunteer opportunities at Impressions.",
+//         "Sneak peek into the grand performances.",
+//         "Throwback to Impressions 2023 highlights.",
+//     ];
+
+//     const duplicatedNewsItems = [...newsItems, ...newsItems];
+
+//     return (
+//         <div className="w-full overflow-hidden">
+//             <div className="flex gap-8 animate-scroll-horizontal">
+//                 {duplicatedNewsItems.map((item, index) => (
+//                     <div key={index} className="whitespace-nowrap">
+//                         {item}
+//                     </div>
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// };
+
+
+// Event descriptions object
+
+const eventDescriptions = {
+    "Swa(g)Desi": "A high-energy Bollywood group dance competition showcasing choreography and cultural expression.",
+    "High Current": "A battle of bands competition featuring live performances with diverse musical instruments and original compositions.",
+    "Poona-०५": "A dynamic rap competition featuring freestyle performances and knockout battles between emerging artists.",
+    "ComiKing": "A stand-up comedy competition celebrating original humor in Hindi, English, or Marathi.",
+    "Saavani": "A solo singing competition focused on English songs across multiple rounds of performance."
+};
+
+// Custom Tooltip Component
+const Tooltip = ({ text, position }) => {
+    return (
+        <div
+            className="fixed z-50 px-4 py-2 text-sm text-white bg-black rounded shadow-lg pointer-events-none"
+            style={{
+                left: `${position.x + 10}px`,
+                top: `${position.y + 10}px`,
+                maxWidth: '250px'
+            }}
+        >
+            {text}
+        </div>
+    );
+};
+
+const EventListItem = ({ event, onMouseMove, onMouseLeave, onMouseEnter }) => {
+    return (
+        <li
+            className="transition-colors duration-300 cursor-pointer hover:text-gray-700"
+            onMouseMove={onMouseMove}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+        >
+            {event}
+        </li>
+    );
+};
+
+const FeatureBox = ({ title, content, isHighlight = false }) => {
+    const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+    const [activeTooltip, setActiveTooltip] = useState(null);
+
+    const handleMouseMove = (e, event) => {
+        setTooltipPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleMouseEnter = (event) => {
+        setActiveTooltip(event);
+    };
+
+    const handleMouseLeave = () => {
+        setActiveTooltip(null);
+    };
+
+    if (title === "Event Highlights") {
+        return (
+            <div className={`border-t border-black pt-4 group ${isHighlight ? 'hover:bg-gray-100' : ''} transition-colors duration-300 relative`}>
+                <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-black group-hover:text-white">
+                    {title}
+                </h4>
+                <ul className="pl-4 list-disc">
+                    {Object.keys(eventDescriptions).map((event) => (
+                        <EventListItem
+                            key={event}
+                            event={event}
+                            onMouseMove={(e) => handleMouseMove(e, event)}
+                            onMouseEnter={() => handleMouseEnter(event)}
+                            onMouseLeave={handleMouseLeave}
+                        />
+                    ))}
+                </ul>
+                {activeTooltip && (
+                    <Tooltip
+                        text={eventDescriptions[activeTooltip]}
+                        position={tooltipPosition}
+                    />
+                )}
+            </div>
+        );
+    }
+
+    return (
+        <div className={`border-t border-black pt-4 group ${isHighlight ? 'hover:bg-gray-100' : ''} transition-colors duration-300`}>
+            <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-black group-hover:text-white">
+                {title}
+            </h4>
+            {content}
+        </div>
+    );
+};
+
 const CountdownTimer = () => {
-    const [timeLeft, setTimeLeft] = useState({
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0
-    });
+    // const [timeLeft, setTimeLeft] = useState({
+    //     days: 0,
+    //     hours: 0,
+    //     minutes: 0,
+    //     seconds: 0
+    // });
 
-    useEffect(() => {
-        const targetDate = new Date('2024-12-25');
+    // useEffect(() => {
+    //     const targetDate = new Date('2024-12-25');
 
-        const timer = setInterval(() => {
-            const now = new Date();
-            const difference = targetDate - now;
+    //     const timer = setInterval(() => {
+    //         const now = new Date();
+    //         const difference = targetDate - now;
 
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    //         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    //         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    //         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            setTimeLeft({ days, hours, minutes, seconds });
-        }, 1000);
+    //         setTimeLeft({ days, hours, minutes, seconds });
+    //     }, 1000);
 
-        return () => clearInterval(timer);
-    }, []);
+    //     return () => clearInterval(timer);
+    // }, []);
 
     return (
         <div className="flex items-center justify-center gap-4 p-4 text-gray-100 transition-colors duration-300 bg-black hover:bg-gray-800 group">
-            <Clock className="w-6 h-6" />
+            {/* <Clock className="w-6 h-6" />
             <div className="flex gap-4 group-hover:animate-vibrate">
                 <div className="text-center">
                     <div className="text-2xl font-bold">{timeLeft.days}</div>
@@ -51,7 +176,8 @@ const CountdownTimer = () => {
                     <div className="text-2xl font-bold">{timeLeft.seconds}</div>
                     <div className="text-xs">SECS</div>
                 </div>
-            </div>
+            </div> */}
+            <text className='text-2xl sm:text-5xl font-paperAttention hover:animate-vibrate'>IMPRESSIONS IS BACK</text>
         </div>
     );
 };
@@ -60,13 +186,11 @@ const EventCard = ({ title, content, image }) => (
     <div className="cursor-pointer group">
         {image && (
             <div className="relative overflow-hidden">
-                {/* Main Image */}
                 <img
                     src={image}
                     alt={title}
                     className="object-cover w-full h-64 mb-2 transition-all duration-300 transform border border-black filter grayscale hover:grayscale-0 group-hover:scale-105"
                 />
-                {/* Overlay Image */}
             </div>
         )}
         <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-black group-hover:text-white animate-float">
@@ -76,20 +200,17 @@ const EventCard = ({ title, content, image }) => (
     </div>
 );
 
-const FeatureBox = ({ title, content, isHighlight = false }) => (
-    <div className={`border-t border-black pt-4 group ${isHighlight ? 'hover:bg-gray-100' : ''} transition-colors duration-300`}>
-        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-black group-hover:text-white">
-            {title}
-        </h4>
-        {content}
-    </div>
-);
-
 const ImpressionsNewspaper = () => {
+    const today = new Date().toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
     return (
         <div className='flex items-center justify-center'>
             <div className="max-w-6xl p-8 m-5 font-serif">
-                {/* <CrumpledPaperBackground /> */}
                 <img
                     src={overlay}
                     alt=""
@@ -109,23 +230,24 @@ const ImpressionsNewspaper = () => {
                 <div className="py-2 mb-8 transition-colors duration-300 border-black border-y-2 hover:bg-gray-100">
                     <div className="flex items-center justify-between py-2 border-black border-y">
                         <div className="flex-1 text-center">Issue #23</div>
-                        <div className="flex-1 text-center">Wednesday, October 30, 2024</div>
+                        <div className="flex-1 text-center">{today}</div>
                         <div className="flex-1 text-center">Cultural Edition</div>
                     </div>
                 </div>
 
                 <CountdownTimer />
+                {/* <EndlessScrollNews /> */}
 
-                <h2 className="mt-8 mb-4 text-4xl transition-colors duration-300 font-paperSubHead hover:text-gray-700">
+                <h2 className="mt-8 mb-4 text-4xl transition-colors duration-300 font-paperSubHead">
                     Impressions Returns: COEP's Cultural Extravaganza Set to Dazzle Once Again
                 </h2>
 
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                     <div className="md:col-span-2">
                         <p className="mb-4">
-                            The cultural heartbeat of Pune is set to quicken as <span className='animate-float'>COEP Technological University</span> announces the return of <span className='animate-glow'>Impressions</span>,
+                            The cultural heartbeat of Pune is set to quicken as <span className='font-bold'>COEP Technological University</span> announces the return of <span className='font-extrabold'>Impressions</span>,
                             the prestigious cultural festival that has been a cornerstone of artistic expression for decades. Under the motto
-                            <span className='animate-glow'>'By The Artist, For The Artist,'</span> this year's festival promises to be an unprecedented celebration of talent,
+                            <span className='font-extrabold'> 'By The Artist, For The Artist'</span> , this year's festival promises to be an unprecedented celebration of talent,
                             creativity, and cultural diversity.
                         </p>
                         <p>
@@ -149,23 +271,21 @@ const ImpressionsNewspaper = () => {
                         title="Event Highlights"
                         content={
                             <ul className="pl-4 list-disc">
-                                <li>Classical Dance Showcase</li>
-                                <li>Battle of the Bands</li>
-                                <li>Street Play Competition</li>
-                                <li>Art Installation Gallery</li>
-                                <li>Poetry Slam</li>
+                                <li>Swa(g)Desi</li>
+                                <li>High Current</li>
+                                <li>Poona-०५</li>
+                                <li>ComiKing</li>
+                                <li>Saavani</li>
                             </ul>
                         }
                         isHighlight={true}
                     />
 
                     <FeatureBox
-                        title="Special Feature"
+                        title="About Impressions"
                         content={
                             <p>
-                                This year introduces the 'Innovation in Art' category, blending technology with traditional art forms.
-                                Participants can showcase projects combining AR/VR with classical dance, digital art with street performances,
-                                and more.
+                                COEP Impressions is a dynamic cultural fest celebrating talent through dance, rapping, singing, drama, art, and DJ events. Experience a vibrant mix of performances, creativity, and entertainment that brings culture to life.
                             </p>
                         }
                         isHighlight={true}

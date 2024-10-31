@@ -6,7 +6,8 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
         paperHeader: ['"Pirata One"', "sans-serif"],
-        paperSubHead: ['"IM Fell French Canon"']
+        paperSubHead: ['"IM Fell French Canon"'],
+        paperAttention: ['"Rye"']
       },
       keyframes: {
         float: {
@@ -34,6 +35,10 @@ module.exports = {
           
           '66%': { textShadow: '0 0 8px #ff00ff, 0 0 10px #ff00ff, 0 0 12px #ff00ff' }, // Magenta
         },
+        'scroll-horizontal': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
 
       animation: {
@@ -42,6 +47,7 @@ module.exports = {
           stretchX: 'stretchX 2s ease-in-out infinite',
           vibrate: 'vibrate 0.2s linear infinite',
           glow: 'glow 1.5s ease-in-out infinite', // optional custom glow animation
+          'scroll-horizontal': 'scroll-horizontal 20s linear infinite',
       },
   
 
