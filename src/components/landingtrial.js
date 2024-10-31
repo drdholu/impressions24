@@ -9,7 +9,7 @@ import AboutUs from './AboutUs';
 import logo from '../images/Logos/Name Logo filled.png';
 import grnd from '../images/ground1.webp';
 import { image } from 'framer-motion/client';
-
+import GlowingCursor from './glowcursor';
 
 const ThreeScene = () => {
   const mountRef = useRef(null);
@@ -216,7 +216,8 @@ const ThreeScene = () => {
   }, []);
 
   return (
-    <div>
+    <div className='cursor-none'>
+      <GlowingCursor/>
         <div ref={mountRef} style={{ width: '100vw', height: '90vh' }} />
         <AboutUs />
       <Events />
