@@ -7,7 +7,7 @@ module.exports = {
         glow: '#00ffcc', // Custom glowing color
       },
       boxShadow: {
-        glow: '0 0 10px rgba(0, 255, 204, 0.5)', // Custom glow shadow
+        boxShadow: '0 0 20px rgba(128, 0, 128, 0.7)', // Custom glow shadow
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
