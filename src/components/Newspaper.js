@@ -194,7 +194,7 @@ const EventCard = ({ title, content, image }) => (
                 <div className="absolute inset-0 overflow-hidden transition-opacity duration-300 opacity-100 bg-gradient-to-t from-red-900/20 to-transparent group-hover:opacity-0 group-hover:hidden"></div>
             </div>
         )}
-        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-black group-hover:text-white animate-float bg-slate-100">
+        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-red-900 group-hover:text-white animate-float bg-slate-100">
             {title}
         </h4>
         <p className="text-gray-800">{content}</p>
