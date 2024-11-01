@@ -59,7 +59,7 @@ const ThreeScene = () => {
       const totalwidth=2 * Math.tan(horizontalFOV / 2) * distance;
       // Calculate world height based on the vertical FOV
       
-      const worldHeight=ismobile?worldWidth*(window.innerHeight/window.innerWidth)*0.4:worldWidth*(window.innerHeight/window.innerWidth)*0.8;
+      const worldHeight=ismobile?worldWidth*(window.innerHeight/window.innerWidth)*0.3:worldWidth*(window.innerHeight/window.innerWidth)*0.8;
       const totalheight=totalwidth*(window.innerHeight/window.innerWidth);
       // Update the geometry size
       imageMesh.geometry.dispose(); // Clean up the previous geometry
