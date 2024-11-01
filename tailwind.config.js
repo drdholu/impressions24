@@ -7,7 +7,9 @@ module.exports = {
         sans: ['Poppins', 'sans-serif'],
         paperHeader: ['"Pirata One"', "sans-serif"],
         paperSubHead: ['"IM Fell French Canon"'],
-        paperAttention: ['"Rye"']
+        paperAttention: ['"Rye"'],
+        paperNote: ['"Special Elite"'],
+        paperMain: ['"IM Fell English"']
       },
       keyframes: {
         float: {

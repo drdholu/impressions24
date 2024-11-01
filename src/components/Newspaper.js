@@ -95,8 +95,8 @@ const FeatureBox = ({ title, content, isHighlight = false }) => {
 
     if (title === "Event Highlights") {
         return (
-            <div className={`border-t border-red-800 pt-4 group ${isHighlight ? 'hover:bg-gray-100' : ''} transition-colors duration-300 relative`}>
-                <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-red-800 group-hover:text-white">
+            <div className={`border-t border-red-800 pt-4 group transition-colors duration-300 relative`}>
+                <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-red-900 group-hover:text-white">
                     {title}
                 </h4>
                 <ul className="pl-4 list-disc">
@@ -157,7 +157,7 @@ const CountdownTimer = () => {
     // }, []);
 
     return (
-        <div className="flex items-center justify-center gap-4 p-4 text-gray-100 transition-colors duration-300 bg-gradient-to-r from-red-900 to-black">
+        <div className="flex items-center justify-center gap-4 p-4 text-gray-100 transition-colors duration-300 bg-black bg-blend-color-burn">
             {/* <Clock className="w-6 h-6" />
             <div className="flex gap-4 group-hover:animate-vibrate">
                 <div className="text-center">
@@ -177,7 +177,7 @@ const CountdownTimer = () => {
                     <div className="text-xs">SECS</div>
                 </div>
             </div> */}
-            <text className='text-2xl sm:text-5xl font-paperAttention hover:animate-vibrate'>IMPRESSIONS IS BACK</text>
+            <text className='text-2xl font-normal sm:text-5xl font-paperAttention'>IMPRESSIONS IS BACK</text>
         </div>
     );
 };
@@ -191,10 +191,10 @@ const EventCard = ({ title, content, image }) => (
                     alt={title}
                     className="object-cover w-full h-64 mb-2 transition-all duration-300 transform border border-black filter grayscale hover:grayscale-0 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 overflow-hidden transition-opacity duration-300 opacity-100 bg-gradient-to-t from-red-900/20 to-transparent group-hover:opacity-0 group-hover:hidden"></div>
+                <div className="absolute inset-0 h-64 overflow-hidden transition-opacity duration-300 opacity-100 bg-gradient-to-t from-red-900/20 to-transparent group-hover:opacity-0 group-hover:hidden"></div>
             </div>
         )}
-        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-red-900 group-hover:text-white animate-float bg-slate-100">
+        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-red-900 group-hover:text-white bg-slate-100">
             {title}
         </h4>
         <p className="text-gray-800">{content}</p>
@@ -210,8 +210,8 @@ const ImpressionsNewspaper = () => {
     });
 
     return (
-        <div className='flex items-center justify-center bg-[#fff1f1]'>
-            <div className="max-w-6xl p-8 m-5 font-serif bg-white shadow-xl">
+        <div className='flex items-center justify-center'>
+            <div className="max-w-6xl p-8 m-5 font-serif">
                 <img
                     src={overlay}
                     alt=""
@@ -229,8 +229,8 @@ const ImpressionsNewspaper = () => {
                 </h1>
 
                 <div className="py-2 mb-8 transition-colors duration-300 border-black border-y-2 hover:bg-red-50">
-                    <div className="flex items-center justify-between py-2 border-black border-y">
-                        <div className="flex-1 text-center">Issue #23</div>
+                    <div className="flex items-center justify-between py-2 border-black font-paperNote border-y">
+                        <div className="flex-1 text-center">Issue #8</div>
                         <div className="flex-1 text-center">{today}</div>
                         <div className="flex-1 text-center">Cultural Edition</div>
                     </div>
@@ -245,13 +245,13 @@ const ImpressionsNewspaper = () => {
 
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                     <div className="md:col-span-2">
-                        <p className="mb-4">
+                        <p className="mb-4 text-lg">
                             The cultural heartbeat of Pune is set to quicken as <span className='font-bold'>COEP Technological University</span> announces the return of <span className='font-extrabold'>Impressions</span>,
                             the prestigious cultural festival that has been a cornerstone of artistic expression for decades. Under the motto
                             <span className='font-extrabold'> 'By The Artist, For The Artist'</span> , this year's festival promises to be an unprecedented celebration of talent,
                             creativity, and cultural diversity.
                         </p>
-                        <p>
+                        <p className='text-lg'>
                             "We're not just organizing a festival; we're creating a stage where every artist can shine," says the Cultural
                             Secretary. "From classical performances to contemporary art, from street plays to digital installations,
                             Impressions 2024 will be a testament to the evolving landscape of cultural expression."
@@ -318,6 +318,14 @@ const ImpressionsNewspaper = () => {
                         content="The biggest college bands battle it out for glory"
                         image={image1}
                     />
+                </div>
+
+                <div className="py-2 pt-2 mt-8 mb-8 transition-colors duration-300 border-t-2 border-black hover:bg-red-50">
+                    <div className="flex items-center justify-between font-paperNote">
+                        <div className="flex-1 text-center">Impressions, COEP</div>
+                        <div className="flex-1 text-center">Made with 💓 by Impressions Web Team</div>
+                        <div className="flex-1 text-center">Edition 8</div>
+                    </div>
                 </div>
             </div>
         </div>
