@@ -14,7 +14,7 @@ import { urls } from './url';
 import ErrorPage from './components/ErrorPage';
 // import gsap from 'gsap';
 // import Preloader from './components/ui/Preloader';
-import TransitionWrapper from './components/ui/TransitionWrapper';
+// import TransitionWrapper from './components/ui/TransitionWrapper';
 import CustomCursor from './components/ui/CustomeCursor';
 // import AnimatedBackground from './components/ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';
