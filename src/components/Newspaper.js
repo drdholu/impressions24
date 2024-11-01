@@ -236,7 +236,7 @@ const ImpressionsNewspaper = () => {
 
                 <div className="py-2 mb-8 transition-colors duration-300 border-black border-y-2 hover:bg-red-50">
                     <div className="flex items-center justify-between py-2 border-black font-paperNote border-y">
-                        <div className="flex-1 text-center">Issue #8</div>
+                        <div className="flex-1 text-center">Issue #9</div>
                         <div className="flex-1 text-center">{today}</div>
                         <div className="flex-1 text-center">Cultural Edition</div>
                     </div>
@@ -330,7 +330,7 @@ const ImpressionsNewspaper = () => {
                     <div className="flex items-center justify-between font-paperNote">
                         <div className="flex-1 text-center">Impressions, COEP</div>
                         <div className="flex-1 text-center">Made with 💓 by Impressions Web Team</div>
-                        <div className="flex-1 text-center">Edition 8</div>
+                        <div className="flex-1 text-center">Edition 9</div>
                     </div>
                 </div>
             </div>
