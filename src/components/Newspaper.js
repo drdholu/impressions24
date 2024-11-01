@@ -95,8 +95,8 @@ const FeatureBox = ({ title, content, isHighlight = false }) => {
 
     if (title === "Event Highlights") {
         return (
-            <div className={`border-t border-red-800 pt-4 group transition-colors duration-300 relative`}>
-                <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-red-900 group-hover:text-white">
+            <div className={`border-t border-black pt-4 group transition-colors duration-300 relative`}>
+                <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-black group-hover:text-white">
                     {title}
                 </h4>
                 <ul className="pl-4 list-disc">
@@ -121,8 +121,8 @@ const FeatureBox = ({ title, content, isHighlight = false }) => {
     }
 
     return (
-        <div className={`border-t border-red-900 pt-4 group ${isHighlight ? 'hover:bg-red-50' : ''} transition-colors duration-300`}>
-            <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-red-900 group-hover:text-white">
+        <div className={`border-t border-black pt-4 group ${isHighlight ? 'hover:bg-red-50' : ''} transition-colors duration-300`}>
+            <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 font-paperSubHead group-hover:bg-black group-hover:text-white">
                 {title}
             </h4>
             {content}
@@ -189,12 +189,14 @@ const EventCard = ({ title, content, image }) => (
                 <img
                     src={image}
                     alt={title}
-                    className="object-cover w-full h-64 mb-2 transition-all duration-300 transform border border-black filter grayscale hover:grayscale-0 group-hover:scale-105"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="object-cover w-full h-64 mb-2 transition-all duration-300 transform border border-black select-none filter grayscale hover:grayscale-0 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 h-64 overflow-hidden transition-opacity duration-300 opacity-100 bg-gradient-to-t from-red-900/20 to-transparent group-hover:opacity-0 group-hover:hidden"></div>
             </div>
         )}
-        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-red-900 group-hover:text-white bg-slate-100">
+        <h4 className="p-2 mb-2 text-xl font-bold transition-colors duration-300 group-hover:bg-black group-hover:text-white bg-slate-100">
             {title}
         </h4>
         <p className="text-gray-800">{content}</p>
@@ -215,16 +217,20 @@ const ImpressionsNewspaper = () => {
                 <img
                     src={overlay}
                     alt=""
-                    className="absolute top-0 left-0 object-cover w-full h-full"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="absolute top-0 left-0 object-cover w-full h-full select-none"
                     style={{ mixBlendMode: 'darken', pointerEvents: 'none' }}
                 />
                 <img
                     src={overlay2}
                     alt=""
-                    className="absolute top-0 left-0 object-cover w-full h-full"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="absolute top-0 left-0 object-cover w-full h-full select-none"
                     style={{ mixBlendMode: 'color-dodge', pointerEvents: 'none' }}
                 />
-                <h1 className="mb-8 text-5xl text-center text-red-900 transition-colors duration-300 font-paperHeader hover:text-black hover-glow">
+                <h1 className="mb-8 text-5xl text-center text-black transition-colors duration-300 font-paperHeader hover:text-black hover-glow">
                     The Impressions Times
                 </h1>
 
@@ -239,19 +245,19 @@ const ImpressionsNewspaper = () => {
                 <CountdownTimer />
                 {/* <EndlessScrollNews /> */}
 
-                <h2 className="mt-8 mb-4 text-4xl text-red-900 transition-colors duration-300 font-paperSubHead">
+                <h2 className="mt-8 mb-4 text-4xl text-black transition-colors duration-300 font-paperSubHead">
                     Impressions Returns: COEP's Cultural Extravaganza Set to Dazzle Once Again
                 </h2>
 
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                     <div className="md:col-span-2">
-                        <p className="mb-4 text-lg">
+                        <p className="mb-4 ">
                             The cultural heartbeat of Pune is set to quicken as <span className='font-bold'>COEP Technological University</span> announces the return of <span className='font-extrabold'>Impressions</span>,
                             the prestigious cultural festival that has been a cornerstone of artistic expression for decades. Under the motto
                             <span className='font-extrabold'> 'By The Artist, For The Artist'</span> , this year's festival promises to be an unprecedented celebration of talent,
                             creativity, and cultural diversity.
                         </p>
-                        <p className='text-lg'>
+                        <p className=''>
                             "We're not just organizing a festival; we're creating a stage where every artist can shine," says the Cultural
                             Secretary. "From classical performances to contemporary art, from street plays to digital installations,
                             Impressions 2024 will be a testament to the evolving landscape of cultural expression."
@@ -292,7 +298,7 @@ const ImpressionsNewspaper = () => {
                         isHighlight={true}
                     />
 
-                    <div className="p-4 transition-colors duration-300 border-2 border-red-900 cursor-pointer hover:bg-red-900 hover:text-white">
+                    <div className="p-4 transition-colors duration-300 border-2 border-black cursor-pointer hover:bg-black hover:text-white">
                         <h4 className="mb-2 text-xl font-bold font-paperSubHead">Connect With Us</h4>
                         <p>Stay updated by following us on social media.</p>
                         <div className="flex mt-4 space-x-4">
