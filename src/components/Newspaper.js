@@ -224,7 +224,7 @@ const ImpressionsNewspaper = () => {
                     className="absolute top-0 left-0 object-cover w-full h-full"
                     style={{ mixBlendMode: 'color-dodge', pointerEvents: 'none' }}
                 />
-                <h1 className="mb-8 text-5xl text-center text-red-900 transition-colors duration-300 font-paperHeader hover:text-black animate-float hover-glow">
+                <h1 className="mb-8 text-5xl text-center text-red-900 transition-colors duration-300 font-paperHeader hover:text-black hover-glow">
                     The Impressions Times
                 </h1>
 

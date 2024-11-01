@@ -42,6 +42,7 @@ module.exports = {
       },
 
       animation: {
+        'unfold': 'unfold 3s ease-out forwards',
           float: 'float 3s ease-in-out infinite',
           float1: 'float1 3s ease-in-out infinite',
           stretchX: 'stretchX 2s ease-in-out infinite',
