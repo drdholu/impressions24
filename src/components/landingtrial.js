@@ -11,6 +11,7 @@ import logo1 from '../images/Logos/Name Logo filled.png';
 import grnd from '../images/ground1.webp';
 import { image } from 'framer-motion/client';
 import GlowingCursor from './glowcursor';
+import { position } from '@chakra-ui/react';
 
 const ThreeScene = () => {
   const mountRef = useRef(null);
@@ -60,7 +61,7 @@ const ThreeScene = () => {
       const totalwidth=2 * Math.tan(horizontalFOV / 2) * distance;
       
       
-      const worldHeight=ismobile?worldWidth*(window.innerHeight/window.innerWidth)*0.3:worldWidth*(window.innerHeight/window.innerWidth)*0.8;
+      const worldHeight=ismobile?worldWidth*(window.innerHeight/window.innerWidth)*0.27:worldWidth*(window.innerHeight/window.innerWidth)*0.8;
       const totalheight=totalwidth*(window.innerHeight/window.innerWidth);
       
       imageMesh.geometry.dispose(); // Clean up the previous geometry
@@ -92,7 +93,7 @@ const ThreeScene = () => {
       updateImageSize(camera, imageMesh, 0.5);
       scene.add(imageMesh);
     });
-
+    let d=0;
     const mouseLight = new THREE.PointLight(0xFFFFFF, 0, 20);
     mouseLight.position.set(0, 0, 5);
     scene.add(mouseLight);
@@ -103,7 +104,7 @@ const ThreeScene = () => {
       mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
       raycaster.setFromCamera(mouse, camera);
-      const targetPlaneZ = 2;
+      const targetPlaneZ = camera.position.z-13;
       const planeNormal = new THREE.Vector3(0, 0, -1);
       const plane = new THREE.Plane(planeNormal, targetPlaneZ);
       const intersectPoint = new THREE.Vector3();
@@ -112,17 +113,18 @@ const ThreeScene = () => {
         mouseLight.position.copy(intersectPoint);
       }
     };
-
+    d=camera.position.z-mouseLight.position.z;
     window.addEventListener('mousemove', onMouseMove);
 
     const textureLoader1 = new THREE.TextureLoader();
+    let ground;
     textureLoader1.load(grnd, (texture) => {
       const groundGeometry = new THREE.PlaneGeometry(50, 50);
       const groundMaterial = new THREE.MeshStandardMaterial({ 
           map: texture,
           side: THREE.DoubleSide,
       });
-      const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+      ground = new THREE.Mesh(groundGeometry, groundMaterial);
       ground.rotation.x = -Math.PI / 2;
       ground.position.y = -1;
       ground.receiveShadow = true;
@@ -130,15 +132,7 @@ const ThreeScene = () => {
     });
     const newLogoTexture = textureLoader.load(logo1);
     const textureLoadertop = new THREE.TextureLoader();
-    textureLoadertop.load('./Foot logo white.png', (texture) => {
-      const imageGeometry = new THREE.PlaneGeometry(2, 4);
-      const imageMaterial = new THREE.MeshStandardMaterial({ map: texture, transparent: true, alphaTest: 0.5 });
-      const imageMesh = new THREE.Mesh(imageGeometry, imageMaterial);
-      imageMesh.position.set(3, 8, 1);
-      
-      imageMesh.castShadow = true;
-      scene.add(imageMesh);
-    });
+    
 
     const createLightOval = (position) => {
       const ovalGeometry = ismobile?new THREE.SphereGeometry(0.2, 16, 16):new THREE.SphereGeometry(0.3, 16, 16);
@@ -211,22 +205,39 @@ const ThreeScene = () => {
         updateImageSize(camera, imageMeshRef.current, 0.5);
       }
     };
+    let lastScrollY=0;
+    const onScroll = (event) => {
+      //console.log("HERE");
+      const scrollAmount = 0.3; 
 
+    if (event.deltaY > 0) {
+
+      camera.position.z -= scrollAmount;
+      ground.position.z-=scrollAmount;
+      
+    } else {
+
+      camera.position.z += scrollAmount;
+      ground.position.z += scrollAmount;
+    }
+    //window.scrollTo(0,0,0);
+    };
+  
+    window.addEventListener('wheel', onScroll);
     window.addEventListener('resize', handleResize);
 
     return () => {
       mountRef.current.removeChild(renderer.domElement);
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', onScroll);
     };
   }, []);
 
   return (
     <div>
       {/* <GlowingCursor/> */}
-        <div ref={mountRef} style={{ width: '100vw', height: '90vh' }} />
-        <AboutUs />
-      <Events />
-      <Memories />
+        <div ref={mountRef} style={{ width: '100vw', height: '90vh', overflow:'hidden' }} />
+        
     </div>
   );
 };
