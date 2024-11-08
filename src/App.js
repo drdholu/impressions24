@@ -15,7 +15,7 @@ import ErrorPage from './components/ErrorPage';
 
 const App = () => {
   return (
-    <div className='font-sans'>
+    <div className='font-sans bg-black'>
       <Navbar />
       <Routes>
         {urls.map((url, idx) => {

@@ -4,7 +4,7 @@ import photo1 from '../images/impressions_campus_shot.webp'
 import Cleo from '../images/Cleo.png'
 const AboutUs = () => {
   return (
-    <section id="about" className="relative px-4 py-24 bg-gradient-to-b from-gray-50 to-gray-100">
+    <section id="about" className="relative px-4 py-24">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
