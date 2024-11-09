@@ -164,7 +164,7 @@ const ThreeScene = () => {
       const fov = camera.fov;
       const distance = camera.position.z-1;
       const aspectRatio = window.innerWidth / window.innerHeight;
-      
+
       
       const verticalFOVInRadians = (fov * Math.PI) / 180;
       
@@ -203,7 +203,7 @@ const ThreeScene = () => {
 
       if(boxup){
         // console.log("BOXUP")
-        tboxx.visible=true;
+        // tboxx.visible=true;
         leftImageMesh.visible=true;
         rightImageMesh.visible=true;
         footlight1.visible=true;
@@ -216,8 +216,8 @@ const ThreeScene = () => {
         rightImageMesh.position.copy(tboxx.position);
         leftImageMesh.position.x-=20;
         rightImageMesh.position.x+=20;
-        //footlight.intensity=50;
-        //footlight.position.y+=1;
+        footlight.intensity=50;
+        footlight.position.y+=1;
         footlight1.position.z+=2;
         footlight2.position.z+=2;
         footlight1.position.y+=2;
@@ -347,7 +347,7 @@ const ThreeScene = () => {
 
   return (
     <div>
-        <div ref={mountRef} style={{ width: '100vw', height: '90vh', overflow:'hidden',position:AbsoluteCenter}} />
+        <div ref={mountRef} style={{ height: '100vh', overflow:'hidden',position:AbsoluteCenter}} />
     </div>
   );
 };
