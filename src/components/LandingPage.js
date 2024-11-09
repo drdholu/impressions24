@@ -38,16 +38,16 @@ const LandingPage = () => {
         {/* <video autoPlay loop muted src={vid} className="w-full h-full object-cover z-[-1]"></video> */}
         {/* <img src={canvas} alt="" className='w-full h-full object-cover z-[-1] brightness-50'/> */}
         {/* <Spline className='object-cover w-full h-full brightness-50' scene="https://prod.spline.design/TbqwE-b2sM-CV50w/scene.splinecode" /> */}
-        {/* <div ref={mainLogoRef} className="absolute flex flex-col items-center justify-center w-3/5 opacity-100">
+        <div ref={mainLogoRef} className="absolute flex flex-col items-center justify-center w-3/5 opacity-100">
           <img
-            src={logo}
+            src={logo}  
             alt="Foreground Fest Logo"
             className="relative w-full transition-transform"
           />
           <div className="relative text-sm text-shadow-md">
             BY THE ARTIST, FOR THE ARTIST
           </div>
-        </div> */}
+        </div>
       </div>
       <AboutUs />
       <Events />
