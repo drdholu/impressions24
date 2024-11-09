@@ -9,12 +9,11 @@ import AboutUs from './AboutUs';
 import logo from '../images/Logos/Name Logo filled1.png';
 import logo1 from '../images/Logos/Name Logo filled.png';
 import grnd from '../images/ground1.webp';
-// import { image } from 'framer-motion/client';
-// import GlowingCursor from './glowcursor';
-// import { position } from '@chakra-ui/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-gsap.registerPlugin(ScrollTrigger);
+import cdance from '../images/Dance.png'
+import cstand from '../images/Cleo1.png'
+import { image } from 'framer-motion/client';
+import GlowingCursor from './glowcursor';
+import { AbsoluteCenter, position } from '@chakra-ui/react';
 
 const ThreeScene = () => {
   const mountRef = useRef(null);
@@ -22,17 +21,16 @@ const ThreeScene = () => {
   const raycaster = new THREE.Raycaster();
   const mouse = new THREE.Vector2();
   const imageMeshRef = useRef(null);
+  const cleoref=useRef(null);
   const w =window.innerWidth;
   const h =window.innerHeight;
   const scalefact=window.innerWidth/1300;
   const ismobile=window.innerWidth<1024;
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-
+  var boxup=false;
   useEffect(() => {
     console.log(scalefact);
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color('#000000');
+    scene.background=new THREE.Color('#000000')
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(0, 5, 15);
@@ -41,8 +39,8 @@ const ThreeScene = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.shadowMap.enabled = true;
     mountRef.current.appendChild(renderer.domElement);
-    const createLight = (color, intensity, position) => {
-      const light = new THREE.PointLight(color, intensity, 10);
+    const createLight = (color, intensity, position,reach) => {
+      const light = new THREE.PointLight(color, intensity, reach);
       light.castShadow = true;
       light.position.set(...position);
       scene.add(light);
@@ -77,17 +75,6 @@ const ThreeScene = () => {
 
       console.log(`New Image Width: ${worldWidth}, New Image Height: ${worldHeight}`);
     };
-    
-    
-    
-    
-    
-    const light = createLight(0xF00000, 2, [0, -10, 5]);
-    const light1 = createLight(0xF00000, 2, [0, -10, 5]);
-    const helpleft = createLight(0xF00000, 0, [-7, 3, 2]);
-    const helpright = createLight(0xF00000, 0, [5, 3, 2]);
-    // const footlight = createLight(0x808080, 0, [0, 0, 0]);
-
     const textureLoader = new THREE.TextureLoader();
     let imageMesh, imageMaterial; 
     textureLoader.load(logo, (texture) => {
@@ -101,33 +88,27 @@ const ThreeScene = () => {
       updateImageSize(camera, imageMesh, 0.5);
       scene.add(imageMesh);
     });
-    let d=0;
-    const mouseLight = new THREE.PointLight(0xFFFFFF, 0, 20);
-    mouseLight.position.set(0, 0, 5);
-    scene.add(mouseLight);
-    mouseLightRef.current = mouseLight;
-
-    const onMouseMove = (event) => {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-      raycaster.setFromCamera(mouse, camera);
-      const targetPlaneZ = camera.position.z-13;
-      const planeNormal = new THREE.Vector3(0, 0, -1);
-      const plane = new THREE.Plane(planeNormal, targetPlaneZ);
-      const intersectPoint = new THREE.Vector3();
-      raycaster.ray.intersectPlane(plane, intersectPoint);
-      if (intersectPoint) {
-        mouseLight.position.copy(intersectPoint);
-      }
-    };
-    d=camera.position.z-mouseLight.position.z;
-    window.addEventListener('mousemove', onMouseMove);
-
+    const leftImageTexture = textureLoader.load(cdance);
+    const rightImageTexture = textureLoader.load(cstand);
+    const imageSize = ismobile ? 3 : 5; // Adjust size for mobile vs desktop
+    
+    const leftImageMesh = new THREE.Mesh(
+      new THREE.PlaneGeometry(10,15),
+      new THREE.MeshStandardMaterial({ map: leftImageTexture, transparent: true ,alphaTest:0.5})
+    );
+    const rightImageMesh = new THREE.Mesh(
+      new THREE.PlaneGeometry(10,15),
+      new THREE.MeshStandardMaterial({ map: rightImageTexture, transparent: true,alphaTest:0.5 })
+    );
+    scene.add(leftImageMesh,rightImageMesh);
+    leftImageMesh.visible=false;
+    rightImageMesh.visible=false;
+    leftImageMesh.castShadow=true;
+    rightImageMesh.castShadow=true;
     const textureLoader1 = new THREE.TextureLoader();
     let ground;
     textureLoader1.load(grnd, (texture) => {
-      const groundGeometry = new THREE.PlaneGeometry(50, 50);
+      const groundGeometry = new THREE.PlaneGeometry(200, 50);
       const groundMaterial = new THREE.MeshStandardMaterial({ 
           map: texture,
           side: THREE.DoubleSide,
@@ -139,9 +120,32 @@ const ThreeScene = () => {
       scene.add(ground);
     });
     const newLogoTexture = textureLoader.load(logo1);
-    const textureLoadertop = new THREE.TextureLoader();
     
-
+    
+    
+    const light = createLight(0xF00000, 2, [0, -8, 5],10);
+    const light1 = createLight(0xF00000, 2, [0, -8, 5],10);
+    const helpleft = createLight(0xF00000, 0, [-7, 3, 2],10);
+    const helpright = createLight(0xF00000, 0, [5, 3, 2],10);
+    const footlight1=createLight(0xFFFFFF,0,[0,0,0],10);
+    const footlight2=createLight(0xFFFFFF,0,[0,0,0],10);
+    const footlight=createLight(0xFFFFFF,0,[0,0,0],30);
+    
+    const mouseLight = new THREE.PointLight(0xFFFFFF, 0, 20);
+    mouseLight.position.set(0, 0, 5);
+    scene.add(mouseLight);
+    mouseLightRef.current = mouseLight;
+    const tbox=new THREE.BoxGeometry(5,5,5);
+    const tmat=new THREE.MeshStandardMaterial({color:0xFFFFFF})
+    const tboxx=new THREE.Mesh(tbox,tmat);
+    tboxx.position.set(0,6,-20);
+    
+    scene.add(tboxx);
+    footlight.position.copy(tboxx.position);
+    footlight.position.z+=3;
+    tboxx.visible=false;
+    tboxx.castShadow=true;
+    footlight.intensity=0;
     const createLightOval = (position) => {
       const ovalGeometry = ismobile?new THREE.SphereGeometry(0.2, 16, 16):new THREE.SphereGeometry(0.3, 16, 16);
       const ovalMaterial = new THREE.MeshBasicMaterial({ color: 0xF00000 });
@@ -197,39 +201,69 @@ const ThreeScene = () => {
         lightOval1.visible = false;
       }
 
+      if(boxup){
+        // console.log("BOXUP")
+        tboxx.visible=true;
+        leftImageMesh.visible=true;
+        rightImageMesh.visible=true;
+        footlight1.visible=true;
+        footlight2.visible=true;
+        footlight1.intensity=5;
+        footlight2.intensity=5;
+        footlight1.position.copy(leftImageMesh.position);
+        footlight2.position.copy(rightImageMesh.position);
+        leftImageMesh.position.copy(tboxx.position);
+        rightImageMesh.position.copy(tboxx.position);
+        leftImageMesh.position.x-=20;
+        rightImageMesh.position.x+=20;
+        //footlight.intensity=50;
+        //footlight.position.y+=1;
+        footlight1.position.z+=2;
+        footlight2.position.z+=2;
+        footlight1.position.y+=2;
+        footlight2.position.y+=2;
+      }
+      else{
+        tboxx.visible=false;
+        footlight.intensity=0;
+        leftImageMesh.visible=false;
+        rightImageMesh.visible=false;
+        footlight1.visible=false;
+        footlight2.visible=false;
+      }  
       renderer.render(scene, camera);
     };
 
     animate();
 
-    const handleScroll = () => {
-      const newScrollPosition = window.pageYOffset;
-      setScrollPosition(newScrollPosition);
+    // const handleScroll = () => {
+    //   const newScrollPosition = window.pageYOffset;
+    //   setScrollPosition(newScrollPosition);
 
-      if (imageMeshRef.current) {
-        // Calculate zoom based on scroll position
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollProgress = newScrollPosition / maxScroll;
-        const minScale = 0.5; // Minimum scale value
-        const newScale = Math.max(1 - scrollProgress, minScale);
+    //   if (imageMeshRef.current) {
+    //     // Calculate zoom based on scroll position
+    //     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    //     const scrollProgress = newScrollPosition / maxScroll;
+    //     const minScale = 0.5; // Minimum scale value
+    //     const newScale = Math.max(1 - scrollProgress, minScale);
 
-        gsap.to(imageMeshRef.current.scale, {
-          x: newScale,
-          y: newScale,
-          duration: 0.5,
-          ease: "power2.out"
-        });
+    //     // gsap.to(imageMeshRef.current.scale, {
+    //     //   x: newScale,
+    //     //   y: newScale,
+    //     //   duration: 0.5,
+    //     //   ease: "power2.out"
+    //     // });
 
-        // Optionally move the image up as it scales down
-        gsap.to(imageMeshRef.current.position, {
-          y: 6 + (scrollProgress * 2), // Adjust multiplier for desired movement
-          duration: 0.5,
-          ease: "power2.out"
-        });
-      }
-    };
+    //     // // Optionally move the image up as it scales down
+    //     // gsap.to(imageMeshRef.current.position, {
+    //     //   y: 6 + (scrollProgress * 2), // Adjust multiplier for desired movement
+    //     //   duration: 0.5,
+    //     //   ease: "power2.out"
+    //     // });
+    //   }
+    // };
 
-    window.addEventListener('scroll', handleScroll);
+    //window.addEventListener('scroll', handleScroll);
 
 
     const handleResize = () => {
@@ -242,31 +276,71 @@ const ThreeScene = () => {
         updateImageSize(camera, imageMeshRef.current, 0.5);
       }
     };
-    // let lastScrollY=0;
-    // const onScroll = (event) => {
+    const onMouseMove = (event) => {
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+      const targetPlaneZ = camera.position.z-13;
+      const planeNormal = new THREE.Vector3(0, 0, -1);
+      const plane = new THREE.Plane(planeNormal, targetPlaneZ);
+      const intersectPoint = new THREE.Vector3();
+      raycaster.ray.intersectPlane(plane, intersectPoint);
+      if (intersectPoint) {
+        mouseLight.position.copy(intersectPoint);
+      }
+    };
+
+    const onScroll = (event) => {
       //console.log("HERE");
-      // const scrollAmount = 0.3; 
-
-    // if (event.deltaY > 0) {
-
-    //   camera.position.z -= scrollAmount;
-    //   ground.position.z-=scrollAmount;
+      const scrollAmount = 0.35; 
       
-    // } else {
+      if(event.type==="wheel"){
+      if (event.deltaY > 0) {
 
-    //   camera.position.z += scrollAmount;
-    //   ground.position.z += scrollAmount;
-    // }
-    //window.scrollTo(0,0,0);
-    // };
-  
-    // window.addEventListener('wheel', onScroll);
+        camera.position.z -= scrollAmount;
+        ground.position.z-=scrollAmount;
+        // light1.position.z-=scrollAmount;
+        // helpright.position.z-=scrollAmount;
+        // helpleft.position.z-=scrollAmount;
+        // light.position.z-=scrollAmount;
+        
+      } 
+      else if(camera.position.z<15){
+        camera.position.z += scrollAmount;
+        ground.position.z += scrollAmount;
+        // light1.position.z+=scrollAmount;
+        // helpright.position.z+=scrollAmount;
+        // helpleft.position.z+=scrollAmount;
+        // light.position.z+=scrollAmount;
+      }
+    }
+    else{
+      if (event.key === 'ArrowUp' && camera.position.z<15) {
+        camera.position.z += scrollAmount; // Scroll forward
+        ground.position.z += scrollAmount;
+      } else if (event.key === 'ArrowDown') {
+        camera.position.z -= scrollAmount; // Scroll backward
+        ground.position.z-=scrollAmount;
+      }
+    }
+      if(camera.position.z<2){
+        boxup=true;
+      }
+      else{
+        boxup=false;
+      }
+      //window.scrollTo(0,0,0);
+    };
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('wheel', onScroll);
     window.addEventListener('resize', handleResize);
+    window.addEventListener('keydown', onScroll);
 
     return () => {
       mountRef.current.removeChild(renderer.domElement);
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
+      
       // window.removeEventListener('scroll', onScroll);
     };
   }, []);
@@ -274,8 +348,8 @@ const ThreeScene = () => {
   return (
     <div>
       {/* <GlowingCursor/> */}
-        <div ref={mountRef} style={{ overflow:'hidden' }} />
-        <AboutUs/>
+        <div ref={mountRef} style={{ width: '100vw', height: '90vh', overflow:'hidden',position:AbsoluteCenter}} />
+        
     </div>
   );
 };

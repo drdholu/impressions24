@@ -64,7 +64,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-30 bg-black backdrop-blur-sm h-[10vh]">
+      <nav className="top-0 z-30 bg-black backdrop-blur-sm h-[10vh] w-[100vw]">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between px-5">
             <Link 
