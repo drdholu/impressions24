@@ -14,7 +14,7 @@ import cstand from '../images/Cleo1.png'
 import { image } from 'framer-motion/client';
 import GlowingCursor from './glowcursor';
 import { AbsoluteCenter, position } from '@chakra-ui/react';
-
+import Events from '../components/Events'
 const ThreeScene = () => {
   const mountRef = useRef(null);
   const mouseLightRef = useRef(null);
@@ -347,9 +347,7 @@ const ThreeScene = () => {
 
   return (
     <div>
-      {/* <GlowingCursor/> */}
         <div ref={mountRef} style={{ width: '100vw', height: '90vh', overflow:'hidden',position:AbsoluteCenter}} />
-        
     </div>
   );
 };
