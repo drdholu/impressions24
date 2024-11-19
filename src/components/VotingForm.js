@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Check, AlertCircle, Vote } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import candidates from '../../candidates';
+import candidates from '../candidates';
 
 const VotingForm = () => {
 
@@ -12,6 +13,7 @@ const VotingForm = () => {
     const [responseMessage, setResponseMessage] = useState('');
     const [hasVoted, setHasVoted] = useState(false);
     const [name, setName] = useState('');
+    const [voteSubmitted, setVoteSubmitted] = useState(false);
 
     useEffect(() => {
         const alreadyVoted = localStorage.getItem('alreadyVoted');
@@ -19,6 +21,8 @@ const VotingForm = () => {
             setHasVoted(true);
         }
     }, []);
+    // const backendURL = process.env
+    // console.log(backendURL);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -36,7 +40,7 @@ const VotingForm = () => {
         }
 
         try {
-            const response = await fetch('/api/vote', {
+            const response = await fetch('http://localhost:5000/api/vote', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -50,16 +54,18 @@ const VotingForm = () => {
             if (response.ok) {
                 localStorage.setItem('alreadyVoted', 'true');
                 toast.success(`Vote registered successfully for your candidate!`);
+                setVoteSubmitted(true);
                 setTimeout(() => setIsSubmitting(false), 1000);
-                // Redirect after 5 seconds
                 setTimeout(() => {
                     navigate('/');
                 }, 4000);
             } else {
                 toast.error('Failed to cast vote. Please try again.');
+                setIsSubmitting(false);
             }
         } catch (error) {
             toast.error('Error submitting vote. Please try again.');
+            setIsSubmitting(false);
         }
     };
 
@@ -80,8 +86,8 @@ const VotingForm = () => {
 
     return (
         <div className="flex items-center justify-center w-full min-h-screen bg-gray-50">
+            <ToastContainer position='top-right' />
             <div className="w-full max-w-lg p-8 mx-4 transition-all duration-300 transform bg-white shadow-lg rounded-2xl hover:shadow-xl">
-                <ToastContainer />
 
                 <div className="flex flex-col items-center mb-8">
                     <Vote className="w-12 h-12 mb-4 text-blue-600" />
@@ -139,33 +145,41 @@ const VotingForm = () => {
                         </div>
                     </div>
 
-                    <button
-                        type="submit"
-                        className={`w-full py-3 px-4 rounded-lg text-white font-medium transition-all duration-200 
-              transform hover:scale-[1.02] active:scale-[0.98] 
-              ${isSubmitting
+                    {!voteSubmitted && (
+                        <button
+                            type="submit"
+                            className={`w-full py-3 px-4 rounded-lg text-white font-medium transition-all duration-200 
+                            transform hover:scale-[1.02] active:scale-[0.98] 
+                            ${isSubmitting
                                 ? 'bg-blue-400 cursor-not-allowed'
                                 : 'bg-blue-600 hover:bg-blue-700 active:bg-blue-800 shadow-md hover:shadow-lg'
                             }`}
-                        disabled={isSubmitting}
-                    >
-                        <span className="flex items-center justify-center gap-2">
-                            {isSubmitting ? (
-                                <>
-                                    <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24">
-                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                                    </svg>
-                                    <span>Submitting...</span>
-                                </>
-                            ) : (
-                                <>
-                                    <Vote className="w-5 h-5" />
-                                    <span>Cast Vote</span>
-                                </>
-                            )}
-                        </span>
-                    </button>
+                            disabled={isSubmitting}
+                        >
+                            <span className="flex items-center justify-center gap-2">
+                                {isSubmitting ? (
+                                    <>
+                                        <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                        </svg>
+                                        <span>Submitting...</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Vote className="w-5 h-5" />
+                                        <span>Cast Vote</span>
+                                    </>
+                                )}
+                            </span>
+                        </button>
+                    )}
+                    
+                    {voteSubmitted && (
+                        <div className="font-medium text-center text-green-600">
+                            Vote submitted successfully! Redirecting...
+                        </div>
+                    )}
                 </form>
 
                 <p className="mt-4 text-xs text-center text-gray-500">
