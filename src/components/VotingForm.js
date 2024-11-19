@@ -16,6 +16,7 @@ const VotingForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [responseMessage, setResponseMessage] = useState('');
     const [hasVoted, setHasVoted] = useState(false);
+    const [name, setName] = useState('');
 
     useEffect(() => {
         const alreadyVoted = localStorage.getItem('alreadyVoted');
@@ -33,13 +34,22 @@ const VotingForm = () => {
             return;
         }
 
+        if (!name) {
+            toast.error('Please enter your name');
+            setIsSubmitting(false);
+            return;
+        }
+
         try {
             const response = await fetch('/api/vote', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ candidateId: selectedCandidate }),
+                body: JSON.stringify({
+                    candidateId: selectedCandidate,
+                    name: name,
+                }),
             });
 
             if (response.ok) {
@@ -101,6 +111,18 @@ const VotingForm = () => {
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="space-y-2">
+                        <label className={labelClass}>
+                            Your Name
+                        </label>
+                        <input
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className="w-full px-4 py-3 text-gray-700 transition-colors duration-200 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
+                            required
+                        />
+                    </div>
                     <div className="space-y-2">
                         <label className={labelClass}>
                             Select Candidate
