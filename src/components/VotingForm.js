@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import { Check, AlertCircle, Vote } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +15,14 @@ const VotingForm = () => {
     const [selectedCandidate, setSelectedCandidate] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [responseMessage, setResponseMessage] = useState('');
+    const [hasVoted, setHasVoted] = useState(false);
+
+    useEffect(() => {
+        const alreadyVoted = localStorage.getItem('alreadyVoted');
+        if (alreadyVoted) {
+            setHasVoted(true);
+        }
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,6 +43,7 @@ const VotingForm = () => {
             });
 
             if (response.ok) {
+                localStorage.setItem('alreadyVoted', 'true');
                 toast.success(`Vote registered successfully for your candidate!`);
                 setTimeout(() => setIsSubmitting(false), 1000);
                 // Redirect after 5 seconds
@@ -51,6 +60,18 @@ const VotingForm = () => {
 
     const labelClass = "block mb-2 text-sm font-semibold text-gray-700";
     const selectClass = "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 bg-gray-50 hover:bg-gray-100 transition-colors duration-200";
+
+    if (hasVoted) {
+        return (
+            <div className="flex items-center justify-center w-full min-h-screen bg-gray-50">
+                <div className="w-full max-w-lg p-8 mx-4 bg-white shadow-lg rounded-2xl">
+                    <h2 className="text-3xl font-bold text-center text-gray-800">
+                        You have already voted
+                    </h2>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="flex items-center justify-center w-full min-h-screen bg-gray-50">
@@ -98,11 +119,6 @@ const VotingForm = () => {
                                     </option>
                                 ))}
                             </select>
-                            <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </div>
                         </div>
                     </div>
 
