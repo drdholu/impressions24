@@ -2,14 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import { Check, AlertCircle, Vote } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import candidates from '../../candidates';
 
 const VotingForm = () => {
-
-    const candidates = [
-        { id: 1, name: 'Candidate 1' },
-        { id: 2, name: 'Candidate 2' },
-        { id: 3, name: 'Candidate 3' },
-    ]
 
     const navigate = useNavigate();
     const [selectedCandidate, setSelectedCandidate] = useState('');
