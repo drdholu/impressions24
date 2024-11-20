@@ -8,8 +8,7 @@ import { AlertCircle, CheckCircle2 } from 'lucide-react';
 import Details2 from "./ui/Details2"; // Import the Details2 component
 import Navbar from './Navbar'
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyGfPmKzDQ-4DHU8Ed1XsgxAAm9o8FyMMS2Rs9Eaow-zw4W3A-SnHKOzEVSPWpx34Ws/exec';
-
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyYnQ5CEsu2pTh8odizO2nueqCPzR17sLVlP961Zb4MXXJ6IyXCvwpYwwg0vK7drrkU/exec'
 const MMIForm = () => {
     const [formData, setFormData] = useState({
         mis: '',
@@ -19,6 +18,7 @@ const MMIForm = () => {
         phone: '',         // Added phone number field
         talent: '',        // Added talent field
         description: '',   // Added description field
+        followInstagram: '', // Changed to store 'Yes' or 'No'
     });
 
     const formRef = useRef();
@@ -44,6 +44,7 @@ const MMIForm = () => {
             phone: '',         // Added phone number field
             talent: '',        // Added talent field
             description: '',   // Added description field
+            followInstagram: '', // Changed to store 'Yes' or 'No'
         });
     };
 
@@ -250,7 +251,38 @@ const MMIForm = () => {
                                 />
                             </div>
 
-
+                            <div>
+                                <label className={labelClass}>Do you follow Impressions on Instagram?</label>
+                                <div className="flex items-center space-x-4">
+                                    <label className="flex items-center">
+                                        <input
+                                            type="radio"
+                                            name="followInstagram"
+                                            value="Yes"
+                                            checked={formData.followInstagram === 'Yes'}
+                                            onChange={handleInputChange}
+                                            className="mr-2"
+                                        />
+                                        Yes
+                                    </label>
+                                    <label className="flex items-center">
+                                        <input
+                                            type="radio"
+                                            name="followInstagram"
+                                            value="No"
+                                            checked={formData.followInstagram === 'No'}
+                                            onChange={handleInputChange}
+                                            className="mr-2"
+                                        />
+                                        No
+                                    </label>
+                                </div>
+                                <p className="mt-2 text-blue-500 underline">
+                                    <a href="https://www.instagram.com/impressions_coep/" target="_blank" rel="noopener noreferrer">
+                                        @impressions_coep
+                                    </a>
+                                </p>
+                            </div>
 
                             <button
                                 type="submit"

@@ -13,21 +13,21 @@ const Details2 = () => (
           </div>
           <div>
             <h3 className="text-lg font-semibold text-red-500">Round 2: Group Discussion &amp; Debate</h3>
-            <p><strong>Format:</strong> Participants will engage in a group discussion but with a fun and interactive twist. The focus will be on gathering participants' opinions on specific topics, followed by a debate-style segment.</p>
+            <p><strong>Format:</strong>The selected 30 participants would be asked to send videos of their talents that they are going to perform. Open ended discussion between the selected participants on different various fun topics.</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold text-red-500">Round 3: Talent Show</h3>
             <p><strong>Format:</strong></p>
             <ul className="list-disc list-inside">
               <li>The top 10 participants from Round 2 will qualify for this round.</li>
-              <li>Additionally, 2 wild card entries will be selected to join.</li>
+              {/* <li>Additionally, 2 wild card entries will be selected to join.</li> */}
             </ul>
             <p><strong>Outcome:</strong></p>
-            <p>Three winners will be chosen:</p>
+            <p>Two winners will be chosen:</p>
             <ol className="list-decimal list-inside">
               <li>Mr. Impressions</li>
               <li>Ms. Impressions</li>
-              <li>Best Performance/People's Choice Award</li>
+              {/* <li>Best Performance/People's Choice Award</li> */}
             </ol>
           </div>
         </div>
