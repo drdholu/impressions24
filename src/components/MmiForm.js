@@ -117,14 +117,14 @@ const MMIForm = () => {
     //     return options.filter(option => !selectedPrefs.includes(option));
     // };
 
-    // const scrollToContainer = () => {
-    //     if (formRef.current) {
-    //         formRef.current.scrollIntoView({ behavior: 'smooth' });
-    //     }
-    // };
+    const scrollToContainer = () => {
+        if (formRef.current) {
+            formRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
-        <div className="min-h-[90vh] bg-gray-50">
+        <div className="min-h-[90vh] bg-gray-50 font-sans">
             <Navbar />
             <ToastContainer />
             <div className="text-center">
@@ -132,11 +132,11 @@ const MMIForm = () => {
                 {/* <p className="text-xl text-gray-600">COEP Technological University Cultural Festival</p> */}
             </div>
 
-            {/* <p className="flex items-center justify-center pt-2"><button onClick={scrollToContainer} className='text-red-400 animate-pulse'>Scroll To Forms</button></p> */}
+            <p className="flex items-center justify-center pt-2"><button onClick={scrollToContainer} className='text-red-400 animate-pulse'>Scroll To Forms</button></p>
             {/* <Details /> */}
             <Details2 />  {/* Include the Details2 component */}
 
-            <div className="max-w-5xl p-8 mx-auto bg-white shadow-lg rounded-xl">
+            <div className="max-w-5xl p-8 m-2 mx-auto bg-white shadow-lg rounded-xl">
                 {responseMessage && (
                     <div className={`mb-3 p-4 rounded-lg flex items-center gap-2 ${responseMessage.includes('successfully')
                             ? 'bg-green-50 text-green-700'
@@ -151,7 +151,7 @@ const MMIForm = () => {
 
                 <div className="">
 
-                    <div ref={formRef}>
+                    <div ref={formRef} className=''>
                         <h2 className="mb-8 text-3xl font-bold text-center text-gray-800">Registration Form</h2>
 
                         <form onSubmit={handleSubmit} className="space-y-6">
