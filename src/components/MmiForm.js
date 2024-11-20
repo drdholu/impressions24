@@ -277,10 +277,12 @@ const MMIForm = () => {
                                         No
                                     </label>
                                 </div>
-                                <p className="mt-2 text-blue-500 underline">
-                                    <a href="https://www.instagram.com/impressions_coep/" target="_blank" rel="noopener noreferrer">
+                                <p className="">
+                                    Follow us on
+                                    <a href="https://www.instagram.com/impressions_coep/" target="_blank" className='mt-2 text-blue-500 underline' rel="noopener noreferrer">
                                         @impressions_coep
                                     </a>
+                                    , if you don't yet!
                                 </p>
                             </div>
 
