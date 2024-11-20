@@ -3,10 +3,17 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Check, AlertCircle, Vote } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import candidates from '../candidates';
+// import candidates from '../candidates';
 
 const VotingForm = () => {
-
+    const candidates = [
+        { id: 1, name: "John Smith" },
+        { id: 2, name: "Sarah Johnson" },
+        { id: 3, name: "Michael Brown" },
+        { id: 4, name: "Emily Davis" },
+        { id: 5, name: "David Wilson" }
+    ];
+    
     const navigate = useNavigate();
     const [selectedCandidate, setSelectedCandidate] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -40,7 +47,7 @@ const VotingForm = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/api/vote', {
+            const response = await fetch('https://server.impressionscoeptech22.workers.dev/api/vote', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
