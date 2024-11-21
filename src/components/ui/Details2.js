@@ -7,16 +7,16 @@ const Details2 = () => (
         <h2 className="mb-4 text-xl font-bold text-gray-800 sm:text-2xl">Round Details</h2>
         <div className="space-y-6 text-sm text-gray-600 sm:text-base">
           <div>
-            <h3 className="text-lg font-semibold text-red-500">Round 1: Online Quiz</h3>
+            <h3 className="text-lg font-semibold text-red-500">Round 1: Fast and Curious</h3>
             <p><strong>Duration:</strong> 30 minutes</p>
             <p><strong>Format:</strong> An online quiz featuring general knowledge questions related to COEP.</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-red-500">Round 2: Group Discussion &amp; Debate</h3>
+            <h3 className="text-lg font-semibold text-red-500">Round 2: Discuss Deewane</h3>
             <p><strong>Format:</strong>The selected 30 participants would be asked to send videos of their talents that they are going to perform. Open ended discussion between the selected participants on different various fun topics.</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-red-500">Round 3: Talent Show</h3>
+            <h3 className="text-lg font-semibold text-red-500">Round 3: Slay the Stage</h3>
             <p><strong>Format:</strong></p>
             <ul className="list-disc list-inside">
               <li>The top 10 participants from Round 2 will qualify for this round.</li>

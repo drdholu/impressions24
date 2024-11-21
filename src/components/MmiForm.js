@@ -128,7 +128,7 @@ const MMIForm = () => {
             <Navbar />
             <ToastContainer />
             <div className="text-center">
-                <h1 className="m-3 text-4xl font-bold text-red-600">Mr. & Mrs. Impressions 2024</h1>
+                <h1 className="m-3 text-4xl font-bold text-red-600">Mr. & Ms. Impressions 2024</h1>
                 {/* <p className="text-xl text-gray-600">COEP Technological University Cultural Festival</p> */}
             </div>
 
