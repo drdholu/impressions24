@@ -22,11 +22,9 @@ const Details2 = () => (
           <div>
             <h3 className="text-lg font-semibold text-red-500">Round 3: Slay the Stage - Performance that WOWS!</h3>
             <p><strong>Duration:</strong> 2.5 - 3hrs</p>
-            <p><strong>Format:</strong></p>
-            <ul className="list-disc list-inside">
-              <li>Talent dikhao apna, pura karo best fresher banne ka sapna. This is a talent showcase round in which the top 10 selected participants from round 2 will perform. Only 1 boy and 1 girl will get the crown of Mr. and Ms. Impressions</li>
+            <p><strong>Format:</strong> Talent dikhao apna, pura karo best fresher banne ka sapna. This is a talent showcase round in which the top 10 selected participants from round 2 will perform. Only 1 boy and 1 girl will get the crown of Mr. and Ms. Impressions</p>
               {/* <li>Additionally, 2 wild card entries will be selected to join.</li> */}
-            </ul>
+            
             
           </div>
         </div>
