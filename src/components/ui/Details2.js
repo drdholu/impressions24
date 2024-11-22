@@ -19,7 +19,7 @@ const Details2 = () => (
             <h3 className="text-lg font-semibold text-red-500">Round 3: Slay the Stage</h3>
             <p><strong>Format:</strong></p>
             <ul className="list-disc list-inside">
-              <li>The top 10 participants from Round 2 will qualify for this round.</li>
+              <li>This is a talent showcase round. Top 10 participants from round 2 will qualify for this round.</li>
               {/* <li>Additionally, 2 wild card entries will be selected to join.</li> */}
             </ul>
             <p><strong>Outcome:</strong></p>
