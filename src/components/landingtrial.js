@@ -11,6 +11,7 @@ import logo1 from '../images/Logos/Name Logo filled.png';
 import grnd from '../images/ground1.webp';
 import cdance from '../images/Dance.png'
 import cstand from '../images/Cleo1.png'
+//import { Html } from '@react-three/drei';
 import { image } from 'framer-motion/client';
 import GlowingCursor from './glowcursor';
 import { AbsoluteCenter, position } from '@chakra-ui/react';
@@ -30,7 +31,7 @@ const ThreeScene = () => {
   useEffect(() => {
     console.log(scalefact);
     const scene = new THREE.Scene();
-    scene.background=new THREE.Color('#000000')
+    scene.background=new THREE.Color('#000000');
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(0, 5, 15);
@@ -101,10 +102,9 @@ const ThreeScene = () => {
       new THREE.MeshStandardMaterial({ map: rightImageTexture, transparent: true,alphaTest:0.5 })
     );
     scene.add(leftImageMesh,rightImageMesh);
-    leftImageMesh.visible=false;
-    rightImageMesh.visible=false;
-    leftImageMesh.castShadow=true;
-    rightImageMesh.castShadow=true;
+    // leftImageMesh.visible=false;
+    // rightImageMesh.visible=false;
+
     const textureLoader1 = new THREE.TextureLoader();
     let ground;
     textureLoader1.load(grnd, (texture) => {
@@ -230,7 +230,10 @@ const ThreeScene = () => {
         rightImageMesh.visible=false;
         footlight1.visible=false;
         footlight2.visible=false;
-      }  
+      }
+      tboxx.rotation.x+=0.01;
+      tboxx.rotation.y+=0.01;
+      tboxx.rotation.z+=0.01;
       renderer.render(scene, camera);
     };
 
