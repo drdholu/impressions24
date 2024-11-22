@@ -8,7 +8,7 @@ import { AlertCircle, CheckCircle2 } from 'lucide-react';
 import Details2 from "./ui/Details2"; // Import the Details2 component
 import Navbar from './Navbar'
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyYnQ5CEsu2pTh8odizO2nueqCPzR17sLVlP961Zb4MXXJ6IyXCvwpYwwg0vK7drrkU/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz57fm73fkBuBGtwJFOgTtCWtuyFrTxlqUwDVzYpeogIjB4lwKfcKeFuV-FiShc3Xkn/exec'
 const MMIForm = () => {
     const [formData, setFormData] = useState({
         mis: '',
@@ -19,6 +19,7 @@ const MMIForm = () => {
         talent: '',        // Added talent field
         description: '',   // Added description field
         followInstagram: '', // Changed to store 'Yes' or 'No'
+        coeprating:'',
     });
 
     const formRef = useRef();
@@ -45,6 +46,7 @@ const MMIForm = () => {
             talent: '',        // Added talent field
             description: '',   // Added description field
             followInstagram: '', // Changed to store 'Yes' or 'No'
+            coeprating:'',
         });
     };
 
@@ -107,7 +109,9 @@ const MMIForm = () => {
         'Manufacturing', 'Civil', 'Computer', 'Robotics & AI', 'EnTC', 'Electrical',
         'Instrumentation', 'Metallurgy', 'Mechanical'
     ];
-
+    const options1 = [
+        1,2,3,4,5,6,7,8,9,10
+    ];
     const inputClass = "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200";
     const labelClass = "block text-sm font-medium text-gray-700 mb-1";
     const selectClass = "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none appearance-none bg-white";
@@ -250,7 +254,21 @@ const MMIForm = () => {
                                     placeholder="Describe yourself in three words"
                                 />
                             </div>
-
+                            <div>
+                                <label className={labelClass}>How well do you know COEP on scale of 1 to 10</label>
+                                <select
+                                    name="coeprating"
+                                    value={formData.coeprating}
+                                    onChange={handleInputChange}
+                                    className={selectClass}
+                                    required
+                                >
+                                    <option value="">Select Rating</option>
+                                    {options1.map((option) => (
+                                        <option key={option} value={option}>{option}</option>
+                                    ))}
+                                </select>
+                            </div>
                             <div>
                                 <label className={labelClass}>Do you follow Impressions on Instagram?</label>
                                 <div className="flex items-center space-x-4">

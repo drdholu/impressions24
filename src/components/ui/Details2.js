@@ -7,28 +7,27 @@ const Details2 = () => (
         <h2 className="mb-4 text-xl font-bold text-gray-800 sm:text-2xl">Round Details</h2>
         <div className="space-y-6 text-sm text-gray-600 sm:text-base">
           <div>
-            <h3 className="text-lg font-semibold text-red-500">Round 1: Fast and Curious</h3>
+            <h3 className="text-lg font-semibold text-red-500">Round 1: Fast and Curious - COEPians Brain Drift</h3>
             <p><strong>Duration:</strong> 30 minutes</p>
-            <p><strong>Format:</strong> An online quiz featuring general knowledge questions related to COEP.</p>
+            <p><strong>Format:</strong> Coep mein aa toh gaye , par kya COEP ko acchese jante ho!" This an online quiz testing your knowlegde about COEP. The top 30 scorers will be selected for the next round
+            .</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-red-500">Round 2: Discuss Deewane</h3>
-            <p><strong>Format:</strong>The selected 30 participants would be asked to send videos of their talents that they are going to perform. Open ended discussion between the selected participants on different various fun topics.</p>
+            <h3 className="text-lg font-semibold text-red-500">Round 2: Discuss Deewane - Voice your Vision</h3>
+            <p><strong>Duration:</strong> 40-50 mins
+            </p>
+            <p><strong>Format:</strong> Baatein karte hai, gappe ladate hai, tumhare vichaar sunte hai. Selected 30 participants will be divided into groups and will be a part of an open ended group discussion on various fun  interesting topics. Top 10 participants will be selected for round 3.
+            </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-red-500">Round 3: Slay the Stage</h3>
+            <h3 className="text-lg font-semibold text-red-500">Round 3: Slay the Stage - Performance that WOWS!</h3>
+            <p><strong>Duration:</strong> 2.5 - 3hrs</p>
             <p><strong>Format:</strong></p>
             <ul className="list-disc list-inside">
-              <li>This is a talent showcase round. Top 10 participants from round 2 will qualify for this round.</li>
+              <li>Talent dikhao apna, pura karo best fresher banne ka sapna. This is a talent showcase round in which the top 10 selected participants from round 2 will perform. Only 1 boy and 1 girl will get the crown of Mr. and Ms. Impressions</li>
               {/* <li>Additionally, 2 wild card entries will be selected to join.</li> */}
             </ul>
-            <p><strong>Outcome:</strong></p>
-            <p>Two winners will be chosen:</p>
-            <ol className="list-decimal list-inside">
-              <li>Mr. Impressions</li>
-              <li>Ms. Impressions</li>
-              {/* <li>Best Performance/People's Choice Award</li> */}
-            </ol>
+            
           </div>
         </div>
       </div>
