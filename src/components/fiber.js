@@ -212,8 +212,44 @@ const App = () => {
       imageMeshRef.current.material.needsUpdate = true;
     };
     let isAnimating=false;
+    let startY = 0;
+    let isTouchScrolling = false;
+
+    const onTouchStart = (event) => {
+      //console.log("Touched");
+      if (event.touches && event.touches.length === 1) {
+        startY = event.touches[0].clientY; // Record the starting touch Y position
+        isTouchScrolling = true;
+      }
+    };
+
+    const onTouchMove = (event) => {
+      //console.log("Touched1");
+      if (isTouchScrolling) {
+        const currentY = event.touches[0].clientY;
+        const deltaY = startY-currentY; // Calculate the scroll distance
+
+        if (Math.abs(deltaY) > 10) { // Ignore small movements
+          startY = currentY; // Update the starting Y position
+          onScroll({ type: "touch", deltaY }); // Simulate the onScroll function with deltaY
+        }
+      }
+    };
+
+    const onTouchEnd = () => {
+      isTouchScrolling = false;
+    };
+
+    // Add the touch event listeners
+    window.addEventListener("touchstart", onTouchStart);
+    window.addEventListener("touchmove", onTouchMove);
+    window.addEventListener("touchend", onTouchEnd);
+
     const onScroll = (event) => {
-      console.log(event.key);
+      //console.log("KKKK");
+      const deltaY = event.type === "touch" ? event.deltaY : event.deltaY;
+      //console.log(deltaY);
+      //console.log(event.key);
       const scrollAmount = 0.05; 
       const camera=cameraref.current;
       const ground=groundref.current;
@@ -224,8 +260,8 @@ const App = () => {
       const imagee=imageMeshRef.current;
       const content=box.current;
       if (isAnimating || !camera || !ground || !c1 || !c2) return;
-      if(event.type==="wheel" && camera && ground && c1 && c2){
-        if (event.deltaY > 0 && imagee.position.z<10) {
+      if((event.type==="wheel" || event.type==="touch") && camera && ground && c1 && c2){
+        if (deltaY > 0 && imagee.position.z<10) {
           isAnimating = true;
           // if(box.current){
           //   box.current.visible=true;
