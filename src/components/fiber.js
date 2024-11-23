@@ -3,12 +3,11 @@ import { Canvas, useLoader ,useFrame} from "@react-three/fiber";
 import * as THREE from "three";
 import logo from "../images/Logos/Name Logo filled1.png";
 import logo1 from "../images/Logos/Name Logo filled.png";
-import { PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera,Html } from "@react-three/drei";
 import grnd from "../images/ground1.webp";
 import cleodance from "../images/Dance.png"
 import cleostand from "../images/Cleo1.png"
 import gsap from 'gsap';
-import { dot } from "three/webgpu";
 
 const ismobile = window.innerWidth < 1024;
 const fov = 75;
@@ -50,7 +49,7 @@ const RotatingBox = forwardRef((props,ref) => {
   return (
     <mesh ref={ref} position={[0,4,-30]}>
       <boxGeometry args={ismobile?[2,2,2]:[4, 4, 4]} />
-      <meshStandardMaterial color="red" />
+      <meshStandardMaterial color="beige" />
     </mesh>
   );
 });
@@ -119,7 +118,7 @@ function MovingLights({onLightsReached}) {
   const endPosition = ismobile?new THREE.Vector3(-totalwidth*0.5*0.52,totalheight*0.5*0.72, 3):new THREE.Vector3(-totalwidth*0.5*0.32,totalheight*0.5*0.8, 3);
   const endPosition1 = ismobile?new THREE.Vector3(totalwidth*0.5*0.345,totalheight*0.5*0.62, 3):new THREE.Vector3(totalwidth*0.5*0.21,totalheight*0.5*0.61,3);
 
-  const moveSpeed = 0.02; // Speed for moving lights
+  const moveSpeed = 0.05; // Speed for moving lights
   const targetIntensity = 20; // Final intensity value
   const intensitySpeed = 0.04; // Speed for adjusting intensity
   const [lightsReached, setLightsReached] = useState(false);
@@ -196,21 +195,50 @@ const App = () => {
     const mouse = new THREE.Vector2();
     const raycaster = new THREE.Raycaster();
     const [lightsReached, setLightsReached] = useState(false);
-    
+    let allowscroll=false;
     const newLogoTexturetexture = useLoader(THREE.TextureLoader, logo1); // Load texture
     const handleLightsReached = () => {
+      allowscroll=true;
       console.log("Lights reached their final position");
       setLightsReached(true); // Update shared state
-      const l1=help1.current;
-      const l2=help2.current;
-      const targetIntensity=20;
-      l1.intensity=ismobile?10:20;
-      l2.intensity=ismobile?10:20;
-      helpleft.current.intensity=ismobile?10:40;
-      helpright.current.intensity=ismobile?10:40;
+    
+      const l1 = help1.current;
+      const l2 = help2.current;
+      const targetIntensity = ismobile ? 10 : 20;
+    
+      const hl = helpleft.current;
+      const hr = helpright.current;
+      const hlTargetIntensity = ismobile ? 10 : 40;
+      const dur=3;
+      if (l1 && l2 && hl && hr) {
+        // Use gsap to animate intensity
+        gsap.to(l1, {
+          intensity: targetIntensity,
+          duration: dur, // 2 seconds for smooth transition
+          ease: "power2.out",
+        });
+        gsap.to(l2, {
+          intensity: targetIntensity,
+          duration: dur,
+          ease: "power2.out",
+        });
+        gsap.to(hl, {
+          intensity: hlTargetIntensity,
+          duration: dur,
+          ease: "power2.out",
+        });
+        gsap.to(hr, {
+          intensity: hlTargetIntensity,
+          duration: dur,
+          ease: "power2.out",
+        });
+      }
+    
+      // Update the image texture
       imageMeshRef.current.material.map = newLogoTexturetexture; // Update texture
       imageMeshRef.current.material.needsUpdate = true;
     };
+    
     let isAnimating=false;
     let startY = 0;
     let isTouchScrolling = false;
@@ -218,7 +246,7 @@ const App = () => {
     const onTouchStart = (event) => {
       //console.log("Touched");
       if (event.touches && event.touches.length === 1) {
-        startY = event.touches[0].clientY; // Record the starting touch Y position
+        startY = event.touches[0].clientY;
         isTouchScrolling = true;
       }
     };
@@ -227,11 +255,11 @@ const App = () => {
       //console.log("Touched1");
       if (isTouchScrolling) {
         const currentY = event.touches[0].clientY;
-        const deltaY = startY-currentY; // Calculate the scroll distance
+        const deltaY = startY-currentY; 
 
-        if (Math.abs(deltaY) > 10) { // Ignore small movements
-          startY = currentY; // Update the starting Y position
-          onScroll({ type: "touch", deltaY }); // Simulate the onScroll function with deltaY
+        if (Math.abs(deltaY) > 10) {
+          startY = currentY; 
+          onScroll({ type: "touch", deltaY });
         }
       }
     };
@@ -244,12 +272,10 @@ const App = () => {
     window.addEventListener("touchstart", onTouchStart);
     window.addEventListener("touchmove", onTouchMove);
     window.addEventListener("touchend", onTouchEnd);
-
+    var trial=false;
     const onScroll = (event) => {
-      //console.log("KKKK");
+      if(!allowscroll) return;
       const deltaY = event.type === "touch" ? event.deltaY : event.deltaY;
-      //console.log(deltaY);
-      //console.log(event.key);
       const scrollAmount = 0.05; 
       const camera=cameraref.current;
       const ground=groundref.current;
@@ -259,35 +285,33 @@ const App = () => {
       const hr=help1.current;
       const imagee=imageMeshRef.current;
       const content=box.current;
+      
       if (isAnimating || !camera || !ground || !c1 || !c2) return;
       if((event.type==="wheel" || event.type==="touch") && camera && ground && c1 && c2){
+        
+        
         if (deltaY > 0 && imagee.position.z<10) {
+          trial=true;
           isAnimating = true;
-          // if(box.current){
-          //   box.current.visible=true;
-          // }
           const timeline = gsap.timeline({
             defaults: { duration: 3, ease: "power4.inOut" },
             onComplete: () => {
-              isAnimating = false; // Unlock when animation completes
+              isAnimating = false;
             },
           });
 
           timeline
-            .to(imagee.position, { z: 16 }) // Animate camera
-            .to(hl.position, { z:17 }, "<") // "<" means this starts at the same time as the previous animation
-            .to(hr.position, { z: 17}, "<") // Synchronized with previous
+            .to(imagee.position, { z: 16 })
+            .to(hl.position, { z:17 }, "<")
+            .to(hr.position, { z: 17}, "<")
             .to(c1.position,{x:-totalwidth*0.41},"-=1.5")
             .to(c2.position,{x:totalwidth*0.41},"<")
-            .to(content.position,{z:1},"<")
-          // light1.position.z-=scrollAmount;
-          // helpright.position.z-=scrollAmount;
-          // helpleft.position.z-=scrollAmount;
-          // light.position.z-=scrollAmount;
+            .to(content.position,{z:0},"<")
           
         } 
         else if(imagee.position.z>1 && camera && ground){
           isAnimating = true;
+          trial=false;
           const timeline = gsap.timeline({
             defaults: { duration: 3, ease: "power4.inOut" },
             onComplete: () => {
@@ -301,45 +325,12 @@ const App = () => {
           .to(content.position,{z:-30},"<")
           .to(imagee.position, { z:1  },"-0.7") // Animate camera
           .to(hl.position, { z:2 }, "<") // "<" means this starts at the same time as the previous animation
-          .to(hr.position, { z: 2}, "<")
-          
-          // camera.position.z += scrollAmount;
-          // ground.position.z += scrollAmount;
-          // c1.position.z+=scrollAmount;
-          // c2.position.z+=scrollAmount;
-          // hl.position.z+=scrollAmount;
-          // hr.position.z+=scrollAmount;
-          
-          // light1.position.z+=scrollAmount;
-          // helpright.position.z+=scrollAmount;
-          // helpleft.position.z+=scrollAmount;
-          // light.position.z+=scrollAmount;
+          .to(hr.position, { z:2 }, "<")
         }
     }
-    else if(camera && ground && c1 && c2){
-      console.log("HEREE");
-      if (event.key === 'ArrowUp' && camera.position.z<15) {
-        camera.position.z += scrollAmount; // Scroll forward
-        ground.position.z += scrollAmount;
-        c1.position.z+=scrollAmount;
-        c2.position.z+=scrollAmount;
-        hl.position.z+=scrollAmount;
-        hr.position.z+=scrollAmount;
-          
-          
-      } else if (event.key === 'ArrowDown') {
-        camera.position.z -= scrollAmount; // Scroll backward
-        ground.position.z-=scrollAmount;
-        c1.position.z-=scrollAmount;
-        c2.position.z-=scrollAmount;
-        hl.position.z-=scrollAmount;
-        hr.position.z-=scrollAmount;
-          
-      }
-    }
+    console.log(trial);
       //window.scrollTo(0,0,0);
     };
-  
     const onMouseMove = (event) => {
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -351,8 +342,6 @@ const App = () => {
           targetPlaneZ=camera.position.z-13;
         
         }
-
-        
         const planeNormal = new THREE.Vector3(0, 0, -1);
         const plane = new THREE.Plane(planeNormal, targetPlaneZ);
         const intersectPoint = new THREE.Vector3();
@@ -379,13 +368,20 @@ const App = () => {
           far={1000}
           near={0.1}
         />
-        <pointLight ref={help1} intensity={0} position={light1Position} color="red" castShadow distance={20}/>
-        <pointLight ref={help2} intensity={0} position={light2Position} color="red" castShadow distance={20}/>
+        <pointLight ref={help1} intensity={0} position={light1Position} color="red" castShadow distance={10}/>
+        <pointLight ref={help2} intensity={0} position={light2Position} color="red" castShadow distance={10}/>
         <pointLight ref={helpleft} intensity={0} position={[-totalwidth*0.5+7,5,2]} color="beige" castShadow distance={40}/>
         <pointLight ref={helpright} intensity={0} position={[totalwidth*0.5-7,5,2]} color="beige" castShadow distance={40}/>
         <MovingLights onLightsReached={handleLightsReached}/>
         <pointLight ref={mlight} intensity={50} position={[0,100,0]} color="beige" castShadow distance={10}/>
-
+        
+        {trial &&
+        <Html position={[0, 4, 4]} distanceFactor={10}>
+          <div style={{ color: 'blue', background: 'white', padding: '10px', borderRadius: '5px' }}>
+            Hello Impressions
+          </div>
+        </Html>
+        }
         {/* <RedDot position={light1Position} />
         <RedDot position={light2Position} /> */}
         <ImageMesh ref={imageMeshRef}/>
@@ -399,7 +395,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
