@@ -9,7 +9,7 @@ const Details2 = () => (
           <div>
             <h3 className="text-lg font-semibold text-red-500">Round 1: Fast and Curious - COEPians Brain Drift</h3>
             <p><strong>Duration:</strong> 30 minutes</p>
-            <p><strong>Format:</strong> Coep mein aa toh gaye , par kya COEP ko acchese jante ho!" This an online quiz testing your knowlegde about COEP. The top 30 scorers will be selected for the next round
+            <p><strong>Format:</strong> "Coep mein aa toh gaye , par kya COEP ko acchese jante ho!" This an online quiz testing your knowlegde about COEP. The top 30 scorers will be selected for the next round
             .</p>
           </div>
           <div>
