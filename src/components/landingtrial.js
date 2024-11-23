@@ -197,8 +197,10 @@ const ThreeScene = () => {
           imageMaterial.map = newLogoTexture;
           imageMaterial.needsUpdate = true;
         }
-        lightOval.visible = false;
-        lightOval1.visible = false;
+        lightOval.position.copy(helpleft.position);
+        lightOval1.position.copy(helpright.position);
+        // lightOval.visible = false;
+        // lightOval1.visible = false;
       }
 
       if(boxup){
