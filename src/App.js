@@ -48,11 +48,13 @@
 
 import React from "react";
 import FiberScene from './components/FiberScene'
-
+import { PerspectiveCamera } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import FiberScene2 from "./components/FiberScene2";
 function App() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
-      <FiberScene />
+        <FiberScene2 />
     </div>
   );
 }

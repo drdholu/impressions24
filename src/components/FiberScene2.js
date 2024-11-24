@@ -3,7 +3,7 @@ import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import logo from "../images/Logos/Name Logo filled1.png";
 import logo1 from "../images/Logos/Name Logo filled.png";
-import { PerspectiveCamera, Html } from "@react-three/drei";
+import { PerspectiveCamera, Html, useGLTF } from "@react-three/drei";
 import grnd from "../images/ground1.webp";
 import cleodance from "../images/Dance.png"
 import cleostand from "../images/Cleo1.png"
@@ -29,30 +29,43 @@ const worldHeight = ismobile
   : worldWidth * (window.innerHeight / window.innerWidth) * 0.8;
 const totalheight = totalwidth * (window.innerHeight / window.innerWidth);
 
-const RotatingBox = forwardRef((props, ref) => {
 
-  // Animation loop for rotation
-  React.useEffect(() => {
-    let frameId;
-    const rotateBox = () => {
-      if (ref.current) {
-        ref.current.rotation.x += 0.01;
-        ref.current.rotation.y += 0.01;
-      }
-      frameId = requestAnimationFrame(rotateBox);
-    };
-    rotateBox();
-
-    return () => cancelAnimationFrame(frameId); // Cleanup
-  }, []);
-
-  return (
-    <mesh ref={ref} position={[0, 4, -30]}>
-      <boxGeometry args={ismobile ? [2, 2, 2] : [4, 4, 4]} />
-      <meshStandardMaterial color="beige" />
-    </mesh>
-  );
+const Model = forwardRef((props,ref) => {
+  const { scene } = useGLTF(process.env.PUBLIC_URL + "/models/paint kit mini.glb"); // Adjust the path to your GLB file
+  // Set the scale of the model
+    // useFrame(() => {
+    //   if (ref.current) {
+        // ref.current.rotation.y = 8;
+        // ref.current.rotation.x = 0.25;
+      // }
+    // });
+  return <primitive ref={ref} object={scene} scale={[110, 110, 110]} position={[0,3,-100]} />;
 });
+
+// const RotatingBox = forwardRef((props, ref) => {
+
+//   // Animation loop for rotation
+//   React.useEffect(() => {
+//     let frameId;
+//     const rotateBox = () => {
+//       if (ref.current) {
+//         ref.current.rotation.x += 0.01;
+//         ref.current.rotation.y += 0.01;
+//       }
+//       frameId = requestAnimationFrame(rotateBox);
+//     };
+//     rotateBox();
+
+//     return () => cancelAnimationFrame(frameId); // Cleanup
+//   }, []);
+
+//   return (
+//     <mesh ref={ref} position={[0, 4, -30]}>
+//       <boxGeometry args={ismobile ? [2, 2, 2] : [4, 4, 4]} />
+//       <meshStandardMaterial color="beige" />
+//     </mesh>
+//   );
+// });
 
 const ImageMesh = forwardRef((props, ref) => {
   const texture = useLoader(THREE.TextureLoader, logo); // Load texture
@@ -178,7 +191,7 @@ function MovingLights({ onLightsReached }) {
   );
 }
 
-const FiberScene = () => {
+const FiberScene2 = () => {
   const cameraref = useRef();
   const mlight = useRef();
   const help1 = useRef();
@@ -189,7 +202,8 @@ const FiberScene = () => {
   const cleoright = useRef();
   const helpright = useRef();
   const helpleft = useRef();
-  const box = useRef()
+  // const box = useRef();
+  const paintBox=useRef();
   const light1Position = ismobile ? new THREE.Vector3(totalwidth * 0.17, totalheight * 0.5 * 0.3, 1) : new THREE.Vector3(-totalwidth * 0.5 * 0.25, totalheight * 0.5 * 0.27, 3);
   const light2Position = ismobile ? new THREE.Vector3(-totalwidth * 0.22, totalheight * 0.5 * 0.3, 2) : new THREE.Vector3(5, 3, 3);
   const mouse = new THREE.Vector2();
@@ -286,7 +300,8 @@ const FiberScene = () => {
     const hl = help1.current;
     const hr = help1.current;
     const imagee = imageMeshRef.current;
-    const content = box.current;
+    const paintBoxCurr = paintBox.current;
+    // const content = box.current;
 
     if (isAnimating || !camera || !ground || !c1 || !c2) return;
     if ((event.type === "wheel" || event.type === "touch") && camera && ground && c1 && c2) {
@@ -308,10 +323,10 @@ const FiberScene = () => {
           .to(hr.position, { z: 17 }, "<")
           .to(c1.position, { x: -totalwidth * 0.41 }, "-=1.5")
           .to(c2.position, { x: totalwidth * 0.41 }, "<")
-          .to(content.position, { z: 0 }, "<")
+          .to(paintBoxCurr.position, { z: 0 }, "<")
 
       }
-      else if (imagee.position.z > 1 && camera && ground) {
+      else if (imagee.position.z > 1 && camera && ground && c1 && c1 && hl && hr && imagee) {
         isAnimating = true;
         trial = false;
         const timeline = gsap.timeline({
@@ -324,7 +339,7 @@ const FiberScene = () => {
         timeline
           .to(c1.position, { x: -totalwidth })
           .to(c2.position, { x: totalwidth }, "<")
-          .to(content.position, { z: -30 }, "<")
+          .to(paintBoxCurr.position, { z: -30 }, "<")
           .to(imagee.position, { z: 1 }, "-0.7") // Animate camera
           .to(hl.position, { z: 2 }, "<") // "<" means this starts at the same time as the previous animation
           .to(hr.position, { z: 2 }, "<")
@@ -380,23 +395,24 @@ const FiberScene = () => {
         <MovingLights onLightsReached={handleLightsReached} />
         <pointLight ref={mlight} intensity={50} position={[0, 100, 0]} color="beige" castShadow distance={10} />
 
-        {trial &&
-          <Html position={[0, 4, 4]} distanceFactor={10}>
-            <div style={{ color: 'blue', background: 'white', padding: '10px', borderRadius: '5px' }}>
-              Hello Impressions
-            </div>
-          </Html>
-        }
+        
+        <Html position={[0, 4, 4]} distanceFactor={10}>
+          <div style={{ color: 'blue', background: 'white', padding: '10px', borderRadius: '5px' }}>
+            Hello Impressions
+          </div>
+        </Html>
+      
         {/* <RedDot position={light1Position} />
         <RedDot position={light2Position} /> */}
         <ImageMesh ref={imageMeshRef} />
         <Ground ref={groundref} />
         <Loadimage img={cleodance} height={10} width={5} position={[-totalwidth, 4, 1]} ref={cleoleft} />
         <Loadimage img={cleostand} height={10} width={5} position={[totalwidth, 4, 1]} ref={cleoright} />
-        <RotatingBox ref={box} />
+        {/* <RotatingBox ref={box} /> */}
+        <Model ref={paintBox}/>
       </Canvas>
     </div>
   );
 };
 
-export default FiberScene;
+export default FiberScene2;
