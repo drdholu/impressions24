@@ -4,11 +4,11 @@
 // import ImpressionsNewspaper from "./components/Newspaper";
 // import VolunteerForm from "./components/VolunteerForm";
 // import FiberScene from './components/FiberScene'
-import FiberScene2 from './components/FiberScene2'
+import FiberScene from './components/FiberScene'
 
 export const urls = [
     // {url: '/', name: "Home", element:<LandingPage/> },
-    {url: '/', name: "Test", element:<FiberScene2/>}
+    {url: '/', name: "Test", element:<FiberScene/>}
     // {url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
     // {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
 ]
