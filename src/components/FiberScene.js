@@ -8,6 +8,9 @@ import grnd from "../images/ground1.webp";
 import cleodance from "../images/Dance.png"
 import cleostand from "../images/Cleo1.png"
 import gsap from 'gsap';
+import { atom, useAtom } from "jotai";
+import { degToRad } from "three/src/math/MathUtils.js";
+export const currentPageAtom = atom("intro");
 
 const ismobile = window.innerWidth < 1024;
 const fov = 75;
@@ -44,6 +47,17 @@ const Model = forwardRef((props, ref) => {
       <primitive ref={ref} object={scene} scale={[110, 110, 110]} position={[0, 3, -100]} rotation={[0.25, 8, 0]} />;
     </>
   )
+});
+
+const Navbar = forwardRef((props, ref) => {
+  // const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
+  return (
+    <Html ref={ref} position={[0, 3, -100]}>
+      {/* <div className="w-10 h-10 bg-red-500">
+      </div> */}
+      Hello
+    </Html>
+  );
 });
 
 // const RotatingBox = forwardRef((props, ref) => {
@@ -208,6 +222,7 @@ const FiberScene = () => {
   const helpleft = useRef();
   // const box = useRef();
   const paintBox = useRef();
+  const navbarRef = useRef();
   const light1Position = ismobile ? new THREE.Vector3(totalwidth * 0.17, totalheight * 0.5 * 0.3, 1) : new THREE.Vector3(-totalwidth * 0.5 * 0.25, totalheight * 0.5 * 0.27, 3);
   const light2Position = ismobile ? new THREE.Vector3(-totalwidth * 0.22, totalheight * 0.5 * 0.3, 2) : new THREE.Vector3(5, 3, 3);
   const mouse = new THREE.Vector2();
@@ -305,6 +320,7 @@ const FiberScene = () => {
     const hr = help1.current;
     const imagee = imageMeshRef.current;
     const paintBoxCurr = paintBox.current;
+    const navbarCurr = navbarRef.current;
     // const content = box.current;
 
     if (isAnimating || !camera || !ground || !c1 || !c2) return;
@@ -328,6 +344,7 @@ const FiberScene = () => {
           .to(c1.position, { x: -totalwidth * 0.41 }, "-=1.5")
           .to(c2.position, { x: totalwidth * 0.41 }, "<")
           .to(paintBoxCurr.position, { z: 0 }, "<")
+          .to(navbarCurr.position, { z: 0 }, "<")
 
       }
       else if (imagee.position.z > 1 && camera && ground && c1 && c1 && hl && hr && imagee) {
@@ -344,6 +361,7 @@ const FiberScene = () => {
           .to(c1.position, { x: -totalwidth })
           .to(c2.position, { x: totalwidth }, "<")
           .to(paintBoxCurr.position, { z: -30 }, "<")
+          .to(navbarCurr.position, { z: -30 }, "<")
           .to(imagee.position, { z: 1 }, "-0.7") // Animate camera
           .to(hl.position, { z: 2 }, "<") // "<" means this starts at the same time as the previous animation
           .to(hr.position, { z: 2 }, "<")
@@ -410,12 +428,8 @@ const FiberScene = () => {
         {/* Mouse Light */}
         <pointLight ref={mlight} intensity={50} position={[0, 100, 0]} color="beige" castShadow distance={10} />
 
-
-        {/*<Html position={[0, 4, 4]} distanceFactor={10}>
-          <div style={{ color: 'blue', background: 'white', padding: '10px', borderRadius: '5px' }}>
-            Hello Impressions
-          </div>
-        </Html>*/}
+        {/* Navbar */}
+        <Navbar ref={navbarRef}/>
 
         {/* <RedDot position={light1Position} /> */}
         {/* <RedDot position={light2Position} /> */}
