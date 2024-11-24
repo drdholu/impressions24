@@ -8,7 +8,7 @@ import FiberScene from './components/FiberScene'
 
 export const urls = [
     // {url: '/', name: "Home", element:<LandingPage/> },
-    {url: '/', name: "Test", element:<FiberScene/>}
+    {url: '/', name: "Home", element:<FiberScene/>}
     // {url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
     // {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
 ]
