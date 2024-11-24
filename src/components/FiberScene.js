@@ -426,8 +426,8 @@ const FiberScene = () => {
         <Ground ref={groundref} />
 
         {/* Cleo Images */}
-        <Loadimage img={cleodance} height={10} width={5} position={[-totalwidth, 4, 1]} ref={cleoleft} />
-        <Loadimage img={cleostand} height={10} width={5} position={[totalwidth, 4, 1]} ref={cleoright} />
+        <Loadimage img={cleodance} height={10} width={10} position={[-totalwidth, 4, 1]} ref={cleoleft} />
+        <Loadimage img={cleostand} height={10} width={10} position={[totalwidth, 4, 1]} ref={cleoright} />
         {/* <RotatingBox ref={box} /> */}
 
         {/* Colour Palette Navbar */}
