@@ -18,25 +18,13 @@ import ErrorPage from './components/ErrorPage';
 import CustomCursor from './components/ui/CustomeCursor';
 // import AnimatedBackground from './components/ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';
-
+import EventsPage from './components/EventsPage';
 const App = () => {
   return (
     // <Preloader>
       <div className=''>
-        {/* <Navbar /> */}
         <CustomCursor />
-       {/* <TransitionWrapper> */}
-          <Routes>
-            {urls.map((url, idx) => {
-              return (
-                <Route key={idx} path={url.url} element={url.element} />
-              )
-            })}
-            <Route path="*" element={<ErrorPage />} />
-          </Routes> 
-        {/* </TransitionWrapper> */}
-        <BackToTop /> 
-        {/* <Footer />  */}
+        <EventsPage />
       </div>
 
 
