@@ -122,19 +122,19 @@ function Events() {
                 </div>
 
                 <div className="arrows absolute top-[30%] z-100 w-full flex justify-between px-5 box-border">
-                    <button className="prev bg-[#eee5] border-0 font-mono w-[40px] h-[40px] rounded-[5px] text-xl text-[#eee] transition-all duration-500 cursor-pointer hover:bg-[#eee] hover:text-black" onClick={handlePrevClick}>&lt;</button>
-                    <button className="next bg-[#eee5] border-0 font-mono w-[40px] h-[40px] rounded-[5px] text-xl text-[#eee] transition-all duration-500 cursor-pointer hover:bg-[#eee] hover:text-black" onClick={handleNextClick}>&gt;</button>
+                    <button className="prev bg-[#eee5] border-0 font-mono w-[40px] h-[40px] rounded-[5px] text-xl text-[#eee] transition-all duration-500 cursor-pointer hover:bg-[#eee] hover:text-black sm:block hidden" onClick={handlePrevClick}>&lt;</button>
+                    <button className="next bg-[#eee5] border-0 font-mono w-[40px] h-[40px] rounded-[5px] text-xl text-[#eee] transition-all duration-500 cursor-pointer hover:bg-[#eee] hover:text-black sm:block hidden" onClick={handleNextClick}>&gt;</button>
                 </div>
 
-                <div className="thumbnail">
+                <div className="thumbnail absolute bottom-[50px] z-20 w-full h-[250px] flex gap-2 px-12 box-border overflow-auto justify-center">
                     {thumbnails.map((thumbnail, index) => (
                         <div
-                            className={`item ${thumbnail.active ? 'active' : ''}`}
+                            className={`item ${thumbnail.active ? 'active' : ''} w-[150px] h-[190px] flex-shrink-0 transition-all duration-500 filter brightness-[0.5]`}
                             key={index}
                             onClick={() => handleThumbnailClick(index)}
                         >
-                            <img src={thumbnail.img} alt={thumbnail.title} />
-                            <div className="content">Name Slider</div>
+                            <img src={thumbnail.img} alt={thumbnail.title} className="w-full h-full object-cover rounded-[10px]" />
+                            <div className="content absolute inset-x-2 bottom-2">Name Slider</div>
                         </div>
                     ))}
                 </div>
