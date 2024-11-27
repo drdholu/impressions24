@@ -1,6 +1,12 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+// import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+// import { Link } from 'react-router-dom';
+// import { Menu, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 // import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
@@ -64,7 +70,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="top-0 z-30 bg-black backdrop-blur-sm h-[10vh] w-[100vw]">
+      <nav className="sticky top-0 z-30 backdrop-blur-sm h-[10vh]">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between px-5">
             <Link 
@@ -74,7 +80,7 @@ const Navbar = () => {
               <img src={smallLogo} alt="Logo" className="w-auto h-20" />
               <span 
                 ref={titleRef} 
-                className="text-xl font-semibold text-transparent bg-gradient-to-r from-white to-gray-300 bg-clip-text"
+                className="text-xl font-semibold bg-clip-text"
               >
                 Impressions 24
               </span>
@@ -161,7 +167,6 @@ const NavLink = ({ to, children, mobile = false, onClick }) => {
       onClick={onClick}
       className={`
         relative 
-        text-white 
         no-underline 
         transition-colors
         ${mobile ? 'block text-lg' : 'inline-block'}
