@@ -3,13 +3,13 @@ import { Canvas, useLoader ,useFrame} from "@react-three/fiber";
 import * as THREE from "three";
 import logo from "../images/Logos/Name Logo filled1.png";
 import logo1 from "../images/Logos/Name Logo filled.png";
-import { PerspectiveCamera,Html } from "@react-three/drei";
+import { PerspectiveCamera,Html,Text } from "@react-three/drei";
 import grnd from "../images/ground1.webp";
 import cleodance from "../images/Dance.png"
 import cleostand from "../images/Cleo1.png"
 import gsap from 'gsap';
 
-const ismobile = window.innerWidth < 1024;
+const ismobile = window.innerWidth < 650;
 const fov = 75;
 const distance = 14;
 const aspectRatio = window.innerWidth / window.innerHeight;
@@ -141,6 +141,8 @@ function MovingLights({onLightsReached}) {
         light1.intensity = THREE.MathUtils.lerp(light1.intensity, targetIntensity, intensitySpeed);
         if(light.intensity>19){
           setLightsReached(true);
+          light.intensity=0;
+          light1.intensity=0;
         }
         if(light.intensity>14){
           //console.log("HERE");
@@ -189,29 +191,36 @@ const App = () => {
     const cleoright=useRef();
     const helpright=useRef();
     const helpleft=useRef();
-    const box=useRef()
+    const box=useRef();
+    const start=useRef();
+    const helpupleft=useRef();
+    const helpupright=useRef();
     const light1Position = ismobile?new THREE.Vector3(totalwidth*0.17,totalheight*0.5*0.3, 1):new THREE.Vector3(-totalwidth*0.5*0.25,totalheight*0.5*0.27, 3);
-    const light2Position =ismobile?new THREE.Vector3(-totalwidth*0.22, totalheight*0.5*0.3, 2):new THREE.Vector3(5,3, 3);
+    const light2Position =ismobile?new THREE.Vector3(-totalwidth*0.22, totalheight*0.5*0.3, 2):new THREE.Vector3(totalwidth*0.5*0.25,3, 3);
+    const endPosition = ismobile?new THREE.Vector3(-totalwidth*0.5*0.52,totalheight*0.5*0.72, 3):new THREE.Vector3(-totalwidth*0.5*0.32,totalheight*0.5*0.8, 3);
+    const endPosition1 = ismobile?new THREE.Vector3(totalwidth*0.5*0.345,totalheight*0.5*0.62, 3):new THREE.Vector3(totalwidth*0.5*0.21,totalheight*0.5*0.61,3);
+    const [isVisible, setIsVisible] = useState(false);
     const mouse = new THREE.Vector2();
     const raycaster = new THREE.Raycaster();
     const [lightsReached, setLightsReached] = useState(false);
-    let allowscroll=false;
+    const [allowscroll,setscroll]=useState(false);
     const newLogoTexturetexture = useLoader(THREE.TextureLoader, logo1); // Load texture
     const handleLightsReached = () => {
-      allowscroll=true;
+      setscroll(true);
       console.log("Lights reached their final position");
       setLightsReached(true); // Update shared state
-    
+      setIsVisible(true);
       const l1 = help1.current;
       const l2 = help2.current;
       const targetIntensity = ismobile ? 10 : 20;
     
-      const hl = helpleft.current;
-      const hr = helpright.current;
+      
+      const hl=helpupleft.current;
+      const hr=helpupright.current;
       const hlTargetIntensity = ismobile ? 10 : 40;
       const dur=3;
       if (l1 && l2 && hl && hr) {
-        // Use gsap to animate intensity
+        console.log("HII");
         gsap.to(l1, {
           intensity: targetIntensity,
           duration: dur, // 2 seconds for smooth transition
@@ -234,7 +243,7 @@ const App = () => {
         });
       }
     
-      // Update the image texture
+
       imageMeshRef.current.material.map = newLogoTexturetexture; // Update texture
       imageMeshRef.current.material.needsUpdate = true;
     };
@@ -274,23 +283,30 @@ const App = () => {
     window.addEventListener("touchend", onTouchEnd);
     var trial=false;
     const onScroll = (event) => {
+      console.log(event.type);
+      console.log(allowscroll);
       if(!allowscroll) return;
-      const deltaY = event.type === "touch" ? event.deltaY : event.deltaY;
+      
+      const deltaY = event.type === "click" ? 2 : event.deltaY;
       const scrollAmount = 0.05; 
       const camera=cameraref.current;
       const ground=groundref.current;
       const c1=cleoleft.current;
       const c2=cleoright.current;
       const hl=help1.current;
-      const hr=help1.current;
+      const hr=help2.current;
+      const hul=helpupleft.current;
+      const hur=helpupright.current;
       const imagee=imageMeshRef.current;
       const content=box.current;
+      const startsurr=start.current;
       
       if (isAnimating || !camera || !ground || !c1 || !c2) return;
-      if((event.type==="wheel" || event.type==="touch") && camera && ground && c1 && c2){
+      if((event.type==="click" || event.type==="wheel") && camera && ground && c1 && c2){
         
         
-        if (deltaY > 0 && imagee.position.z<10) {
+        if ((deltaY > 0) && imagee.position.z<10) {
+          setIsVisible(false);
           trial=true;
           isAnimating = true;
           const timeline = gsap.timeline({
@@ -299,22 +315,26 @@ const App = () => {
               isAnimating = false;
             },
           });
-
+          
           timeline
             .to(imagee.position, { z: 16 })
             .to(hl.position, { z:17 }, "<")
             .to(hr.position, { z: 17}, "<")
+            .to(hur.position, { z: 17}, "<")
+            .to(hul.position, { z: 17}, "<")
             .to(c1.position,{x:-totalwidth*0.41},"-=1.5")
             .to(c2.position,{x:totalwidth*0.41},"<")
             .to(content.position,{z:0},"<")
           
         } 
-        else if(imagee.position.z>1 && camera && ground){
+        else if(deltaY<0 && imagee.position.z>1 && camera && ground){
+          
           isAnimating = true;
           trial=false;
           const timeline = gsap.timeline({
-            defaults: { duration: 3, ease: "power4.inOut" },
+            defaults: { duration: 5, ease: "power4.inOut" },
             onComplete: () => {
+              setIsVisible(true);
               isAnimating = false; // Unlock when animation completes
             },
           });
@@ -326,9 +346,11 @@ const App = () => {
           .to(imagee.position, { z:1  },"-0.7") // Animate camera
           .to(hl.position, { z:2 }, "<") // "<" means this starts at the same time as the previous animation
           .to(hr.position, { z:2 }, "<")
+          .to(hur.position, { z:2 }, "<")
+          .to(hul.position, { z:2 }, "<")
         }
     }
-    console.log(trial);
+    //console.log(trial);
       //window.scrollTo(0,0,0);
     };
     const onMouseMove = (event) => {
@@ -370,21 +392,35 @@ const App = () => {
         />
         <pointLight ref={help1} intensity={0} position={light1Position} color="red" castShadow distance={10}/>
         <pointLight ref={help2} intensity={0} position={light2Position} color="red" castShadow distance={10}/>
-        <pointLight ref={helpleft} intensity={0} position={[-totalwidth*0.5+7,5,2]} color="beige" castShadow distance={40}/>
-        <pointLight ref={helpright} intensity={0} position={[totalwidth*0.5-7,5,2]} color="beige" castShadow distance={40}/>
+        <pointLight ref={helpupleft} intensity={0} position={endPosition} color="red" castShadow distance={10}/>
+        <pointLight ref={helpupright} intensity={0} position={endPosition1} color="red" castShadow distance={10}/>
+        <pointLight ref={helpleft} intensity={10} position={[-totalwidth*0.5+7,5,2]} color="beige" castShadow distance={40}/>
+        <pointLight ref={helpright} intensity={10} position={[totalwidth*0.5-7,5,2]} color="beige" castShadow distance={40}/>
         <MovingLights onLightsReached={handleLightsReached}/>
         <pointLight ref={mlight} intensity={50} position={[0,100,0]} color="beige" castShadow distance={10}/>
         
-        {trial &&
-        <Html position={[0, 4, 4]} distanceFactor={10}>
-          <div style={{ color: 'blue', background: 'white', padding: '10px', borderRadius: '5px' }}>
-            Hello Impressions
+        {
+        <Html ref={start} position={[0, totalheight/17, 0]} distanceFactor={10}>
+          <div className={`text-red-500 bg-transparent rounded-[5vh] w-[15vw] h-[15vh] text-center border-2 border-red-700 ${isVisible ? 'flex' : 'hidden'} items-center justify-center shadow-[0_0_10px_red,0_0_20px_red,0_0_10px_red] transition-shadow duration-300 ease-in-out hover:bg-red-700 hover:text-black text-[40px] font-bold`}>
+            <button onClick={onScroll}>
+              ENTER
+            </button>
           </div>
+
         </Html>
         }
         {/* <RedDot position={light1Position} />
         <RedDot position={light2Position} /> */}
         <ImageMesh ref={imageMeshRef}/>
+        {/* 3D Text */}
+      {/* <Text
+        color="red" // Text color
+        fontSize={3}   // Font size
+        position={[0, totalheight/3, 0]} // Position of the text
+        // rotation={[0, Math.PI / 4, 0]} // Rotation for effect
+      >
+        IMPRESSIONS' 24
+      </Text> */}
         <Ground ref={groundref}/>
         <Loadimage img={cleodance} height={10} width={5} position={[-totalwidth,4,1]} ref={cleoleft}/>
         <Loadimage img={cleostand} height={10} width={5} position={[totalwidth,4,1]} ref={cleoright}/>
