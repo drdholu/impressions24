@@ -428,8 +428,7 @@ const FiberScene = () => {
         />
         <pointLight ref={help1} intensity={0} position={light1Position} color="red" castShadow distance={10}/>
         <pointLight ref={help2} intensity={0} position={light2Position} color="red" castShadow distance={10}/>
-        <pointLight ref={helpupleft} intensity={0} position={endPosition} color="red" castShadow distance={10}/>
-        <pointLight ref={helpupright} intensity={0} position={endPosition1} color="red" castShadow distance={10}/>
+        
         <pointLight ref={helpleft} intensity={10} position={[-totalwidth*0.5+7,5,2]} color="beige" castShadow distance={40}/>
         <pointLight ref={helpright} intensity={10} position={[totalwidth*0.5-7,5,2]} color="beige" castShadow distance={40}/>
         <MovingLights onLightsReached={handleLightsReached}/>
