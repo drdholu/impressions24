@@ -4,11 +4,11 @@
 
 // import CoordinatorForm from "./components/CoordinatorForm";
 import ThreeScene from "./components/landingtrial";
-import App from "./components/FiberScene";
+import FiberScene from "./components/FiberScene";
 // import VolunteerForm from "./components/VolunteerForm";
 
 export const urls = [
-    {url: '/', name: "Home", element: <App />},
+    {url: '/', name: "Home", element: <FiberScene />},
     {url: '/chek', name: "Home", element: <ThreeScene />},
     //{url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
 

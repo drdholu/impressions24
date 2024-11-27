@@ -180,7 +180,7 @@ function MovingLights({onLightsReached}) {
   );
 }
 
-const App = () => {
+const FiberScene = () => {
     const cameraref=useRef();
     const mlight=useRef();
     const help1=useRef();
@@ -430,4 +430,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default FiberScene;
