@@ -44,19 +44,21 @@ const Model = forwardRef((props, ref) => {
   // });
   return (
     <>
+      {/* <OrbitControls/> */}
       <primitive ref={ref} object={scene} scale={[110, 110, 110]} position={[0, 3, -100]} rotation={[0.25, 8, 0]} />;
     </>
   )
 });
 
-const Navbar = forwardRef((props, ref) => {
+const Navbar = forwardRef(({ displayNav }, ref) => {
   // const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
   return (
-    <Html ref={ref} position={[0, 3, -100]}>
-      {/* <div className="w-10 h-10 bg-red-500">
-      </div> */}
-      Hello
-    </Html>
+    <mesh ref={ref}>
+      <Html position={[-4.5, 2, 0]}>
+        <div className={`w-10 h-10 ${displayNav ? "block" : "hidden"}`}>
+        </div>
+      </Html>
+    </mesh>
   );
 });
 
@@ -223,6 +225,7 @@ const FiberScene = () => {
   // const box = useRef();
   const paintBox = useRef();
   const navbarRef = useRef();
+  const [displayNav, setDisplayNav] = useState(false);
   const light1Position = ismobile ? new THREE.Vector3(totalwidth * 0.17, totalheight * 0.5 * 0.3, 1) : new THREE.Vector3(-totalwidth * 0.5 * 0.25, totalheight * 0.5 * 0.27, 3);
   const light2Position = ismobile ? new THREE.Vector3(-totalwidth * 0.22, totalheight * 0.5 * 0.3, 2) : new THREE.Vector3(5, 3, 3);
   const mouse = new THREE.Vector2();
@@ -333,6 +336,7 @@ const FiberScene = () => {
         const timeline = gsap.timeline({
           defaults: { duration: 3, ease: "power4.inOut" },
           onComplete: () => {
+            setDisplayNav(true);
             isAnimating = false;
           },
         });
@@ -345,11 +349,13 @@ const FiberScene = () => {
           .to(c2.position, { x: totalwidth * 0.41 }, "<")
           .to(paintBoxCurr.position, { z: 0 }, "<")
           .to(navbarCurr.position, { z: 0 }, "<")
-
+          
+          // .call(() => setDisplayNav(true))
       }
       else if (imagee.position.z > 1 && camera && ground && c1 && c1 && hl && hr && imagee) {
         isAnimating = true;
         trial = false;
+        setTimeout(() => setDisplayNav(false), 1000);
         const timeline = gsap.timeline({
           defaults: { duration: 3, ease: "power4.inOut" },
           onComplete: () => {
@@ -362,9 +368,12 @@ const FiberScene = () => {
           .to(c2.position, { x: totalwidth }, "<")
           .to(paintBoxCurr.position, { z: -30 }, "<")
           .to(navbarCurr.position, { z: -30 }, "<")
-          .to(imagee.position, { z: 1 }, "-0.7") // Animate camera
+          // .to(navbarCurr.position, { z: -30 }, "<")
+          .to(imagee.position, { z: 1 }, "-0.7") // Animate camera  
           .to(hl.position, { z: 2 }, "<") // "<" means this starts at the same time as the previous animation
           .to(hr.position, { z: 2 }, "<")
+          // .call(() => setDisplayNav(false)); // Hide Navbar after animation
+
       }
     }
     console.log(trial);
@@ -412,7 +421,7 @@ const FiberScene = () => {
         />
 
         {/* testing light */}
-        <ambientLight />
+        {/* <ambientLight /> */}
 
 
         {/* Main Light */}
@@ -428,8 +437,8 @@ const FiberScene = () => {
         {/* Mouse Light */}
         <pointLight ref={mlight} intensity={50} position={[0, 100, 0]} color="beige" castShadow distance={10} />
 
-        {/* Navbar */}
-        <Navbar ref={navbarRef}/>
+        {/* Conditionally render Navbar */}
+        <Navbar ref={navbarRef} displayNav={displayNav}/>
 
         {/* <RedDot position={light1Position} /> */}
         {/* <RedDot position={light2Position} /> */}
