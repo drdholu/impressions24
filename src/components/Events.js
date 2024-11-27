@@ -180,4 +180,6 @@ export default function ScrollCards() {
       </section>
     </div>
   );
-}
+};
+
+export default Events;

@@ -3,6 +3,12 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        glow: '#00ffcc', // Custom glowing color
+      },
+      boxShadow: {
+        boxShadow: '0 0 20px rgba(128, 0, 128, 0.7)', // Custom glow shadow
+      },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
         paperHeader: ['"Pirata One"', "sans-serif"],

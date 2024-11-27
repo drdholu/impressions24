@@ -25,7 +25,7 @@ const App = () => {
       <div className=''>
         {/* <Navbar /> */}
         {/* <CustomCursor /> */}
-       <TransitionWrapper>
+       {/* <TransitionWrapper> */}
           <Routes>
             {urls.map((url, idx) => {
               return (
@@ -34,7 +34,7 @@ const App = () => {
             })}
             <Route path="*" element={<ErrorPage />} />
           </Routes> 
-        </TransitionWrapper>
+        {/* </TransitionWrapper> */}
         <BackToTop /> 
         {/* <Footer />  */}
       </div>

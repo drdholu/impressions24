@@ -1,65 +1,7 @@
-// import React from 'react';
-// import { Palette } from 'lucide-react';
-// import photo1 from '../images/impressions_campus_shot.webp'
-// import Cleo from '../images/Cleo.png'
-// const AboutUs = () => {
-//   return (
-//     <section id="about" className="relative px-4 py-24 bg-gradient-to-b from-gray-50 to-gray-100">
-//       <div className="max-w-6xl mx-auto">
-//         <div className="mb-12 text-center">
-//           <div className="flex items-center justify-center gap-2 mb-4">
-//             <Palette className="text-red-600" size={28} />
-//             <h2 className="text-3xl font-bold text-gray-900">About Impressions</h2>
-//           </div>
-//           <p className="text-xl font-medium text-red-500">By the Artist, For the Artist</p>
-//         </div>
-        
-//         <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:items-start">
-//           <div className="relative w-full md:w-1/2">
-//             <img 
-//               src={photo1}
-//               alt="Artists at work" 
-//               className="object-cover w-full rounded-lg shadow-lg h-80"
-//             />
-//             <div className="absolute bottom-0 left-0 w-full rounded-b-lg h-1/3 bg-gradient-to-t from-black/30 to-transparent" />
-//               <img 
-//                 src={Cleo} 
-//                 alt="" 
-//                 className="absolute h-[8em] -bottom-5 right-0
-//                          sm:h-[12em] sm:-bottom-10 sm:right-0
-//                          md:h-[18em] md:-bottom-28 md:left-[-8%]
-//                          lg:left-[-15%]
-//                          xl:left-[-20%]" 
-//               />
-//           </div>
-//           {/* <div>
-//             <img src={Cleo} alt="" className='absolute md:h-[20em] bottom-4 md:left-10 right-0 h-[10em]' />
-//           </div> */}
-          
-//           <div className="w-full md:w-1/2">
-//             <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
-//               Created by artists who understand the journey, Impressions is your platform to showcase talent, connect with peers, and thrive in a community that speaks your creative language. We believe in empowering artists by providing them with the tools, space, and community they need to flourish. Our platform is more than just a gallery – it's a vibrant ecosystem where creativity meets opportunity, where emerging talents find their voice, and where established artists continue to evolve. Through our curated exhibitions, collaborative spaces, and supportive network, we're fostering an environment where artistic vision can truly come to life.
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default AboutUs;
-
-// import React, { useEffect, useRef } from 'react';
-import React, { useRef } from 'react';
+import React from 'react';
 import { Palette } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-import photo1 from '../images/impressions_campus_shot.webp';
-import Cleo from '../images/Cleo.png';
-
-gsap.registerPlugin(ScrollTrigger);
-
+import photo1 from '../images/impressions_campus_shot.webp'
+import Cleo from '../images/Cleo.png'
 const AboutUs = () => {
   const containerRef = useRef(null);
   const photo1Ref = useRef(null);
@@ -68,7 +10,7 @@ const AboutUs = () => {
   useGSAP(() => {
     // Parallax effect for the main photo
     gsap.to(photo1Ref.current, {
-      yPercent: -5,
+      yPercent: -18,
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
@@ -80,7 +22,7 @@ const AboutUs = () => {
 
     // Parallax effect for Cleo with different speed and direction
     gsap.to(cleoRef.current, {
-      yPercent: 20,
+      yPercent: 10,
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
@@ -135,7 +77,7 @@ const AboutUs = () => {
 
     gsap.from(spans, {
       fontWeight: 400,
-      // color: '#ffffff',
+      color: '#374151', // text-gray-700
       stagger: 0.1,
       scrollTrigger: {
         trigger: description,
@@ -147,11 +89,7 @@ const AboutUs = () => {
   });
 
   return (
-    <section 
-      ref={containerRef}
-      id="about" 
-      className="relative px-4 py-24"
-    >
+    <section id="about" className="relative px-4 py-24">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -160,41 +98,30 @@ const AboutUs = () => {
           </div>
           <p className="text-xl font-medium text-red-500">By the Artist, For the Artist</p>
         </div>
-
-        {/* <div className="mb-12 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Palette className="text-red-600" size={28} />
-            <div ref={titleWrapperRef} className="relative overflow-hidden"> 
-              <h2 ref={titleRef} className="text-3xl font-bold text-gray-900">
-                About Impressions
-              </h2>
-            </div>
-          </div>
-        </div> */}
-
         
         <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:items-start">
           <div className="relative w-full md:w-1/2">
             <img 
-              ref={photo1Ref}
               src={photo1}
               alt="Artists at work" 
               className="object-cover w-full rounded-lg shadow-lg h-80"
             />
-            {/* <div className="absolute bottom-0 left-0 w-full rounded-b-lg h-1/3 bg-gradient-to-t from-black/30 to-transparent" /> */}
-            <img 
-              ref={cleoRef}
-              src={Cleo} 
-              alt="" 
-              className="absolute h-[8em] -bottom-5 right-0
-                       sm:h-[12em] sm:-bottom-10 sm:right-0
-                       md:h-[18em] md:-bottom-28 md:left-[-8%]
-                       lg:left-[-15%]
-                       xl:left-[-20%]" 
-            />
+            <div className="absolute bottom-0 left-0 w-full rounded-b-lg h-1/3 bg-gradient-to-t from-black/30 to-transparent" />
+              <img 
+                src={Cleo} 
+                alt="" 
+                className="absolute h-[8em] -bottom-5 right-0
+                         sm:h-[12em] sm:-bottom-10 sm:right-0
+                         md:h-[18em] md:-bottom-28 md:left-[-8%]
+                         lg:left-[-15%]
+                         xl:left-[-20%]" 
+              />
           </div>
+          {/* <div>
+            <img src={Cleo} alt="" className='absolute md:h-[20em] bottom-4 md:left-10 right-0 h-[10em]' />
+          </div> */}
           
-          {/* <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2">
             <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
               Created by artists who understand the journey, Impressions is your platform to showcase talent, connect with peers, and thrive in a community that speaks your creative language. We believe in empowering artists by providing them with the tools, space, and community they need to flourish. Our platform is more than just a gallery – it's a vibrant ecosystem where creativity meets opportunity, where emerging talents find their voice, and where established artists continue to evolve. Through our curated exhibitions, collaborative spaces, and supportive network, we're fostering an environment where artistic vision can truly come to life.
             </p>
