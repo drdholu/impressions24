@@ -6,12 +6,11 @@ function Events() {
     const [intervalId, setIntervalId] = useState(null); // Store the interval for auto-slide
 
     const items = [
-        { img: '/image/img1.png', title: 'Slider 01', content: 'Lorem ipsum dolor sit amet...' },
-        { img: '/image/img2.jpg', title: 'Slider 02', content: 'Lorem ipsum dolor sit amet...' },
-        { img: '/image/img3.jpg', title: 'Slider 03', content: 'Lorem ipsum dolor sit amet...' },
-        { img: '/image/img4.jpg', title: 'Slider 04', content: 'Lorem ipsum dolor sit amet...' },
-        { img: '/image/img5.jpg', title: 'Slider 05', content: 'Lorem ipsum dolor sit amet...' },
-        { img: '/image/img5.jpg', title: 'Slider 05', content: 'Lorem ipsum dolor sit amet...' },
+        { img: '/image/main-bg.jpg', title: 'Impressions', content: 'Lorem ipsum dolor sit amet...' },
+        { img: '/image/shoutout-stage.jpg', title: 'Shoutout', content: 'Lorem ipsum dolor sit amet...' },
+        { img: '/image/dance-stage.jpg', title: 'Dance', content: 'Lorem ipsum dolor sit amet...' },
+        { img: '/image/music-stage2.jpg', title: 'Music', content: 'Lorem ipsum dolor sit amet...' },
+        { img: '/image/abhinay-stage.jpg', title: 'Abhinay', content: 'Lorem ipsum dolor sit amet...' },
     ];
 
     const thumbnails = items.map((item, index) => ({
@@ -109,7 +108,7 @@ function Events() {
                         // <div className={`item ${index === itemActive ? 'active' : ''}`} key={index}>
                         <div className={`item absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-500 ${index === itemActive ? 'active opacity-100 z-10' : ''}`} key={index}>
                             <img className='w-full h-full object-cover' src={item.img} alt={item.title} />
-                            <div className="absolute left-[10%] top-[20%] w-[500px] max-w-[80%] z-10">
+                            <div className="absolute left-[10%] top-[20%] w-[600px] max-w-[80%] z-10">
                                 <p className='uppercase tracking-[10px]'>design</p>
                                 {/* <p className={`uppercase tracking-[10px] ${index === itemActive ? 'animate-showContent delay-[700ms]' : 'translate-y-[30px] blur-[20px] opacity-0'}`}>design</p> */}
                                 <h2 className='lg:text-[100px] text-[60px] m-0'>{item.title}</h2>
@@ -126,7 +125,7 @@ function Events() {
                     <button className="next bg-[#eee5] border-0 font-mono w-[40px] h-[40px] rounded-[5px] text-xl text-[#eee] transition-all duration-500 cursor-pointer hover:bg-[#eee] hover:text-black sm:block hidden" onClick={handleNextClick}>&gt;</button>
                 </div>
 
-                <div className="thumbnail absolute bottom-[50px] z-20 w-full h-[250px] flex gap-2 px-12 box-border overflow-auto justify-center">
+                <div className="thumbnail absolute bottom-[20px] z-20 w-full h-[250px] flex gap-2 px-12 box-border overflow-auto justify-center">
                     {thumbnails.map((thumbnail, index) => (
                         <div
                             className={`item ${thumbnail.active ? 'active' : ''} w-[150px] h-[190px] flex-shrink-0 transition-all duration-500 filter brightness-[0.5]`}
@@ -134,7 +133,7 @@ function Events() {
                             onClick={() => handleThumbnailClick(index)}
                         >
                             <img src={thumbnail.img} alt={thumbnail.title} className="w-full h-full object-cover rounded-[10px]" />
-                            <div className="content absolute inset-x-2 bottom-2">Name Slider</div>
+                            <div className="content p-0 m-0 absolute inset-x-2 bottom-0 left-0 w-full bg-sky-500 text-white text-center py-1 rounded-b-[10px]">Name Slider</div>
                         </div>
                     ))}
                 </div>
