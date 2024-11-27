@@ -4,7 +4,7 @@
 
 // import CoordinatorForm from "./components/CoordinatorForm";
 import ThreeScene from "./components/landingtrial";
-import App from "./components/fiber";
+import App from "./components/FiberScene";
 // import VolunteerForm from "./components/VolunteerForm";
 
 export const urls = [
