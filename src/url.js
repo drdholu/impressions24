@@ -8,7 +8,7 @@ import ImpressionsNewspaper from "./components/Newspaper";
 export const urls = [
     {url: '/', name: "Home", element:<ImpressionsNewspaper/> },
     // {url: '/mmi', name: "MMI", element: <VotingForm />},
-    {url: '/mmi-reg', name: "MMI Registration", element: <MMIForm />},
+    // {url: '/mmi-reg', name: "MMI Registration", element: <MMIForm />},
     // {url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
     // {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
 ]
