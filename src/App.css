@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
 
 ::-moz-selection {
   color: white;
@@ -14,9 +15,10 @@
   /* text-shadow: 2px 2px 4px #000000; */
 }
 
-/* *{
-  cursor: none;
-} */
+*{
+  /* cursor: url("/public/cursor/paint.png"); */
+  /* cursor: none; */
+}
 
 ::selection {
   color: white;

@@ -11,7 +11,7 @@ import image5 from '../images/memories/sabali7.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ScrollCards() {
+const ScrollCards=() =>{
   const containerRef = useRef(null);
   const cardsRef = useRef(null);
 
@@ -182,4 +182,4 @@ export default function ScrollCards() {
   );
 };
 
-export default Events;
+export default ScrollCards;

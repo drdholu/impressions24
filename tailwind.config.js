@@ -15,7 +15,8 @@ module.exports = {
         paperSubHead: ['"IM Fell French Canon"'],
         paperAttention: ['"Rye"'],
         paperNote: ['"Special Elite"'],
-        paperMain: ['"IM Fell English"']
+        paperMain: ['"IM Fell English"'],
+        panelFont: ['"Lacquer"']
       },
       keyframes: {
         float: {
