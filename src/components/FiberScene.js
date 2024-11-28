@@ -440,7 +440,7 @@ const FiberScene = () => {
         <pointLight ref={mlight} intensity={50} position={[0, 100, 0]} color="beige" castShadow distance={10} />
 
         <Navbar ref={navbarRef} displayNav={displayNav}/>
-        <OrbitControls/>
+        {/* <OrbitControls/> */}
         <Model ref={paintBox} />
       </Canvas>
     </div>
