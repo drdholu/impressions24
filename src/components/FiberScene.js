@@ -2,13 +2,14 @@ import { Canvas, useLoader ,useFrame} from "@react-three/fiber";
 import * as THREE from "three";
 import logo from "../images/Logos/Name Logo filled1.png";
 import logo1 from "../images/Logos/Name Logo filled.png";
-import React, { useRef, useEffect, forwardRef, useState } from "react";
+import React, { useRef, useEffect, forwardRef, useState,useImperativeHandle } from "react";
 import { PerspectiveCamera, Html, useGLTF, OrbitControls } from "@react-three/drei";
 import grnd from "../images/ground1.webp";
 import cleodance from "../images/Dance.png"
 import cleostand from "../images/Cleo1.png"
 import gsap from 'gsap';
 import { atom } from "jotai";
+import {AmbientLight} from 'three'
 
 const ismobile = window.innerWidth < 650;
 
@@ -45,10 +46,16 @@ const Model = forwardRef((props, ref) => {
 
 const Navbar = forwardRef(({ displayNav }, ref) => {
   // const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
+  const ref1 = useRef();
+  const ref2 = useRef();
+  useImperativeHandle(ref, () => ({
+    ref1: ref1.current,
+    ref2: ref2.current,
+  }));
   return (
-    <mesh ref={ref}>
-      <Html position={[-4.5, 2, 0]}>
-        <div className={`w-10 h-10 ${displayNav ? "block" : "hidden"}`}>
+    <mesh ref={ref1} position={[-3, 2.5, -100]}>
+      <Html transform occlude={true} rotation={[2, 0, 0]}>
+        <div ref={ref2} className={`w-2 h-2 ${displayNav ? "block" : "hidden"} bg-red-700`}>
         </div>
       </Html>
     </mesh>
@@ -100,11 +107,11 @@ const Loadimage = forwardRef(({ img, height, width, position }, ref) => {
 });
 
 // Red Dot Component
-const RedDot = forwardRef(({ position, radi = ismobile ? 0.15 : 0.3 }, ref) => {
+const RedDot = forwardRef(({ position, radi = ismobile ? 0.1 : 0.25 }, ref) => {
   return (
     <mesh position={position} scale={[1, 1.8, 1]} ref={ref}>
       <sphereGeometry args={[radi, 16, 16]} /> {/* Small sphere */}
-      <meshBasicMaterial color={0xF00000} />
+      <meshBasicMaterial color={0xFF0000} />
     </mesh>
   );
 });
@@ -140,7 +147,7 @@ function MovingLights({ onLightsReached }) {
         // Smoothly adjust intensity
         light.intensity = THREE.MathUtils.lerp(light.intensity, targetIntensity, intensitySpeed);
         light1.intensity = THREE.MathUtils.lerp(light1.intensity, targetIntensity, intensitySpeed);
-        if (light.intensity > 19) {
+        if (light.intensity > 16) {
           light.intensity=0;
           light1.intensity=0;
 
@@ -186,8 +193,8 @@ function MovingLights({ onLightsReached }) {
 const FiberScene = () => {
   const cameraref = useRef();
   const mlight = useRef();
-  const help1 = useRef();
-  const help2 = useRef();
+  const helplogo1 = useRef();
+  const helplogo2 = useRef();
   const imageMeshRef = useRef();
   const groundref = useRef();
   const cleoleft = useRef();
@@ -217,15 +224,15 @@ const FiberScene = () => {
     console.log("Lights reached their final position");
     setLightsReached(true); // Update shared state
     setIsVisible(true);
-    const l1 = help1.current;
-    const l2 = help2.current;
-    const targetIntensity = ismobile ? 10 : 20;
+    const l1 = helplogo1.current;
+    const l2 = helplogo2.current;
+    const targetIntensity = ismobile ? 3 : 20;
 
     const hl = helpleft.current;
     const hr = helpright.current;
     const dot1curr=dotlight1.current;
     const dot2curr=dotlight2.current;
-    const hlTargetIntensity = ismobile ? 10 : 20;
+    const hlTargetIntensity = ismobile ? 3 : 20;
     const dur = 3;
     if(dot1curr && dot2curr){
       dot1curr.intensity=20;
@@ -298,20 +305,24 @@ const FiberScene = () => {
 
   const onScroll = (event) => {
     if (!AllowScroll) return;
-    const deltaY = event.type === "click" ? 2 : -2;
-    const scrollAmount = 0.05;
+    let deltaY = event.type === "click" ? 2 : -2;
+    if(event.type==="wheel"){
+      deltaY=event.deltaY;
+    }
     const camera = cameraref.current;
     const ground = groundref.current;
     const c1 = cleoleft.current;
     const c2 = cleoright.current;
-    const hl = help1.current;
-    const hr = help2.current;
+    const hl = helplogo1.current;
+    const hr = helplogo2.current;
     const imagee = imageMeshRef.current;
     const paintBoxCurr = paintBox.current;
-    const navbarCurr = navbarRef.current;
+    const navbarCurr = navbarRef.current.ref1;
+    const textdiv=navbarRef.current.ref2;
     const dot1curr=dotlight1.current;
     const dot2curr=dotlight2.current;
     // const content = box.current;
+    console.log(textdiv);
 
     if (isAnimating || !camera || !ground || !c1 || !c2) return;
     if ((event.type==="click" || event.type === "wheel" || event.type === "touch") && camera && ground && c1 && c2 && dot1curr && dot2curr) {
@@ -337,16 +348,16 @@ const FiberScene = () => {
           .to(c1.position, { x: -totalwidth * 0.41 }, "-=1.5")
           .to(c2.position, { x: totalwidth * 0.41 }, "<")
           .to(paintBoxCurr.position, { z: 0 }, "<")
-          .to(navbarCurr.position, { z: 0 }, "<")
-          
+          .to(navbarCurr.position, { z: 3 }, "<")
+          .to(textdiv, { height:'40px',width:'40px' }, "<")
           // .call(() => setDisplayNav(true))
       }
       else if (deltaY<0 && imagee.position.z > 1 && camera && ground && c1 && c1 && hl && hr && imagee) {
         setisanimating(false);
         trial = false;
-        setTimeout(() => setDisplayNav(false), 1000);
+        // setTimeout(() => setDisplayNav(false), 1000);
         const timeline = gsap.timeline({
-          defaults: { duration: 4, ease: "power4.inOut" },
+          defaults: { duration: 2.5, ease: "power4.inOut" },
         
           onComplete: () => {
             setIsVisible(true);
@@ -359,6 +370,7 @@ const FiberScene = () => {
           .to(c2.position, { x: totalwidth }, "<")
           .to(paintBoxCurr.position, { z: -30 }, "<")
           .to(navbarCurr.position, { z: -30 }, "<")
+          .to(textdiv, { height:'10px',width:'10px' }, "<")
           .to(imagee.position, { z: 1 }, "<") // Animate camera  
           .to(dot1curr.position, { z: 2 }, "<") // Animate camera  
           .to(dot2curr.position, { z: 2 }, "<") // Animate camera  
@@ -411,8 +423,8 @@ const FiberScene = () => {
           far={1000}
           near={0.1}
         />
-        <pointLight ref={help1} intensity={0} position={[light1Position.x,light1Position.y,3]} color="red" castShadow distance={10}/>
-        <pointLight ref={help2} intensity={0} position={[light2Position.x,light2Position.y,3]} color="red" castShadow distance={10}/>
+        <pointLight ref={helplogo1} intensity={0} position={[light1Position.x,light1Position.y,3]} color="red" castShadow distance={10}/>
+        <pointLight ref={helplogo2} intensity={0} position={[light2Position.x,light2Position.y,3]} color="red" castShadow distance={10}/>
         
         <pointLight ref={helpleft} intensity={0} position={[-totalwidth*0.5+7,5,2]} color="beige" castShadow distance={40}/>
         <pointLight ref={helpright} intensity={0} position={[totalwidth*0.5-7,5,2]} color="beige" castShadow distance={40}/>
@@ -420,8 +432,8 @@ const FiberScene = () => {
         <pointLight ref={dotlight1} intensity={0} position={[endPosition.x,endPosition.y,3]} color="red" castShadow distance={20} />
         <pointLight ref={dotlight2} intensity={0} position={[endPosition1.x,endPosition1.y,3]} color="red" castShadow distance={20} />
         
-        <Html ref={start} position={[0, totalheight/17, 0]} distanceFactor={10}>
-          <div className={`text-red-500 bg-transparent rounded-[5vh] w-[15vw] h-[15vh] text-center border-2 border-red-700 ${isVisible ? 'flex' : 'hidden'} items-center justify-center shadow-[0_0_10px_red,0_0_20px_red,0_0_10px_red] transition-shadow duration-300 ease-in-out hover:bg-red-700 hover:text-black text-[40px] font-bold`}>
+        <Html ref={start} position={[-1, totalheight/17, 0]} distanceFactor={10}>
+          <div className={`text-red-500 bg-transparent rounded-[5vh] ${ismobile? 'w-[50vw] h-[15vh]': 'w-[15vw] h-[15vh]'} text-center border-2 border-red-700 ${isVisible ? 'flex' : 'hidden'} items-center justify-center shadow-[0_0_10px_red,0_0_20px_red,0_0_10px_red] transition-shadow duration-300 ease-in-out hover:bg-red-700 hover:text-black text-[40px] font-bold`}>
             <button onClick={onScroll}>
               ENTER
             </button>
@@ -432,11 +444,7 @@ const FiberScene = () => {
         <Ground ref={groundref}/>
         <Loadimage img={cleodance} height={10} width={5} position={[-totalwidth,4,1]} ref={cleoleft}/>
         <Loadimage img={cleostand} height={10} width={5} position={[totalwidth,4,1]} ref={cleoright}/>
-
-        {/* Impressions Point Light */}
-        
-
-        {/* <MovingLights onLightsReached={handleLightsReached} /> */}
+        {/* <ambientLight/> */}
         <pointLight ref={mlight} intensity={50} position={[0, 100, 0]} color="beige" castShadow distance={10} />
 
         <Navbar ref={navbarRef} displayNav={displayNav}/>
