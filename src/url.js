@@ -3,12 +3,12 @@
 // import LandingPage from "./components/LandingPage";
 // import ImpressionsNewspaper from "./components/Newspaper";
 // import VolunteerForm from "./components/VolunteerForm";
+import Landing from "./components/Landing"
 // import FiberScene from './components/FiberScene'
-import FiberScene from './components/FiberScene'
 
 export const urls = [
     // {url: '/', name: "Home", element:<LandingPage/> },
-    {url: '/', name: "Home", element:<FiberScene/>}
+    {url: '/', name: "Home", element:<Landing/>}
     // {url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
     // {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
 ]
