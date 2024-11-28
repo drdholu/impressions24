@@ -3,6 +3,9 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      cursor: {
+        custom: 'url(../src/images/brush.png), auto',
+      },
       colors: {
         glow: '#00ffcc', // Custom glowing color
       },

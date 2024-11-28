@@ -14,9 +14,9 @@
   /* text-shadow: 2px 2px 4px #000000; */
 }
 
-/* *{
-  cursor: none;
-} */
+*{
+  cursor: url("./images/brush.png");
+}
 
 ::selection {
   color: white;

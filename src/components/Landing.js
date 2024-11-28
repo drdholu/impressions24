@@ -37,11 +37,25 @@ const totalheight = totalwidth * (window.innerHeight / window.innerWidth);
 
 const Model = forwardRef((props, ref) => {
   const { scene } = useGLTF(process.env.PUBLIC_URL + "/models/paint kit mini.glb"); // Adjust the path to your GLB file
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <>
-      {/* <OrbitControls/> */}
-      <primitive ref={ref} object={scene} scale={[110, 110, 110]} position={[0, 3, -100]} rotation={[0.25, 8, 0]} />;
-    </>
+    <primitive
+    ref={ref}
+    object={scene}
+    scale={[110, 110, 110]}
+    position={[0, 3, -15]}
+    rotation={[0.25, 8, 0]}
+    onPointerOver={() => {
+      setIsHovered(true);
+      document.body.style.cursor = "custom"; // Custom cursor
+    }}
+    onPointerOut={() => {
+      setIsHovered(false);
+      document.body.style.cursor = "auto"; // Reset cursor
+    }}
+    className={`paintbox ${isHovered ? "cursor-custom" : "cursor-auto"}`}
+  />
+    
   )
 });
 
@@ -69,13 +83,13 @@ const Navbar = forwardRef(({ displayNav }, ref) => {
 
   const [hoveredItem, setHoveredItem] = useState(null);
   const items = [
-    { url: '/team', name: "Team", element: <InProgress />, position: [-3, 2, 0], className: "bg-green-500", ref: ref2 },
-    { url: '/events', name: "Events", element: <InProgress />, position: [-3.45, 3.25, 0], className: "bg-red-700", ref: ref3 },
-    { url: '/sponsors', name: "Sponsors", element: <InProgress />, position: [-2.25, 4, 0], className: "bg-purple-700", ref: ref4 },
-    { url: '/showflow', name: "Showflow", element: <InProgress />, position: [-0.35, 4.25, 0], className: "bg-red-700", ref: ref5 },
-    { url: '/proshow', name: "Proshows", element: <InProgress />, position: [0.7, 4, 0], className: "bg-green-900", ref: ref6 },
-    { url: '/about', name: "About", element: <InProgress />, position: [1.8, 3.45, 0], className: "bg-red-700", ref: ref7 },
-    { url: '/contact', name: "Contact", element: <InProgress />, position: [2.7, 2.45, 0], className: "bg-green-500", ref: ref8 },
+    { url: '/team', name: "Team", element: <InProgress />, position: [-3, 4, 2], className: "", ref: ref2 },
+    { url: '/events', name: "Events", element: <InProgress />, position: [-2.5, 3.25, 4], className: "", ref: ref3 },
+    { url: '/sponsors', name: "Sponsors", element: <InProgress />, position: [-2.25, 4, 0], className: "", ref: ref4 },
+    { url: '/showflow', name: "Showflow", element: <InProgress />, position: [-0.35, 4.25, 0], className: "", ref: ref5 },
+    { url: '/proshow', name: "Proshows", element: <InProgress />, position: [0.7, 4, 0], className: "", ref: ref6 },
+    { url: '/about', name: "About", element: <InProgress />, position: [1.8, 3.45, 0], className: "", ref: ref7 },
+    { url: '/contact', name: "Contact", element: <InProgress />, position: [2.7, 3.5, 0], className: "", ref: ref8 },
   ]
 
   // Create an array of refs
@@ -89,7 +103,7 @@ const Navbar = forwardRef(({ displayNav }, ref) => {
   //   }, {});
   // });
   return (
-    <mesh ref={ref1} position={[0, 0, -100]}>
+    <mesh ref={ref1} position={[0, 0, -15]}>
       {items.map((item, idx) => {
         return (
           <Html transform occlude={true} rotation={[-19.8, 0, 0]} position={item.position}>
@@ -109,7 +123,7 @@ const Navbar = forwardRef(({ displayNav }, ref) => {
               backdrop-blur-sm
               transform`}>
 
-              {hoveredItem === idx && (
+              {/* {hoveredItem === idx && (
                 <mesh>
                   <div
                     className="absolute z-50 
@@ -140,7 +154,7 @@ const Navbar = forwardRef(({ displayNav }, ref) => {
                     </p>
                   </div>
                 </mesh>
-              )}
+              )} */}
               <a href={item.url}>{item.name}</a>
 
             </div>
@@ -179,7 +193,7 @@ const Ground = forwardRef((props, ref) => {
   );
 });
 
-const Loadimage = forwardRef(({ img, height, width, position }, ref) => {
+const Loadimage = forwardRef(({ img, height, width, position,rotation }, ref) => {
   const texture = useLoader(THREE.TextureLoader, img); // Load texture
 
   return (
@@ -188,6 +202,7 @@ const Loadimage = forwardRef(({ img, height, width, position }, ref) => {
       position={position}
       castShadow
       receiveShadow
+      rotation={rotation}
     >
       <planeGeometry args={[width, height]} /> {/* Initial size; updated dynamically */}
       <meshStandardMaterial map={texture} transparent={true} alphaTest={0.5} />
@@ -291,6 +306,7 @@ const Landing = () => {
   const helpright = useRef();
   const helpleft = useRef();
   const start = useRef();
+  const paintboxlight=useRef();
   // const box = useRef();
   const paintBox = useRef();
   const navbarRef = useRef();
@@ -304,6 +320,8 @@ const Landing = () => {
   const [lightsReached, setLightsReached] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [AllowScroll, setAllowScroll] = useState(false);
+  
+
   const newLogoTexturetexture = useLoader(THREE.TextureLoader, logo1); // Load texture
   const endPosition = ismobile ? new THREE.Vector3(-totalwidth * 0.5 * 0.52, totalheight * 0.5 * 0.72, 3) : new THREE.Vector3(-totalwidth * 0.5 * 0.32, totalheight * 0.5 * 0.8, 3);
   const endPosition1 = ismobile ? new THREE.Vector3(totalwidth * 0.5 * 0.345, totalheight * 0.5 * 0.62, 3) : new THREE.Vector3(totalwidth * 0.5 * 0.21, totalheight * 0.5 * 0.61, 3);
@@ -340,16 +358,7 @@ const Landing = () => {
         duration: dur,
         ease: "power2.out",
       });
-      gsap.to(hl, {
-        intensity: hlTargetIntensity,
-        duration: dur,
-        ease: "power2.out",
-      });
-      gsap.to(hr, {
-        intensity: hlTargetIntensity,
-        duration: dur,
-        ease: "power2.out",
-      });
+      
     }
 
     // Update the image texture
@@ -402,14 +411,15 @@ const Landing = () => {
     const ground = groundref.current;
     const c1 = cleoleft.current;
     const c2 = cleoright.current;
-    const hl = helplogo1.current;
-    const hr = helplogo2.current;
+    const hl = helpleft.current;
+    const hr = helpright.current;
     const imagee = imageMeshRef.current;
     const paintBoxCurr = paintBox.current;
     const navbarCurr = navbarRef.current.ref1;
     const textdiv = navbarRef.current.ref2;
     const dot1curr = dotlight1.current;
     const dot2curr = dotlight2.current;
+    const paintlightcurr=paintboxlight.current;
     // const content = box.current;
     console.log(textdiv);
 
@@ -429,19 +439,24 @@ const Landing = () => {
         });
 
         timeline
-          .to(imagee.position, { z: 16 })
-          .to(dot1curr.position, { z: 17 }, "<")
-          .to(dot2curr.position, { z: 17 }, "<")
-          .to(hl.position, { z: 17 }, "<")
-          .to(hr.position, { z: 17 }, "<")
-          .to(c1.position, { x: -totalwidth * 0.41 }, "-=1.5")
+          // .to(imagee.position, { z: 16 })
+          // .to(dot1curr.position, { z: 17 }, "<")
+          // .to(dot2curr.position, { z: 17 }, "<")
+          
+          
+          // .to(paintBoxCurr.position, { z: 0 }, "<")
+          // .to(navbarCurr.position, { z: 3 }, "<")
+          // .to(textdiv, { height: '40px', width: '40px' }, "<")
+          
+          .to(camera.position,{z:0})
+          .to(c1.position, { x: -totalwidth * 0.41 }, "<")
           .to(c2.position, { x: totalwidth * 0.41 }, "<")
-          .to(paintBoxCurr.position, { z: 0 }, "<")
-          .to(navbarCurr.position, { z: 3 }, "<")
-          .to(textdiv, { height: '40px', width: '40px' }, "<")
+          .to(hl, { intensity: 17 },"<")
+          .to(hr, { intensity: 17 }, "<")
+          .to(paintlightcurr, { intensity: 17 }, "<")
         // .call(() => setDisplayNav(true))
       }
-      else if (deltaY < 0 && imagee.position.z > 1 && camera && ground && c1 && c1 && hl && hr && imagee) {
+      else if (deltaY < 0 && camera && ground && c1 && c1 && hl && hr && imagee) {
         setisanimating(false);
         trial = false;
         // setTimeout(() => setDisplayNav(false), 1000);
@@ -457,14 +472,18 @@ const Landing = () => {
         timeline
           .to(c1.position, { x: -totalwidth })
           .to(c2.position, { x: totalwidth }, "<")
-          .to(paintBoxCurr.position, { z: -30 }, "<")
-          .to(navbarCurr.position, { z: -30 }, "<")
-          .to(textdiv, { height: '10px', width: '10px' }, "<")
-          .to(imagee.position, { z: 1 }, "<") // Animate camera  
-          .to(dot1curr.position, { z: 2 }, "<") // Animate camera  
-          .to(dot2curr.position, { z: 2 }, "<") // Animate camera  
-          .to(hl.position, { z: 2 }, "<") // "<" means this starts at the same time as the previous animation
-          .to(hr.position, { z: 2 }, "<")
+          .to(hl, { intensity: 0 },"<")
+          .to(hr, { intensity: 0 }, "<")
+          .to(paintlightcurr, { intensity: 0 }, "<")
+          // .to(paintBoxCurr.position, { z: -30 }, "<")
+          // .to(navbarCurr.position, { z: -30 }, "<")
+          // .to(textdiv, { height: '10px', width: '10px' }, "<")
+          // .to(imagee.position, { z: 1 }, "<") // Animate camera  
+          // .to(dot1curr.position, { z: 2 }, "<") // Animate camera  
+          // .to(dot2curr.position, { z: 2 }, "<") // Animate camera  
+          // .to(hl.position, { z: 2 }, "<") // "<" means this starts at the same time as the previous animation
+          // .to(hr.position, { z: 2 }, "<")
+          .to(camera.position,{z:15},"<")
         // .call(() => setDisplayNav(false)); // Hide Navbar after animation
 
       }
@@ -515,8 +534,9 @@ const Landing = () => {
         <pointLight ref={helplogo1} intensity={0} position={[light1Position.x, light1Position.y, 3]} color="red" castShadow distance={10} />
         <pointLight ref={helplogo2} intensity={0} position={[light2Position.x, light2Position.y, 3]} color="red" castShadow distance={10} />
 
-        <pointLight ref={helpleft} intensity={0} position={[-totalwidth * 0.5 + 7, 5, 2]} color="beige" castShadow distance={40} />
-        <pointLight ref={helpright} intensity={0} position={[totalwidth * 0.5 - 7, 5, 2]} color="beige" castShadow distance={40} />
+        <pointLight ref={helpleft} intensity={0} position={[-totalwidth * 0.5 + 7, 5, -14]} color="beige" castShadow distance={40} />
+        <pointLight ref={helpright} intensity={0} position={[totalwidth * 0.5 - 7, 5, -14]} color="beige" castShadow distance={40} />
+        <pointLight ref={paintboxlight} intensity={0} position={[0,7,-14]} color="beige" castShadow distance={40} />
         <MovingLights onLightsReached={handleLightsReached} />
         <pointLight ref={dotlight1} intensity={0} position={[endPosition.x, endPosition.y, 3]} color="red" castShadow distance={20} />
         <pointLight ref={dotlight2} intensity={0} position={[endPosition1.x, endPosition1.y, 3]} color="red" castShadow distance={20} />
@@ -577,9 +597,9 @@ const Landing = () => {
 
         <ImageMesh ref={imageMeshRef} />
         <Ground ref={groundref} />
-        <Loadimage img={cleodance} rotation={[0, 10, 0]} height={10} width={10} position={[-totalwidth, 4, 1]} ref={cleoleft} />
-        <Loadimage img={cleostand} rotation={[0, 10, 0]} height={10} width={10} position={[totalwidth, 4, 1]} ref={cleoright} />
-        <ambientLight />
+        <Loadimage img={cleodance} rotation={[0, 2, 0]} height={10} width={10} position={[-totalwidth, 4, -15]} ref={cleoleft} />
+        <Loadimage img={cleostand} rotation={[0, -2, 0]} height={10} width={10} position={[totalwidth, 4, -15]} ref={cleoright} />
+        {/* <ambientLight /> */}
         <pointLight ref={mlight} intensity={50} position={[0, 100, 0]} color="beige" castShadow distance={10} />
 
         <Navbar ref={navbarRef} displayNav={displayNav} />
