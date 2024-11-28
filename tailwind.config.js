@@ -3,11 +3,14 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      // cursor: {
+      //   custom: 'url(../src/images/brush.png), auto',
+      // },
       colors: {
-        glow: '#00ffcc', // Custom glowing color
+        glow: '#00ffcc',
       },
       boxShadow: {
-        boxShadow: '0 0 20px rgba(128, 0, 128, 0.7)', // Custom glow shadow
+        boxShadow: '0 0 20px rgba(128, 0, 128, 0.7)',
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],

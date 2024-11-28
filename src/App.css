@@ -15,11 +15,6 @@
   /* text-shadow: 2px 2px 4px #000000; */
 }
 
-*{
-  /* cursor: url("/public/cursor/paint.png"); */
-  /* cursor: none; */
-}
-
 ::selection {
   color: white;
   background: black;
