@@ -1,6 +1,6 @@
 // import CoordinatorForm from "./components/CoordinatorForm";
 // import LandingPage from "./components/LandingPage";
-import MMIForm from "./components/MmiForm";
+// import MMIForm from "./components/MmiForm";
 import ImpressionsNewspaper from "./components/Newspaper";
 // import VotingForm from "./components/VotingForm";
 // import VolunteerForm from "./components/VolunteerForm";
