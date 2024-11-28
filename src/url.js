@@ -9,7 +9,7 @@ export const urls = [
     {url: '/', name: "Home", element: <Landing />},
     //{url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
 
+    // {url: '/', name: "Home", element:<LandingPage/> },
     // {url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
-
     // {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
 ]
