@@ -45,7 +45,7 @@ const totalheight = totalwidth * (window.innerHeight / window.innerWidth);
 const Model = forwardRef((props, ref) => {
   // const { scene } = useGLTF(process.env.PUBLIC_URL + "/models/paint kit mini.glb");
   const { scene } = useGLTF(process.env.PUBLIC_URL + "/models/palette.glb");
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
   return (
     <primitive
     ref={ref}
@@ -53,15 +53,15 @@ const Model = forwardRef((props, ref) => {
     scale={[110, 110, 110]}
     position={[0, 3, -17]}
     rotation={[0.4, 9, 0]}
-    onPointerOver={() => {
-      setIsHovered(true);
-      document.body.style.cursor = "custom"; // Custom cursor
-    }}
-    onPointerOut={() => {
-      setIsHovered(false);
-      document.body.style.cursor = "auto"; // Reset cursor
-    }}
-    className={`paintbox ${isHovered ? "cursor-custom" : "cursor-auto"}`}
+    // onPointerOver={() => {
+    //   setIsHovered(true);
+    //   document.body.style.cursor = "custom";
+    // }}
+    // onPointerOut={() => {
+    //   setIsHovered(false);
+    //   document.body.style.cursor = "auto";
+    // }}
+    // className={`paintbox ${isHovered ? "cursor-custom" : "cursor-auto"}`}
   />
     
   )
@@ -301,6 +301,33 @@ function MovingLights({ onLightsReached }) {
   );
 }
 
+const LightPointer = forwardRef(({ position = [0, 0, 0], targetPos }, ref) => {
+  useFrame(() => {
+    if (ref.current && targetPos) {
+      ref.current.position.lerp(targetPos, 0.15);
+      
+      // Add subtle hover movement
+      const time = Date.now() * 0.001;
+      ref.current.position.y += Math.sin(time * 2) * 0.002;
+    }
+  });
+
+  return (
+    <group ref={ref}>
+      <mesh>
+        <sphereGeometry args={[0.15, 16, 16]} />
+        <meshBasicMaterial color={0xffffff} transparent opacity={0.6} />
+      </mesh>
+      <pointLight
+        intensity={40}
+        distance={8}
+        decay={2}
+        color="white"
+      />
+    </group>
+  );
+});
+
 const Landing = () => {
   const cameraref = useRef();
   const mlight = useRef();
@@ -331,7 +358,9 @@ const Landing = () => {
   const [lightsReached, setLightsReached] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [AllowScroll, setAllowScroll] = useState(false);
-  
+  const lightPointerRef = useRef();
+  const lightTargetPos = useRef(new THREE.Vector3());
+  const lerpSpeed = 0.15;
 
   const newLogoTexturetexture = useLoader(THREE.TextureLoader, logo1); // Load texture
   const endPosition = ismobile ? new THREE.Vector3(-totalwidth * 0.5 * 0.52, totalheight * 0.5 * 0.72, 3) : new THREE.Vector3(-totalwidth * 0.5 * 0.32, totalheight * 0.5 * 0.8, 3);
@@ -516,20 +545,25 @@ const Landing = () => {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     const camera = cameraref.current;
-    const mouseLight = mlight.current;
-    let targetPlaneZ;
-    if (camera && mouseLight) {
+    
+    if (camera && lightPointerRef.current) {
       raycaster.setFromCamera(mouse, camera);
-      targetPlaneZ = camera.position.z - 13;
-
-    }
-    const planeNormal = new THREE.Vector3(0, 0, -1);
-    const plane = new THREE.Plane(planeNormal, targetPlaneZ);
-    const intersectPoint = new THREE.Vector3();
-    raycaster.ray.intersectPlane(plane, intersectPoint);
-
-    if (intersectPoint && mouseLight) {
-      mouseLight.position.copy(intersectPoint);
+      const targetPlaneZ = camera.position.z - 13;
+      const planeNormal = new THREE.Vector3(0, 0, -1);
+      const plane = new THREE.Plane(planeNormal, targetPlaneZ);
+      const intersectPoint = new THREE.Vector3();
+      
+      if (raycaster.ray.intersectPlane(plane, intersectPoint)) {
+        lightTargetPos.current.copy(intersectPoint);
+        
+        // Dynamic color based on position
+        const color = new THREE.Color(0xffffff);
+        
+        if (lightPointerRef.current) {
+          lightPointerRef.current.children[0].material.color = color;
+          lightPointerRef.current.children[1].color = color;
+        }
+      }
     }
   };
 
@@ -640,8 +674,7 @@ const Landing = () => {
           </div>
         </Html>
         {/* <ambientLight /> */}
-        <pointLight ref={mlight} intensity={50} position={[0, 100, 0]} color="beige" castShadow distance={10} />
-
+        <LightPointer ref={lightPointerRef} targetPos={lightTargetPos.current} />
         <Navbar ref={navbarRef} displayNav={displayNav} />
         {/* <OrbitControls/> */}
         <Model ref={paintBox} />

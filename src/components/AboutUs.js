@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Palette } from 'lucide-react';
 import photo1 from '../images/impressions_campus_shot.webp'
 import Cleo from '../images/Cleo.png'
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+
 const AboutUs = () => {
   const containerRef = useRef(null);
   const photo1Ref = useRef(null);
@@ -125,7 +128,7 @@ const AboutUs = () => {
             <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
               Created by artists who understand the journey, Impressions is your platform to showcase talent, connect with peers, and thrive in a community that speaks your creative language. We believe in empowering artists by providing them with the tools, space, and community they need to flourish. Our platform is more than just a gallery – it's a vibrant ecosystem where creativity meets opportunity, where emerging talents find their voice, and where established artists continue to evolve. Through our curated exhibitions, collaborative spaces, and supportive network, we're fostering an environment where artistic vision can truly come to life.
             </p>
-          </div> */}
+          </div>
 
           <div className="w-full md:w-1/2">
             <p ref={descriptionRef} className="text-lg leading-relaxed md:text-xl">
