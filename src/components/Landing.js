@@ -663,12 +663,12 @@ const Landing = () => {
         <Loadimage img={cleoDance} rotation={[0, -0.5, 0]} height={10} width={10} position={[totalwidth/5, 4, -20]} ref={cleoright2}/>
         
         {/* Rangrez */}
-        <Html transform occlude={true} position={[0, 10, -12]} ref={themeRef}>
-          <div className="flex flex-col items-center justify-center font-sans text-white">
+        <Html transform occlude={true} position={[0, 10.75, -12]} ref={themeRef}>
+          <div className="flex flex-col items-center justify-center text-white font-hindi">
             <div className="text-9xl">
               RANGREZ
             </div>
-            <div>
+            <div className="mt-5 font-panelFont">
               The Artist Within
             </div>
           </div>

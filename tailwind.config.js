@@ -19,7 +19,9 @@ module.exports = {
         paperAttention: ['"Rye"'],
         paperNote: ['"Special Elite"'],
         paperMain: ['"IM Fell English"'],
-        panelFont: ['"Lacquer"']
+        panelFont: ['"Lacquer"'],
+        hindi: ['"Samarkan"'],
+        hindi2: ['"Ananda Akchyar"']
       },
       keyframes: {
         float: {
