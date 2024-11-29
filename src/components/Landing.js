@@ -51,7 +51,7 @@ const Model = forwardRef((props, ref) => {
     ref={ref}
     object={scene}
     scale={[110, 110, 110]}
-    position={[0, 3, -15]}
+    position={[0, 3, -16]}
     rotation={[0.4, 9, 0]}
     onPointerOver={() => {
       setIsHovered(true);
@@ -90,13 +90,13 @@ const Navbar = forwardRef(({ displayNav }, ref) => {
 
   const [hoveredItem, setHoveredItem] = useState(null);
   const items = [
-    { url: '/team', name: "Team", position: [0.5, 1.25, 4], className: "", ref: ref2 },
-    { url: '/events', name: "Events", position: [-2.15, 1.65, 4], className: "", ref: ref3 },
-    { url: '/sponsors', name: "Sponsors", position: [-3, 3, 4], className: "", ref: ref4 },
-    { url: '/showflow', name: "Showflow", position: [-1.75, 4.15, 3.5], className: "", ref: ref5 },
-    { url: '/proshow', name: "Proshows", position: [-0.15, 4.15, 3.5], className: "", ref: ref6 },
-    { url: '/about', name: "About", position: [1.5, 4.15, 3.5], className: "", ref: ref7 },
-    { url: '/contact', name: "Contact", position: [3, 3.75, 3.5], className: "", ref: ref8 },
+    { url: '/team', name: "Team", position: [0.5, 1.25, 3], className: "", ref: ref2 },
+    { url: '/events', name: "Events", position: [-2.15, 1.65, 3], className: "", ref: ref3 },
+    { url: '/sponsors', name: "Sponsors", position: [-3, 3, 3], className: "", ref: ref4 },
+    { url: '/showflow', name: "Showflow", position: [-1.75, 4.15, 2.5], className: "", ref: ref5 },
+    { url: '/proshow', name: "Proshows", position: [-0.15, 4.15, 2.5], className: "", ref: ref6 },
+    { url: '/about', name: "About", position: [1.5, 4.15, 2.5], className: "", ref: ref7 },
+    { url: '/contact', name: "Contact", position: [3, 3.75, 2.5], className: "", ref: ref8 },
   ]
 
   // Create an array of refs
