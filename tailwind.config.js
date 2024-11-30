@@ -3,6 +3,9 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      scrollMargin: {
+        30: '7.5rem', // Adds scroll-mt-30
+      },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
         paperHeader: ['"Pirata One"', "sans-serif"],

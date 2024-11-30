@@ -19,12 +19,16 @@ import CustomCursor from './components/ui/CustomeCursor';
 // import AnimatedBackground from './components/ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';
 import EventsPage from './components/EventsPage';
+import Explore from './components/Explore';
 const App = () => {
   return (
     // <Preloader>
       <div className=''>
         <CustomCursor />
-        <EventsPage />
+        <Routes>
+          <Route path="/" element={<EventsPage />} />
+          <Route path="/explore" element={<Explore />} />
+        </Routes>
       </div>
 
 
