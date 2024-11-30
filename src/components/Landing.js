@@ -44,15 +44,15 @@ const totalheight = totalwidth * (window.innerHeight / window.innerWidth);
 
 const Model = forwardRef((props, ref) => {
   // const { scene } = useGLTF(process.env.PUBLIC_URL + "/models/paint kit mini.glb");
-  const { scene } = useGLTF(process.env.PUBLIC_URL + "/models/palette.glb");
+  const { scene } = useGLTF(process.env.PUBLIC_URL + props.url);
   // const [isHovered, setIsHovered] = useState(false);
   return (
     <primitive
     ref={ref}
     object={scene}
-    scale={[110, 110, 110]}
-    position={[0, 3, -17]}
-    rotation={[0.4, 9, 0]}
+    scale={props.scale}
+    position={props.position}
+    rotation={props.rotation}
     // onPointerOver={() => {
     //   setIsHovered(true);
     //   document.body.style.cursor = "custom";
@@ -731,12 +731,15 @@ const Landing = () => {
             </div>
           </div>
         </Html>
-        {/* <ambientLight /> */}
+        <ambientLight />
         <LightPointer ref={lightPointerRef} targetPos={lightTargetPos.current} />
         <Navbar ref={navbarRef} displayNav={displayNav} />
         {/* <OrbitControls/> */}
-        <Model ref={paintBox} />
+        <Model ref={paintBox} rotation={[0.4, 9, 0]} position={[0, 3, -17]} scale={[110, 110, 110]} url={"models/palette.glb"} />
+        <Model rotation={[0, 5, 0]} position={[25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
+        <Model rotation={[0, -5, 0]} position={[-25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
       </Canvas>
+
     </div>
   );
 }
