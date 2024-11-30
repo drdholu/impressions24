@@ -5,15 +5,19 @@ import logo1 from "../images/Logos/Name Logo filled.png";
 import React, { useRef, useEffect, forwardRef, useState, useImperativeHandle } from "react";
 import { PerspectiveCamera, Html, useGLTF, OrbitControls } from "@react-three/drei";
 import grnd from "../images/ground1.webp";
-import cleoDance from "../images/Dance.png"
-import cleoMain from "../images/Cleo1.png"
-import cleoCam from "../images/Cleo1.png"
-import cleoAbhinay from "../images/Cleo1.png"
-import cleoShoutout from "../images/Cleo1.png"
+// import cleodance from "../images/Cleo/Dance.png"
+// import cleostand from "../images/Cleo/Shoutout.png"
+import cleoANC from '../images/Cleo/AnC.png'
+import cleoCam from '../images/Cleo/Camera.png'
+import cleoMain from '../images/Cleo/Cleo.png'
+import cleoDance from '../images/Cleo/Dance.png'
+import cleoMusic from '../images/Cleo/Music.png'
+import cleoShoutout from '../images/Cleo/Shoutout.png'
+import cleoAbhinay from '../images/Cleo/abhinay.png'
 import gsap from 'gsap';
 import { atom } from "jotai";
 import { AmbientLight } from 'three'
-import InProgress from "./InProgress";
+import InProgress from "./ui/InProgress";
 
 const ismobile = window.innerWidth < 650;
 
@@ -39,24 +43,25 @@ const totalheight = totalwidth * (window.innerHeight / window.innerWidth);
 
 
 const Model = forwardRef((props, ref) => {
-  const { scene } = useGLTF(process.env.PUBLIC_URL + "/models/paint kit mini.glb"); // Adjust the path to your GLB file
-  const [isHovered, setIsHovered] = useState(false);
+  // const { scene } = useGLTF(process.env.PUBLIC_URL + "/models/paint kit mini.glb");
+  const { scene } = useGLTF(process.env.PUBLIC_URL + "/models/palette.glb");
+  // const [isHovered, setIsHovered] = useState(false);
   return (
     <primitive
     ref={ref}
     object={scene}
     scale={[110, 110, 110]}
-    position={[0, 3, -15]}
-    rotation={[0.25, 8, 0]}
-    onPointerOver={() => {
-      setIsHovered(true);
-      document.body.style.cursor = "custom"; // Custom cursor
-    }}
-    onPointerOut={() => {
-      setIsHovered(false);
-      document.body.style.cursor = "auto"; // Reset cursor
-    }}
-    className={`paintbox ${isHovered ? "cursor-custom" : "cursor-auto"}`}
+    position={[0, 3, -17]}
+    rotation={[0.4, 9, 0]}
+    // onPointerOver={() => {
+    //   setIsHovered(true);
+    //   document.body.style.cursor = "custom";
+    // }}
+    // onPointerOut={() => {
+    //   setIsHovered(false);
+    //   document.body.style.cursor = "auto";
+    // }}
+    // className={`paintbox ${isHovered ? "cursor-custom" : "cursor-auto"}`}
   />
     
   )
@@ -64,7 +69,6 @@ const Model = forwardRef((props, ref) => {
 
 const Navbar = forwardRef(({ displayNav }, ref) => {
   // const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
-
   const ref1 = useRef();
   const ref2 = useRef();
   const ref3 = useRef();
@@ -86,13 +90,13 @@ const Navbar = forwardRef(({ displayNav }, ref) => {
 
   const [hoveredItem, setHoveredItem] = useState(null);
   const items = [
-    { url: '/team', name: "Team", element: <InProgress />, position: [-3, 4, 2], className: "", ref: ref2 },
-    { url: '/events', name: "Events", element: <InProgress />, position: [-2.5, 3.25, 4], className: "", ref: ref3 },
-    { url: '/sponsors', name: "Sponsors", element: <InProgress />, position: [-2.25, 4, 0], className: "", ref: ref4 },
-    { url: '/showflow', name: "Showflow", element: <InProgress />, position: [-0.35, 4.25, 0], className: "", ref: ref5 },
-    { url: '/proshow', name: "Proshows", element: <InProgress />, position: [0.7, 4, 0], className: "", ref: ref6 },
-    { url: '/about', name: "About", element: <InProgress />, position: [1.8, 3.45, 0], className: "", ref: ref7 },
-    { url: '/contact', name: "Contact", element: <InProgress />, position: [2.7, 3.5, 0], className: "", ref: ref8 },
+    { url: '/team', name: "Team", position: [0.5, 1.25, 2], className: "", ref: ref2 },
+    { url: '/events', name: "Events", position: [-2.15, 1.65, 2], className: "", ref: ref3 },
+    { url: '/sponsors', name: "Sponsors", position: [-3, 3, 3], className: "", ref: ref4 },
+    { url: '/showflow', name: "Showflow", position: [-1.75, 4.15, 1.5], className: "", ref: ref5 },
+    { url: '/proshow', name: "Proshows", position: [-0.15, 4.15, 1.5], className: "", ref: ref6 },
+    { url: '/about', name: "About", position: [1.5, 4.15, 1.5], className: "", ref: ref7 },
+    { url: '/contact', name: "Contact", position: [3, 3.75, 1.5], className: "", ref: ref8 },
   ]
 
   // Create an array of refs
@@ -123,7 +127,8 @@ const Navbar = forwardRef(({ displayNav }, ref) => {
               hover:scale-110 hover:brightness-110
               cursor-pointer
               text-white
-              backdrop-blur-sm
+              bg-black/20
+              backdrop-blur-3xl
               transform`}>
 
               {/* {hoveredItem === idx && (
@@ -135,7 +140,6 @@ const Navbar = forwardRef(({ displayNav }, ref) => {
                     bg-white/90 
                     text-black 
                     p-4 
-                    rounded-lg 
                     shadow-lg
                     before:content-[''] 
                     before:absolute 
@@ -331,8 +335,12 @@ const Landing = () => {
   const helplogo2 = useRef();
   const imageMeshRef = useRef();
   const groundref = useRef();
-  const cleoleft = useRef();
-  const cleoright = useRef();
+  const cleoleft1 = useRef();
+  const cleoleft2 = useRef();
+  const cleoright1 = useRef();
+  const cleoright2 = useRef();
+  const cleoMain1 = useRef();
+  const themeRef = useRef();
   const helpright = useRef();
   const helpleft = useRef();
   const start = useRef();
@@ -362,7 +370,9 @@ const Landing = () => {
   const [lightsReached, setLightsReached] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [AllowScroll, setAllowScroll] = useState(false);
-  
+  const lightPointerRef = useRef();
+  const lightTargetPos = useRef(new THREE.Vector3());
+  const lerpSpeed = 0.15;
 
   const newLogoTexturetexture = useLoader(THREE.TextureLoader, logo1); // Load texture
   const endPosition = ismobile ? new THREE.Vector3(-totalwidth * 0.5 * 0.52, totalheight * 0.5 * 0.72, 3) : new THREE.Vector3(-totalwidth * 0.5 * 0.32, totalheight * 0.5 * 0.8, 3);
@@ -455,9 +465,12 @@ const Landing = () => {
     const camera = cameraref.current;
     const ground = groundref.current;
     const c1 = cleoleft1.current;
+    const cL2 = cleoleft2.current;
     const c2 = cleoright1.current;
+    const cR2 = cleoright2.current;
     const hl = helpleft.current;
     const hr = helpright.current;
+    const themeRefCurr = themeRef.current;
     const imagee = imageMeshRef.current;
     const paintBoxCurr = paintBox.current;
     const navbarCurr = navbarRef.current.ref1;
@@ -485,7 +498,7 @@ const Landing = () => {
         trial = true;
         lightPointerRef.current.children[0].intensity=0;
         const timeline = gsap.timeline({
-          defaults: { duration: 3, ease: "power4.inOut" },
+          defaults: { duration: 2.5, ease: "power4.inOut" },
           onComplete: () => {
             setDisplayNav(true);
             setisanimating(false);
@@ -506,8 +519,7 @@ const Landing = () => {
           .to(camera.position,{z:0})
           .to(c1.position, { x: -totalwidth * 0.41 }, "<")
           .to(c2.position, { x: totalwidth * 0.41 }, "<")
-          
-          
+          // .to(themeRefCurr.position, {y: 18})
           // .to(cL2.position, { x: -totalwidth/5 }, "<")
           // .to(cR2.position, { x: totalwidth/5 }, "<")
           .to(hl, { intensity: 17 },"<")
@@ -538,6 +550,9 @@ const Landing = () => {
         timeline
           .to(c1.position, { x: -totalwidth })
           .to(c2.position, { x: totalwidth }, "<")
+          // .to(themeRefCurr.position, {y: 100}, "<")
+          // .to(cL2.position, { x: -totalwidth })
+          // .to(cR2.position, { x: totalwidth }, "<")
           .to(hl, { intensity: 0 },"<")
           .to(hr, { intensity: 0 }, "<")
           .to(cleol1curr, { intensity: 0 }, "<")
@@ -556,7 +571,7 @@ const Landing = () => {
           .to(camera.position,{z:15},"<")
         // .call(() => setDisplayNav(false)); // Hide Navbar after animation
 
-      }
+      } 
     }
     console.log(trial);
     //window.scrollTo(0,0,0);
@@ -566,7 +581,8 @@ const Landing = () => {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     const camera = cameraref.current;
-    if (camera) {
+    
+    if (camera && lightPointerRef.current) {
       raycaster.setFromCamera(mouse, camera);
       const targetPlaneZ = camera.position.z - 13;
       const planeNormal = new THREE.Vector3(0, 0, -1);
@@ -580,8 +596,8 @@ const Landing = () => {
         const color = new THREE.Color(0xffffff);
         
         if (lightPointerRef.current) {
-          // lightPointerRef.current.children[0].material.color = color;
-          lightPointerRef.current.children[0].color = color;
+          lightPointerRef.current.children[0].material.color = color;
+          lightPointerRef.current.children[1].color = color;
         }
       }
     }
@@ -724,8 +740,7 @@ const Landing = () => {
           </div>
         </Html>
         {/* <ambientLight /> */}
-        {/* <pointLight ref={mlight} intensity={50} position={[0, 100, 0]} color="beige" castShadow distance={10} /> */}
-        <LightPointer position={lightTargetPos.current} ref={lightPointerRef}/>
+        <LightPointer ref={lightPointerRef} targetPos={lightTargetPos.current} />
         <Navbar ref={navbarRef} displayNav={displayNav} />
         {/* <OrbitControls/> */}
         <Model ref={paintBox} />
