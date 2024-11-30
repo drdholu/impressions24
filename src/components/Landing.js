@@ -2,22 +2,22 @@ import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import logo from "../images/Logos/Name Logo filled1.png";
 import logo1 from "../images/Logos/Name Logo filled.png";
-import React, { useRef, useEffect, forwardRef, useState, useImperativeHandle } from "react";
-import { PerspectiveCamera, Html, useGLTF, OrbitControls } from "@react-three/drei";
+import React, { useRef, forwardRef, useState, useImperativeHandle } from "react";
+import { PerspectiveCamera, Html, useGLTF } from "@react-three/drei";
 import grnd from "../images/ground1.webp";
 // import cleodance from "../images/Cleo/Dance.png"
 // import cleostand from "../images/Cleo/Shoutout.png"
-import cleoANC from '../images/Cleo/AnC.png'
+// import cleoANC from '../images/Cleo/AnC.png'
 import cleoCam from '../images/Cleo/Camera.png'
 import cleoMain from '../images/Cleo/Cleo.png'
 import cleoDance from '../images/Cleo/Dance.png'
-import cleoMusic from '../images/Cleo/Music.png'
+// import cleoMusic from '../images/Cleo/Music.png'
 import cleoShoutout from '../images/Cleo/Shoutout.png'
 import cleoAbhinay from '../images/Cleo/abhinay.png'
 import gsap from 'gsap';
 import { atom } from "jotai";
-import { AmbientLight } from 'three'
-import InProgress from "./ui/InProgress";
+// import { AmbientLight } from 'three'
+// import InProgress from "./ui/InProgress";
 
 const ismobile = window.innerWidth < 650;
 
@@ -331,7 +331,7 @@ const LightPointer = forwardRef(({ position = [0, 0, 16], targetPos }, ref) => {
 
 const Landing = () => {
   const cameraref = useRef();
-  const mlight = useRef();
+  // const mlight = useRef();
   const helplogo1 = useRef();
   const helplogo2 = useRef();
   const imageMeshRef = useRef();
@@ -340,7 +340,7 @@ const Landing = () => {
   const cleoleft2 = useRef();
   const cleoright1 = useRef();
   const cleoright2 = useRef();
-  const cleoMain1 = useRef();
+  // const cleoMain1 = useRef();
   const themeRef = useRef();
   const helpright = useRef();
   const lamp1=useRef();
@@ -370,7 +370,7 @@ const Landing = () => {
   const [AllowScroll, setAllowScroll] = useState(false);
   const lightPointerRef = useRef();
   const lightTargetPos = useRef(new THREE.Vector3());
-  const lerpSpeed = 0.15;
+  // const lerpSpeed = 0.15;
   const newLogoTexturetexture = useLoader(THREE.TextureLoader, logo1); // Load texture
   const endPosition = ismobile ? new THREE.Vector3(-totalwidth * 0.5 * 0.52, totalheight * 0.5 * 0.72, 3) : new THREE.Vector3(-totalwidth * 0.5 * 0.32, totalheight * 0.5 * 0.8, 3);
   const endPosition1 = ismobile ? new THREE.Vector3(totalwidth * 0.5 * 0.345, totalheight * 0.5 * 0.62, 3) : new THREE.Vector3(totalwidth * 0.5 * 0.21, totalheight * 0.5 * 0.61, 3);
@@ -388,7 +388,7 @@ const Landing = () => {
     const hr = helpright.current;
     const dot1curr = dotlight1.current;
     const dot2curr = dotlight2.current;
-    const hlTargetIntensity = ismobile ? 3 : 20;
+    // const hlTargetIntensity = ismobile ? 3 : 20;
     const dur = 3;
 
     lightPointerRef.current.children[0].intensity = 40;
@@ -418,33 +418,33 @@ const Landing = () => {
   };
 
   const [isAnimating, setisanimating] = useState(false);
-  let startY = 0;
-  let isTouchScrolling = false;
+  // let startY = 0;
+  // let isTouchScrolling = false;
 
-  const onTouchStart = (event) => {
-    //console.log("Touched");
-    if (event.touches && event.touches.length === 1) {
-      startY = event.touches[0].clientY;
-      isTouchScrolling = true;
-    }
-  };
+  // const onTouchStart = (event) => {
+  //   //console.log("Touched");
+  //   if (event.touches && event.touches.length === 1) {
+  //     startY = event.touches[0].clientY;
+  //     isTouchScrolling = true;
+  //   }
+  // };
 
-  const onTouchMove = (event) => {
-    //console.log("Touched1");
-    if (isTouchScrolling) {
-      const currentY = event.touches[0].clientY;
-      const deltaY = startY - currentY;
+  // const onTouchMove = (event) => {
+  //   //console.log("Touched1");
+  //   if (isTouchScrolling) {
+  //     const currentY = event.touches[0].clientY;
+  //     const deltaY = startY - currentY;
 
-      if (Math.abs(deltaY) > 10) {
-        startY = currentY;
-        onScroll({ type: "touch", deltaY });
-      }
-    }
-  };
+  //     if (Math.abs(deltaY) > 10) {
+  //       startY = currentY;
+  //       onScroll({ type: "touch", deltaY });
+  //     }
+  //   }
+  // };
 
-  const onTouchEnd = () => {
-    isTouchScrolling = false;
-  };
+  // const onTouchEnd = () => {
+  //   isTouchScrolling = false;
+  // };
 
   // Add the touch event listeners
   window.addEventListener("touchstart", onscroll);
@@ -455,25 +455,25 @@ const Landing = () => {
   const onScroll = (event) => {
     
     if (!AllowScroll) return;
-    let deltaY = event.type === "click" ? 2 : -2;
-    if (event.type === "wheel") {
-      deltaY = event.deltaY;
-    }
+    // let deltaY = event.type === "click" ? 2 : -2;
+    // if (event.type === "wheel") {
+    //   deltaY = event.deltaY;
+    // }
     const lmp1=lamplight1.current;
     const lmp2=lamplight2.current;
     const camera = cameraref.current;
     const ground = groundref.current;
     const c1 = cleoleft1.current;
-    const cL2 = cleoleft2.current;
+    // const cL2 = cleoleft2.current;
     const c2 = cleoright1.current;
-    const cR2 = cleoright2.current;
+    // const cR2 = cleoright2.current;
     const hl = helpleft.current;
     const hr = helpright.current;
-    const themeRefCurr = themeRef.current;
-    const imagee = imageMeshRef.current;
-    const paintBoxCurr = paintBox.current;
-    const navbarCurr = navbarRef.current.ref1;
-    const textdiv = navbarRef.current.ref2;
+    // const themeRefCurr = themeRef.current;
+    // const imagee = imageMeshRef.current;
+    // const paintBoxCurr = paintBox.current;
+    // const navbarCurr = navbarRef.current.ref1;
+    // const textdiv = navbarRef.current.ref2;
     const dot1curr = dotlight1.current;
     const dot2curr = dotlight2.current;
     const paintlightcurr=paintboxlight.current;
