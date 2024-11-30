@@ -513,8 +513,8 @@ const Landing = () => {
           .to(c1.position, { x: -totalwidth * 0.41 }, "<")
           .to(c2.position, { x: totalwidth * 0.41 }, "<")
           // .to(themeRefCurr.position, {y: 18})
-          // .to(cL2.position, { x: -totalwidth/5 }, "<")
-          // .to(cR2.position, { x: totalwidth/5 }, "<")
+          .to(cL2.position, { z: -20 }, "<")
+          .to(cR2.position, { z: -20}, "<")
           .to(hl, { intensity: 17 },"<")
           .to(hr, { intensity: 17 }, "<")
           .to(cleol1curr, { intensity: cleointensity }, "<")
@@ -544,8 +544,8 @@ const Landing = () => {
           .to(c1.position, { x: -totalwidth })
           .to(c2.position, { x: totalwidth }, "<")
           // .to(themeRefCurr.position, {y: 100}, "<")
-          // .to(cL2.position, { x: -totalwidth })
-          // .to(cR2.position, { x: totalwidth }, "<")
+          .to(cL2.position, { z: -40 }, "<")
+          .to(cR2.position, { z: -40}, "<")
           .to(hl, { intensity: 0 },"<")
           .to(hr, { intensity: 0 }, "<")
           .to(cleol1curr, { intensity: 0 }, "<")
@@ -717,16 +717,16 @@ const Landing = () => {
         <Loadimage img={cleoCam} rotation={[0, 0, 0]} height={10} width={10} position={[-totalwidth, 4, -21]} ref={cleoleft1}/>
         <Loadimage img={cleoAbhinay} rotation={[0, 0, 0]} height={10} width={10} position={[totalwidth, 5, -21]} ref={cleoright1} />
         <Loadimage img={cleoMain} rotation={[0, 0, 0]} height={10} width={10} position={[0, 4, -19]}/>
-        <Loadimage img={cleoShoutout} rotation={[0, 0.5, 0]} height={10} width={10} position={[-totalwidth/5, 4, -20]}ref={cleoleft2}/>
-        <Loadimage img={cleoDance} rotation={[0, -0.5, 0]} height={10} width={10} position={[totalwidth/5, 4, -20]} ref={cleoright2}/>
+        <Loadimage img={cleoShoutout} rotation={[0, 0.5, 0]} height={10} width={10} position={[-totalwidth/5, 4, -100]}ref={cleoleft2}/>
+        <Loadimage img={cleoDance} rotation={[0, -0.5, 0]} height={10} width={10} position={[totalwidth/5, 4, -100]} ref={cleoright2}/>
         
         {/* Rangrez */}
-        <Html transform occlude={true} position={[0, 10, -15]} ref={themeRef} rotation={[0,0,0]}>
-          <div className="flex flex-col items-center justify-center font-paperSubHead text-white">
-            <div className="text-9xl">
+        <Html transform occlude={true} position={[0, 12, -15]} ref={themeRef} rotation={[0,0,0]}>
+          <div className="flex flex-col items-center justify-center font-hindi text-white h-[30vh] w-[50vw]">
+            <div className="text-[13vw]">
               RANGREZ
             </div>
-            <div>
+            <div className="text-[3vh]">
               The Artist Within
             </div>
           </div>
