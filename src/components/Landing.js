@@ -45,11 +45,12 @@ const totalheight = totalwidth * (window.innerHeight / window.innerWidth);
 const Model = forwardRef((props, ref) => {
   // const { scene } = useGLTF(process.env.PUBLIC_URL + "/models/paint kit mini.glb");
   const { scene } = useGLTF(process.env.PUBLIC_URL + props.url);
+  const clonedScene = scene.clone();
   // const [isHovered, setIsHovered] = useState(false);
   return (
     <primitive
     ref={ref}
-    object={scene}
+    object={clonedScene}
     scale={props.scale}
     position={props.position}
     rotation={props.rotation}
@@ -342,6 +343,10 @@ const Landing = () => {
   const cleoMain1 = useRef();
   const themeRef = useRef();
   const helpright = useRef();
+  const lamp1=useRef();
+  const lamp2=useRef();
+  const lamplight1=useRef();
+  const lamplight2=useRef();
   const helpleft = useRef();
   const start = useRef();
   const back = useRef();
@@ -366,7 +371,6 @@ const Landing = () => {
   const lightPointerRef = useRef();
   const lightTargetPos = useRef(new THREE.Vector3());
   const lerpSpeed = 0.15;
-
   const newLogoTexturetexture = useLoader(THREE.TextureLoader, logo1); // Load texture
   const endPosition = ismobile ? new THREE.Vector3(-totalwidth * 0.5 * 0.52, totalheight * 0.5 * 0.72, 3) : new THREE.Vector3(-totalwidth * 0.5 * 0.32, totalheight * 0.5 * 0.8, 3);
   const endPosition1 = ismobile ? new THREE.Vector3(totalwidth * 0.5 * 0.345, totalheight * 0.5 * 0.62, 3) : new THREE.Vector3(totalwidth * 0.5 * 0.21, totalheight * 0.5 * 0.61, 3);
@@ -386,6 +390,7 @@ const Landing = () => {
     const dot2curr = dotlight2.current;
     const hlTargetIntensity = ismobile ? 3 : 20;
     const dur = 3;
+
     lightPointerRef.current.children[0].intensity = 40;
     if (dot1curr && dot2curr) {
       dot1curr.intensity = 20;
@@ -454,7 +459,8 @@ const Landing = () => {
     if (event.type === "wheel") {
       deltaY = event.deltaY;
     }
-    
+    const lmp1=lamplight1.current;
+    const lmp2=lamplight2.current;
     const camera = cameraref.current;
     const ground = groundref.current;
     const c1 = cleoleft1.current;
@@ -520,6 +526,8 @@ const Landing = () => {
           .to(cleor1curr, { intensity: cleointensity }, "<")
           .to(cleor2curr, { intensity: cleointensity }, "<")
           .to(paintlightcurr, { intensity: 17 }, "<")
+          .to(lmp1, { intensity: 60 }, "<")
+          .to(lmp2, { intensity: 60 }, "<")
           
         // .call(() => setDisplayNav(true))
       }
@@ -549,6 +557,8 @@ const Landing = () => {
           .to(cleor1curr, { intensity: 0 }, "<")
           .to(cleor2curr, { intensity: 0 }, "<")
           .to(paintlightcurr, { intensity: 0 }, "<")
+          .to(lmp1, { intensity: 0 }, "<")
+          .to(lmp2, { intensity: 0 }, "<")
           // .to(paintBoxCurr.position, { z: -30 }, "<")
           // .to(navbarCurr.position, { z: -30 }, "<")
           // .to(textdiv, { height: '10px', width: '10px' }, "<")
@@ -616,6 +626,8 @@ const Landing = () => {
         <pointLight ref={cleol2} intensity={0} position={[-totalwidth * 0.4, 7, -16]} color="beige" castShadow distance={40} />
         <pointLight ref={cleor1} intensity={0} position={[totalwidth * 0.2, 7, -15]} color="white" castShadow distance={60} />
         <pointLight ref={cleor2} intensity={0} position={[totalwidth * 0.4, 7, -18]} color="beige" castShadow distance={40} />
+        <pointLight ref={lamplight1} intensity={0} position={[-20,10,-20]} color="yellow" castShadow distance={40} />
+        <pointLight ref={lamplight2} intensity={0} position={[20,10,-20]} color="yellow" castShadow distance={40} />
         <pointLight ref={paintboxlight} intensity={0} position={[0,7,-14]} color="beige" castShadow distance={40} />
         <MovingLights onLightsReached={handleLightsReached} />
         <pointLight ref={dotlight1} intensity={0} position={[endPosition.x, endPosition.y, 3]} color="red" castShadow distance={20} />
@@ -727,13 +739,13 @@ const Landing = () => {
             </div>
           </div>
         </Html>
-        <ambientLight />
+        {/* <ambientLight /> */}
         <LightPointer ref={lightPointerRef} targetPos={lightTargetPos.current} />
         <Navbar ref={navbarRef} displayNav={displayNav} />
         {/* <OrbitControls/> */}
         <Model ref={paintBox} rotation={[0.4, 9, 0]} position={[0, 3, -17]} scale={[110, 110, 110]} url={"models/palette.glb"} />
-        <Model rotation={[0, 5, 0]} position={[25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
-        <Model rotation={[0, -5, 0]} position={[-25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
+        <Model ref={lamp1} rotation={[0, -5, 0]} position={[-25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
+        <Model ref={lamp2} rotation={[0, 5, 0]} position={[25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
       </Canvas>
 
     </div>
