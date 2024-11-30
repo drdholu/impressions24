@@ -735,7 +735,7 @@ const Landing = () => {
         <Loadimage img={cleoAbhinay} rotation={[0, 0, 0]} height={10} width={10} position={[totalwidth, 5, -21]} ref={cleoright1} />
         
         {/* Rangrez */}
-        {/* <Html transform occlude={true} position={[0, 12, -15]} ref={themeRef} rotation={[0,0,0]}>
+        <Html transform occlude={true} position={[0, 12, -15]} ref={themeRef} rotation={[0,0,0]}>
           <div className="flex flex-col items-center justify-center font-hindi text-white h-[30vh] w-[50vw]">
             <div className="text-[13vw]">
               RANGREZ
@@ -744,7 +744,7 @@ const Landing = () => {
               The Artist Within
             </div>
           </div>
-        </Html> */}
+        </Html>
         <LightPointer ref={lightPointerRef} targetPos={lightTargetPos.current} />
         <Navbar ref={navbarRef} displayNav={displayNav} />
         
