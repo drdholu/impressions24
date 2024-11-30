@@ -1,0 +1,89 @@
+body {
+    background-color: #2E3537;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cards: 6; 
+    --cardWidth: 400px; 
+    --cardHeight: 90vh; 
+    --cardTopPadding: 1.5em;
+    --cardMargin: 15vh; 
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    padding-top: 20px;
+    align-items: center;
+    padding-bottom: 5px;
+    position: relative;
+    text-align: center; 
+}
+
+.main-heading {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 0;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#cards {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--cards), var(--cardHeight));
+    gap: var(--cardMargin);
+}
+
+.card {
+    position: sticky;
+    top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:nth-child(1) {
+    transform: translateY(-20px); 
+}
+.card:nth-child(2) {
+    transform: translateY(-10px); 
+}
+.card:nth-child(3) {
+    transform: translateY(0px); 
+}
+.card:nth-child(4) {
+    transform: translateY(10px); 
+}
+.card:nth-child(5) {
+    transform: translateY(20px); 
+}
+.card:nth-child(6) {
+    transform: translateY(30px); 
+}
+
+.card-body {
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 50px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    height: var(--cardHeight);
+    width: var(--cardWidth);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #fff;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
