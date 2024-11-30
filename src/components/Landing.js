@@ -484,7 +484,7 @@ const Landing = () => {
     if ((event.type === "click" || event.type === "wheel" || event.type === "touch") && camera && ground && c1 && c2 && dot1curr && dot2curr) {
       
       if (camera.position.z>10) {
-        
+        lightPointerRef.current.children[0].intensity = 0;
         setIsVisible(false);
         setisanimating(true);
         const cleointensity=ismobile?10:25;
@@ -589,8 +589,7 @@ const Landing = () => {
         const color = new THREE.Color(0xffffff);
         
         if (lightPointerRef.current) {
-          lightPointerRef.current.children[0].material.color = color;
-          lightPointerRef.current.children[1].color = color;
+          lightPointerRef.current.children[0].color = color;
         }
       }
     }
