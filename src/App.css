@@ -41,6 +41,56 @@
   padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+
+@font-face {
+  font-family: 'Samarkan';
+  src: url('/public/fonts/samarkan-font/SamarkanNormal-Gg5D.ttf') format('truetype');
+  /* src: url('/public/fonts/samarkan-font/SamarkanOblique-BXew.ttf') format('truetype'); */
+}
+
+@font-face {
+  font-family: 'Ananda Akchyar';
+  src: url('/public/fonts/ananda-akchyar-bold/Ananda Akchyar Bold/Ananda Akchyar Bold.ttf') format('truetype');
+}
+
+::-moz-selection {
+  color: white;
+  background: black;
+  /* text-shadow: 2px 2px 4px #000000; */
+}
+
+/* *{
+  cursor: none;
+} */
+
+::selection {
+  color: white;
+  background: black;
+  /* text-shadow: 1px 1px 4px #1c1c1ca6; */
+}
+
+
+@keyframes scroll-horizontal {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-scroll-horizontal {
+    animation: scroll-horizontal 20s linear infinite linear;
+}
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App{
   display: flex;
   flex-direction: column;

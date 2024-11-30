@@ -2,15 +2,15 @@
 import React, { useRef } from 'react';
 import Events from './Events';
 import AboutUs from './AboutUs';
-import Memories from './Memories';
+// import Memories from './Memories';
 // import vid from '../images/fire3.3gp';
 import logo from '../images/Logos/Name Logo filled.png';
-import canvas from '../images/background.webp'
+// import canvas from '../images/background.webp'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+// import Spline from '@splinetool/react-spline';
 gsap.registerPlugin(ScrollTrigger);
-
 
 const LandingPage = () => {
   const mainLogoRef = useRef();
@@ -32,32 +32,24 @@ const LandingPage = () => {
 
   return (
     <div>
-      <div ref={containerRef} className="flex items-center justify-center h-[90vh]">
+      <div ref={containerRef} className="flex items-center justify-center h-[90svh]">
         {/* <video autoPlay loop muted src={vid} className="w-full h-full object-cover z-[-1]"></video> */}
-        <img src={canvas} alt="" className='w-full h-full object-cover z-[-1] brightness-50'/>
+        {/* <img src={canvas} alt="" className='w-full h-full object-cover z-[-1] brightness-50'/> */}
+        {/* <Spline className='object-cover w-full h-full brightness-50' scene="https://prod.spline.design/TbqwE-b2sM-CV50w/scene.splinecode" /> */}
         <div ref={mainLogoRef} className="absolute flex flex-col items-center justify-center w-3/5 opacity-100">
-          {/* <div className="absolute" style={{ transform: 'scale(1)' }}>
-            <img
-              src={logo}
-              alt="Background Fest Logo"
-              className="w-full opacity-50"
-              style={{ transform: calculateTransform(0.5) }} 
-            />
-          </div> */}
           <img
-            src={logo}
+            src={logo}  
             alt="Foreground Fest Logo"
-            className="relative w-full transition-transform hover:scale-105"
-            // style={{ transform: calculateTransform(0.45) }}
+            className="relative w-full transition-transform"
           />
-          <div className="relative text-sm text-white text-shadow-md">
+          <div className="relative text-sm text-shadow-md">
             BY THE ARTIST, FOR THE ARTIST
           </div>
         </div>
       </div>
       <AboutUs />
       <Events />
-      <Memories />
+      {/* <Memories /> */}
     </div>
   );
 };

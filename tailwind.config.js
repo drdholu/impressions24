@@ -3,13 +3,25 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      // cursor: {
+      //   custom: 'url(../src/images/brush.png), auto',
+      // },
+      colors: {
+        glow: '#00ffcc',
+      },
+      boxShadow: {
+        boxShadow: '0 0 20px rgba(128, 0, 128, 0.7)',
+      },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
         paperHeader: ['"Pirata One"', "sans-serif"],
         paperSubHead: ['"IM Fell French Canon"'],
         paperAttention: ['"Rye"'],
         paperNote: ['"Special Elite"'],
-        paperMain: ['"IM Fell English"']
+        paperMain: ['"IM Fell English"'],
+        panelFont: ['"Lacquer"'],
+        hindi: ['"Samarkan"'],
+        hindi2: ['"Ananda Akchyar"']
       },
       keyframes: {
         float: {
