@@ -722,7 +722,7 @@ const Landing = () => {
         
         {/* Rangrez */}
         <Html transform occlude={true} position={[0, 10, -15]} ref={themeRef} rotation={[0,0,0]}>
-          <div className="flex flex-col items-center justify-center font-paperSubHead text-white">
+          <div className="flex flex-col items-center justify-center text-white font-paperSubHead">
             <div className="text-9xl">
               RANGREZ
             </div>
