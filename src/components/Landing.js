@@ -626,8 +626,10 @@ const Landing = () => {
         <pointLight ref={cleol2} intensity={0} position={[-totalwidth * 0.4, 7, -16]} color="beige" castShadow distance={40} />
         <pointLight ref={cleor1} intensity={0} position={[totalwidth * 0.2, 7, -15]} color="white" castShadow distance={60} />
         <pointLight ref={cleor2} intensity={0} position={[totalwidth * 0.4, 7, -18]} color="beige" castShadow distance={40} />
+        
         <pointLight ref={lamplight1} intensity={0} position={[-20,10,-20]} color="yellow" castShadow distance={40} />
         <pointLight ref={lamplight2} intensity={0} position={[20,10,-20]} color="yellow" castShadow distance={40} />
+        
         <pointLight ref={paintboxlight} intensity={0} position={[0,7,-14]} color="beige" castShadow distance={40} />
         <MovingLights onLightsReached={handleLightsReached} />
         <pointLight ref={dotlight1} intensity={0} position={[endPosition.x, endPosition.y, 3]} color="red" castShadow distance={20} />
