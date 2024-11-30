@@ -20,8 +20,8 @@ module.exports = {
         paperNote: ['"Special Elite"'],
         paperMain: ['"IM Fell English"'],
         panelFont: ['"Lacquer"'],
-        hindi: ['"Samarkan"'],
-        hindi2: ['"Ananda Akchyar"']
+        hindi: ['"Samarkan"', 'display'],  // Added display strategy
+        // hindi2: ['"Ananda Akchyar"']
       },
       keyframes: {
         float: {

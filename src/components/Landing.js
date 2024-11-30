@@ -617,6 +617,7 @@ const Landing = () => {
           far={1000}
           near={0.1}
         />
+        {/* <ambientLight /> */}
         <pointLight ref={helplogo1} intensity={0} position={[light1Position.x, light1Position.y, 3]} color="red" castShadow distance={10} />
         <pointLight ref={helplogo2} intensity={0} position={[light2Position.x, light2Position.y, 3]} color="red" castShadow distance={10} />
 
@@ -627,6 +628,7 @@ const Landing = () => {
         <pointLight ref={cleor1} intensity={0} position={[totalwidth * 0.2, 7, -15]} color="white" castShadow distance={60} />
         <pointLight ref={cleor2} intensity={0} position={[totalwidth * 0.4, 7, -18]} color="beige" castShadow distance={40} />
         
+        {/* Lamp lights */}
         <pointLight ref={lamplight1} intensity={0} position={[-20,10,-20]} color="yellow" castShadow distance={40} />
         <pointLight ref={lamplight2} intensity={0} position={[20,10,-20]} color="yellow" castShadow distance={40} />
         
@@ -689,6 +691,7 @@ const Landing = () => {
             </button>
           </div>
         </Html>
+
         <Html transform occlude={true} ref={back} position={[-1, totalheight*0.13, -15]} rotation={[-19.8, 0, 0]} distanceFactor={10}>
           <div className={`
           ${ismobile ? 'w-[20vw] h-[10vh]' : 'w-[10vw] h-[10vh]'} 
@@ -725,13 +728,14 @@ const Landing = () => {
         {/* Cleo Images */}
         {/* <Loadimage img={cleoANC} rotation={[0, 1.5, 0]} height={10} width={10} position={[-totalwidth, 4, -15]} /> */}
         <Loadimage img={cleoCam} rotation={[0, 0, 0]} height={10} width={10} position={[-totalwidth, 4, -21]} ref={cleoleft1}/>
+        {/* <Loadimage img={cleoShoutout} rotation={[0, 0.5, 0]} height={10} width={10} position={[-totalwidth/5, 4, -20]}ref={cleoleft2}/> */}
+        <Loadimage img={cleoShoutout} rotation={[0, 0.5, 0]} height={10} width={10} position={[-10, 4, -20]}ref={cleoleft2}/>
+        <Loadimage img={cleoMain} rotation={[0, 0, 0]} height={10} width={10} position={[0, 5.5, -19.5]}/>
+        <Loadimage img={cleoDance} rotation={[0, -0.5, 0]} height={10} width={10} position={[10, 4, -20]} ref={cleoright2}/>
         <Loadimage img={cleoAbhinay} rotation={[0, 0, 0]} height={10} width={10} position={[totalwidth, 5, -21]} ref={cleoright1} />
-        <Loadimage img={cleoMain} rotation={[0, 0, 0]} height={10} width={10} position={[0, 4, -19]}/>
-        <Loadimage img={cleoShoutout} rotation={[0, 0.5, 0]} height={10} width={10} position={[-totalwidth/5, 4, -20]}ref={cleoleft2}/>
-        <Loadimage img={cleoDance} rotation={[0, -0.5, 0]} height={10} width={10} position={[totalwidth/5, 4, -20]} ref={cleoright2}/>
         
         {/* Rangrez */}
-        <Html transform occlude={true} position={[0, 12, -15]} ref={themeRef} rotation={[0,0,0]}>
+        {/* <Html transform occlude={true} position={[0, 12, -15]} ref={themeRef} rotation={[0,0,0]}>
           <div className="flex flex-col items-center justify-center font-hindi text-white h-[30vh] w-[50vw]">
             <div className="text-[13vw]">
               RANGREZ
@@ -740,14 +744,18 @@ const Landing = () => {
               The Artist Within
             </div>
           </div>
-        </Html>
-        {/* <ambientLight /> */}
+        </Html> */}
         <LightPointer ref={lightPointerRef} targetPos={lightTargetPos.current} />
         <Navbar ref={navbarRef} displayNav={displayNav} />
-        {/* <OrbitControls/> */}
+        
+        {/* Palette */}
         <Model ref={paintBox} rotation={[0.4, 9, 0]} position={[0, 3, -17]} scale={[110, 110, 110]} url={"models/palette.glb"} />
-        <Model ref={lamp1} rotation={[0, -5, 0]} position={[-25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
-        <Model ref={lamp2} rotation={[0, 5, 0]} position={[25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
+        
+        {/* Lamps */}
+        {/* <Model ref={lamp1} rotation={[0, -5, 0]} position={[-25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} /> */}
+        <Model ref={lamp1} rotation={[0, -5, 0]} position={[-totalwidth/1.55, 0, -22]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
+        {/* <Model ref={lamp2} rotation={[0, 5, 0]} position={[25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} /> */}
+        <Model ref={lamp2} rotation={[0, 5, 0]} position={[totalwidth/1.55, 0, -22]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
       </Canvas>
 
     </div>

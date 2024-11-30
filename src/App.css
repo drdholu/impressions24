@@ -15,10 +15,10 @@
   /* src: url('/public/fonts/samarkan-font/SamarkanOblique-BXew.ttf') format('truetype'); */
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Ananda Akchyar';
   src: url('/public/fonts/ananda-akchyar-bold/Ananda Akchyar Bold/Ananda Akchyar Bold.ttf') format('truetype');
-}
+} */
 
 ::-moz-selection {
   color: white;
