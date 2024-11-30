@@ -17,6 +17,8 @@
 *{
   cursor: url("./images/brush.png");
 }
+  cursor: none;
+} */
 
 ::selection {
   color: white;
