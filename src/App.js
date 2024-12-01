@@ -29,7 +29,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<MainCards />} />
           <Route path="/events/:moduleName" element={<EventsPage />} />
-          <Route path="/:moduleName/:eventTitle" element={<Explore />} />
+          <Route path="/events/:moduleName/:eventTitle" element={<Explore />} />
         </Routes>
         {/* <MainCards /> */}
       </div>

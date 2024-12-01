@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const Explore = () => {
-    const { eventTitle } = useParams();
+    const {moduleName, eventTitle } = useParams();
     const navigate = useNavigate();
     const [eventData, setEventData] = useState(null);
 
@@ -14,7 +14,8 @@ const Explore = () => {
         }
 
         // Fetch data and find the specific event by title
-        fetch('/data/data1.json')
+        // fetch('/data/data1.json')
+        fetch(`/data/${moduleName}.json`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch event data');
@@ -117,6 +118,19 @@ const Explore = () => {
                     </p>
                 </div>
             </section>
+
+            {eventData.buttonLink && (
+                <section className="w-[1200px] max-w-[90%] mx-auto py-12 mt-1 text-center">
+                    <a
+                        href={eventData.buttonLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform duration-300 hover:tracking-wider hover:shadow-xl"
+                    >
+                        Learn More
+                    </a>
+                </section>
+            )}
 
             {/* Footer */}
             <footer className="bg-black/80 py-6 text-center text-gray-400 mt-auto">
