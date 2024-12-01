@@ -20,18 +20,19 @@ import CustomCursor from './components/ui/CustomeCursor';
 // import Spline from '@splinetool/react-spline';
 import EventsPage from './components/EventsPage';
 import Explore from './components/Explore';
+import MainCards from './components/MainCards';
 const App = () => {
   return (
     // <Preloader>
       <div className=''>
         <CustomCursor />
         <Routes>
-          <Route path="/" element={<EventsPage />} />
+          <Route path="/" element={<MainCards />} />
+          <Route path="/events/:moduleName" element={<EventsPage />} />
           <Route path="/explore/:eventTitle" element={<Explore />} />
         </Routes>
+        {/* <MainCards /> */}
       </div>
-
-
     // </Preloader>
   );
 };

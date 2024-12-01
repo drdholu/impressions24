@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../eventspage.css';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function Events() {
+    const { moduleName } = useParams();
     const [itemActive, setItemActive] = useState(0); // Track the active item
     const [intervalId, setIntervalId] = useState(null); // Store the interval for auto-slide
+    // const [items, setItems] = useState([]);
+    // console.log(moduleName);
 
     const items = [
         { img: '/image/main-bg.jpg', title: 'Impressions', content: 'Lorem ipsum dolor sit amet...' },
@@ -13,6 +17,26 @@ function Events() {
         { img: '/image/music-stage2.jpg', title: 'Music', content: 'Lorem ipsum dolor sit amet...' },
         { img: '/image/abhinay-stage.jpg', title: 'Abhinay', content: 'Lorem ipsum dolor sit amet...' },
     ];
+
+    // useEffect(() => {
+    //     // Fetch and map items dynamically based on the module name
+    //     const fetchAndMapItems = async () => {
+    //         try {
+    //           const response = await fetch(`${process.env.PUBLIC_URL}/Shoutout.json`);
+    //           if (!response.ok) {
+    //             throw new Error(`HTTP error! status: ${response.status}`);
+    //           }
+    //           const data = await response.json();
+    //           console.log(data);
+    //           // Map the data to your desired format if necessary
+    //         } catch (error) {
+    //           console.error('Error fetching data:', error);
+    //         }
+    //       };
+    //     if (moduleName) {
+    //         fetchAndMapItems();
+    //     }
+    // }, [moduleName]);
 
     // console.log('Active Event Title:', items[itemActive].title);
 
