@@ -1,40 +1,86 @@
 {
     "events": [
       {
-        "title": "High Current",
+            "title": "Bomb A Drop",
+            "sections": [
+              {
+                "id": "details",
+                "title": "Details",
+                "content": [
+                  "Battle of DJ's and EDM's."
+                ]   
+              },
+              {
+                "id": "structure",
+                "title": "Structure",
+                "content": [
+                  "Time Limit: 8-10 minutes, including setting up time.",
+                  "There will be only one round in which the participant will showcase their talent in:"
+                ],
+                "list": [
+                  "Mixing",
+                  "Looping",
+                  "Miking"
+                ]
+              },
+              {
+                "id": "guidelines",
+                "title": "Guidelines",
+                "content": [
+                  "This competition is open for college students aged 16-25.",
+                  "All mixing needs to be done on the spot. Usage of pre-mixed songs or mash-ups will lead to disqualification.",
+                  "Only understandable language songs are allowed.",
+                  "Computer-operated software/hardware or any other equipment (other than headphones, pen drives, and CDs) is not allowed.",
+                  "No limit on the amount of tracks used (but the time limit should be strictly followed).",
+                  "Participants are allowed to go live on Instagram but it is mandatory to tag Impressions. A mixer (with booth outs(monitor)) will be provided. If participants wish to bring any addittionla gears, they should bring it themselves and should inform the organisers in advance.",
+                  "Participants must carry a backup CD and Pen-drives.."
+                ]
+              },
+              {
+                "id": "contact",
+                "title": "Contact Us",
+                "coordinator": "Arnav Bankar",
+                "phone": "+91 7506175550",
+                "email": "events23.impressions@gmail.com"
+              }
+            ],
+            "footer": {
+              "text": "© 2023 Impressions. All Rights Reserved."
+            }
+        },
+      {
+        "title": "High-Current",
         "sections": [
           {
             "id": "details",
             "title": "Details",
             "content": [
-              "Battle of DJ's and EDM's is an exciting competition where participants showcase their skills in mixing, looping, and miking.",
-              "Push your limits and let the music speak for itself!"
+              "This competition is Battle of Bands."
             ]   
           },
           {
             "id": "structure",
             "title": "Structure",
             "content": [
-              "There will be only one round in which the participant will showcase their talent in:",
-              "Time Limit: 8-10 minutes (including setup time)."
+              "Time limit: 10 to 12 minutes. (includes setup time.)",
+              "The competition will consist of one single round.",
+              "Bands can perform any song of their choice, cover or an original composition",
+              "There should be only 6-7 performing members(on-stage)."
             ],
             "list": [
-              "Mixing",
-              "Looping",
-              "Miking"
             ]
           },
           {
             "id": "guidelines",
             "title": "Guidelines",
             "content": [
-              "Competition is open for college students aged 16-25.",
-              "All mixing needs to be done on the spot. Pre-mixed songs or mash-ups will lead to disqualification.",
-              "Only understandable language songs are allowed.",
-              "Computer-operated software/hardware or any other equipment (other than headphones, pen drives, and CDs) is not allowed.",
-              "No limit on the number of tracks used, but the time limit should be strictly followed.",
-              "Participants are allowed to go live on Instagram but must tag Impressions. A mixer (with booth outs) will be provided. Inform the organizers in advance if additional gear is needed.",
-              "Participants must carry a backup CD and Pen-drives."
+              "This competition is open for college students age group 16-25 only.",
+                  "The Band should not be a professional band and should not have a professional performer as a member of the band.",
+                  "A right-handed 5-piece drum kit, microphones, amplifiers (one guitar amplifiers and one bass amplifier) and line-in jacks will be provided, common to all bands for the duration of their performances.",
+                  "In case the band drummer is left-handed, the team must inform the organisers at the time of registration itself.",
+                  "Participants can bring their own drum pieces (cymbals). Vocals with lyrics are mandatory. At least 3 instruments should be used (different guitars will count as different instruments).",
+                  "Use of pre-recorded music such as guitar loops and keyboard samples will result in disqualification. The chosen songs and their lyrics, the name of the song and the instruments are subject to verification.",
+                  "In case they fail to adhere to the rules, participants will be disqualified. Usage of abusive language, obscenity, direct implications, plagiarism, and racial, religious/ linguistic, sexual and political views will lead to immediate disqualification."
             ]
           },
           {
@@ -51,54 +97,310 @@
       },
 
       {
-        "title": "Shoutout",
+        "title": "Poona-०५",
         "sections": [
           {
             "id": "details",
             "title": "Details",
             "content": [
-              "Battle of DJ's and EDM's is an exciting competition where participants showcase their skills in mixing, looping, and miking.",
-              "Push your limits and let the music speak for itself!"
-            ]
+              "It is a Rapping competition."
+            ]   
           },
           {
             "id": "structure",
             "title": "Structure",
             "content": [
-              "There will be only one round in which the participant will showcase their talent in:",
-              "Time Limit: 8-10 minutes (including setup time)."
+              "Eleminations: ",
+              "Time limit of the freestyle performance will be 3 minutes.",
+              "All participants get the chance to perform in front of the judge.",
+              "A beatboxer can accompany the performer in the freestyle round.",
+              "Time limit: 3 minutes per rap battle.",
+              "The top 8 participants will have to face each other in a rap battle format.",
+              "Every battle will be a knockout and the winners will qualify for the next battle."
             ],
             "list": [
-              "Mixing",
-              "Looping",
-              "Miking"
             ]
           },
           {
             "id": "guidelines",
-            "title": "Guidelines",
+            "title": "Rules & Guidelines",
             "content": [
-              "Competition is open for college students aged 16-25.",
-              "All mixing needs to be done on the spot. Pre-mixed songs or mash-ups will lead to disqualification.",
-              "Only understandable language songs are allowed.",
-              "Computer-operated software/hardware or any other equipment (other than headphones, pen drives, and CDs) is not allowed.",
-              "No limit on the number of tracks used, but the time limit should be strictly followed.",
-              "Participants are allowed to go live on Instagram but must tag Impressions. A mixer (with booth outs) will be provided. Inform the organizers in advance if additional gear is needed.",
-              "Participants must carry a backup CD and Pen-drives."
+              "This competition is open for college students of age group 16-25",
+              "The participant is allowed to use puns, double entendre, and quips, but any sort of sexist or offensive slurs will lead to immediate disqualification.",
+              "Usage of abusive language, obscenity, direct implications plagiarism, racial, religious/linguistic, sexual, political views will lead to immediate disqualification.",
+              "Performance should be confined within the area (10-12 meters in diameter) i.e., an open-air venue, with the audience on all sides.",
+              "The scoring track should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue."
             ]
           },
           {
             "id": "contact",
             "title": "Contact Us",
-            "coordinator": "Arnav Bankar",
-            "phone": "+91 7506175550",
+            "coordinator": "Deep",
+            "phone": "+91 7045407123",
             "email": "events23.impressions@gmail.com"
           }
         ],
         "footer": {
           "text": "© 2023 Impressions. All Rights Reserved."
         }
+    },
+    {
+      "title": "Saavni Western",
+      "sections": [
+        {
+          "id": "details",
+          "title": "Details",
+          "content": [
+            "This is a solo singing competition."
+          ]   
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "content": [
+              "This competition consist of three categories:",
+              "Classical(Indian)",
+              "Bollywood(Hindhi and Marathi)",
+              "Western(English)",
+
+              "Participants can register for more than one category",
+              "This competion consist of three rounds:",
+              "2 min (Bollywood and Western), 3 mins(Clssical). Participants must prepare a relevant song in the chosen category.",
+              "Time limit: 3 minutes. A specification will be given to bollywood category, classical, western.",
+              "Time limit: 3 to 4 minutes. Finalists must prepare a new song which they haven't sung in the earlier rounds.The finalists may be asked to sing specific types of songs, scales etc by the judges in this round."
+          ],
+          "list": [
+          ]
+        },
+        {
+          "id": "guidelines",
+          "title": "Rules & Guidelines",
+          "content": [
+            "No backing tracks are allowed for pre eliminations.",
+            "Participants can play one instrument OR have an accompanist for an musical instrument OR use a backing track for eliminations and finals.",
+            "This competition is open for college students of age group 16-25.",
+            "Vulgarity and obscenity at any point are strictly not allowed.",
+            "Each participant can sing in one category per registration and can register for multiple categories separately.",
+            "Original compositions are allowed and encouraged.",
+            "No rap music or remixing is allowed in this competition.",
+            "Obscenity of any kind is not allowed and will lead to immediate disqualification.",
+            "For the eliminations, participants can sing an extended version of their pre-elimination song or a new song. For the finals, participants have to sing a song which has not been submitted in the prior rounds.",
+            "The time limit for all rounds should be strictly followed."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact Us",
+          "coordinator": "Mihika Khade",
+          "phone": "+91 9975639315",
+          "email": "events23.impressions@gmail.com"
+        }
+      ],
+      "footer": {
+        "text": "© 2023 Impressions. All Rights Reserved."
+      }
+    },
+    {
+      "title": "Saavni Bollywood",
+      "sections": [
+        {
+          "id": "details",
+          "title": "Details",
+          "content": [
+            "This is a solo singing competition."
+          ]   
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "content": [
+              "This competition consist of three categories:",
+              "Classical(Indian)",
+              "Bollywood(Hindhi and Marathi)",
+              "Western(English)",
+
+              "Participants can register for more than one category",
+              "This competion consist of three rounds:",
+              "Time limit: 2 min(Bollywood and Western), 3 mins(Classical). Participants must prepare a relevant song in the chosen category.",
+              "Time limit: 3 minutes. A specification will be given to bollywood category, classical, western.",
+              "Time limit: 3 to 4 minutes. Finalists must prepare a new song which they haven't sung in the earlier rounds.The finalists may be asked to sing specific types of songs, scales etc by the judges in this round."
+          ],
+          "list": [
+          ]
+        },
+        {
+          "id": "guidelines",
+          "title": "Rules & Guidelines",
+          "content": [
+            "No backing tracks are allowed for pre eliminations.",
+            "Participants can play one instrument OR have an accompanist for an musical instrument OR use a backing track for eliminations and finals.",
+            "This competition is open for college students of age group 16-25.",
+            "Vulgarity and obscenity at any point are strictly not allowed.",
+            "Each participant can sing in one category per registration and can register for multiple categories separately.",
+            "Original compositions are allowed and encouraged.",
+            "No rap music or remixing is allowed in this competition.",
+            "Obscenity of any kind is not allowed and will lead to immediate disqualification.",
+            "For the eliminations, participants can sing an extended version of their pre-elimination song or a new song. For the finals, participants have to sing a song which has not been submitted in the prior rounds.",
+            "The time limit for all rounds should be strictly followed."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact Us",
+          "coordinator": "Mihika Khade",
+          "phone": "+91 9975639315",
+          "email": "events23.impressions@gmail.com"
+        }
+      ],
+      "footer": {
+        "text": "© 2023 Impressions. All Rights Reserved."
+      }
+  },
+  {
+    "title": "Saavni Classical",
+    "sections": [
+      {
+        "id": "details",
+        "title": "Details",
+        "content": [
+          "This is a solo singing competition."
+        ]   
       },
+      {
+        "id": "structure",
+        "title": "Structure",
+        "content": [
+            "This competition consist of three categories:",
+            "Classical(Indian)",
+            "Bollywood(Hindhi and Marathi)",
+            "Western(English)",
+
+            "Participants can register for more than one category",
+            "This competion consist of three rounds:",
+            "Time limit: 2 min(Bollywood and Western), 3 mins(Classical). Participants must prepare a relevant song in the chosen category.",
+            "Time limit: 3 minutes. A specification will be given to bollywood category, classical, western.",
+            "Time limit: 3 to 4 minutes. Finalists must prepare a new song which they haven't sung in the earlier rounds.The finalists may be asked to sing specific types of songs, scales etc by the judges in this round."
+        ],
+        "list": [
+        ]
+      },
+      {
+        "id": "guidelines",
+        "title": "Rules & Guidelines",
+        "content": [
+          "No backing tracks are allowed for pre eliminations.",
+          "Participants can play one instrument OR have an accompanist for an musical instrument OR use a backing track for eliminations and finals.",
+          "This competition is open for college students of age group 16-25.",
+          "Vulgarity and obscenity at any point are strictly not allowed.",
+          "Each participant can sing in one category per registration and can register for multiple categories separately.",
+          "Original compositions are allowed and encouraged.",
+          "No rap music or remixing is allowed in this competition.",
+          "Obscenity of any kind is not allowed and will lead to immediate disqualification.",
+          "For the eliminations, participants can sing an extended version of their pre-elimination song or a new song. For the finals, participants have to sing a song which has not been submitted in the prior rounds.",
+          "The time limit for all rounds should be strictly followed."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contact Us",
+        "coordinator": "Mihika Khade",
+        "phone": "+91 9975639315",
+        "email": "events23.impressions@gmail.com"
+      }
+    ],
+    "footer": {
+      "text": "© 2023 Impressions. All Rights Reserved."
+    }
+  },
+  {
+    "title": "Stay Tuned",
+    "sections": [
+      {
+        "id": "details",
+        "title": "Details",
+        "content": [
+          "It is a Musical Instrument-Playing Competition."
+        ]   
+      },
+      {
+        "id": "structure",
+        "title": "Structure",
+        "content": [
+            "It brodly has two categories:",
+            "Non-Percussion",
+            "Percussion"
+        ],
+        "list":[]
+      },
+      {
+        "id": "guidelines",
+        "title": "Rules & Guidelines",
+        "content": [
+          "Time limit: 6 minutes including setup and clearance time (1min + 4min +1min).",
+          "All instruments are allowed (String, Wind, Percussion, Electronic, Acoustic).",
+          "This competition is open for college students of the age group 16-25.",
+          "Each participant can use only one instrument per registration and can register for multiple categories separately. Participants have to carry their own instruments.",
+          "Participants can have one accompanist supporting their performance, however only the registered participant is eligible for the prize.",
+          "Vocals are not allowed in this competition.",
+          "Use of pre-recorded music will lead to disqualification."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contact Us",
+        "coordinator": "Vanshika Bhuyarkar",
+        "phone": "+91 9175898977",
+        "email": "events23.impressions@gmail.com"
+      }
+    ],
+    "footer": {
+      "text": "© 2023 Impressions. All Rights Reserved."
+    }
+},
+{
+    "title": "Boots & Cats",
+    "sections": [
+      {
+        "id": "details",
+        "title": "Details",
+        "content": [
+          "It is a solo beatboxing competition."
+        ]   
+      },
+      {
+        "id": "structure",
+        "title": "Structure",
+        "content": [
+            "It is a single round competition.",
+            "Each participant will perform for a maximum of 3 minutes."
+        ],
+        "list":[]
+      },
+      {
+        "id": "guidelines",
+        "title": "Rules & Guidelines",
+        "content": [
+          "This competition is open for college students of the age group 16-25.",
+          "All sounds and beats must be created live during the performance; the use of pre-recorded sounds is strictly prohibited.",
+          "Participants are encouraged to incorporate original beats, rhythms, sound effects, and routines.",
+          "Offensive, explicit, or inappropriate content is strictly prohibited and may lead to disqualification.",
+          "Participants are not allowed to use musical instruments, props, or accessories during their performances.",
+          "No loopstation allowed.",
+          "Vulgarity and obscenity is strictly prohibited."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contact Us",
+        "coordinator": "Vanshika Bhuyarkar",
+        "phone": "+91 9175898977",
+        "email": "events23.impressions@gmail.com"
+      }
+    ],
+    "footer": {
+      "text": "© 2023 Impressions. All Rights Reserved."
+    }
+  },
 
       {
         "title": "Dance",

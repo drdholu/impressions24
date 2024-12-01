@@ -72,17 +72,22 @@ const Explore = () => {
             {/* Structure Section */}
             <section id="structure" className="w-[1200px] max-w-[90%] mx-auto py-12 mt-12 bg-gray-800 rounded-lg shadow-lg px-8 scroll-mt-30">
                 <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">{structureSection.title}</h2>
-                <p className="text-lg text-gray-200 mb-4">
-                    {structureSection.content[0]}
-                </p>
+                {/* <p className="text-lg text-gray-200 mb-4">
+                    {structureSection.content}
+                </p> */}
+                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-200">
+                    {structureSection.content.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
                 <ul className="list-disc pl-6 space-y-2 text-lg text-gray-200">
                     {structureSection.list.map((item, index) => (
                         <li key={index}>{item}</li>
                     ))}
                 </ul>
-                <p className="text-lg text-gray-200 mt-4">
+                {/* <p className="text-lg text-gray-200 mt-4">
                     <strong>{structureSection.content[1]}</strong>
-                </p>
+                </p> */}
             </section>
 
             {/* Guidelines Section */}

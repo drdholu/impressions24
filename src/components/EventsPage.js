@@ -160,7 +160,7 @@ function Events() {
                                 <button className={`mt-4 py-2 px-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-lg shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-xl`}>
                                     <Link
                                         // to={`/explore/${encodeURIComponent(item.title)}`}
-                                        to={`/${encodeURIComponent(moduleName)}/${encodeURIComponent(item.title.replace)}`}
+                                        to={`/${encodeURIComponent(moduleName)}/${encodeURIComponent(item.title)}`}
                                         className="text-white"
                                     >
                                         Explore

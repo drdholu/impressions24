@@ -12,12 +12,12 @@
     "Music": {
         "title": "Music",
         "items": [
-            { "img": "/image/main-bg.jpg", "title": "High Current", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/shoutout-stage.jpg", "title": "Poona-05", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "Bomb a Drop", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/main-bg.jpg", "title": "High-Current", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Poona-०५", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Bomb A Drop", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/music-stage2.jpg", "title": "Saavni Western", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/abhinay-stage.jpg", "title": "Saavni Bollywood", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/abhinay-stage.jpg", "title": "Saavni Classic", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/abhinay-stage.jpg", "title": "Saavni Classical", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/abhinay-stage.jpg", "title": "Stay Tuned", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/abhinay-stage.jpg", "title": "Boots & Cats", "content": "Lorem ipsum dolor sit amet..." }
         ]
@@ -40,10 +40,10 @@
             { "img": "/image/shoutout-stage.jpg", "title": "Lens Art", "content": "Lorem ipsum dolor sit amet..." }
         ]
     },
-    "Arts&Craft": {
-        "title": "Arts&Craft",
+    "Arts & Craft": {
+        "title": "Arts & Craft",
         "items": [
-            { "img": "/image/main-bg.jpg", "title": "Doodly Doo", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/main-bg.jpg", "title": "DoodlyDoo", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/shoutout-stage.jpg", "title": "Game of Shades", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/dance-stage.jpg", "title": "Graphix AI", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/dance-stage.jpg", "title": "Graphix Digital", "content": "Lorem ipsum dolor sit amet..." },
