@@ -184,6 +184,9 @@ const Teams = () => {
     }
   ];
 
+
+  
+
   return (
     <div className="container mx-auto p-10 flex flex-col items-center gap-5">
         <h1 className="title text-center text-3xl font-bold text-brown-700">SECRETARY</h1>
