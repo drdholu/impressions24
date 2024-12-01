@@ -2,24 +2,24 @@ import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import logo from "../images/Logos/Name Logo filled1.png";
 import logo1 from "../images/Logos/Name Logo filled.png";
-import React, { useRef, forwardRef, useState, useImperativeHandle } from "react";
-import { PerspectiveCamera, Html, useGLTF } from "@react-three/drei";
+import React, { useRef, useEffect, forwardRef, useState, useImperativeHandle } from "react";
+import { PerspectiveCamera, Html, useGLTF, OrbitControls,RectAreaLight } from "@react-three/drei";
 import grnd from "../images/ground1.webp";
 // import cleodance from "../images/Cleo/Dance.png"
 // import cleostand from "../images/Cleo/Shoutout.png"
-// import cleoANC from '../images/Cleo/AnC.png'
+import cleoANC from '../images/Cleo/AnC.png'
 import cleoCam from '../images/Cleo/Camera.png'
 import cleoMain from '../images/Cleo/Cleo.png'
 import cleoDance from '../images/Cleo/Dance.png'
-// import cleoMusic from '../images/Cleo/Music.png'
+import cleoMusic from '../images/Cleo/Music.png'
 import cleoShoutout from '../images/Cleo/Shoutout.png'
 import cleoAbhinay from '../images/Cleo/abhinay.png'
 import gsap from 'gsap';
 import { atom } from "jotai";
-// import { AmbientLight } from 'three'
-// import InProgress from "./ui/InProgress";
+import { AmbientLight } from 'three'
+import InProgress from "./ui/InProgress";
 
-const ismobile = window.innerWidth < 650;
+const ismobile = window.innerWidth < 930;
 
 export const currentPageAtom = atom("intro");
 const fov = 75;
@@ -201,7 +201,7 @@ const Ground = forwardRef((props, ref) => {
   );
 });
 
-const Loadimage = forwardRef(({ img, height, width, position,rotation }, ref) => {
+const Loadimage = forwardRef(({ img, height, width, position,rotation,visible }, ref) => {
   const texture = useLoader(THREE.TextureLoader, img); // Load texture
 
   return (
@@ -211,6 +211,7 @@ const Loadimage = forwardRef(({ img, height, width, position,rotation }, ref) =>
       castShadow
       receiveShadow
       rotation={rotation}
+      visible={visible}
     >
       <planeGeometry args={[width, height]} /> {/* Initial size; updated dynamically */}
       <meshStandardMaterial map={texture} transparent={true} alphaTest={0.5} />
@@ -331,7 +332,7 @@ const LightPointer = forwardRef(({ position = [0, 0, 16], targetPos }, ref) => {
 
 const Landing = () => {
   const cameraref = useRef();
-  // const mlight = useRef();
+  const mlight = useRef();
   const helplogo1 = useRef();
   const helplogo2 = useRef();
   const imageMeshRef = useRef();
@@ -340,7 +341,7 @@ const Landing = () => {
   const cleoleft2 = useRef();
   const cleoright1 = useRef();
   const cleoright2 = useRef();
-  // const cleoMain1 = useRef();
+  const cleoMain1 = useRef();
   const themeRef = useRef();
   const helpright = useRef();
   const lamp1=useRef();
@@ -354,12 +355,15 @@ const Landing = () => {
   const cleor1=useRef();
   const cleol2=useRef();
   const cleor2=useRef();
+  const Treer=useRef();
+  const Treel=useRef();
   const paintboxlight=useRef();
   // const box = useRef();
   const paintBox = useRef();
   const navbarRef = useRef();
   const dotlight1 = useRef();
   const dotlight2 = useRef();
+  const temp=useRef();
   const [displayNav, setDisplayNav] = useState(true);
   const light1Position = ismobile ? new THREE.Vector3(totalwidth * 0.17, totalheight * 0.5 * 0.3, 1) : new THREE.Vector3(-totalwidth * 0.5 * 0.25, totalheight * 0.5 * 0.27, 3);
   const light2Position = ismobile ? new THREE.Vector3(-totalwidth * 0.22, totalheight * 0.5 * 0.3, 2) : new THREE.Vector3(5, 3, 3);
@@ -370,7 +374,7 @@ const Landing = () => {
   const [AllowScroll, setAllowScroll] = useState(false);
   const lightPointerRef = useRef();
   const lightTargetPos = useRef(new THREE.Vector3());
-  // const lerpSpeed = 0.15;
+  const lerpSpeed = 0.15;
   const newLogoTexturetexture = useLoader(THREE.TextureLoader, logo1); // Load texture
   const endPosition = ismobile ? new THREE.Vector3(-totalwidth * 0.5 * 0.52, totalheight * 0.5 * 0.72, 3) : new THREE.Vector3(-totalwidth * 0.5 * 0.32, totalheight * 0.5 * 0.8, 3);
   const endPosition1 = ismobile ? new THREE.Vector3(totalwidth * 0.5 * 0.345, totalheight * 0.5 * 0.62, 3) : new THREE.Vector3(totalwidth * 0.5 * 0.21, totalheight * 0.5 * 0.61, 3);
@@ -382,13 +386,13 @@ const Landing = () => {
     setIsVisible(true);
     const l1 = helplogo1.current;
     const l2 = helplogo2.current;
-    const targetIntensity = ismobile ? 3 : 20;
+    const targetIntensity = ismobile ? 3 : 0;
     
     const hl = helpleft.current;
     const hr = helpright.current;
     const dot1curr = dotlight1.current;
     const dot2curr = dotlight2.current;
-    // const hlTargetIntensity = ismobile ? 3 : 20;
+    const hlTargetIntensity = ismobile ? 3 : 0;
     const dur = 3;
 
     lightPointerRef.current.children[0].intensity = 40;
@@ -418,33 +422,33 @@ const Landing = () => {
   };
 
   const [isAnimating, setisanimating] = useState(false);
-  // let startY = 0;
-  // let isTouchScrolling = false;
+  let startY = 0;
+  let isTouchScrolling = false;
 
-  // const onTouchStart = (event) => {
-  //   //console.log("Touched");
-  //   if (event.touches && event.touches.length === 1) {
-  //     startY = event.touches[0].clientY;
-  //     isTouchScrolling = true;
-  //   }
-  // };
+  const onTouchStart = (event) => {
+    //console.log("Touched");
+    if (event.touches && event.touches.length === 1) {
+      startY = event.touches[0].clientY;
+      isTouchScrolling = true;
+    }
+  };
 
-  // const onTouchMove = (event) => {
-  //   //console.log("Touched1");
-  //   if (isTouchScrolling) {
-  //     const currentY = event.touches[0].clientY;
-  //     const deltaY = startY - currentY;
+  const onTouchMove = (event) => {
+    //console.log("Touched1");
+    if (isTouchScrolling) {
+      const currentY = event.touches[0].clientY;
+      const deltaY = startY - currentY;
 
-  //     if (Math.abs(deltaY) > 10) {
-  //       startY = currentY;
-  //       onScroll({ type: "touch", deltaY });
-  //     }
-  //   }
-  // };
+      if (Math.abs(deltaY) > 10) {
+        startY = currentY;
+        onScroll({ type: "touch", deltaY });
+      }
+    }
+  };
 
-  // const onTouchEnd = () => {
-  //   isTouchScrolling = false;
-  // };
+  const onTouchEnd = () => {
+    isTouchScrolling = false;
+  };
 
   // Add the touch event listeners
   window.addEventListener("touchstart", onscroll);
@@ -455,25 +459,25 @@ const Landing = () => {
   const onScroll = (event) => {
     
     if (!AllowScroll) return;
-    // let deltaY = event.type === "click" ? 2 : -2;
-    // if (event.type === "wheel") {
-    //   deltaY = event.deltaY;
-    // }
+    let deltaY = event.type === "click" ? 2 : -2;
+    if (event.type === "wheel") {
+      deltaY = event.deltaY;
+    }
     const lmp1=lamplight1.current;
     const lmp2=lamplight2.current;
     const camera = cameraref.current;
     const ground = groundref.current;
     const c1 = cleoleft1.current;
-    // const cL2 = cleoleft2.current;
+    const cL2 = cleoleft2.current;
     const c2 = cleoright1.current;
-    // const cR2 = cleoright2.current;
+    const cR2 = cleoright2.current;
     const hl = helpleft.current;
     const hr = helpright.current;
-    // const themeRefCurr = themeRef.current;
-    // const imagee = imageMeshRef.current;
-    // const paintBoxCurr = paintBox.current;
-    // const navbarCurr = navbarRef.current.ref1;
-    // const textdiv = navbarRef.current.ref2;
+    const themeRefCurr = themeRef.current;
+    const imagee = imageMeshRef.current;
+    const paintBoxCurr = paintBox.current;
+    const navbarCurr = navbarRef.current.ref1;
+    const textdiv = navbarRef.current.ref2;
     const dot1curr = dotlight1.current;
     const dot2curr = dotlight2.current;
     const paintlightcurr=paintboxlight.current;
@@ -528,6 +532,7 @@ const Landing = () => {
           .to(paintlightcurr, { intensity: 17 }, "<")
           .to(lmp1, { intensity: 60 }, "<")
           .to(lmp2, { intensity: 60 }, "<")
+          .to(themeRefCurr.children[0], {opacity : 1 }, "-=1")
           
         // .call(() => setDisplayNav(true))
       }
@@ -559,6 +564,7 @@ const Landing = () => {
           .to(paintlightcurr, { intensity: 0 }, "<")
           .to(lmp1, { intensity: 0 }, "<")
           .to(lmp2, { intensity: 0 }, "<")
+          .to(themeRefCurr.children[0], {opacity : 0 }, "<")
           // .to(paintBoxCurr.position, { z: -30 }, "<")
           // .to(navbarCurr.position, { z: -30 }, "<")
           // .to(textdiv, { height: '10px', width: '10px' }, "<")
@@ -617,7 +623,6 @@ const Landing = () => {
           far={1000}
           near={0.1}
         />
-        {/* <ambientLight /> */}
         <pointLight ref={helplogo1} intensity={0} position={[light1Position.x, light1Position.y, 3]} color="red" castShadow distance={10} />
         <pointLight ref={helplogo2} intensity={0} position={[light2Position.x, light2Position.y, 3]} color="red" castShadow distance={10} />
 
@@ -627,16 +632,18 @@ const Landing = () => {
         <pointLight ref={cleol2} intensity={0} position={[-totalwidth * 0.4, 7, -16]} color="beige" castShadow distance={40} />
         <pointLight ref={cleor1} intensity={0} position={[totalwidth * 0.2, 7, -15]} color="white" castShadow distance={60} />
         <pointLight ref={cleor2} intensity={0} position={[totalwidth * 0.4, 7, -18]} color="beige" castShadow distance={40} />
-        
-        {/* Lamp lights */}
         <pointLight ref={lamplight1} intensity={0} position={[-20,10,-20]} color="yellow" castShadow distance={40} />
         <pointLight ref={lamplight2} intensity={0} position={[20,10,-20]} color="yellow" castShadow distance={40} />
-        
         <pointLight ref={paintboxlight} intensity={0} position={[0,7,-14]} color="beige" castShadow distance={40} />
         <MovingLights onLightsReached={handleLightsReached} />
         <pointLight ref={dotlight1} intensity={0} position={[endPosition.x, endPosition.y, 3]} color="red" castShadow distance={20} />
         <pointLight ref={dotlight2} intensity={0} position={[endPosition1.x, endPosition1.y, 3]} color="red" castShadow distance={20} />
-
+        <pointLight ref={dotlight2} intensity={0} position={[endPosition1.x, endPosition1.y, 3]} color="red" castShadow distance={20} />
+        {/* <pointLight  intensity={20} position={[-14,12,2]} color="pink" castShadow distance={20} />
+        <pointLight  intensity={20} position={[-16,3,1]} color="pink" castShadow distance={20} /> */}
+        <rectAreaLight  intensity={20} position={[0,12,45]} color="pink" castShadow width={4} height={12} />
+        {/* <pointLight  intensity={20} position={[14,3,1]} color="pink" castShadow distance={20} /> */}
+        <RedDot ref={temp} position={[0,12,2]}/>
         {/* enter button */}
         <Html ref={start} position={[-1.5, totalheight/ 17, 0]} distanceFactor={10}>
           <div className={`
@@ -691,7 +698,6 @@ const Landing = () => {
             </button>
           </div>
         </Html>
-
         <Html transform occlude={true} ref={back} position={[-1, totalheight*0.13, -15]} rotation={[-19.8, 0, 0]} distanceFactor={10}>
           <div className={`
           ${ismobile ? 'w-[20vw] h-[10vh]' : 'w-[10vw] h-[10vh]'} 
@@ -728,15 +734,14 @@ const Landing = () => {
         {/* Cleo Images */}
         {/* <Loadimage img={cleoANC} rotation={[0, 1.5, 0]} height={10} width={10} position={[-totalwidth, 4, -15]} /> */}
         <Loadimage img={cleoCam} rotation={[0, 0, 0]} height={10} width={10} position={[-totalwidth, 4, -21]} ref={cleoleft1}/>
-        {/* <Loadimage img={cleoShoutout} rotation={[0, 0.5, 0]} height={10} width={10} position={[-totalwidth/5, 4, -20]}ref={cleoleft2}/> */}
-        <Loadimage img={cleoShoutout} rotation={[0, 0.5, 0]} height={10} width={10} position={[-10, 4, -20]}ref={cleoleft2}/>
-        <Loadimage img={cleoMain} rotation={[0, 0, 0]} height={10} width={10} position={[0, 5.5, -19.5]}/>
-        <Loadimage img={cleoDance} rotation={[0, -0.5, 0]} height={10} width={10} position={[10, 4, -20]} ref={cleoright2}/>
-        <Loadimage img={cleoAbhinay} rotation={[0, 0, 0]} height={10} width={10} position={[totalwidth, 5, -21]} ref={cleoright1} />
+        <Loadimage img={cleoAbhinay} rotation={[0, 0, 0]} height={10} width={10} position={[totalwidth, 5, -21]} ref={cleoright1}/>
+        <Loadimage img={cleoMain} rotation={[0, 0, 0]} height={10} width={10} position={[0, 4, -19]}/>
+        <Loadimage img={cleoShoutout} rotation={[0, 0.5, 0]} height={10} width={10} position={[-totalwidth/5, 4, -20]}ref={cleoleft2} visible={ismobile?false:true}/>
+        <Loadimage img={cleoDance} rotation={[0, -0.5, 0]} height={10} width={10} position={[totalwidth/5, 4, -20]} ref={cleoright2} visible={ismobile?false:true}/>
         
         {/* Rangrez */}
         <Html transform occlude={true} position={[0, 12, -15]} ref={themeRef} rotation={[0,0,0]}>
-          <div className="flex flex-col items-center justify-center font-hindi text-white h-[30vh] w-[50vw]">
+          <div className="flex flex-col items-center justify-center font-hindi text-white h-[30vh] w-[50vw] opacity-0">
             <div className="text-[13vw]">
               RANGREZ
             </div>
@@ -745,18 +750,16 @@ const Landing = () => {
             </div>
           </div>
         </Html>
+        {/* <ambientLight /> */}
         <LightPointer ref={lightPointerRef} targetPos={lightTargetPos.current} />
         <Navbar ref={navbarRef} displayNav={displayNav} />
-        
-        {/* Palette */}
+        {/* <OrbitControls/> */}
         <Model ref={paintBox} rotation={[0.4, 9, 0]} position={[0, 3, -17]} scale={[110, 110, 110]} url={"models/palette.glb"} />
-        
-        {/* Lamps */}
-        {/* <Model ref={lamp1} rotation={[0, -5, 0]} position={[-25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} /> */}
-        <Model ref={lamp1} rotation={[0, -5, 0]} position={[-totalwidth/1.55, 0, -22]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
-        {/* <Model ref={lamp2} rotation={[0, 5, 0]} position={[25, 0, -20]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} /> */}
-        <Model ref={lamp2} rotation={[0, 5, 0]} position={[totalwidth/1.55, 0, -22]} scale={[5, 5, 5]} url={"models/Post Lantern.glb"} />
-      </Canvas>
+        <Model ref={lamp1} rotation={[0, -5, 0]} position={ismobile?[-totalwidth*0.6,0,-18]:[-25, 0, -20]} scale={ismobile?[2 ,5, 3]:[4, 5, 5]} url={"models/Post Lantern.glb"} />
+        <Model ref={lamp2} rotation={[0, 5, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[25, 0, -20]} scale={ismobile?[2 ,5, 3]:[4, 5, 5]} url={"models/Post Lantern.glb"} />
+        <Model ref={Treer} rotation={[0, -19, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[14, 0, 0]} scale={ismobile?[2 ,5, 3]:[0.1, 0.1, 0.1]} url={"models/Tree.glb"} />
+        <Model ref={Treel} rotation={[0, 22, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[-17, 0, 2]} scale={ismobile?[2 ,5, 3]:[0.1, 0.1, 0.1]} url={"models/Tree.glb"} />
+ </Canvas>
 
     </div>
   );
