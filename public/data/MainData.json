@@ -1,0 +1,63 @@
+{
+    "Shoutout": {
+        "title": "Shoutout",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Anecdote", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Andaaz-E-Bayaan", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Tale Teller", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/music-stage2.jpg", "title": "Comiking", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/abhinay-stage.jpg", "title": "Verse-a-tile", "content": "Lorem ipsum dolor sit amet..." }
+        ]
+    },
+    "Music": {
+        "title": "Music",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "High Current", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Poona-05", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Bomb a Drop", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/music-stage2.jpg", "title": "Saavni Western", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/abhinay-stage.jpg", "title": "Saavni Bollywood", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/abhinay-stage.jpg", "title": "Saavni Classic", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/abhinay-stage.jpg", "title": "Stay Tuned", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/abhinay-stage.jpg", "title": "Boots & Cats", "content": "Lorem ipsum dolor sit amet..." }
+        ]
+    },
+    "Dance": {
+        "title": "Dance",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Nrityangana(Bharatnatyam)", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Heat the Beat", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "So Duet(Solo)", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/music-stage2.jpg", "title": "So Duet(Duet)", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/abhinay-stage.jpg", "title": "Swa(g)Desi", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/abhinay-stage.jpg", "title": "Nrityangana(Kathak)", "content": "Lorem ipsum dolor sit amet..." }
+        ]
+    },
+    "Camera": {
+        "title": "Camera",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Reelscapes", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Lens Art", "content": "Lorem ipsum dolor sit amet..." }
+        ]
+    },
+    "Arts&Craft": {
+        "title": "Arts&Craft",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Doodly Doo", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Game of Shades", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Graphix AI", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Graphix Digital", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Cirकला", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Color Splash", "content": "Lorem ipsum dolor sit amet..." }
+
+        ]
+    },
+    "Abhinay": {
+        "title": "Abhinay",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Artiskit", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Suno-Suno", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Limelight", "content": "Lorem ipsum dolor sit amet..." }
+        ]
+    }
+}

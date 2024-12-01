@@ -1,44 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import '../eventspage.css';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function Events() {
+    const navigate = useNavigate();
     const { moduleName } = useParams();
+    const [items, setItems] = useState([]);
+    const [moduleData, setModuleData] = useState(null);
     const [itemActive, setItemActive] = useState(0); // Track the active item
     const [intervalId, setIntervalId] = useState(null); // Store the interval for auto-slide
-    // const [items, setItems] = useState([]);
-    // console.log(moduleName);
 
-    const items = [
-        { img: '/image/main-bg.jpg', title: 'Impressions', content: 'Lorem ipsum dolor sit amet...' },
-        { img: '/image/shoutout-stage.jpg', title: 'Shoutout', content: 'Lorem ipsum dolor sit amet...' },
-        { img: '/image/dance-stage.jpg', title: 'Dance', content: 'Lorem ipsum dolor sit amet...' },
-        { img: '/image/music-stage2.jpg', title: 'Music', content: 'Lorem ipsum dolor sit amet...' },
-        { img: '/image/abhinay-stage.jpg', title: 'Abhinay', content: 'Lorem ipsum dolor sit amet...' },
-    ];
-
-    // useEffect(() => {
-    //     // Fetch and map items dynamically based on the module name
-    //     const fetchAndMapItems = async () => {
-    //         try {
-    //           const response = await fetch(`${process.env.PUBLIC_URL}/Shoutout.json`);
-    //           if (!response.ok) {
-    //             throw new Error(`HTTP error! status: ${response.status}`);
-    //           }
-    //           const data = await response.json();
-    //           console.log(data);
-    //           // Map the data to your desired format if necessary
-    //         } catch (error) {
-    //           console.error('Error fetching data:', error);
-    //         }
-    //       };
-    //     if (moduleName) {
-    //         fetchAndMapItems();
-    //     }
-    // }, [moduleName]);
-
-    // console.log('Active Event Title:', items[itemActive].title);
+    useEffect(() => {
+        // Fetch the JSON data
+        const fetchData = async () => {
+          try {
+            // Assuming the JSON file is named 'data.json' and is located in the public folder
+            const response = await fetch('/data/MainData.json');
+            const data = await response.json();
+    
+            // Check if moduleName exists in the data, and then extract the items
+            if (data[moduleName]) {
+              setItems(data[moduleName].items); // Set the items for the specific module
+            } else {
+              console.error(`Module ${moduleName} not found.`);
+            }
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData();
+    }, [moduleName]); // Re-fetch data when moduleName changes    
+    
+    // const items = [
+    //     { img: '/image/main-bg.jpg', title: 'Impressions', content: 'Lorem ipsum dolor sit amet...' },
+    //     { img: '/image/shoutout-stage.jpg', title: 'Shoutout', content: 'Lorem ipsum dolor sit amet...' },
+    //     { img: '/image/dance-stage.jpg', title: 'Dance', content: 'Lorem ipsum dolor sit amet...' },
+    //     { img: '/image/music-stage2.jpg', title: 'Music', content: 'Lorem ipsum dolor sit amet...' },
+    //     { img: '/image/abhinay-stage.jpg', title: 'Abhinay', content: 'Lorem ipsum dolor sit amet...' },
+    // ];
 
     const thumbnails = items.map((item, index) => ({
         ...item,
@@ -46,15 +47,27 @@ function Events() {
     }));
 
     // Effect to start auto-sliding
+    // useEffect(() => {
+    //     const id = setInterval(() => {
+    //         setItemActive((prevActive) => (prevActive + 1) % items.length);
+    //     }, 5000);
+
+    //     setIntervalId(id);
+
+    //     return () => clearInterval(id); // Cleanup interval on component unmount
+    // }, [itemActive]);
+
     useEffect(() => {
-        const id = setInterval(() => {
-            setItemActive((prevActive) => (prevActive + 1) % items.length);
-        }, 5000);
-
-        setIntervalId(id);
-
-        return () => clearInterval(id); // Cleanup interval on component unmount
-    }, [itemActive]);
+        if (items.length > 0) { // Ensure items exist before setting up the interval
+            const id = setInterval(() => {
+                setItemActive((prevActive) => (prevActive + 1) % items.length);
+            }, 5000);
+    
+            setIntervalId(id);
+    
+            return () => clearInterval(id); // Cleanup interval on component unmount
+        }
+    }, [items, itemActive]);
 
     // Click handler for next button
     const handleNextClick = () => {
@@ -135,7 +148,7 @@ function Events() {
                         // <div className={`item ${index === itemActive ? 'active' : ''}`} key={index}>
                         <div className={`item absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-500 ${index === itemActive ? 'active opacity-100 z-10' : ''}`} key={index}>
                             <img className='w-full h-full object-cover' src={item.img} alt={item.title} />
-                            <div className="absolute left-[10%] top-[20%] w-[600px] max-w-[80%] z-10">
+                            <div className="absolute left-[10%] top-[20%] w-[1300px] max-w-[80%] z-10">
                                 <p className='uppercase tracking-[10px]'>design</p>
                                 {/* <p className={`uppercase tracking-[10px] ${index === itemActive ? 'animate-showContent delay-[700ms]' : 'translate-y-[30px] blur-[20px] opacity-0'}`}>design</p> */}
                                 <h2 className='lg:text-[100px] text-[50px] m-0'>{item.title}</h2>
@@ -146,7 +159,8 @@ function Events() {
                                 
                                 <button className={`mt-4 py-2 px-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-lg shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-xl`}>
                                     <Link
-                                        to={`/explore/${encodeURIComponent(item.title)}`}
+                                        // to={`/explore/${encodeURIComponent(item.title)}`}
+                                        to={`/${encodeURIComponent(moduleName)}/${encodeURIComponent(item.title.replace)}`}
                                         className="text-white"
                                     >
                                         Explore
@@ -170,7 +184,7 @@ function Events() {
                             onClick={() => handleThumbnailClick(index)}
                         >
                             <img src={thumbnail.img} alt={thumbnail.title} className="w-full h-full object-cover rounded-[10px]" />
-                            <div className="content p-0 m-0 absolute inset-x-2 bottom-0 left-0 w-full bg-blue-500 text-white text-center py-1 rounded-b-[10px]">Name Slider</div>
+                            <div className="content p-0 m-0 absolute inset-x-2 bottom-0 left-0 w-full bg-blue-500 text-white text-center py-1 rounded-b-[10px]">{thumbnail.title}</div>
                         </div>
                     ))}
                 </div>

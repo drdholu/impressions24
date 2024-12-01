@@ -1,50 +1,337 @@
 {
-    "title": "Impressions",
-    "sections": [
-      {
-        "id": "details",
-        "title": "Details",
-        "content": [
-          "Battle of DJ's and EDM's is an exciting competition where participants showcase their skills in mixing, looping, and miking.",
-          "Push your limits and let the music speak for itself!"
-        ]
-      },
-      {
-        "id": "structure",
-        "title": "Structure",
-        "content": [
-            "There will be only one round in which the participant will showcase their talent in:",
-            "Time Limit: 8-10 minutes (including setup time)."
-        ],
-        "list": [
+  "events": [
+    {
+      "module": "Shoutout",
+      "image": "/image/abhinay-stage.jpg",
+      "content": "Lorem ipsum dolor sit amet...",
+      "title": "Tale Teller",
+      "sections": [
+        {
+          "id": "details",
+          "title": "Details",
+          "content": [
+            "It is a Story Telling Competition."
+          ]   
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "content": [
+            "Each participant must tell a live story based on the given topic.",
+            "Each participant will choose a famous story/ scene/ situation as a topic.",
+            "The participant needs to present that story with a different ending/ or slightly changing the story to conclude it with a different ending of his/her choice."
+          ],
+          "list": [
             "Mixing",
             "Looping",
             "Miking"
-        ]
-      },
-      {
-        "id": "guidelines",
-        "title": "Guidelines",
-        "content": [
-          "Competition is open for college students aged 16-25.",
-          "All mixing needs to be done on the spot. Pre-mixed songs or mash-ups will lead to disqualification.",
-          "Only understandable language songs are allowed.",
-          "Computer-operated software/hardware or any other equipment (other than headphones, pen drives, and CDs) is not allowed.",
-          "No limit on the number of tracks used, but the time limit should be strictly followed.",
-          "Participants are allowed to go live on Instagram but must tag Impressions. A mixer (with booth outs) will be provided. Inform the organizers in advance if additional gear is needed.",
-          "Participants must carry a backup CD and Pen-drives."
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "Contact Us",
-        "coordinator": "Arnav Bankar",
-        "phone": "+91 7506175550",
-        "email": "events23.impressions@gmail.com"
+          ]
+        },
+        {
+          "id": "guidelines",
+          "title": "Guidelines",
+          "content": [
+              "If the story is not self written, credits should be given to the original author. No vulgarity or abusive language should be used.",
+              "The participants are expected to submit the written story to the event head 3 days prior to the event to check for vulgarity and plagarism.",
+              "Submissions would be accepted through Whatsapp.",
+              "By default, all timings mentioned for competitions are to be followed according to Indian Standard Time.",
+              "The information provided during registration should be correct and is the sole responsibility of the participant.",
+              "The organisers will contact the participants only via the email address and contact numbers given during registration.",
+              "Entires must be submitted via the official website. Entries through any other modes will not be considered.",
+              "Multiple submissions from a single registration will not be considered. Only the chronologically first entry will be considered valid.",
+              "Requests for registration fee refunds shall not be entertained. If under any circumstances, the competition is cancelled by the organisers then the registration fees will be refunded.",
+              "All participants must report 1 hour prior to the commencement of offline events unless mentioned otherwise by event heads.",
+              "Time limit must be strictly observed. Exceeding the time limit will result in negative marking of the participant(s) and/or disqualification.",
+              "The participant(s) must adhere to the theme provided.",
+              "Any use of homophobic, transphobic, xenophobic, misogynistic, or hateful speech will be grounds for immediate disqualification of the participant(s).",
+              "Obscenity (at the discretion of the judges) of any kind, is not allowed and will lead to immediate disqualification.",
+              "Any plagiarised content or any offensive content directed towards any political party, religion or community will lead to disqualification.",
+              "Violation of any of the rules will lead to disqualification.",
+              "The decision of the judges and organisers shall be final and binding. To question the official result declared, participants can do so by contacting the organising commitee and paying the grievance fees.",
+              "While submitting any artwork or content the participants or group of participants must declare their submissions as original and owned by them.",
+              "Impressions does not intend any copyright claims on the artist's work. The winner's art, if posted on the social media handles of Impressions, shall have the due credits to the creators.",
+              "Impressions reserves the right to record performances and upload them on social media platforms for promotional purposes.",
+              "The organisers reserve the right to change the prize structure, prize money, and nature of the prize at any point in time before the start of the event/competition.",
+              "All updates will be posted on our social media handles and our official website regularly.",
+              "Impressions reserves the right to change or modify any of the above rules.",
+              "Any form of plagiarism will resut in immediate disqualification."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact Us",
+          "coordinator": "Arnav Bankar",
+          "phone": "+91 7506175550",
+          "email": "events23.impressions@gmail.com"
+        }
+      ],
+      "footer": {
+        "text": "© 2023 Impressions. All Rights Reserved."
       }
-    ],
-    "footer": {
-      "text": "© 2023 Impressions. All Rights Reserved."
+    },
+
+    {
+      "module": "Shoutout",
+      "image": "/image/abhinay-stage.jpg",
+      "content": "Lorem ipsum dolor sit amet...",
+      "title": "Andaaz-E-Bayaan",
+      "sections": [
+        {
+          "id": "details",
+          "title": "Details",
+          "content": [
+            "It is a Shayari Competition."
+          ]
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "content": [
+              "Eliminations: Participants are free to perform any self pre written shayari. Top participants will be selected for finals.",
+              "Finals: In the finale, you have to select one of the navras and perform a shayari on one of them. Navras are the nine basic emotions which everybody have to pass through at least once in their course of life. Shringara (love/beauty), Hasya (laughter), Karuna(sorrow), Raudra (anger), Veera (heroism/courage), Bhayanaka (terror/fear), Bibhatsa (disgust), Adbutha (surprise/wonder), Shantha (peace or tranquility)."
+          ],
+          "list": [
+            "Mixing",
+            "Looping",
+            "Miking"
+          ]
+        },
+        {
+          "id": "guidelines",
+          "title": "Guidelines",
+          "content": [
+                  "The shayari may be completely hindi or hindi and urdu or completely urdu.College-issued IDs and Booking IDs are necessary for offline attendance.",
+                  "By default, all timings mentioned for competitions are to be followed according to Indian Standard Time.",
+                  "The information provided during registration should be correct and is the sole responsibility of the participant.",
+                  "The organisers will contact the participants only via the email address and contact numbers given during registration.",
+                  "Entires must be submitted via the official website. Entries through any other modes will not be considered.",
+                  "Multiple submissions from a single registration will not be considered. Only the chronologically first entry will be considered valid.",
+                  "Requests for registration fee refunds shall not be entertained. If under any circumstances, the competition is cancelled by the organisers then the registration fees will be refunded.",
+                  "All participants must report 1 hour prior to the commencement of offline events unless mentioned otherwise by event heads.",
+                  "Time limit must strictly be observed. Failure to keep within the time limit will result in a penalty and/or disqualification. Exceeding the time limit will result in negative marking of the participant(s) and/or disqualification.",
+                  "The participant(s) must adhere to the theme provided.",
+                  "Any use of homophobic, transphobic, xenophobic, misogynistic, or hateful speech will be grounds for immediate disqualification of the participant(s).",
+                  "Obscenity (at the discretion of the judges) of any kind, is not allowed and will lead to immediate disqualification.",
+                  "Any plagiarised content or any offensive content directed towards any political party, religion or community will lead to disqualification.",
+                  "Violation of any of the rules will lead to disqualification.",
+                  "The decision of the judges and organisers shall be final and binding. To question the official result declared, participants can do so by contacting the organising commitee and paying the grievance fees.",
+                  "While submitting any artwork or content the participants or group of participants must declare their submissions as original and owned by them.",
+                  "Impressions does not intend any copyright claims on the artitst's work. The winner's art, if posted on the social media handles of Impressions, shall have the due credits to the creators.",
+                  "Impressions reserves the right to record performances and upload them on social media platforms for promotional purposes.",
+                  "The organisers reserve the right to change the prize structure, prize money, and nature of the prize at any point in time before the start of the event/competition.",
+                  "All updates will be posted on our social media handles and our official website regularly.",
+                  "Impressions reserves the right to change or modify any of the above rules.",
+                  "Any form of plagiarism will resut in immediate disqualification."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact Us",
+          "coordinator": "Arnav Bankar",
+          "phone": "+91 7506175550",
+          "email": "events23.impressions@gmail.com"
+        }
+      ],
+      "footer": {
+        "text": "© 2023 Impressions. All Rights Reserved."
+      }
+    },
+
+    {
+      "module": "Shoutout",
+      "image": "/image/abhinay-stage.jpg",
+      "content": "Lorem ipsum dolor sit amet...",
+      "title": "ComiKing",
+      "sections": [
+        {
+          "id": "details",
+          "title": "Details",
+          "content": [
+            "It is a Stand-up Comedy Competition."
+          ]
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "content": [
+              "Each participant must perform a live original comedy set. The Competion consists of a single round.",
+              "Each Participant will have 2-6 minutes performance time.",
+              "Participants can perform their set in Hindi,English or Marathi."
+          ],
+          "list": [
+            "Mixing",
+            "Looping",
+            "Miking"
+          ]
+        },
+        {
+          "id": "guidelines",
+          "title": "Guidelines",
+          "content": [
+              "The Comedy should be college environment friendly. Use of abusive language, vulgarity is not permitted.",
+              "The participant is expected to submit the written set to the event head 3 days prior to the competion to check for the same.",
+              "In case of Props, participants are expected to submit the Prop-List to the event head 3 days prior to the competition as-well.",
+              "The Event Head holds the authority to disqualify any participant in-case the participant is found non abiding to the rules.",
+              "By default, all timings mentioned for competitions are to be followed according to Indian Standard Time.",
+              "The information provided during registration should be correct and is the sole responsibility of the participant.",
+              "The organisers will contact the participants only via the email address and contact numbers given during registration.",
+              "Entires must be submitted via the official website. Entries through any other modes will not be considered.",
+              "Requests for registration fee refunds shall not be entertained. If under any circumstances, the competition is cancelled by the organisers then the registration fees will be refunded.",
+              "All participants must report 1 hour prior to the commencement of offline events unless mentioned otherwise by event heads.",
+              "Deduction for exceeding performance time.",
+              "Time limit must strictly be observed. Failure to keep within the time limit will result in a penalty and/or disqualification./ Exceeding the time limit will result in negative marking of the participant(s) and/or disqualification.",
+              "The participant(s) must adhere to the theme provided.",
+              "Any use of homophobic, transphobic, xenophobic, misogynistic, or hateful speech will be grounds for immediate disqualification of the participant(s).",
+              "Obscenity (at the discretion of the judges) of any kind, is not allowed and will lead to immediate disqualification.",
+              "Any plagiarised content or any offensive content directed towards any political party, religion or community will lead to disqualification.",
+              "Violation of any of the rules will lead to disqualification.",
+              "The decision of the judges and organisers shall be final and binding. To question the official result declared, participants can do so by contacting the organising commitee and paying the grievance fees.",
+              "While submitting any artwork or content the participants or group of participants must declare their submissions as original and owned by them.",
+              "Impressions does not intend any copyright claims on the artitst's work. The winner's art, if posted on the social media handles of Impressions, shall have the due credits to the creators.",
+              "Impressions reserves the right to record performances and upload them on social media platforms for promotional purposes.",
+              "The organisers reserve the right to change the prize structure, prize money, and nature of the prize at any point in time before the start of the event/competition.",
+              "All updates will be posted on our social media handles and our official website regularly.",
+              "Impressions reserves the right to change or modify any of the above rules.",
+              "Any form of plagiarism will resut in immediate disqualification."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact Us",
+          "coordinator": "Nishit Modi",
+          "phone": "+919867401032",
+          "email": "events23.impressions@gmail.com"
+        }
+      ],
+      "footer": {
+        "text": "© 2023 Impressions. All Rights Reserved."
+      }
+    },
+
+    {
+      "module": "Shoutout",
+      "image": "/image/abhinay-stage.jpg",
+      "content": "Lorem ipsum dolor sit amet...",
+      "title": "Verse-a-tile",
+      "sections": [
+        {
+          "id": "details",
+          "title": "Details",
+          "content": [
+            "It is a Slam poetry Competition."
+          ]
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "content": [
+              "Eliminations: Participants are free to perform any self pre written poetry of their choice in the elims round. Top participants will be selected for final round.",
+              "Finals: In the finale, you have to select one of the navras and perform a poem on one of them.Navras are the nine basic emotions which everybody have to pass through at least once in their course of life. Shringara (love/beauty), Hasya (laughter), Karuna(sorrow), Raudra (anger), Veera (heroism/courage), Bhayanaka (terror/fear), Bibhatsa (disgust), Adbutha (surprise/wonder), Shantha (peace or tranquility)."
+          ],
+          "list": [
+            "Mixing",
+            "Looping",
+            "Miking"
+          ]
+        },
+        {
+          "id": "guidelines",
+          "title": "Guidelines",
+          "content": [
+              "The poetry performed should be original, self written.",
+              "The theme given to the participant should be strictly followed. If not followed it shall lead to disqualification.",
+              "By default, all timings mentioned for competitions are to be followed according to Indian Standard Time.",
+              "The information provided during registration should be correct and is the sole responsibility of the participant.",
+              "The organisers will contact the participants only via the email address and contact numbers given during registration.",
+              "Entires must be submitted via the official website. Entries through any other modes will not be considered.",
+              "Multiple submissions from a single registration will not be considered. Only the chronologically first entry will be considered valid.",
+              "Requests for registration fee refunds shall not be entertained. If under any circumstances, the competition is cancelled by the organisers then the registration fees will be refunded.",
+              "All participants must report 1 hour prior to the commencement of offline events unless mentioned otherwise by event heads. ",
+              "Deduction for exceeding performance time.",
+              "Time limit must strictly be observed. Failure to keep within the time limit will result in a penalty and/or disqualification. Exceeding the time limit will result in negative marking of the participant(s) and/or disqualification.",
+              "The participant(s) must adhere to the theme provided.",
+              "Any use of homophobic, transphobic, xenophobic, misogynistic, or hateful speech will be grounds for immediate disqualification of the participant(s).",
+              "Obscenity (at the discretion of the judges) of any kind, is not allowed and will lead to immediate disqualification.",
+              "Any plagiarised content or any offensive content directed towards any political party, religion or community will lead to disqualification. ",
+              "Violation of any of the rules will lead to disqualification.",
+              "The decision of the judges and organisers shall be final and binding. To question the official result declared, participants can do so by contacting the organising commitee and paying the grievance fees.",
+              "While submitting any artwork or content the participants must declare their submissions as original and owned by them.",
+              "Impressions does not intend any copyright claims on the artitst's work. The winner's art, if posted on the social media handles of Impressions, shall have the due credits to the creators.",
+              "Impressions reserves the right to record performances and upload them on social media platforms for promotional purposes.",
+              "The organisers reserve the right to change the prize structure, prize money, and nature of the prize at any point in time before the start of the event/competition.",
+              "All updates will be posted on our social media handles and our official website regularly.",
+              "Impressions reserves the right to change or modify any of the above rules.",
+              "Any form of plagiarism will resut in immediate disqualification."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact Us",
+          "coordinator": "Madhura Godale",
+          "phone": "+918767965272",
+          "email": "events23.impressions@gmail.com"
+        }
+      ],
+      "footer": {
+        "text": "© 2023 Impressions. All Rights Reserved."
+      }
+    },
+
+    {
+      "module": "Shoutout",
+      "image": "/image/abhinay-stage.jpg",
+      "content": "Lorem ipsum dolor sit amet...",
+      "title": "Anecdote",
+      "sections": [
+        {
+          "id": "details",
+          "title": "Details",
+          "content": [
+            "It is an online Creative Writing competiton."
+          ]
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "content": [
+            "Participants have to write prose/poetry with a word limit of 120 words on the pre given theme."
+          ],
+          "list": [
+            "Mixing",
+            "Looping",
+            "Miking"
+          ]
+        },
+        {
+          "id": "guidelines",
+          "title": "Guidelines",
+          "content": [
+              "The competition is open to college students of the age group 16-25 strictly. If the participant is found out of the mentioned age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+              "The participant is required to ensure the digital transcription (typed format) of their work. Handwritten work will not be considered.",
+              "Make a pdf of the same and upload on the Google Drive as mentioned below.",
+              "The word limit is 120 words.",
+              "Vulgarity and obscenity at any point are strictly not allowed.",
+              "PDF Submission Rules:",
+              "Participants have to submit a pdf file of their prose/poetry.",
+              "File must be named 'Anecdote_ParticipantName_ThemeName'.",
+              "The file should be uploaded to the google form shared on the Whatsapp groups made after registration.",
+              "The size of the pdf must not exceed 5MB.",
+              "The file uploaded must be clearly visible for the judgement of the artwork.",
+              "Use of AI Tools or other online softwares is strictly prohibited."
+              
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact Us",
+          "coordinator": "Arnav Bankar",
+          "phone": "+91 7506175550",
+          "email": "events23.impressions@gmail.com"
+        }
+      ],
+      "footer": {
+        "text": "© 2023 Impressions. All Rights Reserved."
+      }
     }
+  ]
 }
-  
