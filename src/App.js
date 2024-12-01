@@ -27,7 +27,7 @@ const App = () => {
         <CustomCursor />
         <Routes>
           <Route path="/" element={<EventsPage />} />
-          <Route path="/explore" element={<Explore />} />
+          <Route path="/explore/:eventTitle" element={<Explore />} />
         </Routes>
       </div>
 

@@ -14,6 +14,8 @@ function Events() {
         { img: '/image/abhinay-stage.jpg', title: 'Abhinay', content: 'Lorem ipsum dolor sit amet...' },
     ];
 
+    // console.log('Active Event Title:', items[itemActive].title);
+
     const thumbnails = items.map((item, index) => ({
         ...item,
         active: index === itemActive,
@@ -117,8 +119,14 @@ function Events() {
                                 <p>{item.content}</p>
                                 {/* <p className={`${index === itemActive? 'animate-showContent delay-[1.3s]': 'translate-y-[30px] blur-[20px] opacity-0'}`}>{item.content}</p> */}
                                 {/* <button className={`mt-4 py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 transition`}>Learn More */}
+                                
                                 <button className={`mt-4 py-2 px-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-lg shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-xl`}>
-                                    <Link to="/explore" className="text-white">Learn More</Link>
+                                    <Link
+                                        to={`/explore/${encodeURIComponent(item.title)}`}
+                                        className="text-white"
+                                    >
+                                        Explore
+                                    </Link>
                                 </button>
                             </div>
                         </div>
