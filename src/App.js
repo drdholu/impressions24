@@ -1,6 +1,5 @@
 import CardComponent from './CardComponent'
-import MainCards from './mainCards'
-import Sponsors from './Sponsors'
+import MainCards from './MainCards'
 
 function App() {
   return(
