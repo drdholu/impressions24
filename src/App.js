@@ -25,12 +25,20 @@ const App = () => {
   return (
     // <Preloader>
       <div className=''>
-        <CustomCursor />
         <Routes>
+          {urls.map((url, idx) => {
+            return (
+              <Route key={idx} path={url.url} element={url.element} />
+            )
+          })}
+          <Route path="*" element={<ErrorPage />} />
+        </Routes> 
+        {/* <CustomCursor /> */}
+        {/* <Routes>
           <Route path="/" element={<MainCards />} />
           <Route path="/events/:moduleName" element={<EventsPage />} />
           <Route path="/events/:moduleName/:eventTitle" element={<Explore />} />
-        </Routes>
+        </Routes> */}
         {/* <MainCards /> */}
       </div>
     // </Preloader>
