@@ -26,7 +26,7 @@ const App = () => {
     // <Preloader>
       <div className=''>
         {/* <Navbar /> */}
-        <CustomCursor />
+        {/* <CustomCursor /> */}
        {/* <TransitionWrapper> */}
           <Routes>
             {urls.map((url, idx) => {

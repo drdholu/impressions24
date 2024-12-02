@@ -4,11 +4,11 @@
 // import CoordinatorForm from "./components/CoordinatorForm";
 // import VolunteerForm from "./components/VolunteerForm";
 import InProgress from "./components/ui/InProgress";
-// import Landing from "./components/Landing";
+import Landing from "./components/Landing";
 import  Newspaper  from './components/Newspaper';
 
 export const urls = [
-    { url: '/', name: "Home", element: <Newspaper /> },
+    { url: '/', name: "Landing", element: <Landing /> },
     // { url: '/test', name: "Home", element: <Landing /> },
     { url: '/team', name: "Team", element: <InProgress />, position: [-3, 4, 2], className: "" },
     { url: '/events', name: "Events", element: <InProgress />, position: [-2.5, 3.25, 4], className: "" },
