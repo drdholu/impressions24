@@ -7,11 +7,16 @@ import { useNavigate } from 'react-router-dom';
 
 const VotingForm = () => {
     const candidates = [
-        { id: 1, name: "John Smith" },
-        { id: 2, name: "Sarah Johnson" },
-        { id: 3, name: "Michael Brown" },
-        { id: 4, name: "Emily Davis" },
-        { id: 5, name: "David Wilson" }
+        { id: 1, name: 'Sanika Inamdar' },
+        { id: 2, name: 'Parmita Bombarde' },
+        { id: 3, name: 'Manan Sharma' },
+        { id: 4, name: 'Digvijay Jagdale' },
+        { id: 5, name: 'Priyanka Pani' },
+        { id: 6, name: 'Swaralee Bhope' },
+        { id: 7, name: 'Adarsh Choudhary' },
+        { id: 8, name: 'Pratham Shah' },
+        { id: 9, name: 'Vedant Satao' },
+        { id: 10, name: 'Aryan Soni' }
     ];
     
     const navigate = useNavigate();
@@ -37,11 +42,13 @@ const VotingForm = () => {
 
         if (!selectedCandidate) {
             toast.error('Please select a candidate');
+            setResponseMessage('Please select a candidate');
             return;
         }
 
         if (!name) {
             toast.error('Please enter your name');
+            setResponseMessage('Please enter your name');
             setIsSubmitting(false);
             return;
         }
@@ -61,6 +68,7 @@ const VotingForm = () => {
             if (response.ok) {
                 localStorage.setItem('alreadyVoted', 'true');
                 toast.success(`Vote registered successfully for your candidate!`);
+                setResponseMessage('Vote registered successfully for your candidate!');
                 setVoteSubmitted(true);
                 setTimeout(() => setIsSubmitting(false), 1000);
                 setTimeout(() => {
@@ -68,10 +76,12 @@ const VotingForm = () => {
                 }, 4000);
             } else {
                 toast.error('Failed to cast vote. Please try again.');
+                setResponseMessage('Failed to cast vote. Please try again.');
                 setIsSubmitting(false);
             }
         } catch (error) {
             toast.error('Error submitting vote. Please try again.');
+            setResponseMessage('Error submitting vote. Please try again.');
             setIsSubmitting(false);
         }
     };

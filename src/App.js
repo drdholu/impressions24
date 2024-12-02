@@ -1,5 +1,5 @@
 // App.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // import CoordinatorForm from './components/CoordinatorForm';
 // import VolunteerForm from './components/VolunteerForm';
@@ -17,16 +17,25 @@ import ErrorPage from './components/ui/ErrorPage';
 // import gsap from 'gsap';
 // import Preloader from './components/ui/Preloader';
 // import TransitionWrapper from './components/ui/TransitionWrapper';
-import CustomCursor from './components/ui/CustomeCursor';
+// import CustomCursor from './components/ui/CustomeCursor';
 // import AnimatedBackground from './components/ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';
+// import EventsPage from './components/EventsPage';
+// import Explore from './components/Explore';
+// import MainCards from './components/MainCards';
 
 const App = () => {
+  // const [homePage, setHomePage] = useState(false);
+
+  // useEffect(() => {
+  //   if(window.location.pathname !== '/') setHomePage(true)
+  // }, []);
+
   return (
     // <Preloader>
-      <div className=''>
-        {/* <Navbar /> */}
-        {/* <CustomCursor /> */}
+      <div className='font-sans'>
+      {/* {homePage && <Navbar />} */}
+      {/* <CustomCursor /> */}
        {/* <TransitionWrapper> */}
           <Routes>
             {urls.map((url, idx) => {
@@ -40,8 +49,6 @@ const App = () => {
         <BackToTop /> 
         {/* <Footer />  */}
       </div>
-
-
     // </Preloader>
   );
 };

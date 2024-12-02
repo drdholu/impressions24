@@ -12,6 +12,9 @@ module.exports = {
       boxShadow: {
         boxShadow: '0 0 20px rgba(128, 0, 128, 0.7)',
       },
+      scrollMargin: {
+        30: '7.5rem', // Adds scroll-mt-30
+      },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
         paperHeader: ['"Pirata One"', "sans-serif"],

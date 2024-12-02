@@ -1,16 +1,8 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useLayoutEffect, useRef, useState, startTransition } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-// import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-// import { Link } from 'react-router-dom';
-// import { Menu, X } from 'lucide-react';
-// import { useLocation } from 'react-router-dom';
-// import { motion, AnimatePresence } from 'framer-motion';
-// import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-// import { Link } from 'react-router-dom';
-// import { Menu, X } from 'lucide-react';
 import smallLogo from '../images/z.png';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -20,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const titleRef = useRef();
-  // const navbarRef = useRef();
+  const navigate = useNavigate();
   const location = useLocation();
   
   // Handle scroll lock when menu is open
@@ -69,11 +61,17 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-30 backdrop-blur-sm h-[10vh]">
+      <nav className="sticky top-0 z-30 bg-black h-[10vh]">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between px-5">
-            <Link 
-              to="/" 
+            <a 
+              href="/" 
+              onClick={(e) => {
+                e.preventDefault();
+                startTransition(() => {
+                  navigate('/');
+                });
+              }}
               className="flex items-center gap-3 transition-transform hover:cursor-pointer"
             >
               <img src={smallLogo} alt="Logo" className="w-auto h-20" />
@@ -83,7 +81,7 @@ const Navbar = () => {
               >
                 Impressions 24
               </span>
-            </Link>
+            </a>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex md:items-center md:space-x-8">
@@ -157,13 +155,20 @@ const Navbar = () => {
 };
 
 const NavLink = ({ to, children, mobile = false, onClick }) => {
+  const navigate = useNavigate();
   const location = useLocation();
   const isActive = location.pathname === to;
   
   return (
-    <Link
-      to={to}
-      onClick={onClick}
+    <a
+      href={to}
+      onClick={(e) => {
+        e.preventDefault();
+        startTransition(() => {
+          navigate(to);
+        });
+        onClick();
+      }}
       className={`
         relative 
         no-underline 
@@ -187,7 +192,7 @@ const NavLink = ({ to, children, mobile = false, onClick }) => {
         duration-300
         ${isActive ? 'scale-x-100' : 'group-hover:scale-x-100'}
       `} />
-    </Link>
+    </a>
   );
 };
 
