@@ -42,11 +42,13 @@ const VotingForm = () => {
 
         if (!selectedCandidate) {
             toast.error('Please select a candidate');
+            setResponseMessage('Please select a candidate');
             return;
         }
 
         if (!name) {
             toast.error('Please enter your name');
+            setResponseMessage('Please enter your name');
             setIsSubmitting(false);
             return;
         }
@@ -66,6 +68,7 @@ const VotingForm = () => {
             if (response.ok) {
                 localStorage.setItem('alreadyVoted', 'true');
                 toast.success(`Vote registered successfully for your candidate!`);
+                setResponseMessage('Vote registered successfully for your candidate!');
                 setVoteSubmitted(true);
                 setTimeout(() => setIsSubmitting(false), 1000);
                 setTimeout(() => {
@@ -73,10 +76,12 @@ const VotingForm = () => {
                 }, 4000);
             } else {
                 toast.error('Failed to cast vote. Please try again.');
+                setResponseMessage('Failed to cast vote. Please try again.');
                 setIsSubmitting(false);
             }
         } catch (error) {
             toast.error('Error submitting vote. Please try again.');
+            setResponseMessage('Error submitting vote. Please try again.');
             setIsSubmitting(false);
         }
     };
