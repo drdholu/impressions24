@@ -19,8 +19,8 @@ const Payment = () => {
                             tokenizationSpecification: {
                                 type: 'PAYMENT_GATEWAY',
                                 parameters: {
-                                    gateway: 'example',
-                                    gatewayMerchantId: 'exampleGatewayMerchantId',
+                                    gateway: 'your_gateway_name',
+                                    gatewayMerchantId: 'your_gateway_merchant_id',
                                 },
                             },
                         },

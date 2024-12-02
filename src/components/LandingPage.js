@@ -9,7 +9,6 @@ import logo from '../images/Logos/Name Logo filled.png';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import AnimatedBackground from './ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,7 +32,6 @@ const LandingPage = () => {
 
   return (
     <div>
-      <AnimatedBackground/>
       <div ref={containerRef} className="flex items-center justify-center h-[90svh]">
         {/* <video autoPlay loop muted src={vid} className="w-full h-full object-cover z-[-1]"></video> */}
         {/* <img src={canvas} alt="" className='w-full h-full object-cover z-[-1] brightness-50'/> */}

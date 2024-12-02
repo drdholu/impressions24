@@ -97,9 +97,12 @@ const CustomCursor = () => {
             background-color: #fefefe;
           }
 
+          html, body {
+            cursor: none;
+          }
 
           html *, body * {
-            cursor: url("/public/cursor/paint.png");
+            cursor: none;
           }
         `}
       </style>
