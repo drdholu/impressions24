@@ -6,7 +6,6 @@
 import InProgress from "./components/ui/InProgress";
 // import Landing from "./components/Landing";
 import  Newspaper  from './components/Newspaper';
-import VotingForm from "./components/VotingForm";
 
 export const urls = [
     { url: '/', name: "Home", element: <Newspaper /> },
@@ -18,7 +17,7 @@ export const urls = [
     { url: '/proshow', name: "Proshows", element: <InProgress />, position: [0.7, 4, 0], className: "" },
     { url: '/about', name: "About", element: <InProgress />, position: [1.8, 3.45, 0], className: "" },
     { url: '/contact', name: "Contact", element: <InProgress />, position: [2.7, 3.5, 0], className: "" },
-    { url: '/mmi-test', name: "MMI Test voting", element: <VotingForm />, position: [2.7, 3.5, 0], className: "" },
+
     //{url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
 
     // {url: '/', name: "Home", element:<LandingPage/> },
