@@ -7,11 +7,16 @@ import { useNavigate } from 'react-router-dom';
 
 const VotingForm = () => {
     const candidates = [
-        { id: 1, name: "John Smith" },
-        { id: 2, name: "Sarah Johnson" },
-        { id: 3, name: "Michael Brown" },
-        { id: 4, name: "Emily Davis" },
-        { id: 5, name: "David Wilson" }
+        { id: 1, name: 'Bhoomi Kadam' },
+        { id: 2, name: 'Bhavna Mishra' },
+        { id: 3, name: 'Digvijay Dhananjay Jagdale' },
+        { id: 4, name: 'Swaralee Bhope' },
+        { id: 5, name: 'Anushka Pawar' },
+        { id: 6, name: 'Swanandi Kulkarni' },
+        { id: 7, name: 'Om Sonawane' },
+        { id: 8, name: 'Aryan' },
+        { id: 9, name: 'Sanika Inamdar' },
+        { id: 10, name: 'Vedant Satao' }
     ];
     
     const navigate = useNavigate();
