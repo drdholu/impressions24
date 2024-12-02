@@ -18,7 +18,6 @@ import gsap from 'gsap';
 import { atom } from "jotai";
 import { AmbientLight } from 'three'
 import InProgress from "./ui/InProgress";
-import dat from 'dat.gui';
 
 const ismobile = window.innerWidth < 930;
 
@@ -332,6 +331,7 @@ const LightPointer = forwardRef(({ position = [0, 0, 16], targetPos }, ref) => {
 });
 
 const Landing = () => {
+  const canvasref=useRef();
   const cameraref = useRef();
   const mlight = useRef();
   const helplogo1 = useRef();
@@ -388,13 +388,13 @@ const Landing = () => {
     setIsVisible(true);
     const l1 = helplogo1.current;
     const l2 = helplogo2.current;
-    const targetIntensity = ismobile ? 3 : 0;
+    const targetIntensity = ismobile ? 3 : 30;
     
     const hl = helpleft.current;
     const hr = helpright.current;
     const dot1curr = dotlight1.current;
     const dot2curr = dotlight2.current;
-    const hlTargetIntensity = ismobile ? 3 : 0;
+    const hlTargetIntensity = ismobile ? 3 : 30;
     const dur = 3;
 
     lightPointerRef.current.children[0].intensity = 40;
@@ -491,9 +491,9 @@ const Landing = () => {
     // const content = box.current;
     // console.log(textdiv);
     console.log(c1);
-    if (isAnimating || !camera || !ground || !c1 || !c2) return;
+    if (isAnimating || !camera || !c1 || !c2) return;
     
-    if ((event.type === "click" || event.type === "wheel" || event.type === "touch") && camera && ground && c1 && c2 && dot1curr && dot2curr) {
+    if ((event.type === "click" || event.type === "wheel" || event.type === "touch") && camera && c1 && c2 && dot1curr && dot2curr) {
       
       if (camera.position.z>10) {
         lightPointerRef.current.children[0].intensity = 0;
@@ -522,6 +522,7 @@ const Landing = () => {
           // .to(textdiv, { height: '40px', width: '40px' }, "<")
           
           .to(camera.position,{z:0})
+          
           .to(c1.position, { x: -totalwidth * 0.41 }, "<")
           .to(c2.position, { x: totalwidth * 0.41 }, "<")
           // .to(themeRefCurr.position, {y: 18})
@@ -534,6 +535,7 @@ const Landing = () => {
           .to(paintlightcurr, { intensity: 17 }, "<")
           .to(lmp1, { intensity: 60 }, "<")
           .to(lmp2, { intensity: 60 }, "<")
+          
           .to(themeRefCurr.children[0], {opacity : 1 }, "-=1")
           
         // .call(() => setDisplayNav(true))
@@ -611,104 +613,11 @@ const Landing = () => {
 
   window.addEventListener('mousemove', onMouseMove);
 
-  useEffect(() => {
-    const gui = new dat.GUI();
-
-    const lightOptions = {
-      helplogo1_intensity: 0,
-      helplogo2_intensity: 0,
-      helpleft_intensity: 0,
-      helpright_intensity: 0,
-      cleol1_intensity: 0,
-      cleol2_intensity: 0,
-      cleor1_intensity: 0,
-      cleor2_intensity: 0,
-      lamplight1_intensity: 0,
-      lamplight2_intensity: 0,
-      paintboxlight_intensity: 0,
-      rectAreLightref_intensity: 0, // Added property
-      rectAreaLight_width: 4,        // Added property
-      rectAreaLight_height: 12,      // Added property
-      rectAreaLight_r: 255,          // Added property
-      rectAreaLight_g: 192,          // Added property
-      rectAreaLight_b: 203,          // Added property
-    };
-
-    gui.add(lightOptions, 'helplogo1_intensity', 0, 20).onChange((value) => {
-      if (helplogo1.current) helplogo1.current.intensity = value;
-    });
-    gui.add(lightOptions, 'helplogo2_intensity', 0, 20).onChange((value) => {
-      if (helplogo2.current) helplogo2.current.intensity = value;
-    });
-    gui.add(lightOptions, 'helpleft_intensity', 0, 40).onChange((value) => {
-      if (helpleft.current) helpleft.current.intensity = value;
-    });
-    gui.add(lightOptions, 'helpright_intensity', 0, 40).onChange((value) => {
-      if (helpright.current) helpright.current.intensity = value;
-    });
-    gui.add(lightOptions, 'cleol1_intensity', 0, 60).onChange((value) => {
-      if (cleol1.current) cleol1.current.intensity = value;
-    });
-    gui.add(lightOptions, 'cleol2_intensity', 0, 40).onChange((value) => {
-      if (cleol2.current) cleol2.current.intensity = value;
-    });
-    gui.add(lightOptions, 'cleor1_intensity', 0, 60).onChange((value) => {
-      if (cleor1.current) cleor1.current.intensity = value;
-    });
-    gui.add(lightOptions, 'cleor2_intensity', 0, 40).onChange((value) => {
-      if (cleor2.current) cleor2.current.intensity = value;
-    });
-    gui.add(lightOptions, 'lamplight1_intensity', 0, 60).onChange((value) => {
-      if (lamplight1.current) lamplight1.current.intensity = value;
-    });
-    gui.add(lightOptions, 'lamplight2_intensity', 0, 60).onChange((value) => {
-      if (lamplight2.current) lamplight2.current.intensity = value;
-    });
-    gui.add(lightOptions, 'paintboxlight_intensity', 0, 40).onChange((value) => {
-      if (paintboxlight.current) paintboxlight.current.intensity = value;
-    });
-    gui.add(lightOptions, 'rectAreLightref_intensity', 0, 40).onChange((value) => {
-      if (rectAreLightref.current) rectAreLightref.current.intensity = value; // Corrected reference
-    });
-    gui.add(lightOptions, 'rectAreaLight_width', 1, 20).onChange((value) => {
-      if (rectAreLightref.current) rectAreLightref.current.width = value;
-    });
-    gui.add(lightOptions, 'rectAreaLight_height', 1, 20).onChange((value) => {
-      if (rectAreLightref.current) rectAreLightref.current.height = value;
-    });
-    gui.add(lightOptions, 'rectAreaLight_r', 0, 255).onChange((value) => {
-      if (rectAreLightref.current) {
-        const currentColor = rectAreLightref.current.color;
-        rectAreLightref.current.color.setRGB(value / 255, currentColor.g, currentColor.b);
-      }
-    });
-    gui.add(lightOptions, 'rectAreaLight_g', 0, 255).onChange((value) => {
-      if (rectAreLightref.current) {
-        const currentColor = rectAreLightref.current.color;
-        rectAreLightref.current.color.setRGB(currentColor.r, value / 255, currentColor.b);
-      }
-    });
-    gui.add(lightOptions, 'rectAreaLight_b', 0, 255).onChange((value) => {
-      if (rectAreLightref.current) {
-        const currentColor = rectAreLightref.current.color;
-        rectAreLightref.current.color.setRGB(currentColor.r, currentColor.g, value / 255);
-      }
-    });
-
-    // Position the GUI to be visible
-    gui.domElement.style.position = 'absolute';
-    gui.domElement.style.top = '0px';
-    gui.domElement.style.right = '0px';
-    gui.domElement.style.zIndex = '1000'; // Ensure it's above other elements
-
-    return () => {
-      gui.destroy();
-    };
-  }, []);
+    
 
   return (
     <div>
-      <Canvas
+      <Canvas ref={canvasref}
         style={{ background: "#000000", height: "100vh", width: "100vw" }}
       >
         <PerspectiveCamera
@@ -736,11 +645,8 @@ const Landing = () => {
         <pointLight ref={dotlight1} intensity={0} position={[endPosition.x, endPosition.y, 3]} color="red" castShadow distance={20} />
         <pointLight ref={dotlight2} intensity={0} position={[endPosition1.x, endPosition1.y, 3]} color="red" castShadow distance={20} />
         <pointLight ref={dotlight2} intensity={0} position={[endPosition1.x, endPosition1.y, 3]} color="red" castShadow distance={20} />
-        {/* <pointLight  intensity={20} position={[-14,12,2]} color="pink" castShadow distance={20} />
-        <pointLight  intensity={20} position={[-16,3,1]} color="pink" castShadow distance={20} /> */}
         
-        <rectAreaLight ref={rectAreLightref} intensity={20} position={[0,12,45]} color="pink" castShadow width={4} height={12} />
-        {/* <pointLight  intensity={20} position={[14,3,1]} color="pink" castShadow distance={20} /> */}
+        {/* <RedDot ref={temp} position={[-12,9,3]}/> */}
         {/* enter button */}
         <Html ref={start} position={[-1.5, totalheight/ 17, 0]} distanceFactor={10}>
           <div className={`
@@ -854,8 +760,7 @@ const Landing = () => {
         <Model ref={paintBox} rotation={[0.4, 9, 0]} position={[0, 3, -17]} scale={[110, 110, 110]} url={"models/palette.glb"} />
         <Model ref={lamp1} rotation={[0, -5, 0]} position={ismobile?[-totalwidth*0.6,0,-18]:[-25, 0, -20]} scale={ismobile?[2 ,5, 3]:[4, 5, 5]} url={"models/Post Lantern.glb"} />
         <Model ref={lamp2} rotation={[0, 5, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[25, 0, -20]} scale={ismobile?[2 ,5, 3]:[4, 5, 5]} url={"models/Post Lantern.glb"} />
-        <Model ref={Treer} rotation={[0, -19, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[14, 0, 0]} scale={ismobile?[2 ,5, 3]:[0.1, 0.1, 0.1]} url={"models/Tree.glb"} />
-        <Model ref={Treel} rotation={[0, 22, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[-17, 0, 2]} scale={ismobile?[2 ,5, 3]:[0.1, 0.1, 0.1]} url={"models/Tree.glb"} />
+        {/* <Model ref={groundref} rotation={[2, 4, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[0, 4, 1]} scale={ismobile?[2 ,5, 3]:[1, 1, 1]} url={"models/Concert.glb"} /> */}
  </Canvas>
 
     </div>
