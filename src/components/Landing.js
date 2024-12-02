@@ -91,6 +91,7 @@ const Navbar = forwardRef(({ displayNav }, ref) => {
   }));
 
   const [hoveredItem, setHoveredItem] = useState(null);
+  console.log(hoveredItem);
   const items = [
     { url: '/team', name: "Team", position: [0.5, 1.25, 2], className: "", ref: ref2 },
     { url: '/events', name: "Events", position: [-2.15, 1.65, 2], className: "", ref: ref3 },
@@ -381,6 +382,7 @@ const Landing = () => {
   const endPosition = ismobile ? new THREE.Vector3(-totalwidth * 0.5 * 0.52, totalheight * 0.5 * 0.72, 3) : new THREE.Vector3(-totalwidth * 0.5 * 0.32, totalheight * 0.5 * 0.8, 3);
   const endPosition1 = ismobile ? new THREE.Vector3(totalwidth * 0.5 * 0.345, totalheight * 0.5 * 0.62, 3) : new THREE.Vector3(totalwidth * 0.5 * 0.21, totalheight * 0.5 * 0.61, 3);
 
+  console.log(lightsReached);
   const handleLightsReached = () => {
     setAllowScroll(true);
     console.log("Lights reached their final position");

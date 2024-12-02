@@ -5,6 +5,8 @@ import { Routes, Route } from 'react-router-dom';
 // import VolunteerForm from './components/VolunteerForm';
 // import LandingPage from './components/LandingPage'; 
 // import Navbar from './components/Navbar';
+// import LandingPage from './components/LandingPage'; 
+// import Navbar from './components/Navbar';
 import BackToTop from "./components/ui/BackToTop"
 // import Footer from './components/ui/Footer';
 
@@ -24,7 +26,7 @@ const App = () => {
     // <Preloader>
       <div className=''>
         {/* <Navbar /> */}
-        {/* <CustomCursor /> */}
+        <CustomCursor />
        {/* <TransitionWrapper> */}
           <Routes>
             {urls.map((url, idx) => {

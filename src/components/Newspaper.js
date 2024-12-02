@@ -327,7 +327,7 @@ const ImpressionsNewspaper = () => {
                 </div>
 
                 <div className="py-2 pt-2 mt-8 mb-8 transition-colors duration-300 border-t-2 border-black hover:bg-red-50">
-                    <div className="flex items-center justify-between font-paperNote">
+                    <div className="flex flex-col items-center justify-between gap-5 sm:flex-row font-paperNote sm:gap-0">
                         <div className="flex-1 text-center">Impressions, COEP</div>
                         <div className="flex-1 text-center">Made with 💓 by Impressions Web Team</div>
                         <div className="flex-1 text-center">Edition 9</div>
