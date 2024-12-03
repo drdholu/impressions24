@@ -27,12 +27,12 @@ const VotingForm = () => {
     const [name, setName] = useState('');
     const [voteSubmitted, setVoteSubmitted] = useState(false);
 
-    useEffect(() => {
-        const alreadyVoted = localStorage.getItem('alreadyVoted');
-        if (alreadyVoted) {
-            setHasVoted(true);
-        }
-    }, []);
+    // useEffect(() => {
+    //     // const alreadyVoted = localStorage.getItem('alreadyVoted');
+    //     if (alreadyVoted) {
+    //         setHasVoted(true);
+    //     }
+    // }, []);
     // const backendURL = process.env
     // console.log(backendURL);
 
@@ -46,12 +46,6 @@ const VotingForm = () => {
             return;
         }
 
-        if (!name) {
-            toast.error('Please enter your name');
-            setResponseMessage('Please enter your name');
-            setIsSubmitting(false);
-            return;
-        }
 
         try {
             const response = await fetch('https://server.impressionscoeptech22.workers.dev/api/vote', {
@@ -61,7 +55,6 @@ const VotingForm = () => {
                 },
                 body: JSON.stringify({
                     candidateId: selectedCandidate,
-                    name: name,
                 }),
             });
 
@@ -71,9 +64,9 @@ const VotingForm = () => {
                 setResponseMessage('Vote registered successfully for your candidate!');
                 setVoteSubmitted(true);
                 setTimeout(() => setIsSubmitting(false), 1000);
-                setTimeout(() => {
-                    navigate('/');
-                }, 4000);
+                // setTimeout(() => {
+                //     navigate('/');
+                // }, 4000);
             } else {
                 toast.error('Failed to cast vote. Please try again.');
                 setResponseMessage('Failed to cast vote. Please try again.');
@@ -129,18 +122,7 @@ const VotingForm = () => {
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                        <label className={labelClass}>
-                            Your Name
-                        </label>
-                        <input
-                            type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            className="w-full px-4 py-3 text-gray-700 transition-colors duration-200 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
-                            required
-                        />
-                    </div>
+                    
                     <div className="space-y-2">
                         <label className={labelClass}>
                             Select Candidate
