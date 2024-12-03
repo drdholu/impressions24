@@ -5,13 +5,15 @@
 import InProgress from "./components/ui/InProgress";
 // import Landing from "./components/Landing";
 import  Newspaper  from './components/Newspaper';
-import Mmifinal from './components/Mmifinal';
-import Voting from './components/VotingForm';
+// import VolunteerForm from "./components/VolunteerForm";
+// import Mmifinal from './components/Mmifinal';
+// import Voting from './components/VotingForm';
 
 export const urls = [
     { url: '/', name: "Home", element: <Newspaper /> },
-    { url: '/mmi-finalists', name: "mmi-finalists", element: <Mmifinal />, className: "" },
-    { url: '/voting', name: "mmi-voting", element: <Voting /> },
+    // {url: '/', name: "Home", element:<LandingPage/> },
+    // { url: '/mmi-finalists', name: "mmi-finalists", element: <Mmifinal />, className: "" },
+    // { url: '/voting', name: "mmi-voting", element: <Voting /> },
     // { url: '/test', name: "Home", element: <Landing /> },
     { url: '/team', name: "Team", element: <InProgress />, position: [-3, 4, 2], className: "" },
     { url: '/events', name: "Events", element: <InProgress />, position: [-2.5, 3.25, 4], className: "" },
@@ -23,8 +25,5 @@ export const urls = [
     
 
     //{url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
-
-    // {url: '/', name: "Home", element:<LandingPage/> },
-    // {url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
     // {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
 ]
