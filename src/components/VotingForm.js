@@ -10,13 +10,15 @@ const VotingForm = () => {
         { id: 1, name: 'Sanika Inamdar' },
         { id: 2, name: 'Parmita Bombarde' },
         { id: 3, name: 'Manan Sharma' },
-        { id: 4, name: 'Digvijay Jagdale' },
+        { id: 4, name: 'Ananya Kanetkar' },
         { id: 5, name: 'Priyanka Pani' },
         { id: 6, name: 'Swaralee Bhope' },
         { id: 7, name: 'Adarsh Choudhary' },
         { id: 8, name: 'Pratham Shah' },
         { id: 9, name: 'Vedant Satao' },
-        { id: 10, name: 'Aryan Soni' }
+        { id: 10, name: 'Aryan Soni' },
+        { id: 11, name: 'Presha Rane' },
+        { id: 12, name: 'Vinay More' }
     ];
     
     // const navigate = useNavigate();
