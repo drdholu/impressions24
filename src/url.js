@@ -12,7 +12,7 @@ import Voting from './components/VotingForm';
 export const urls = [
     { url: '/', name: "Home", element: <Newspaper /> },
     { url: '/mmi-finalists', name: "mmi-finalists", element: <Mmifinal />, className: "" },
-    { url: '/Voting', name: "mmi-finalists", element: <Voting />, className: "" },
+    { url: '/Voting', name: "mmi-voting", element: <Voting />, className: "" },
     // { url: '/test', name: "Home", element: <Landing /> },
     { url: '/team', name: "Team", element: <InProgress />, position: [-3, 4, 2], className: "" },
     { url: '/events', name: "Events", element: <InProgress />, position: [-2.5, 3.25, 4], className: "" },
