@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Check, AlertCircle, Vote } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 // import candidates from '../candidates';
 
 const VotingForm = () => {
@@ -19,12 +19,12 @@ const VotingForm = () => {
         { id: 10, name: 'Aryan Soni' }
     ];
     
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [selectedCandidate, setSelectedCandidate] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [responseMessage, setResponseMessage] = useState('');
-    const [hasVoted, setHasVoted] = useState(false);
-    const [name, setName] = useState('');
+    // const [hasVoted, setHasVoted] = useState(false);
+    // const [name, setName] = useState('');
     const [voteSubmitted, setVoteSubmitted] = useState(false);
 
     // useEffect(() => {
@@ -82,17 +82,17 @@ const VotingForm = () => {
     const labelClass = "block mb-2 text-sm font-semibold text-gray-700";
     const selectClass = "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 bg-gray-50 hover:bg-gray-100 transition-colors duration-200";
 
-    if (hasVoted) {
-        return (
-            <div className="flex items-center justify-center w-full min-h-screen bg-gray-50">
-                <div className="w-full max-w-lg p-8 mx-4 bg-white shadow-lg rounded-2xl">
-                    <h2 className="text-3xl font-bold text-center text-gray-800">
-                        You have already voted
-                    </h2>
-                </div>
-            </div>
-        );
-    }
+    // if (hasVoted) {
+    //     return (
+    //         <div className="flex items-center justify-center w-full min-h-screen bg-gray-50">
+    //             <div className="w-full max-w-lg p-8 mx-4 bg-white shadow-lg rounded-2xl">
+    //                 <h2 className="text-3xl font-bold text-center text-gray-800">
+    //                     You have already voted
+    //                 </h2>
+    //             </div>
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className="flex items-center justify-center w-full min-h-screen bg-gray-50">
