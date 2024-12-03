@@ -2,7 +2,6 @@
 // import ErrorPage from "./components/ErrorPage";
 // import LandingPage from "./components/LandingPage";
 // import CoordinatorForm from "./components/CoordinatorForm";
-// import VolunteerForm from "./components/VolunteerForm";
 import InProgress from "./components/ui/InProgress";
 // import Landing from "./components/Landing";
 import  Newspaper  from './components/Newspaper';
@@ -12,7 +11,7 @@ import Voting from './components/VotingForm';
 export const urls = [
     { url: '/', name: "Home", element: <Newspaper /> },
     { url: '/mmi-finalists', name: "mmi-finalists", element: <Mmifinal />, className: "" },
-    { url: '/Voting', name: "mmi-voting", element: <Voting />, className: "" },
+    { url: '/voting', name: "mmi-voting", element: <Voting /> },
     // { url: '/test', name: "Home", element: <Landing /> },
     { url: '/team', name: "Team", element: <InProgress />, position: [-3, 4, 2], className: "" },
     { url: '/events', name: "Events", element: <InProgress />, position: [-2.5, 3.25, 4], className: "" },
