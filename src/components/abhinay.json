@@ -1,0 +1,145 @@
+{
+    "events": [
+      {
+            "title": "Suno Suno",
+            "sections": [
+              {
+                "id": "details",
+                "title": "Details",
+                "content": [
+                  "It is a Street Play competiton."
+                ]   
+              },
+              {
+                "id": "structure",
+                "title": "Structure",
+                "content": [
+                  "Teams can perform a social topic(s) of their choice.",
+                  "Teams can perform a social topic(s) of their choice.",
+                  "The competition will consist of a single round.",
+                  "Setup time: 2 mins, Performance time: 12 mins to 14mins(If setup is done early, can be added to performance time)."
+                ],
+                "list": [
+                ]
+              },
+              {
+                "id": "guidelines",
+                "title": "Guidelines",
+                "content": [
+                  "The competition is open to college students of age group 16 - 25 strictly. If participant is found out of the mentioned age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+                  "List of all team members should be provided to the event head during registration.Music accompanists are included in the team named stated above.",
+                  "Performance should be confined within the area (10-12 metres in diameter) i.e an open-air venue, with the audience on all sides.",
+                  "Costumes, props, instruments, and scripts are subject to verification.",
+                  "No electrical appliances shall be allowed during the performance whether inside or outside the circle of performance.",
+                  "Only live music is allowed. Teams will have to bring their own instruments. No instruments will be provided.",
+                  "Any kind of fluids, live animals, flame, heavy objects or any other material which has a possibility of damaging the area, or harming the people involved is strictly not allowed.",
+                  "Any prop/material used during the performance by the participants that litter the performance area is not permitted. In case of such circumstances, participants are expected to clean it.",
+                  "Usage of abusive language, obscenity, direct implications, plagiarism, racial, religious/ linguistic, sexual, political views will lead to immediate disqualification."
+                ]
+              },
+              {
+                "id": "contact",
+                "title": "Contact Us",
+                "coordinator": "Arnav Bankar",
+                "phone": "+91 7506175550",
+                "email": "events23.impressions@gmail.com"
+              }
+            ],
+            "footer": {
+              "text": "© 2023 Impressions. All Rights Reserved."
+            },
+            "buttonLink": "https://example.com/learn-more"
+      },
+      {
+        "title": "Limelight",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+                "It is a Monologue Competition."
+            ]   
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+              "The competition will consist of a single round.",
+              "Participants will have to prepare an original monologue for this round.",
+              "The time duration of the monologue should be 3 to 4 minutes.",
+              "Participants can use non lyrical - non prompting background music for their performance."
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Guidelines",
+            "content": [
+              "The competition is open to college students of the age group 16-25 strictly. If the participant is found out of the mentioned age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+              "Participants must submit a digital written copy of their monologue 2 days prior to the competition.",
+              "Unoriginal, plagiarised, or copied monologues will receive negative markings or will be disqualified depending on the discretion of the judges.",
+              "Props (except hazardous and dangerous materials) are allowed.",
+              "Miming or ventriloquism is not allowed.Usage of abusive language, obscenity, direct implications, plagiarism, and racial,religious/ linguistic, sexual, and political views will lead to immediate disqualification."
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Vanshika Bhuyarkar",
+            "phone": "+91 9175898977",
+            "email": "events23.impressions@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2023 Impressions. All Rights Reserved."
+        }
+      },
+      {
+        "title": "Artiskit",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+              "It is an Impromptu Acting Competition.."
+            ]   
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+              "The competition will consist of a single round.",
+              "At the reporting time, each team will be assigned two random topics, out of which participants choose one for their skit.",
+              "Each team will be given 30 minutes of preparation time for the performance."
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Rules & Guidelines",
+            "content": [
+              "The Competition is open to college students of age 16-25 strictly.",
+              "A separate space will be allocated to each group to prepare for 30 minutes.",
+              "Teams will be provided a stage, table, and two chairs for their performance.",
+              "Teams are allowed to use objects they are carrying with themselves as props (on the discretion of the organisers). The use of such props is the sole responsibility of the participating team.",
+              "Teams must present the synopsis of their skit along with the name of characters corresponding to the team members right after their performance.",
+              "The use of virtual sources, communicating with other teams, and any other kind of malpractice will lead to immediate disqualification.",
+              "Usage of abusive language, obscenity, direct implications, plagiarism, and racial, religious/ linguistic, sexual, and political views will lead to immediate disqualification."
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Deep Narkhede",
+            "phone": "+91 7045407123",
+            "email": "events23.impressions@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2023 Impressions. All Rights Reserved."
+        }
+    }
+ ]
+}
