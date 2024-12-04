@@ -1,0 +1,120 @@
+
+{
+    "events": [
+      {
+            "title": "Lens Art",
+            "sections": [
+              {
+                "id": "details",
+                "title": "Details",
+                "content": [
+                  "It is a Solo Photography Competition."
+                ]   
+              },
+              {
+                "id": "structure",
+                "title": "Structure",
+                "content": [
+                  "The competition will be conducted and judged completely online, no live presence will be required for this competition.",
+                  "Participants will submit their photographs via the official Impressions website or through the drive link which will be provided on Whatsapp of the participant after the registration.",
+                  "The top 10 entries shortlisted by the judge will be displayed in an “Exhibition” on the college campus on the day of the main fest along with the name of the artist."
+                ],
+                "list": [
+                ]
+              },
+              {
+                "id": "guidelines",
+                "title": "Guidelines",
+                "content": [
+                    "The competition is open to college students of age group 16 - 25 strictly. If participant is found out of the mentioned age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+                    "Themes will be mentioned at the time of registration.",
+                    "Photography can be done using any device available (Mobile phone, DSLR or point-and-shoot).",
+                    "Usage of filters or editing software or plagiarism will result in disqualification.",
+                    "The photo must be of a standard aspect ratio (1:1, 1:2, 3:4, 9:16) with no more than 2048 pixels on the longer side.",
+                    "Vulgarity and obscenity at any point are strictly not allowed.",
+                    "By submitting their artwork, the participants declare that their artwork is original and that they are the sole creators of the artwork. A provision will be made on the submission link to sign a declaration ensuring the same.",
+                    "The sole copyright of the artwork remains with the creators, but Impressions has the right of promoting the content on social media platforms and other print media.",
+                    "Image Submission Rules:",
+                    "Images should be submitted in JPEG/JPG/PNG format.",
+                    "Photos must be named “Lensart_ParticipantName_ThemeName”.",
+                    "Image size should not exceed 10MB.",
+                    "If the submission is via Drive link, Folder should be uploaded to your personal Google Drive. Access permission must be given to “Anyone with a link can view/edit”.",
+                    "The link to your Personal Google Drive should be uploaded to the form shared to you on Whatsapp. The Access permission should be given as stated above.",
+                    "Photo editing and the use of filters are strictly prohibited.",
+                    "Photos submitted should be clearly visible for judging.",
+                    "The artwork provided should not have any glass frames.",
+                    "Submissions for multiple themes shall require multiple registrations."
+                ]
+              },
+              {
+                "id": "contact",
+                "title": "Contact Us",
+                "coordinator": "Vanshika Bhuyarkar",
+                "phone": "+919175898977",
+                "email": "events23.impressions@gmail.com"
+              }
+            ],
+            "footer": {
+              "text": "© 2023 Impressions. All Rights Reserved."
+            },
+            "buttonLink": "https://example.com/learn-more"
+      },
+      {
+        "title": "Reelscapes",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+                "This is a Reel Making competition."
+            ]  
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+                "Team size: 1-5",
+                "The competition will be conductd throughout the 3 days of Impressions, live presence of participant is required on day of shooting.",
+                "Participants will submit their Reels via the official Impressions website or through the drive link which will be provided on Whatsap of the participant after registration.",
+                "Results will be declared after the fest."
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Guidelines",
+            "content": [
+                "Participant name submitted should be the name of the team leader.",
+                "The competition is open to college students of age group 16 - 25 strictly. If participant is found out of the mentioned age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+                "Reel can be shot using any device available (Mobile phone, DSLR or point-and-shoot).",
+                "Plagiarism will result in disqualification.",
+                "Reel can be shot in any arena without disturbing the participants of the ongoing competition. Inclusion of participant can be done by their consent only.",
+                "Vulgarity and obscenity at any point are strictly not allowed.",
+                "By submitting their artwork, the participants declare that their artwork is original and that they are the sole creators of the artwork. A provision will be made on the submission link to sign a declaration ensuring the same.",
+                "The sole copyright of the artwork remains with the creators, but Impressions has the right of promoting the content on social media platforms and other print media.",
+                "Participants can shoot their reel on all the three days or either of the three days of the festival.",
+                "The reel limit should be 30 - 60 seconds of time.",
+                "Image Submission Rules:",
+                "Video format : MP4, MOV.",
+                "Reel must be named “Reelscapes_ParticipantName”.",
+                "Reel size should not exceed 100MB.",
+                "If the submission is via Drive link, Folder should be uploaded to your personal Google Drive. Access permission must be given to “Anyone with a link can view/edit”.",
+                "The link to your Personal Google Drive should be uploaded to the form shared to you on Whatsapp. The Access permission should be given as stated above.",
+                "Reel submitted should be clearly visible for judging."
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Vanshika Bhuyarkar",
+            "phone": "+91 9175898977",
+            "email": "events23.impressions@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2023 Impressions. All Rights Reserved."
+        }
+      }
+    ]
+}

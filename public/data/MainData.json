@@ -6,7 +6,7 @@
             { "img": "/image/shoutout-stage.jpg", "title": "Andaaz-E-Bayaan", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/dance-stage.jpg", "title": "Tale Teller", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/music-stage2.jpg", "title": "Comiking", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/abhinay-stage.jpg", "title": "Verse-a-tile", "content": "Lorem ipsum dolor sit amet..." }
+            { "img": "/image/abhinay-stage.jpg", "title": "Verse-a-Tile", "content": "Lorem ipsum dolor sit amet..." }
         ]
     },
     "Music": {
@@ -48,7 +48,7 @@
             { "img": "/image/dance-stage.jpg", "title": "Graphix AI", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/dance-stage.jpg", "title": "Graphix Digital", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/dance-stage.jpg", "title": "Cirकला", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "Color Splash", "content": "Lorem ipsum dolor sit amet..." }
+            { "img": "/image/dance-stage.jpg", "title": "Colour Splash", "content": "Lorem ipsum dolor sit amet..." }
 
         ]
     },
