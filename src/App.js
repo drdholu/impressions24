@@ -6,8 +6,10 @@ import { Routes, Route } from 'react-router-dom';
 // import LandingPage from './components/LandingPage'; 
 // import Navbar from './components/Navbar';
 // import LandingPage from './components/LandingPage'; 
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import BackToTop from "./components/ui/BackToTop"
+import EventsPage from './components/EventsPage';
+import Explore from './components/Explore';
 // import Footer from './components/ui/Footer';
 
 // import VolunteerForm from './components/VolunteerForm';
@@ -25,16 +27,16 @@ import ErrorPage from './components/ui/ErrorPage';
 // import MainCards from './components/MainCards';
 
 const App = () => {
-  // const [homePage, setHomePage] = useState(false);
+  const [homePage, setHomePage] = useState(false);
 
-  // useEffect(() => {
-  //   if(window.location.pathname !== '/') setHomePage(true)
-  // }, []);
+  useEffect(() => {
+    if(window.location.pathname !== '/') setHomePage(true)
+  }, []);
 
   return (
     // <Preloader>
       <div className='font-sans'>
-      {/* {homePage && <Navbar />} */}
+      {homePage && <Navbar />}
       {/* <CustomCursor /> */}
        {/* <TransitionWrapper> */}
           <Routes>
@@ -43,6 +45,8 @@ const App = () => {
                 <Route key={idx} path={url.url} element={url.element} />
               )
             })}
+            <Route path='/events/:moduleName' element={<EventsPage />} />
+            <Route path='/events/:moduleName/:eventTitle' element={<Explore />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes> 
         {/* </TransitionWrapper> */}

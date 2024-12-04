@@ -4,10 +4,8 @@
 // import CoordinatorForm from "./components/CoordinatorForm";
 // import VolunteerForm from "./components/VolunteerForm";
 // import  Newspaper  from './components/Newspaper';
-import InProgress from "./components/ui/InProgress";
+// import InProgress from "./components/ui/InProgress";
 import Landing from "./components/Landing";
-import EventsPage from './components/EventsPage';
-import Explore from './components/Explore';
 import MainCards from './components/EventsModules';
 import Teams from './components/teams';
 
@@ -20,7 +18,5 @@ export const urls = [
     // { url: '/proshow', name: "Proshows", element: <InProgress />, position: [0.7, 4, 0], className: "" },
     // { url: '/contact', name: "Contact", element: <InProgress />, position: [2.7, 3.5, 0], className: "" },
     {url: '/events', name: "Events", element: <MainCards />},
-    {url: '/events/:moduleName', name: ":moduleName", element: <EventsPage />},
-    {url: '/events/:moduleName/:eventTitle', name: ":eventTitle", element: <Explore />}
     // {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
 ]
