@@ -5,7 +5,7 @@
 import InProgress from "./components/ui/InProgress";
 // import Landing from "./components/Landing";
 import  Newspaper  from './components/Newspaper';
-// import VolunteerForm from "./components/VolunteerForm";
+import VolunteerForm from "./components/VolunteerForm";
 // import Mmifinal from './components/Mmifinal';
 // import Voting from './components/VotingForm';
 
@@ -25,5 +25,5 @@ export const urls = [
     
 
     //{url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
-    // {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
+    {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
 ]

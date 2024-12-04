@@ -6,7 +6,7 @@ import { toast,ToastContainer } from 'react-toastify';
 import Details from "./ui/Details"
 import 'react-toastify/dist/ReactToastify.css';
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwq7EfkHoVpMiXAETjKjxxdJ2Trmjh3BcVHITA7KsAG7x75TS9VOZvIZZwsrrTlQ-ot/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwJSqjXQWaLPofCbeH8NIL8pVNlct6Kb9j96WYk0bGYL9eSjmi0GBr8eprwfC0gZeiC/exec';
 
 const VolunteerForm = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +19,7 @@ const VolunteerForm = () => {
     pref3: '',
     reason: '',
     otherFest: '',
+    talent: '',
   });
 
   const formRef = useRef();
@@ -46,6 +47,7 @@ const VolunteerForm = () => {
       pref3: '',
       reason: '',
       otherFest: '',
+      talent: '',
     });
   };
 
@@ -59,7 +61,7 @@ const VolunteerForm = () => {
     }
 
     for (const key in formData) {
-      if (formData[key].trim() === '' && key !== 'portfolio' && key!=='contact') {
+      if (formData[key].trim() === '' && key !== 'portfolio' && key!=='contact'&& key!=='talent') {
         toast.error("Please fill all manditory fields");
         console.log(key);
         setResponseMessage('All fields are mandatory.');
@@ -252,6 +254,16 @@ const VolunteerForm = () => {
                   className={`${inputClass} min-h-[100px] resize-y`}
                   placeholder="Enter your reason"
                   required
+                />
+              </div>
+              <div>
+                <label className={labelClass}>Any talents you want to share?</label>
+                <textarea
+                  name="talent"
+                  value={formData.talent}
+                  onChange={handleInputChange}
+                  className={`${inputClass} min-h-[100px] resize-y`}
+                  placeholder="Enter your talent"
                 />
               </div>
 
