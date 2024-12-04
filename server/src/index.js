@@ -35,10 +35,10 @@ export default {
 		if (request.method === "POST" && request.url.endsWith("/api/vote")) {
 			// const env.DB = env.DB;
 			const requestBody = await request.json();
-			const { candidateId, name } = requestBody;
+			const { candidateId } = requestBody;
 
 			// Validate input
-			if (!candidateId || !name) {
+			if (!candidateId) {
 				return new Response(
 					JSON.stringify({ message: "Candidate ID and name are required" }),
 					{ status: 400, headers: corsHeaders }
@@ -82,11 +82,11 @@ export default {
 					.run();
 
 				// Insert new user who voted
-				await env.DB.prepare(
-					"INSERT INTO users(name, voted_candidate_id) VALUES(?, ?)"
-				)
-					.bind(name, candidateId)
-					.run();
+				// await env.DB.prepare(
+				// 	"INSERT INTO users(name, voted_candidate_id) VALUES(?, ?)"
+				// )
+				// 	.bind(name, candidateId)
+				// 	.run();
 
 				return new Response(
 					JSON.stringify({ message: "Vote recorded successfully" }),

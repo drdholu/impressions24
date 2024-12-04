@@ -57,7 +57,9 @@ const Events = () => {
     ];
 
     return (
-        <div className="container flex flex-col items-center max-w-screen-lg min-h-screen mx-auto">
+        <div 
+        style={{backgroundImage: urls("../images/dance.webp")}}
+        className="container flex flex-col items-center max-w-screen-lg min-h-screen mx-auto">
 
             <div>
                 <p className="text-3xl">Events</p>

@@ -1,4 +1,4 @@
--- Migration number: 0003 	 2024-11-20T08:59:08.408Z
+-- Migration number: 0004 	 2024-12-02T12:56:20.967Z
 
 INSERT INTO candidates (id, name, votes) VALUES
 (1, 'Bhoomi Kadam', 0),
