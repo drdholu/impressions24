@@ -1,13 +1,13 @@
 // import CoordinatorForm from "./components/CoordinatorForm";
 // import LandingPage from "./components/LandingPage";
-import { element } from "three/webgpu";
-import MMIForm from "./components/MmiForm";
-import ImpressionsNewspaper from "./components/Newspaper";
+// import { element } from "three/webgpu";
+// import MMIForm from "./components/MmiForm";
+// import ImpressionsNewspaper from "./components/Newspaper";
 // import VotingForm from "./components/VotingForm";
 // import VolunteerForm from "./components/VolunteerForm";
 import EventsPage from './components/EventsPage';
 import Explore from './components/Explore';
-import MainCards from './components/MainCards';
+// import MainCards from './components/MainCards';
 import Modules from "./components/Modules";
 
 export const urls = [

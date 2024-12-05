@@ -40,7 +40,7 @@
 //     }, [eventTitle, navigate]);
 
 //     if (!eventData) {
-//         return <div className="text-white text-center mt-20">Loading...</div>;
+//         return <div className="mt-20 text-center text-white">Loading...</div>;
 //     }
 
 //     // Separate sections into variables
@@ -50,7 +50,7 @@
 //     const contactSection = eventData.sections.find((section) => section.id === 'contact');
 
 //     return (
-//         <div className="bg-gray-900 text-gray-100 font-poppins min-h-screen flex flex-col">
+//         <div className="flex flex-col min-h-screen text-gray-100 bg-gray-900 font-poppins">
 //             {/* Header */}
 //             <header className="w-[1200px] max-w-[90%] mx-auto px-10 py-4 flex justify-between items-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-lg shadow-lg sticky top-0 z-50">
 //                 <div className="text-3xl font-bold text-white">{eventData.title}</div>
@@ -64,37 +64,37 @@
 
 //             {/* Details Section */}
 //             <section id="details" className="w-[1200px] max-w-[90%] mx-auto py-12 mt-12 bg-gray-800 rounded-lg shadow-lg px-8 scroll-mt-30">
-//                 <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">{detailsSection.title}</h2>
-//                 <p className="text-lg text-gray-200 leading-relaxed">
+//                 <h2 className="mb-6 text-4xl font-bold text-center text-blue-400">{detailsSection.title}</h2>
+//                 <p className="text-lg leading-relaxed text-gray-200">
 //                     {detailsSection.content.join(' ')}
 //                 </p>
 //             </section>
 
 //             {/* Structure Section */}
 //             <section id="structure" className="w-[1200px] max-w-[90%] mx-auto py-12 mt-12 bg-gray-800 rounded-lg shadow-lg px-8 scroll-mt-30">
-//                 <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">{structureSection.title}</h2>
-//                 {/* <p className="text-lg text-gray-200 mb-4">
+//                 <h2 className="mb-6 text-4xl font-bold text-center text-blue-400">{structureSection.title}</h2>
+//                 {/* <p className="mb-4 text-lg text-gray-200">
 //                     {structureSection.content}
 //                 </p> */}
-//                 <ul className="list-disc pl-6 space-y-4 text-lg text-gray-200">
+//                 <ul className="pl-6 space-y-4 text-lg text-gray-200 list-disc">
 //                     {structureSection.content.map((item, index) => (
 //                         <li key={index}>{item}</li>
 //                     ))}
 //                 </ul>
-//                 <ul className="list-disc pl-6 space-y-2 text-lg text-gray-200">
+//                 <ul className="pl-6 space-y-2 text-lg text-gray-200 list-disc">
 //                     {structureSection.list.map((item, index) => (
 //                         <li key={index}>{item}</li>
 //                     ))}
 //                 </ul>
-//                 {/* <p className="text-lg text-gray-200 mt-4">
+//                 {/* <p className="mt-4 text-lg text-gray-200">
 //                     <strong>{structureSection.content[1]}</strong>
 //                 </p> */}
 //             </section>
 
 //             {/* Guidelines Section */}
 //             <section id="guidelines" className="w-[1200px] max-w-[90%] mx-auto py-12 mt-12 bg-gray-800 rounded-lg shadow-lg px-8 scroll-mt-30">
-//                 <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">{guidelinesSection.title}</h2>
-//                 <ul className="list-disc pl-6 space-y-4 text-lg text-gray-200">
+//                 <h2 className="mb-6 text-4xl font-bold text-center text-blue-400">{guidelinesSection.title}</h2>
+//                 <ul className="pl-6 space-y-4 text-lg text-gray-200 list-disc">
 //                     {guidelinesSection.content.map((item, index) => (
 //                         <li key={index}>{item}</li>
 //                     ))}
@@ -103,8 +103,8 @@
 
 //             {/* Contact Section */}
 //             <section id="contact" className="w-[1200px] max-w-[90%] mx-auto py-12 mt-12 bg-gray-800 rounded-lg shadow-lg px-8 scroll-mt-30">
-//                 <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">{contactSection.title}</h2>
-//                 <div className="text-lg space-y-4 text-gray-200">
+//                 <h2 className="mb-6 text-4xl font-bold text-center text-blue-400">{contactSection.title}</h2>
+//                 <div className="space-y-4 text-lg text-gray-200">
 //                     <p><strong>Event Coordinator:</strong> {contactSection.coordinator}</p>
 //                     <p>
 //                         <strong>Phone:</strong> 
@@ -125,7 +125,7 @@
 //                         href={eventData.buttonLink}
 //                         target="_blank"
 //                         rel="noopener noreferrer"
-//                         className="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform duration-300 hover:tracking-wider hover:shadow-xl"
+//                         className="inline-block px-6 py-3 font-bold text-white transition-transform duration-300 rounded-lg shadow-lg bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:tracking-wider hover:shadow-xl"
 //                     >
 //                         Learn More
 //                     </a>
@@ -133,7 +133,7 @@
 //             )}
 
 //             {/* Footer */}
-//             <footer className="bg-black/80 py-6 text-center text-gray-400 mt-auto">
+//             <footer className="py-6 mt-auto text-center text-gray-400 bg-black/80">
 //                 {eventData.footer.text}
 //             </footer>
 //         </div>
@@ -186,7 +186,7 @@ const Explore = () => {
                 console.error('Error fetching data:', error);
                 navigate('/');
             });
-    }, [eventTitle, navigate]);
+    }, [eventTitle, moduleName, navigate]);
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -204,7 +204,7 @@ const Explore = () => {
 
 
     if (!eventData) {
-        return <div className="text-white text-center mt-20">Loading...</div>;
+        return <div className="mt-20 text-center text-white">Loading...</div>;
     }
 
     // Separate sections into variables
@@ -224,11 +224,11 @@ const Explore = () => {
     };
 
     return (
-        <div className="bg-gray-900 text-gray-100 font-poppins min-h-screen flex flex-col">
+        <div className="flex flex-col min-h-screen text-gray-100 bg-gray-900 font-poppins">
             {/* Header */}
             <header className="w-[1200px] max-w-[90%] mx-auto px-10 py-4 flex justify-between items-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-lg shadow-lg sticky top-0 z-50">
                 <div className="text-3xl font-bold text-white">{eventData.title}</div>
-                <nav className="hidden lg:flex space-x-6 text-white">
+                <nav className="hidden space-x-6 text-white lg:flex">
                     <a href="#details" className="hover:text-blue-400" onClick={handleLinkClick}>Details</a>
                     <a href="#structure" className="hover:text-blue-400" onClick={handleLinkClick}>Structure</a>
                     <a href="#guidelines" className="hover:text-blue-400" onClick={handleLinkClick}>Guidelines</a>
@@ -236,7 +236,7 @@ const Explore = () => {
                 </nav>
                 <button
                     onClick={toggleHamburger}
-                    className="lg:hidden text-white focus:outline-none"
+                    className="text-white lg:hidden focus:outline-none"
                 >
                     <svg
                         className="w-6 h-6"
@@ -258,7 +258,7 @@ const Explore = () => {
             {hamBurgerOpen && (
                 <nav
                     ref={dropdownRef}
-                    className="fixed top-16 right-5 bg-gray-800 rounded-lg shadow-lg p-4 lg:hidden z-50 "
+                    className="fixed z-50 p-4 bg-gray-800 rounded-lg shadow-lg top-16 right-5 lg:hidden "
                 >
                     <a href="#details" className="block hover:text-blue-400" onClick={handleLinkClick}>Details</a>
                     <a href="#structure" className="block hover:text-blue-400" onClick={handleLinkClick}>Structure</a>
@@ -269,37 +269,37 @@ const Explore = () => {
 
             {/* Details Section */}
             <section id="details" className="w-[1200px] max-w-[90%] mx-auto py-12 mt-12 bg-gray-800 rounded-lg shadow-lg px-8 scroll-mt-30">
-                <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">{detailsSection.title}</h2>
-                <p className="text-lg text-gray-200 leading-relaxed">
+                <h2 className="mb-6 text-4xl font-bold text-center text-blue-400">{detailsSection.title}</h2>
+                <p className="text-lg leading-relaxed text-gray-200">
                     {detailsSection.content.join(' ')}
                 </p>
             </section>
 
             {/* Structure Section */}
             <section id="structure" className="w-[1200px] max-w-[90%] mx-auto py-12 mt-12 bg-gray-800 rounded-lg shadow-lg px-8 scroll-mt-30">
-                <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">{structureSection.title}</h2>
-                {/* <p className="text-lg text-gray-200 mb-4">
+                <h2 className="mb-6 text-4xl font-bold text-center text-blue-400">{structureSection.title}</h2>
+                {/* <p className="mb-4 text-lg text-gray-200">
                     {structureSection.content}
                 </p> */}
-                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-200">
+                <ul className="pl-6 space-y-4 text-lg text-gray-200 list-disc">
                     {structureSection.content.map((item, index) => (
                         <li key={index}>{item}</li>
                     ))}
                 </ul>
-                <ul className="list-disc pl-6 space-y-2 text-lg text-gray-200">
+                <ul className="pl-6 space-y-2 text-lg text-gray-200 list-disc">
                     {structureSection.list.map((item, index) => (
                         <li key={index}>{item}</li>
                     ))}
                 </ul>
-                {/* <p className="text-lg text-gray-200 mt-4">
+                {/* <p className="mt-4 text-lg text-gray-200">
                     <strong>{structureSection.content[1]}</strong>
                 </p> */}
             </section>
 
             {/* Guidelines Section */}
             <section id="guidelines" className="w-[1200px] max-w-[90%] mx-auto py-12 mt-12 bg-gray-800 rounded-lg shadow-lg px-8 scroll-mt-30">
-                <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">{guidelinesSection.title}</h2>
-                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-200">
+                <h2 className="mb-6 text-4xl font-bold text-center text-blue-400">{guidelinesSection.title}</h2>
+                <ul className="pl-6 space-y-4 text-lg text-gray-200 list-disc">
                     {guidelinesSection.content.map((item, index) => (
                         <li key={index}>{item}</li>
                     ))}
@@ -308,8 +308,8 @@ const Explore = () => {
 
             {/* Contact Section */}
             <section id="contact" className="w-[1200px] max-w-[90%] mx-auto py-12 mt-12 bg-gray-800 rounded-lg shadow-lg px-8 scroll-mt-30">
-                <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">{contactSection.title}</h2>
-                <div className="text-lg space-y-4 text-gray-200">
+                <h2 className="mb-6 text-4xl font-bold text-center text-blue-400">{contactSection.title}</h2>
+                <div className="space-y-4 text-lg text-gray-200">
                     <p><strong>Event Coordinator:</strong> {contactSection.coordinator}</p>
                     <p>
                         <strong>Phone:</strong> 
@@ -330,7 +330,7 @@ const Explore = () => {
                         href={eventData.buttonLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform duration-300 hover:tracking-wider hover:shadow-xl"
+                        className="inline-block px-6 py-3 font-bold text-white transition-transform duration-300 rounded-lg shadow-lg bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:tracking-wider hover:shadow-xl"
                     >
                         Register
                     </a>
@@ -338,7 +338,7 @@ const Explore = () => {
             )}
 
             {/* Footer */}
-            <footer className="bg-black/80 py-6 text-center text-gray-400 mt-auto">
+            <footer className="py-6 mt-auto text-center text-gray-400 bg-black/80">
                 {eventData.footer.text}
             </footer>
         </div>

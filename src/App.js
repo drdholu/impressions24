@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 // import VolunteerForm from './components/VolunteerForm';
 // import LandingPage from './components/LandingPage'; 
 // import Navbar from './components/Navbar';
-import BackToTop from "./components/ui/BackToTop"
+// import BackToTop from "./components/ui/BackToTop"
 // import Footer from './components/ui/Footer';
 
 // import VolunteerForm from './components/VolunteerForm';
@@ -15,12 +15,12 @@ import ErrorPage from './components/ErrorPage';
 // import gsap from 'gsap';
 // import Preloader from './components/ui/Preloader';
 // import TransitionWrapper from './components/ui/TransitionWrapper';
-import CustomCursor from './components/ui/CustomeCursor';
+// import CustomCursor from './components/ui/CustomeCursor';
 // import AnimatedBackground from './components/ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';
-import EventsPage from './components/EventsPage';
-import Explore from './components/Explore';
-import MainCards from './components/MainCards';
+// import EventsPage from './components/EventsPage';
+// import Explore from './components/Explore';
+// import MainCards from './components/MainCards';
 const App = () => {
   return (
     // <Preloader>

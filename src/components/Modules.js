@@ -36,13 +36,11 @@ import { Link } from 'react-router-dom';
 import "./Modules.css";
 
 function Modules() {
-    return(
+    return (
         <div>
-            <div className="box-border m-0 p-0 bg-gray-200 overflow-x-hidden font-poppins">
+            <div className="box-border p-0 m-0 overflow-x-hidden bg-gray-200 font-poppins">
                 <section>
-                    {/* <section class="parallax-1"> */}
-                    <section class="parallax-1" className="bg-parallax-1 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
-                        {/* <div class="parallax-inner"> */}
+                    <section class="parallax-1" className="flex items-center w-screen min-h-screen bg-fixed bg-center bg-cover bg-parallax-1">
                         <div class="parallax-inner" className="px-10 py-[10%]">
                             <h1 className="text-6xl sm:text-7xl lg:text-8xl text-left text-overlay">Music</h1>
                             <button className="mt-4 px-5 py-2 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 ml-20">

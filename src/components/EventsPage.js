@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import '../eventspage.css';
-import { useParams, useNavigate} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function Events() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const { moduleName } = useParams();
     const [items, setItems] = useState([]);
-    const [moduleData, setModuleData] = useState(null);
+    // const [moduleData, setModuleData] = useState(null);
     const [itemActive, setItemActive] = useState(0); // Track the active item
     const [intervalId, setIntervalId] = useState(null); // Store the interval for auto-slide
 
+    console.log(intervalId);
     useEffect(() => {
         // Fetch the JSON data
         const fetchData = async () => {
@@ -127,10 +128,10 @@ function Events() {
     }, [itemActive]);
 
     return (
-        <div  className="font-poppins m-0 bg-black text-gray-200">
+        <div  className="m-0 text-gray-200 bg-black font-poppins">
             <header className="w-[1200px max-w-[90%] mx-auto grid grid-cols-[50px_1fr_50px] grid-rows-[50px] justify-center items-center relative z-[100]">
                 <div className="w-[110px] font-bold">Impressions</div>
-                <ul className="p-0 m-0 list-none flex justify-center gap-5 font-medium">
+                <ul className="flex justify-center gap-5 p-0 m-0 font-medium list-none">
                     <li>Home</li>
                     <li>Blog</li>
                     <li>Info</li>
@@ -143,11 +144,11 @@ function Events() {
             </header>
 
             <div className="slider h-screen -mt-[50px] relative">
-                <div className="list relative h-full">
+                <div className="relative h-full list">
                     {items.map((item, index) => (
                         // <div className={`item ${index === itemActive ? 'active' : ''}`} key={index}>
                         <div className={`item absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-500 ${index === itemActive ? 'active opacity-100 z-10' : ''}`} key={index}>
-                            <img className='w-full h-full object-cover' src={item.img} alt={item.title} />
+                            <img className='object-cover w-full h-full' src={item.img} alt={item.title} />
                             <div className="absolute left-[10%] top-[20%] w-[1300px] max-w-[80%] z-10">
                                 <p className='uppercase tracking-[10px]'>design</p>
                                 {/* <p className={`uppercase tracking-[10px] ${index === itemActive ? 'animate-showContent delay-[700ms]' : 'translate-y-[30px] blur-[20px] opacity-0'}`}>design</p> */}
