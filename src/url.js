@@ -8,6 +8,7 @@ import ImpressionsNewspaper from "./components/Newspaper";
 import EventsPage from './components/EventsPage';
 import Explore from './components/Explore';
 import MainCards from './components/MainCards';
+import Modules from "./components/Modules";
 
 export const urls = [
     // {url: '/', name: "Home", element:<ImpressionsNewspaper/> },
@@ -15,7 +16,7 @@ export const urls = [
     // {url: '/mmi-reg', name: "MMI Registration", element: <MMIForm />},
     // {url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
     // {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
-    {url: '/', name: "Module's Page", element: <MainCards />},
+    {url: '/', name: "Module's Page", element: <Modules />},
     {url: '/events/:moduleName', name: "Events Page", element: <EventsPage />},
     {url: '/events/:moduleName/:eventTitle', name: "Explore Page", element: <Explore />}
 ]

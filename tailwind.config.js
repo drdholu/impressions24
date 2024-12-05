@@ -7,6 +7,7 @@ module.exports = {
         30: '7.5rem', // Adds scroll-mt-30
       },
       fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
         sans: ['Poppins', 'sans-serif'],
         paperHeader: ['"Pirata One"', "sans-serif"],
         paperSubHead: ['"IM Fell French Canon"'],
@@ -55,7 +56,11 @@ module.exports = {
           glow: 'glow 1.5s ease-in-out infinite', // optional custom glow animation
           'scroll-horizontal': 'scroll-horizontal 20s linear infinite',
       },
-  
+      backgroundImage: {
+        "parallax-1": "url('/public/banner.png')",
+        "parallax-2": "url('/public/dancing-visual-ai-generated.jpg')",
+        "parallax-3": "url('/public/impressions patti1 (1).png')",
+      },
 
       backdropFilter: {
         'blur-sm': 'blur(10px)',
