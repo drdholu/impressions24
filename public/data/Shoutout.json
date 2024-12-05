@@ -1,6 +1,7 @@
 {
     "events": [
       {
+            "id": "Verse-a-Tile",
             "title": "Verse-a-Tile",
             "sections": [
               {
@@ -66,6 +67,7 @@
             "buttonLink": "https://example.com/learn-more"
       },
       {
+        "id": "Anecdote",
         "title": "Anecdote",
         "sections": [
           {
@@ -114,6 +116,7 @@
         }
       },
       {
+        "id": "Andaaz-E-Bayaan",
         "title": "Andaaz-E-Bayaan",
         "sections": [
           {
@@ -176,6 +179,7 @@
         }
     },
     {
+        "id": "TaleTeller",
         "title": "Tale Teller",
         "sections": [
           {
@@ -239,6 +243,7 @@
         }
       },
       {
+        "id": "Comiking",
         "title": "Comiking",
         "sections": [
           {

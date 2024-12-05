@@ -151,7 +151,7 @@ function Events() {
                             <div className="absolute left-[10%] top-[20%] w-[1300px] max-w-[80%] z-10">
                                 <p className='uppercase tracking-[10px]'>design</p>
                                 {/* <p className={`uppercase tracking-[10px] ${index === itemActive ? 'animate-showContent delay-[700ms]' : 'translate-y-[30px] blur-[20px] opacity-0'}`}>design</p> */}
-                                <h2 className='lg:text-[100px] text-[50px] m-0'>{item.title}</h2>
+                                <h2 className='lg:text-[100px] text-[50px] m-0' style={{fontSize:window.innerWidth <= 1024 ? (item.title.length > 18 ? '40px' : '50px'): (item.title.length > 20 ? '85px' : '100px')}}>{item.title}</h2>
                                 {/* <h2 className={`text-[100px] m-0 ${index === itemActive ? 'animate-showContent delay-[1s]' : 'translate-y-[30px] blur-[20px] opacity-0'}`}>{item.title}</h2> */}
                                 <p>{item.content}</p>
                                 {/* <p className={`${index === itemActive? 'animate-showContent delay-[1.3s]': 'translate-y-[30px] blur-[20px] opacity-0'}`}>{item.content}</p> */}
@@ -160,7 +160,7 @@ function Events() {
                                 <button className={`mt-4 py-2 px-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-lg shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-xl`}>
                                     <Link
                                         // to={`/explore/${encodeURIComponent(item.title)}`}
-                                        to={`/events/${encodeURIComponent(moduleName)}/${encodeURIComponent(item.title)}`}
+                                        to={`/events/${(moduleName)}/${encodeURIComponent(item.title.trim().replace(/\s+/g, '').replace(/[&%]/g, ''))}`}
                                         className="text-white"
                                     >
                                         Explore

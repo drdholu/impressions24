@@ -32,6 +32,7 @@
 // export default Modules;
 
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./Modules.css";
 
 function Modules() {
@@ -44,21 +45,81 @@ function Modules() {
                         {/* <div class="parallax-inner"> */}
                         <div class="parallax-inner" className="px-10 py-[10%]">
                             <h1 className="text-6xl sm:text-7xl lg:text-8xl text-left text-overlay">Music</h1>
-                            <button className="mt-4 px-5 py-2 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 ml-20">Events</button>
+                            <button className="mt-4 px-5 py-2 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 ml-20">
+                                <Link
+                                    to={`/events/Music`}
+                                    className="text-white"
+                                >
+                                    Events
+                                </Link>
+                            </button>
                         </div>
-                </section>
-                <section class="parallax-2" className="bg-parallax-2 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
-                    <div className="px-10 py-[10%] text-right sm:text-left">
-                        <h1 className="text-6xl sm:text-7xl lg:text-8xl text-right text-overlay">Dance</h1>
-                        <button className="mt-4 px-5 py-2 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1300px] sm:ml-[0px]">Events</button>
-                    </div>
-                </section>
-                <section class="parallax-3" className="bg-parallax-3 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
-                    <div class="parallax-inner" className="px-10 py-[10%]">
-                        <h1 className="text-6xl sm:text-7xl lg:text-8xl text-left text-overlay">Arts & Craft</h1>
-                        <button className="mt-4 px-5 py-2 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 ml-20">Events</button>
-                    </div>
-             </section>
+                    </section>
+                    <section class="parallax-2" className="bg-parallax-2 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
+                        <div className="px-10 py-[10%] text-right sm:text-left">
+                            <h1 className="text-6xl sm:text-7xl lg:text-8xl text-right text-overlay">Dance</h1>
+                            <button className="mt-4 px-5 py-2 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1300px] sm:ml-[0px]">
+                                <Link
+                                    to={`/events/Dance`}
+                                    className="text-white"
+                                >
+                                    Events
+                                </Link>
+                            </button>
+                        </div>
+                    </section>
+                    <section class="parallax-3" className="bg-parallax-3 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
+                        <div class="parallax-inner" className="px-10 py-[10%]">
+                            <h1 className="text-6xl sm:text-7xl lg:text-8xl text-left text-overlay">Arts & Craft</h1>
+                            <button className="mt-4 px-5 py-2 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 ml-20">
+                                <Link
+                                    to={`/events/Arts&Craft`}
+                                    className="text-white"
+                                >
+                                    Events
+                                </Link>
+                            </button>
+                        </div>
+                    </section>
+                    <section class="parallax-4" className="bg-parallax-2 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
+                        <div className="px-10 py-[10%] text-right sm:text-left">
+                            <h1 className="text-6xl sm:text-7xl lg:text-8xl text-right text-overlay">Camera</h1>
+                            <button className="mt-4 px-5 py-2 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1300px] sm:ml-[0px]">
+                                <Link
+                                    to={`/events/Camera`}
+                                    className="text-white"
+                                >
+                                    Events
+                                </Link>
+                            </button>
+                        </div>
+                    </section>
+                    <section class="parallax-5" className="bg-parallax-3 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
+                        <div class="parallax-inner" className="px-10 py-[10%]">
+                            <h1 className="text-6xl sm:text-7xl lg:text-8xl text-left text-overlay">Shoutout</h1>
+                            <button className="mt-4 px-5 py-2 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 ml-20">
+                                <Link
+                                    to={`/events/Shoutout`}
+                                    className="text-white"
+                                >
+                                    Events
+                                </Link>
+                            </button>
+                        </div>
+                    </section>
+                    <section class="parallax-6" className="bg-parallax-2 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
+                        <div className="px-10 py-[10%] text-right sm:text-left">
+                            <h1 className="text-6xl sm:text-7xl lg:text-8xl text-right text-overlay">Abhinay</h1>
+                            <button className="mt-4 px-5 py-2 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1300px] sm:ml-[0px]">
+                                <Link
+                                    to={`/events/Abhinay`}
+                                    className="text-white"
+                                >
+                                    Events
+                                </Link>
+                            </button>
+                        </div>
+                    </section>
                 </section>
             </div>
         </div>

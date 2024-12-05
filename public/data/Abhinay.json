@@ -2,7 +2,8 @@
 {
     "events": [
       {
-            "title": "Suno-Suno",
+            "id": "SunoSuno",
+            "title": "Suno Suno",
             "sections": [
               {
                 "id": "details",
@@ -52,6 +53,7 @@
             "buttonLink": "https://example.com/learn-more"
       },
       {
+        "id": "Limelight",
         "title": "Limelight",
         "sections": [
           {
@@ -97,6 +99,7 @@
         }
       },
       {
+        "id": "Artiskit",
         "title": "Artiskit",
         "sections": [
           {

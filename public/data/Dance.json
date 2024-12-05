@@ -1,6 +1,7 @@
 {
     "events": [
       {
+            "id": "Swa(g)Desi",
             "title": "Swa(g)Desi",
             "sections": [
               {
@@ -48,6 +49,7 @@
             "buttonLink": "https://example.com/learn-more"
       },
       {
+        "id": "Nrityangana(Kathak)",
         "title": "Nrityangana(Kathak)",
         "sections": [
           {
@@ -97,6 +99,7 @@
         }
       },
       {
+        "id": "Nrityangana(Bharatnatyam)",
         "title": "Nrityangana(Bharatnatyam)",
         "sections": [
           {
@@ -146,6 +149,7 @@
         }
     },
     {
+        "id": "HeattheBeat",
         "title": "Heat the Beat",
         "sections": [
           {
@@ -194,6 +198,7 @@
         }
       },
       {
+        "id": "SoDuet(Solo)",
         "title": "So Duet(Solo)",
         "sections": [
           {
@@ -244,6 +249,7 @@
         }
       },
       {
+        "id": "SoDuet(Duet)",
         "title": "So Duet(Duet)",
         "sections": [
           {

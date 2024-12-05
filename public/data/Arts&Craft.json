@@ -1,6 +1,7 @@
 {
     "events": [
-      {
+      {     
+            "id": "ColourSplash",
             "title": "Colour Splash",
             "sections": [
               {
@@ -47,6 +48,7 @@
             "buttonLink": "https://example.com/learn-more"
       },
       {
+        "id": "DoodlyDoo",
         "title": "DoodlyDoo",
         "sections": [
           {
@@ -90,6 +92,7 @@
       },
 
       {
+        "id": "GameofShades",
         "title": "Game of Shades",
         "sections": [
           {
@@ -137,7 +140,8 @@
           "text": "© 2023 Impressions. All Rights Reserved."
         }
     },
-    {
+    { 
+      "id": "GraphixAI",
       "title": "Graphix AI",
       "sections": [
         {
@@ -191,6 +195,7 @@
       }
     },
     {
+      "id": "GraphixDigital",
       "title": "Graphix Digital",
       "sections": [
         {
@@ -246,6 +251,7 @@
       }
   },
   {
+    "id": "Cirकला",
     "title": "Cirकला",
     "sections": [
       {

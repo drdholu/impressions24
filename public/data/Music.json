@@ -1,6 +1,7 @@
 {
     "events": [
-      {
+      {     
+            "id": "BombADrop",
             "title": "Bomb A Drop",
             "sections": [
               {
@@ -50,6 +51,7 @@
             "buttonLink": "https://example.com/learn-more"
       },
       {
+        "id": "High-Current",
         "title": "High-Current",
         "sections": [
           {
@@ -98,6 +100,7 @@
       },
 
       {
+        "id": "Poona-०५",
         "title": "Poona-०५",
         "sections": [
           {
@@ -146,6 +149,7 @@
         }
     },
     {
+      "id": "SaavniWestern",
       "title": "Saavni Western",
       "sections": [
         {
@@ -202,6 +206,7 @@
       }
     },
     {
+      "id": "SaavniBollywood",
       "title": "Saavni Bollywood",
       "sections": [
         {
@@ -258,6 +263,7 @@
       }
   },
   {
+    "id": "SaavniClassical",
     "title": "Saavni Classical",
     "sections": [
       {
@@ -314,6 +320,7 @@
     }
   },
   {
+    "id": "StayTuned",
     "title": "Stay Tuned",
     "sections": [
       {
@@ -359,6 +366,7 @@
     }
 },
 {
+    "id": "BootsCats",
     "title": "Boots & Cats",
     "sections": [
       {

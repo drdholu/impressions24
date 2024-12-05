@@ -15,7 +15,7 @@ export const urls = [
     // {url: '/mmi', name: "MMI", element: <VotingForm />},
     // {url: '/mmi-reg', name: "MMI Registration", element: <MMIForm />},
     // {url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
-    // {url: '/volunteer-form', name: 'Volunteer Forms', element: <VolunteerForm />},
+    // {url: '/volunteer-form', name: 'Volunteer Forms', element:   <VolunteerForm />},
     {url: '/', name: "Module's Page", element: <Modules />},
     {url: '/events/:moduleName', name: "Events Page", element: <EventsPage />},
     {url: '/events/:moduleName/:eventTitle', name: "Explore Page", element: <Explore />}

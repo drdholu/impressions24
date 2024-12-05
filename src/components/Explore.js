@@ -149,6 +149,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 const Explore = () => {
     const {moduleName, eventTitle } = useParams();
     const navigate = useNavigate();
+    console.log(moduleName);
+    console.log(eventTitle);
     const [eventData, setEventData] = useState(null);
     const [hamBurgerOpen, setHamBurgerOpen] = useState(false);
     const dropdownRef = useRef(null); // Ref for the dropdown
@@ -171,7 +173,7 @@ const Explore = () => {
             })
             .then((data) => {
                 const event = data.events.find(
-                    (item) => item.title === decodeURIComponent(eventTitle)
+                    (item) => item.id === decodeURIComponent(eventTitle)
                 );
                 if (event) {
                     setEventData(event);

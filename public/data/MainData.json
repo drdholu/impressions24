@@ -40,7 +40,7 @@
             { "img": "/image/shoutout-stage.jpg", "title": "Lens Art", "content": "Lorem ipsum dolor sit amet..." }
         ]
     },
-    "Arts & Craft": {
+    "Arts&Craft": {
         "title": "Arts & Craft",
         "items": [
             { "img": "/image/main-bg.jpg", "title": "DoodlyDoo", "content": "Lorem ipsum dolor sit amet..." },
@@ -56,7 +56,7 @@
         "title": "Abhinay",
         "items": [
             { "img": "/image/main-bg.jpg", "title": "Artiskit", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/shoutout-stage.jpg", "title": "Suno-Suno", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Suno Suno", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/dance-stage.jpg", "title": "Limelight", "content": "Lorem ipsum dolor sit amet..." }
         ]
     }

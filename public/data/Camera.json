@@ -2,6 +2,7 @@
 {
     "events": [
       {
+            "id": "LensArt",
             "title": "Lens Art",
             "sections": [
               {
@@ -59,7 +60,8 @@
             },
             "buttonLink": "https://example.com/learn-more"
       },
-      {
+      { 
+        "id": "Reelscapes",
         "title": "Reelscapes",
         "sections": [
           {
