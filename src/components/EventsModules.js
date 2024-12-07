@@ -1,6 +1,7 @@
 import React from "react"; 
 import CardComponent from "./ui/CardComponent"; 
 import '../styles/Cards.css';
+import { color } from "framer-motion";
 
 const Events = () => {     
     // const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,16 +58,14 @@ const Events = () => {
     ];
 
     return (
-        <div 
-        style={{backgroundImage: urls("../images/dance.webp")}}
-        className="container flex flex-col items-center max-w-screen-lg min-h-screen mx-auto">
+        <div className="container flex flex-col items-center w-[100vw] h-[90vh] mx-auto" style={{ background:"black"}}>
 
             <div>
                 <p className="text-3xl">Events</p>
             </div>
 
             {/* Cards Section */}
-            <div className="flex-grow w-full">
+            <div className="flex-grow w-[75vw]">
                 <ul
                     id="cards"
                     className="grid w-full gap-12 px-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"

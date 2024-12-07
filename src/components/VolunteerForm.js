@@ -7,7 +7,6 @@ import Details from "./ui/Details"
 import 'react-toastify/dist/ReactToastify.css';
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwJSqjXQWaLPofCbeH8NIL8pVNlct6Kb9j96WYk0bGYL9eSjmi0GBr8eprwfC0gZeiC/exec';
-
 const VolunteerForm = () => {
   const [formData, setFormData] = useState({
     mis: '',
@@ -266,7 +265,16 @@ const VolunteerForm = () => {
                   placeholder="Enter your talent"
                 />
               </div>
-
+              <div>
+                <label className={labelClass}>Any talents you want to share?</label>
+                <textarea
+                  name="talent"
+                  value={formData.talent}
+                  onChange={handleInputChange}
+                  className={`${inputClass} min-h-[100px] resize-y`}
+                  placeholder="Enter your talents"
+                />
+              </div>
           <div>
             <label className={labelClass}>Part of any other fest?</label>
             <input

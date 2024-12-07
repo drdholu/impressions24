@@ -27,19 +27,19 @@ const CardComponent = ({
                 hover: { duration: 0.3 }
             }}
             className={`relative overflow-hidden rounded-3xl bg-white dark:bg-neutral-800 
-                shadow-xl ring-1 ring-gray-900/5 dark:ring-white/10 ${className}`}
+                shadow-xl ring-1 ring-gray-900/5 dark:ring-white/10 ${className} w-[50vw]`}
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
         >
             {/* Innovative Header */}
             <div 
                 className={`relative p-5 bg-gradient-to-br from-teal-500 to-emerald-600 
-                    text-white flex items-center justify-between ${headerClassName}`}
+                    text-white flex items-center justify-center ${headerClassName}`}
             >
                 <h2 className="text-xl font-bold tracking-tight truncate">{header}</h2>
-                <Layers 
+                {/* <Layers 
                     className={`w-6 h-6 transition-transform ${isHovered ? 'rotate-12 scale-110' : ''}`} 
-                />
+                /> */}
             </div>
 
             {/* Image with Modern Overlay */}

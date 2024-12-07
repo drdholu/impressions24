@@ -5,6 +5,7 @@ import logo1 from "../images/Logos/Name Logo filled.png";
 import React, { useRef, useEffect, forwardRef, useState, useImperativeHandle } from "react";
 import { PerspectiveCamera, Html, useGLTF, OrbitControls,RectAreaLight } from "@react-three/drei";
 import grnd from "../images/ground1.webp";
+import Fireflyscene from './firefly'
 // import cleodance from "../images/Cleo/Dance.png"
 // import cleostand from "../images/Cleo/Shoutout.png"
 import cleoANC from '../images/Cleo/AnC.png'
@@ -16,7 +17,7 @@ import cleoShoutout from '../images/Cleo/Shoutout.png'
 import cleoAbhinay from '../images/Cleo/abhinay.png'
 import gsap from 'gsap';
 import { atom } from "jotai";
-import { AmbientLight } from 'three'
+import { AmbientLight,Vector3 } from 'three'
 import InProgress from "./ui/InProgress";
 
 const ismobile = window.innerWidth < 930;
@@ -54,15 +55,7 @@ const Model = forwardRef((props, ref) => {
     scale={props.scale}
     position={props.position}
     rotation={props.rotation}
-    // onPointerOver={() => {
-    //   setIsHovered(true);
-    //   document.body.style.cursor = "custom";
-    // }}
-    // onPointerOut={() => {
-    //   setIsHovered(false);
-    //   document.body.style.cursor = "auto";
-    // }}
-    // className={`paintbox ${isHovered ? "cursor-custom" : "cursor-auto"}`}
+  
   />
     
   )
@@ -100,17 +93,6 @@ const Navbar = forwardRef(({ displayNav }, ref) => {
     { url: '/about', name: "About", position: [1.5, 4.15, 1.5], className: "", ref: ref7 },
     { url: '/contact', name: "Contact", position: [3, 3.75, 1.5], className: "", ref: ref8 },
   ]
-
-  // Create an array of refs
-  // const refs = useRef(items.map(() => React.createRef()));
-
-  // Expose refs via `useImperativeHandle`
-  // useImperativeHandle(ref, () => {
-  //   return refs.current.reduce((acc, currentRef, idx) => {
-  //     acc[`ref${idx + 1}`] = currentRef.current;
-  //     return acc;
-  //   }, {});
-  // });
   return (
     <mesh ref={ref1} position={[0, 0, -15]}>
       {items.map((item, idx) => {
@@ -365,6 +347,8 @@ const Landing = () => {
   const navbarRef = useRef();
   const dotlight1 = useRef();
   const dotlight2 = useRef();
+  const headlight1=useRef();
+  const headlight2=useRef();
   const rectAreLightref = useRef();
   const temp=useRef();
   const [displayNav, setDisplayNav] = useState(true);
@@ -381,8 +365,52 @@ const Landing = () => {
   const newLogoTexturetexture = useLoader(THREE.TextureLoader, logo1); // Load texture
   const endPosition = ismobile ? new THREE.Vector3(-totalwidth * 0.5 * 0.52, totalheight * 0.5 * 0.72, 3) : new THREE.Vector3(-totalwidth * 0.5 * 0.32, totalheight * 0.5 * 0.8, 3);
   const endPosition1 = ismobile ? new THREE.Vector3(totalwidth * 0.5 * 0.345, totalheight * 0.5 * 0.62, 3) : new THREE.Vector3(totalwidth * 0.5 * 0.21, totalheight * 0.5 * 0.61, 3);
-
+  const fireflies = [];
+  for (let i = 0; i < 5; i++) {
+    const position = new Vector3(Math.random() * 20 - 10, Math.random() * 15 , Math.random() * 10 );
+    fireflies.push(position);
+  }
   console.log(lightsReached);
+  const Firefly = ({ position }) => {
+    const fireflyRef = useRef();
+    const lightRef = useRef();
+    const rndm=Math.random()*10-5;
+    // Random movement animation for the firefly
+    useFrame(() => {
+      if(rndm>0){
+      const time = Date.now() * 0.004;
+      fireflyRef.current.position.x += Math.sin(time * 2) * 0.01;
+      fireflyRef.current.position.y += Math.cos(time * 2) * 0.01;
+      fireflyRef.current.position.z += Math.sin(time * 1.5) * 0.01;
+      }
+      else{
+        const time = Date.now() * 0.004;
+      fireflyRef.current.position.x -= Math.sin(time * 2) * 0.05;
+      fireflyRef.current.position.y -= Math.cos(time * 2) * 0.05;
+      fireflyRef.current.position.z -= Math.sin(time * 1.5) * 0.05;
+      }
+      lightRef.current.position.copy(fireflyRef.current.position);
+    });
+  
+    return (
+      <>
+        <mesh ref={fireflyRef} position={position}>
+          <sphereGeometry args={[0.1, 16, 16]} />
+          <meshStandardMaterial color="#B8860B" emissive="#B8860B" emissiveIntensity={1} />
+        </mesh>
+  
+        {/* Glowing Point Light */}
+        <pointLight
+          ref={lightRef}
+          position={position}
+          intensity={5}
+          distance={20}
+          decay={2}
+          color="yellow"
+        />
+      </>
+    );
+  };
   const handleLightsReached = () => {
     setAllowScroll(true);
     console.log("Lights reached their final position");
@@ -535,10 +563,12 @@ const Landing = () => {
           .to(cleor1curr, { intensity: cleointensity }, "<")
           .to(cleor2curr, { intensity: cleointensity }, "<")
           .to(paintlightcurr, { intensity: 17 }, "<")
+          .to(headlight1.current, { intensity: 50 }, "<")
+          .to(headlight2.current, { intensity: 50 }, "<")
           .to(lmp1, { intensity: 60 }, "<")
           .to(lmp2, { intensity: 60 }, "<")
           
-          .to(themeRefCurr.children[0], {opacity : 1 }, "-=1")
+          .to(themeRefCurr.children[0], {opacity : 1 }, "-=1.5")
           
         // .call(() => setDisplayNav(true))
       }
@@ -554,6 +584,8 @@ const Landing = () => {
             lightPointerRef.current.children[0].intensity = 40;
             setIsVisible(true);
             setisanimating(false); // Unlock when animation completes
+            headlight1.current.intensity=0;
+            headlight2.current.intensity=0;
           },
         });
 
@@ -568,17 +600,11 @@ const Landing = () => {
           .to(cleor1curr, { intensity: 0 }, "<")
           .to(cleor2curr, { intensity: 0 }, "<")
           .to(paintlightcurr, { intensity: 0 }, "<")
+          .to(headlight1.current, { intensity: 0 }, "<")
+          .to(headlight2.current, { intensity: 0 }, "<")
           .to(lmp1, { intensity: 0 }, "<")
           .to(lmp2, { intensity: 0 }, "<")
           .to(themeRefCurr.children[0], {opacity : 0 }, "<")
-          // .to(paintBoxCurr.position, { z: -30 }, "<")
-          // .to(navbarCurr.position, { z: -30 }, "<")
-          // .to(textdiv, { height: '10px', width: '10px' }, "<")
-          // .to(imagee.position, { z: 1 }, "<") // Animate camera  
-          // .to(dot1curr.position, { z: 2 }, "<") // Animate camera  
-          // .to(dot2curr.position, { z: 2 }, "<") // Animate camera  
-          // .to(hl.position, { z: 2 }, "<") // "<" means this starts at the same time as the previous animation
-          // .to(hr.position, { z: 2 }, "<")
           .to(camera.position,{z:15},"<")
         // .call(() => setDisplayNav(false)); // Hide Navbar after animation
 
@@ -631,8 +657,8 @@ const Landing = () => {
           far={1000}
           near={0.1}
         />
-        <pointLight ref={helplogo1} intensity={0} position={[light1Position.x, light1Position.y, 3]} color="red" castShadow distance={10} />
-        <pointLight ref={helplogo2} intensity={0} position={[light2Position.x, light2Position.y, 3]} color="red" castShadow distance={10} />
+        <pointLight ref={helplogo1} intensity={0} position={[light1Position.x, light1Position.y, 3]} color="beige" castShadow distance={10} />
+        <pointLight ref={helplogo2} intensity={0} position={[light2Position.x, light2Position.y, 3]} color="beige" castShadow distance={10} />
 
         <pointLight ref={helpleft} intensity={0} position={[-totalwidth * 0.5 + 7, 5, -14]} color="beige" castShadow distance={40} />
         <pointLight ref={helpright} intensity={0} position={[totalwidth * 0.5 - 7, 5, -14]} color="beige" castShadow distance={40} />
@@ -640,15 +666,17 @@ const Landing = () => {
         <pointLight ref={cleol2} intensity={0} position={[-totalwidth * 0.4, 7, -16]} color="beige" castShadow distance={40} />
         <pointLight ref={cleor1} intensity={0} position={[totalwidth * 0.2, 7, -15]} color="white" castShadow distance={60} />
         <pointLight ref={cleor2} intensity={0} position={[totalwidth * 0.4, 7, -18]} color="beige" castShadow distance={40} />
-        <pointLight ref={lamplight1} intensity={0} position={[-20,10,-20]} color="yellow" castShadow distance={40} />
-        <pointLight ref={lamplight2} intensity={0} position={[20,10,-20]} color="yellow" castShadow distance={40} />
+        <pointLight ref={lamplight1} intensity={0} position={[-20,10,-20]} color="beige" castShadow distance={40} />
+        <pointLight ref={lamplight2} intensity={0} position={[20,10,-20]} color="beige" castShadow distance={40} />
         <pointLight ref={paintboxlight} intensity={0} position={[0,7,-14]} color="beige" castShadow distance={40} />
         <MovingLights onLightsReached={handleLightsReached} />
         <pointLight ref={dotlight1} intensity={0} position={[endPosition.x, endPosition.y, 3]} color="red" castShadow distance={20} />
         <pointLight ref={dotlight2} intensity={0} position={[endPosition1.x, endPosition1.y, 3]} color="red" castShadow distance={20} />
         <pointLight ref={dotlight2} intensity={0} position={[endPosition1.x, endPosition1.y, 3]} color="red" castShadow distance={20} />
+        <pointLight ref={headlight1} intensity={0} position={[-10,13,-14]} color="yellow" castShadow distance={20} />
+        <pointLight ref={headlight2} intensity={0} position={[10,13,-14]} color="#6699ff" castShadow distance={20} />
         
-        {/* <RedDot ref={temp} position={[-12,9,3]}/> */}
+        {/* <RedDot ref={temp} position={[-10,13,-15]}/> */}
         {/* enter button */}
         <Html ref={start} position={[-1.5, totalheight/ 17, 0]} distanceFactor={10}>
           <div className={`
@@ -743,17 +771,24 @@ const Landing = () => {
         <Loadimage img={cleoMain} rotation={[0, 0, 0]} height={10} width={10} position={[0, 4, -19]}/>
         <Loadimage img={cleoShoutout} rotation={[0, 0.5, 0]} height={10} width={10} position={[-totalwidth/5, 4, -20]}ref={cleoleft2} visible={ismobile?false:true}/>
         <Loadimage img={cleoDance} rotation={[0, -0.5, 0]} height={10} width={10} position={[totalwidth/5, 4, -20]} ref={cleoright2} visible={ismobile?false:true}/>
-        
         {/* Rangrez */}
         <Html transform occlude={true} position={[0, 12, -15]} ref={themeRef} rotation={[0,0,0]}>
-          <div className="flex flex-col items-center justify-center font-hindi text-white h-[30vh] w-[50vw] opacity-0">
-            <div className="text-[13vw]">
-              RANGREZ
-            </div>
-            <div className="text-[3vh]">
-              The Artist Within
-            </div>
-          </div>
+        <div
+  className="flex flex-col items-center justify-center font-hindi text-white h-[30vh] w-[50vw] opacity-0"
+  style={{
+    background: "linear-gradient(90deg, #ffcc00, #33cc99, #6699ff)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  }}
+>
+  <div className="text-[13vw]">
+    RANGREZ
+  </div>
+  <div className="text-[3vh]">
+    The Artist Within
+  </div>
+</div>
+
         </Html>
         {/* <ambientLight /> */}
         <LightPointer ref={lightPointerRef} targetPos={lightTargetPos.current} />
@@ -762,7 +797,13 @@ const Landing = () => {
         <Model ref={paintBox} rotation={[0.4, 9, 0]} position={[0, 3, -17]} scale={[110, 110, 110]} url={"models/palette.glb"} />
         <Model ref={lamp1} rotation={[0, -5, 0]} position={ismobile?[-totalwidth*0.6,0,-18]:[-25, 0, -20]} scale={ismobile?[2 ,5, 3]:[4, 5, 5]} url={"models/Post Lantern.glb"} />
         <Model ref={lamp2} rotation={[0, 5, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[25, 0, -20]} scale={ismobile?[2 ,5, 3]:[4, 5, 5]} url={"models/Post Lantern.glb"} />
+        <Model ref={lamp2} rotation={[0,1, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[-12, 16, -15]} scale={ismobile?[2 ,5, 3]:[4, 4, 4]} url={"models/Spotlight.glb"} />
+        <Model ref={lamp2} rotation={[0,-1, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[12, 16, -15]} scale={ismobile?[2 ,5, 3]:[4, 4, 4]} url={"models/Spotlight.glb"} />
+        <Model ref={lamp2} rotation={[0,0, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[0, -2, 0]} scale={ismobile?[2 ,5, 3]:[2, 2, 2]} url={"models/Rug.glb"} />
         {/* <Model ref={groundref} rotation={[2, 4, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[0, 4, 1]} scale={ismobile?[2 ,5, 3]:[1, 1, 1]} url={"models/Concert.glb"} /> */}
+        {/* {fireflies.map((position, index) => (
+        <Firefly key={index} position={position} />
+      ))} */}
  </Canvas>
 
     </div>
