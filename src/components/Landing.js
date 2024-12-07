@@ -3,7 +3,7 @@ import * as THREE from "three";
 import logo from "../images/Logos/Name Logo filled1.png";
 import logo1 from "../images/Logos/Name Logo filled.png";
 import React, { useRef, useEffect, forwardRef, useState, useImperativeHandle } from "react";
-import { PerspectiveCamera, Html, useGLTF, OrbitControls,RectAreaLight } from "@react-three/drei";
+import { PerspectiveCamera, Html, useGLTF, OrbitControls,RectAreaLight,useTexture,MeshReflectorMaterial   } from "@react-three/drei";
 import grnd from "../images/ground1.webp";
 import Fireflyscene from './firefly'
 // import cleodance from "../images/Cleo/Dance.png"
@@ -41,6 +41,73 @@ const worldHeight = ismobile
   ? worldWidth * (window.innerHeight / window.innerWidth) * 0.27
   : worldWidth * (window.innerHeight / window.innerWidth) * 0.8;
 const totalheight = totalwidth * (window.innerHeight / window.innerWidth);
+
+const GradientMaterial = () => {
+  return (
+    <shaderMaterial
+      attach="material"
+      vertexShader={`
+        varying vec2 vUv;
+        void main() {
+          vUv = uv; // Pass UV coordinates to the fragment shader
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `}
+      fragmentShader={`
+        varying vec2 vUv;
+        void main() {
+          // Create a vertical gradient
+          gl_FragColor = vec4(vUv.y, vUv.y * 0.5, 1.0, 1.0); // RGB Gradient
+        }
+      `}
+    />
+  );
+};
+
+
+const ReflectiveRectangle = ({ position, dim,color,rotation=[0,0,0] }) => {
+  return (
+    <mesh position={position} rotation={rotation}>
+      <planeGeometry args={dim} />
+      <MeshReflectorMaterial 
+        color={color}
+        blur={[300, 100]} // Blur reflection
+        resolution={512}
+        mixBlur={1.5}
+        mixStrength={30}
+        roughness={0.5}
+        depthScale={1}
+        minDepthThreshold={0.9}
+        maxDepthThreshold={1}
+        reflectorOffset={0.2}
+      />
+      
+    </mesh>
+  );
+};
+
+const Rectangle = ({ position, dim,color,rotation=[0,0,0] }) => {
+  return (
+    <mesh position={position} rotation={rotation}>
+      <planeGeometry args={dim} />
+      <meshStandardMaterial 
+        metalness={0.5}
+        color={color}
+        blur={[300, 100]} // Blur reflection
+        resolution={512}
+        mixBlur={1}
+        mixStrength={30}
+        roughness={0.5}
+        depthScale={1}
+        minDepthThreshold={0.9}
+        maxDepthThreshold={1}
+        reflectorOffset={0.2}
+      />
+      
+    </mesh>
+  );
+};
+
 
 
 const Model = forwardRef((props, ref) => {
@@ -762,7 +829,7 @@ const Landing = () => {
         
 
         <ImageMesh ref={imageMeshRef} />
-        <Ground ref={groundref} />
+
 
         {/* Cleo Images */}
         {/* <Loadimage img={cleoANC} rotation={[0, 1.5, 0]} height={10} width={10} position={[-totalwidth, 4, -15]} /> */}
@@ -795,15 +862,18 @@ const Landing = () => {
         <Navbar ref={navbarRef} displayNav={displayNav} />
         {/* <OrbitControls/> */}
         <Model ref={paintBox} rotation={[0.4, 9, 0]} position={[0, 3, -17]} scale={[110, 110, 110]} url={"models/palette.glb"} />
-        <Model ref={lamp1} rotation={[0, -5, 0]} position={ismobile?[-totalwidth*0.6,0,-18]:[-25, 0, -20]} scale={ismobile?[2 ,5, 3]:[4, 5, 5]} url={"models/Post Lantern.glb"} />
-        <Model ref={lamp2} rotation={[0, 5, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[25, 0, -20]} scale={ismobile?[2 ,5, 3]:[4, 5, 5]} url={"models/Post Lantern.glb"} />
-        <Model ref={lamp2} rotation={[0,1, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[-12, 16, -15]} scale={ismobile?[2 ,5, 3]:[4, 4, 4]} url={"models/Spotlight.glb"} />
-        <Model ref={lamp2} rotation={[0,-1, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[12, 16, -15]} scale={ismobile?[2 ,5, 3]:[4, 4, 4]} url={"models/Spotlight.glb"} />
-        <Model ref={lamp2} rotation={[0,0, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[0, -2, 0]} scale={ismobile?[2 ,5, 3]:[2, 2, 2]} url={"models/Rug.glb"} />
+        {/* <Model ref={lamp1} rotation={[0, -5, 0]} position={ismobile?[-totalwidth*0.6,0,-18]:[-25, 0, -20]} scale={ismobile?[2 ,5, 3]:[4, 5, 5]} url={"models/Post Lantern.glb"} />
+        <Model ref={lamp2} rotation={[0, 5, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[25, 0, -20]} scale={ismobile?[2 ,5, 3]:[4, 5, 5]} url={"models/Post Lantern.glb"} /> */}
+        <Model ref={lamp2} rotation={[0,1, 0]} position={ismobile?[-totalwidth*0.5,17,-15]:[-12, 16, -15]} scale={ismobile?[2 ,5, 3]:[4, 4, 4]} url={"models/Spotlight.glb"} />
+        <Model ref={lamp2} rotation={[0,-1, 0]} position={ismobile?[totalwidth*0.5,17,-15]:[12, 16, -15]} scale={ismobile?[2 ,5, 3]:[4, 4, 4]} url={"models/Spotlight.glb"} />
+        {/* <Model ref={lamp2} rotation={[0,0, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[0, -2, 0]} scale={ismobile?[2 ,5, 3]:[2, 2, 2]} url={"models/Rug.glb"} /> */}
         {/* <Model ref={groundref} rotation={[2, 4, 0]} position={ismobile?[totalwidth*0.6,0,-18]:[0, 4, 1]} scale={ismobile?[2 ,5, 3]:[1, 1, 1]} url={"models/Concert.glb"} /> */}
         {/* {fireflies.map((position, index) => (
         <Firefly key={index} position={position} />
       ))} */}
+        <Rectangle position={[0,4,-27]} dim={[150,110]} color={"skyblue"}/>
+        <ReflectiveRectangle position={[0,-1,-20]} dim={[150,110]} rotation={[-Math.PI / 2, 0, 0]} color={"white"}/>
+
  </Canvas>
 
     </div>
