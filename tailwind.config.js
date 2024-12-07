@@ -59,7 +59,11 @@ module.exports = {
       backgroundImage: {
         "parallax-1": "url('/public/banner.png')",
         "parallax-2": "url('/public/dancing-visual-ai-generated.jpg')",
-        "parallax-3": "url('/public/impressions patti1 (1).png')",
+        "parallax-3": "url('/public/arts.png')",
+        "parallax-4": "url('/public/camera_new.jpg')",
+        "parallax-5": "url('/public/standup.jpeg')",
+        "parallax-6": "url('/public/abhinay.jpg')",
+        
       },
 
       backdropFilter: {
