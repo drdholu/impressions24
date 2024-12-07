@@ -2,35 +2,22 @@
     "Shoutout": {
         "title": "Shoutout",
         "items": [
-            { "img": "/image/main-bg.jpg", "title": "Anecdote", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/shoutout-stage.jpg", "title": "Andaaz-E-Bayaan", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "Tale Teller", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/music-stage2.jpg", "title": "Comiking", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/abhinay-stage.jpg", "title": "Verse-a-Tile", "content": "Lorem ipsum dolor sit amet..." }
+            { "img": "/image/main-bg.jpg", "title": "The COEP Open Mic", "content": "Lorem ipsum dolor sit amet..." }
         ]
     },
     "Music": {
         "title": "Music",
         "items": [
-            { "img": "/image/main-bg.jpg", "title": "High-Current", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/shoutout-stage.jpg", "title": "Poona-०५", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "Bomb A Drop", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/music-stage2.jpg", "title": "Saavni Western", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/abhinay-stage.jpg", "title": "Saavni Bollywood", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/abhinay-stage.jpg", "title": "Saavni Classical", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/abhinay-stage.jpg", "title": "Stay Tuned", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/abhinay-stage.jpg", "title": "Boots & Cats", "content": "Lorem ipsum dolor sit amet..." }
+            { "img": "/image/main-bg.jpg", "title": "Stay Tuned", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Saavani", "content": "Lorem ipsum dolor sit amet..." }
         ]
     },
     "Dance": {
         "title": "Dance",
         "items": [
-            { "img": "/image/main-bg.jpg", "title": "Nrityangana(Bharatnatyam)", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/shoutout-stage.jpg", "title": "Heat the Beat", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "So Duet(Solo)", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/music-stage2.jpg", "title": "So Duet(Duet)", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/abhinay-stage.jpg", "title": "Swa(g)Desi", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/abhinay-stage.jpg", "title": "Nrityangana(Kathak)", "content": "Lorem ipsum dolor sit amet..." }
+            { "img": "/image/main-bg.jpg", "title": "Step it Up", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Dance Dil Se", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Nrityangana", "content": "Lorem ipsum dolor sit amet..." }
         ]
     },
     "Camera": {
@@ -43,21 +30,14 @@
     "Arts&Craft": {
         "title": "Arts & Craft",
         "items": [
-            { "img": "/image/main-bg.jpg", "title": "DoodlyDoo", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/main-bg.jpg", "title": "Colour Splash", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/shoutout-stage.jpg", "title": "Game of Shades", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "Graphix AI", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "Graphix Digital", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "Cirकला", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "Colour Splash", "content": "Lorem ipsum dolor sit amet..." }
-
+            { "img": "/image/dance-stage.jpg", "title": "Cirकला", "content": "Lorem ipsum dolor sit amet..." }
         ]
     },
     "Abhinay": {
         "title": "Abhinay",
         "items": [
-            { "img": "/image/main-bg.jpg", "title": "Artiskit", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/shoutout-stage.jpg", "title": "Suno Suno", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "Limelight", "content": "Lorem ipsum dolor sit amet..." }
-        ]
+            { "img": "/image/main-bg.jpg", "title": "Scene-Sational", "content": "Lorem ipsum dolor sit amet..." }        ]
     }
 }

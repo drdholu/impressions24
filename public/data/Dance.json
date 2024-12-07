@@ -1,25 +1,31 @@
 {
     "events": [
       {
-            "id": "Swa(g)Desi",
-            "title": "Swa(g)Desi",
+            "id": "StepitUp",
+            "title": "Step it Up",
             "sections": [
               {
                 "id": "details",
                 "title": "Details",
                 "content": [
-                  "It is a Bollywood group dance competition."
+                  "It is a solo dance competition.",
+                  "Styles permitted: All except Classical ,semi classical and Folk Dance.",
+                  "Venue: Main Auditorium ,COEP Technological University"
                 ]   
               },
               {
                 "id": "structure",
                 "title": "Structure",
                 "content": [
-                  "The competition will consist of a single round.",
-                  "Time Duration: 3-5 minutes +1 min setup time.",
-                  "Participants may use more than one song.",
-                  "Team size: 5 - 15 members.",
-                  "Usage of English songs shouldnt be more than 1 min."
+                  "Registration Fee: Rs 79/-",
+                  "Eliminations:-",
+                  "The contestants are required to present a 1.5 minutes dance performance in front of the judges.",
+                  "No prop usage is allowed",
+                  "The participants who get selected will move to the next round.",
+                  "Finals:-",
+                  "Participants shortlisted for this round will perform in front of the judges.",
+                  "Participants can perform an extended version of their eliminations performance or a new one altogether.", 
+                  "Time Limit: 3 - 5 minutes + 1 min setup"
                 ],
                 "list": [
                 ]
@@ -28,11 +34,10 @@
                 "id": "guidelines",
                 "title": "Guidelines",
                 "content": [
-                  "This competition is open for college students of age group 16-25.",
-                  "Vulgarity and obscenity at any point are strictly not allowed.",
-                  "Props (except hazardous and dangerous materials) are allowed but will be based on the organizers' discretion. A list of all the props should be given 2 days prior to the fest. Only the props mentioned in the list are allowed.",
-                  "The music track should be submitted to the Event Head 2 days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue.",
-                  "Participants may use more than one song in their performance."
+                  "Vulgarity and obscenity at any point in the choreography are strictly not allowed.",
+                  "Props (except hazardous and dangerous materials) are allowed. List of all the props should be given 4 days prior to the fest. Only the props mentioned in the list are allowed.",
+                  "The music track for elimination and finals both should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue.", 
+                  "Points will be deducted for exceeding the time limit."
                 ]
               },
               {
@@ -46,30 +51,29 @@
             "footer": {
               "text": "© 2023 Impressions. All Rights Reserved."
             },
-            "buttonLink": "https://example.com/learn-more"
+            "buttonLink": "https://forms.gle/Zbk5ZCqbXUe8Vsr17"
       },
       {
-        "id": "Nrityangana(Kathak)",
-        "title": "Nrityangana(Kathak)",
+        "id": "Nrityangana",
+        "title": "Nrityangana",
         "sections": [
           {
             "id": "details",
             "title": "Details",
             "content": [
-                "It is a Classical dance competition."
+              "Team Size: Solo.",
+              "Venue: COEP Technological University",
+              "Style Permitted : Semi classical, Classical"
             ]   
           },
           {
             "id": "structure",
             "title": "Structure",
             "content": [
-              "Team size: Solo",
-              "Eliminations:",
-              "The contestants will be given 2 - 4 mins to perform in front of the judges.",
-              "The selected participants will move to the next round.",
-              "Finals:",
-              "Shortlisted participants have to perform an extended version of their eliminations performance or a new one altogether.",
-              "Time limit: 4 - 6 minutes."
+              "Registration Fee: Rs 79/-.",
+              "The competition will consist of a single round.",
+              "The contestants will be given 3 - 5 mins including setup time to perform in front of the judges.",
+              "2 winners one from classical and one from semi-classical"
             ],
             "list": [
             ]
@@ -78,12 +82,14 @@
             "id": "guidelines",
             "title": "Guidelines",
             "content": [
-              "This competition is open for college students of the age group 16 - 25.",
-              "Only Kathak,Bharatanatyam dance forms are allowed and both will be judged separately.",
-              "Folk and semi-classical dances are not permitted.",
-              "Props (except hazardous and dangerous materials) are allowed. A list of all the props should be given 2 days prior to the fest. Only the props mentioned in the list are allowed.",
-              "The music track should be submitted to the Event Head 2 days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue.",
-              "No live accompanists allowed."
+              "This competition is open for all COEP students.",
+              "All classical dance forms and semi classical dance forms are allowed.",
+              "Folk dances are not permitted.",
+              "Vulgarity and obscenity at any point are strictly not allowed.",
+              "Props (except hazardous and dangerous materials) are allowed. A list of all the props should be given 4 days prior to the fest. Only the props mentioned in the list are allowed",
+              "Participants can have one accompanist supporting their performance with live music. Only the registered participant is eligible for the prize.",
+              "The music track should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue."
+
             ]
           },
           {
@@ -96,17 +102,20 @@
         ],
         "footer": {
           "text": "© 2023 Impressions. All Rights Reserved."
-        }
+        },
+        "buttonLink":"https://forms.gle/JZwiZARCj7TZMMEm7"
       },
       {
-        "id": "Nrityangana(Bharatnatyam)",
-        "title": "Nrityangana(Bharatnatyam)",
+        "id": "DanceDilSe",
+        "title": "Dance Dil Se",
         "sections": [
           {
             "id": "details",
             "title": "Details",
             "content": [
-              "It is a Classical Dance competiton."
+              "Team Size: 2-10 members.",
+              "Venue: COEP Technological University.",
+              "Styles permitted: All styles except Classical and Semi classical and folk dance."
             ]   
           },
           {
@@ -114,11 +123,9 @@
             "title": "Structure",
             "content": [
               "Eliminations:",
-              "The contestants will be given 2 - 4 minutes to perform in front of the judges.",
-              "The selected participants will move to the next round.",
-              "Finals:",
-              "Shortlisted participants have to perform an extended version of their eliminations performance or a new one altogether.",
-              "Time limit: 4-6 minutes."
+              "The competition will consist of a single round.",
+              "Time Duration: 3-5 minutes, +1 min setup time.",
+              "This competition is open for all COEP students"
             ],
             "list": [
             ]
@@ -127,113 +134,10 @@
             "id": "guidelines",
             "title": "Rules & Guidelines",
             "content": [
-              "This competition is open for college students of the age group 16 - 25.",
-              "Only Kathak, Bharatanatyam dance forms are allowed and would be judged separately.",
-              "Folk and semi-classical dances are not permitted.",
               "Vulgarity and obscenity at any point are strictly not allowed.",
-              "Props (except hazardous and dangerous materials) are allowed. A list of all the props should be given 2 days prior to the event. Only the props mentioned in the list are allowed.",
-              "The music track should be submitted to the Event Head 2 days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue.",
-              "No live accompanists allowed."
-            ]
-          },
-          {
-            "id": "contact",
-            "title": "Contact Us",
-            "coordinator": "Shrawani Gosavi",
-            "phone": "+91 9028428001",
-            "email": "events23.impressions@gmail.com"
-          }
-        ],
-        "footer": {
-          "text": "© 2023 Impressions. All Rights Reserved."
-        }
-    },
-    {
-        "id": "HeattheBeat",
-        "title": "Heat the Beat",
-        "sections": [
-          {
-            "id": "details",
-            "title": "Details",
-            "content": [
-                "It is a Solo street dance battle competition."
-            ]   
-          },
-          {
-            "id": "structure",
-            "title": "Structure",
-            "content": [
-              "Showcase Round:The participants are required to present their 1.5 min choreographed dance in the first round.",
-              "Battle rounds:The participants who get selected will advance to the 1v1 battle rounds."
-            ],
-            "list": [
-            ]
-          },
-          {
-            "id": "guidelines",
-            "title": "Guidelines",
-            "content": [
-              "This competition is open for college students of the age group 16 - 25.",
-              "Only street dance forms are allowed.",
+              "Props (except hazardous and dangerous materials) are allowed but will be based on the organisers' discretion. A list of all the props should be given 4 days prior to the fest. Only the props mentioned in the list are allowed.",
               "The music track should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue.",
-              "Participants may use more than one song in their performance.",
-              "Props (except hazardous and dangerous materials) are allowed but will be based on the discretion of the organizers.",
-              "A list of all the props should be given 2 days prior to the fest. Only the props mentioned in the list are allowed.",
-              "Following all necessary safety measures is the responsibility of the participants.",
-              "Vulgarity and obscenity at any point are strictly not allowed.",
-              "Performance should be confined within the area (10-12 meters in diameter) i.e an open-air venue, with the audience on all sides.",
-              "Participants are strictly prohibited from engaging in violent and abusive mocking during battle."
-            ]
-          },
-          {
-            "id": "contact",
-            "title": "Contact Us",
-            "coordinator": "Parth Farkade",
-            "phone": "+91 9322947083",
-            "email": "events23.impressions@gmail.com"
-          }
-        ],
-        "footer": {
-          "text": "© 2023 Impressions. All Rights Reserved."
-        }
-      },
-      {
-        "id": "SoDuet(Solo)",
-        "title": "So Duet(Solo)",
-        "sections": [
-          {
-            "id": "details",
-            "title": "Details",
-            "content": [
-                "It is an open genre (except classical and folk) solo and duet dance competition."
-            ]   
-          },
-          {
-            "id": "structure",
-            "title": "Structure",
-            "content": [
-              "Eliminations:",
-              "The solo contestants are required to present a 100 seconds dance performance in front of the judges.",
-              "The participants who get selected will move to the next round.",
-              "Finals:",
-              "Shortlisted participants in this round will have to perform in front of the judges.",
-              "Participants can perform an extended version of their old performance or they can perform a new one altogether.",
-              "Time limit: 2-4 mins + 1 min setup"
-            ],
-            "list": [
-            ]
-          },
-          {
-            "id": "guidelines",
-            "title": "Guidelines",
-            "content": [
-              "This competition is open for college students of the age group 16 - 25.",
-              "Solos and Duets will be judged separately.",
-              "Classical and Folk dances are not a part of this competition. (Please refer to the rules of the classical dance competition, Nrityangana).",
-              "Vulgarity and obscenity at any point in the choreography are strictly not allowed.",
-              "Props (except hazardous and dangerous materials) are allowed. List of all the props should be given 2 days prior to the fest. Only the props mentioned in the list are allowed.",
-              "The music track for elimination and finals both should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue.",
-              "Points will be deducted for exceeding the time limit."
+              "Participants may use more than one song in their performance."
             ]
           },
           {
@@ -246,57 +150,8 @@
         ],
         "footer": {
           "text": "© 2023 Impressions. All Rights Reserved."
-        }
-      },
-      {
-        "id": "SoDuet(Duet)",
-        "title": "So Duet(Duet)",
-        "sections": [
-          {
-            "id": "details",
-            "title": "Details",
-            "content": [
-            ]   
-          },
-          {
-            "id": "structure",
-            "title": "Structure",
-            "content": [
-              "Eliminations:",
-              "The contestants are required to present a 2 minutes dance performance in front of the judges.",
-              "The participants who get selected will move to the next round.",
-              "Finals:",
-              "Shortlisted participants in this round will have to perform in front of the judges.",
-              "They can perform their old version or can perform a new one altogether.",
-              "Time limit: 2-4 mins + 1 min setup"
-            ],
-            "list": [
-            ]
-          },
-          {
-            "id": "guidelines",
-            "title": "Guidelines",
-            "content": [
-              "This competition is open for college students of age group 16-25.",
-              "Solos and Duets will be judged separately.",
-              "Classical and Folk dances are not a part of this competition. (Please refer to the rules of the classical dance competition, Nrityangana).",
-              "Vulgarity and obscenity at any point in the choreography are strictly not allowed.",
-              "Props (except hazardous and dangerous materials) are allowed. List of all the props should be given 2 days prior to the fest. Only the props mentioned in the list are allowed.",
-              "The music track for elimination and finals both should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue.",
-              "Points will be deducted for exceeding the time limit."
-            ]
-          },
-          {
-            "id": "contact",
-            "title": "Contact Us",
-            "coordinator": "Parth Farkade",
-            "phone": "+91 9322947083",
-            "email": "events23.impressions@gmail.com"
-          }
-        ],
-        "footer": {
-          "text": "© 2023 Impressions. All Rights Reserved."
-        }
-      }
+        },
+        "buttonLink":"https://forms.gle/NR3wTbPCvy1wH7pZ9"
+    }
  ]
 }
