@@ -57,7 +57,7 @@ const Model = forwardRef((props, ref) => {
         console.log("here");
         if(cameraRef.current && RoomRef ){
     
-            
+            if(cameraRef.current.position.z>0){
             const timeline = gsap.timeline({
                 defaults: { duration: 2.5, ease: "power4.inOut" },
                 onComplete: () => {
@@ -65,13 +65,20 @@ const Model = forwardRef((props, ref) => {
               });
       
               timeline
-                .to(cameraRef.current.position, { z: -80,x:0 })
+                .to(cameraRef.current.position, ismobile?{z:-50}:{ z: -80,x:0 })
                 .to(RoomRef.current.rotation,{y:-0.04},"<")
-            
-            
-            
-            
-              
+            }
+            else{
+              const timeline = gsap.timeline({
+                defaults: { duration: 2.5, ease: "power4.inOut" },
+                onComplete: () => {
+                },
+              });
+      
+              timeline
+                .to(cameraRef.current.position, ismobile?{z:1}:{ z: 1,x:0 })
+                .to(RoomRef.current.rotation,{y:0.9},"<")
+            }
         }
         
       };
@@ -85,6 +92,7 @@ const Model = forwardRef((props, ref) => {
         return () => {
           window.removeEventListener('scroll', Move);
           window.removeEventListener('wheel', Move);
+          window.removeEventListener('touchstart', Move);
         };
       }, []); // Empty dependency array to run only once after component mount
     return (
@@ -101,7 +109,7 @@ const Model = forwardRef((props, ref) => {
           position={
             ismobile ? [0,-15,-70] : [0, -20, -70]
           }
-          scale={ismobile ? [0.5, 0.5, 0.5] : [1, 1, 1]}
+          scale={ismobile ? [0.5, 0.5, 0.5] : [1.5, 1.5, 1.5]}
           url={"models/Room.glb"}
         />
         <ambientLight />
@@ -110,7 +118,7 @@ const Model = forwardRef((props, ref) => {
           fov={75}
           ref={cameraRef}
           makeDefault
-          position={[0, 0, 0]}
+          position={[0, 0, 1]}
           aspect={window.innerWidth / window.innerHeight}
           far={1000}
           near={0.1}
