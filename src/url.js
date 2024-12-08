@@ -5,7 +5,7 @@
 import VolunteerForm from "./components/VolunteerForm";
 // import  Newspaper  from './components/Newspaper';
 // import InProgress from "./components/ui/InProgress";
-import Landing from "./components/Landing";
+import Room from "./components/LandingRoom";
 import MainCards from './components/EventsModules';
 import Teams from './components/teams';
 // import VolunteerForm from "./components/VolunteerForm";
@@ -13,7 +13,7 @@ import Teams from './components/teams';
 // import Voting from './components/VotingForm';
 
 export const urls = [
-    { url: '/', name: "Landing", element: <Landing /> },
+    { url: '/', name: "Landing", element: <Room /> },
     // {url: '/', name: "Home", element:<LandingPage/> },
     // { url: '/mmi-finalists', name: "mmi-finalists", element: <Mmifinal />, className: "" },
     // { url: '/voting', name: "mmi-voting", element: <Voting /> },

@@ -261,7 +261,7 @@ const Loadimage = forwardRef(({ img, height, width, position,rotation,visible },
       castShadow
       receiveShadow
       rotation={rotation}
-      visible={visible}
+      visible={false}
     >
       <planeGeometry args={[width, height]} /> {/* Initial size; updated dynamically */}
       <meshStandardMaterial map={texture} transparent={true} alphaTest={0.5} />
@@ -871,7 +871,7 @@ const Landing = () => {
         {/* {fireflies.map((position, index) => (
         <Firefly key={index} position={position} />
       ))} */}
-        <Rectangle position={[0,4,-27]} dim={[150,110]} color={"skyblue"}/>
+        <ReflectiveRectangle position={[0,4,-27]} dim={[150,110]} color={"skyblue"}/>
         <ReflectiveRectangle position={[0,-1,-20]} dim={[150,110]} rotation={[-Math.PI / 2, 0, 0]} color={"white"}/>
 
  </Canvas>
