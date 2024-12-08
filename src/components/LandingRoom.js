@@ -42,7 +42,6 @@ const Model = forwardRef((props, ref) => {
             scale={props.scale}
             position={props.position}
             rotation={props.rotation}
-
         />
 
     )
@@ -51,8 +50,8 @@ const Model = forwardRef((props, ref) => {
 const Room = () => {
     const RoomRef = useRef();
     const cameraRef = useRef();
-    const start = useState(true); // Control to trigger animation once
-    const Controls = useRef();
+    // const start = useState(true); // Control to trigger animation once
+    // const Controls = useRef();
     const Move = (event) => {
         console.log("here");
         if (cameraRef.current && RoomRef) {
@@ -105,17 +104,16 @@ const Room = () => {
         >
             <Model
                 ref={RoomRef}
-                rotation={[0, 0.9, 0]}
-                position={
-                    ismobile ? [0, -15, -70] : [0, -20, -70]
-                }
-                scale={ismobile ? [0.5, 0.5, 0.5] : [1.5, 1.5, 1.5]}
+                rotation={[0.3, 0.8, 0]}
+                position={[0, 0, -80]}
+                scale={1}
                 url={"/models/roomTest.glb"}
             />
             {/* <ambientLight /> */}
             <Environment preset="sunset" />
+
             {/* Camera */}
-            <PerspectiveCamera
+            {/* <PerspectiveCamera
                 fov={75}
                 ref={cameraRef}
                 makeDefault
@@ -123,7 +121,7 @@ const Room = () => {
                 aspect={window.innerWidth / window.innerHeight}
                 far={1000}
                 near={0.1}
-            />
+            /> */}
             {/* Room Model */}
 
         </Canvas>
