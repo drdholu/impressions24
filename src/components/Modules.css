@@ -91,20 +91,3 @@ p:nth-of-type(3) {
     
 } */
 
-@media (max-width: 480px){
-    .parallax-1 h1, .parallax-3 h1{
-        font-size: 70px;
-        /* text-align: left; */
-        /* color: rgba(255, 255, 255, .4); */
-    }
-    .parallax-2 h1{
-        padding: 0;
-        text-align: left;
-        font-size: 70px;
-        /* text-align: right; */
-        /* color: rgba(255, 255, 255, .4); */
-    }
-    .parallax-inner button{
-        margin-left: 50px;
-    }
-}

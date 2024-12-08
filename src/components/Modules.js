@@ -56,7 +56,7 @@ function Modules() {
                     <section class="parallax-2" className="bg-parallax-2 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
                         <div className="px-10 py-[10%] text-right sm:text-left">
                             <h1 className="text-6xl sm:text-7xl lg:text-8xl text-right text-overlay text-white">Dance</h1>
-                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1300px] sm:ml-[0px]">
+                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1500px] sm:ml-[0px]">
                                 <Link
                                     to={`/events/Dance`}
                                     className="text-white"
@@ -82,7 +82,7 @@ function Modules() {
                     <section class="parallax-4" className="bg-parallax-4 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
                         <div className="px-10 py-[10%] text-right sm:text-left">
                             <h1 className="text-6xl sm:text-7xl lg:text-8xl text-right text-overlay text-white">Camera</h1>
-                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1300px] sm:ml-[0px]">
+                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1500px] sm:ml-[0px]">
                                 <Link
                                     to={`/events/Camera`}
                                     className="text-white"
@@ -108,7 +108,7 @@ function Modules() {
                     <section class="parallax-6" className="bg-parallax-6 bg-fixed bg-cover bg-center w-screen min-h-screen flex items-center">
                         <div className="px-10 py-[10%] text-right sm:text-left">
                             <h1 className="text-6xl sm:text-7xl lg:text-8xl text-right text-overlay text-white">Abhinay</h1>
-                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1300px] sm:ml-[0px]">
+                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1500px] sm:ml-[0px]">
                                 <Link
                                     to={`/events/Abhinay`}
                                     className="text-white"
