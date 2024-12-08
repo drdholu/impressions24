@@ -1,7 +1,7 @@
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import React, { useRef, useEffect, forwardRef, useState, useImperativeHandle } from "react";
-import { PerspectiveCamera, Html, useGLTF, OrbitControls,RectAreaLight,useTexture,MeshReflectorMaterial, CameraControls   } from "@react-three/drei";
+import { PerspectiveCamera, Html, useGLTF, OrbitControls,RectAreaLight,useTexture,MeshReflectorMaterial, CameraControls, Environment   } from "@react-three/drei";
 import { atom } from "jotai";
 import { AmbientLight,Vector3 } from 'three'
 import InProgress from "./ui/InProgress";
@@ -112,7 +112,7 @@ const Model = forwardRef((props, ref) => {
           scale={ismobile ? [0.5, 0.5, 0.5] : [1.5, 1.5, 1.5]}
           url={"models/Room.glb"}
         />
-        <ambientLight />
+        {/* <ambientLight /> */}
         {/* Camera */}
         <PerspectiveCamera
           fov={75}
@@ -125,6 +125,7 @@ const Model = forwardRef((props, ref) => {
 
         />
         {/* Room Model */}
+        <Environment preset="sunset"/>
         
       </Canvas>
     );
