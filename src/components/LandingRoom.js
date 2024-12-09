@@ -64,7 +64,7 @@ const Model = forwardRef((props, ref) => {
 
 
 const Room = () => {
-  
+
   const RoomRef = useRef();
   const cameraRef = useRef();
   const start = useState(true); // Control to trigger animation once
@@ -72,24 +72,49 @@ const Room = () => {
   const [blur, setblur] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false); // Track animation state
   const [isVisible, setIsVisible] = useState(false);
-  
+  const [buttons, setbuttons] = useState(false);
+  const [isVisible1, setIsVisible1] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+    });
+
+    useEffect(() => {
+        const targetDate = new Date('2024-12-17');
+
+        const timer = setInterval(() => {
+            const now = new Date();
+            const difference = targetDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            setTimeLeft({ days, hours, minutes, seconds });
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
 
   const turn = (dir) => {
-    if(isAnimating) return;
+    if (isAnimating) return;
     console.log("HERE2");
     if (!cameraRef.current) return;
-    
+
     const rotationSpeed = Math.PI / 8; // Adjust for desired rotation (in radians)
-    
+
     const newRotationY =
       dir === "left"
         ? cameraRef.current.rotation.y + rotationSpeed
         : cameraRef.current.rotation.y - rotationSpeed;
     console.log(newRotationY);
-    if(dir==="right" && (ismobile?newRotationY<-2:newRotationY<-1.5)){
+    if (dir === "right" && (ismobile ? newRotationY < -2 : newRotationY < -1.5)) {
       return;
     }
-    if(dir==="left" && (ismobile?newRotationY>1.5:newRotationY>1.17)){
+    if (dir === "left" && (ismobile ? newRotationY > 1.5 : newRotationY > 1.17)) {
       return;
     }
     setIsAnimating(true);
@@ -106,50 +131,58 @@ const Room = () => {
 
 
   const Move = (event) => {
-    console.log("here");
+    console.log("herem");
+    
 
     if (cameraRef.current && RoomRef && !isAnimating) {  // Check if not animating
       setIsAnimating(true);  // Set the flag to true when animation starts
-
+      console.log(cameraRef.current.position.z);
       if (cameraRef.current.position.z > 0) {
         setblur(false);
 
         const timeline = gsap.timeline({
           defaults: { duration: 2.5, ease: "power4.inOut" },
           onComplete: () => {
+            setbuttons(true);
+            setIsVisible1(true);
             setIsAnimating(false);  // Set flag to false when animation completes
           },
         });
 
         timeline
-          .to(cameraRef.current.position,{ z: ismobile?-65:-105, x: 0 })
-          .to(cameraRef.current.rotation, { y: 0, x: 0 },"<")
+          .to(cameraRef.current.position, { z: ismobile ? -65 : -105, x: 0 })
+          .to(cameraRef.current.rotation, { y: 0, x: 0 }, "<")
       }
-      else if (cameraRef.current.position.z > -110) {
+      else if (ismobile?cameraRef.current.position.z >= -65:cameraRef.current.position.z > -110) {
+        console.log("OKKK");
+        setIsVisible1(false);
         const timeline = gsap.timeline({
           defaults: { duration: 2.5, ease: "power4.inOut" },
           onComplete: () => {
+            setbuttons(false);
             setIsAnimating(false);  // Set flag to false when animation completes
             setIsVisible(true);
           },
         });
 
         timeline
-          .to(cameraRef.current.position,{ z: ismobile?-75:-140, x: 0 })
-          .to(cameraRef.current.rotation, { y: 0, x: 0 },"<")
+          .to(cameraRef.current.position, { z: ismobile ? -75 : -140, x: 0 })
+          .to(cameraRef.current.rotation, { y: 0, x: 0 }, "<")
       }
       else {
         setIsVisible(false);
         const timeline = gsap.timeline({
           defaults: { duration: 2.5, ease: "power4.inOut" },
           onComplete: () => {
+            setIsVisible1(true);
+            setbuttons(true);
             setIsAnimating(false);  // Set flag to false when animation completes
           },
         });
 
         timeline
-          .to(cameraRef.current.position, { z:ismobile? -65:-105, x: 0 })
-          .to(cameraRef.current.rotation, { y: 0, x: 0 },"<")
+          .to(cameraRef.current.position, { z: ismobile ? -65 : -105, x: 0 })
+          .to(cameraRef.current.rotation, { y: 0, x: 0 }, "<")
 
       }
     }
@@ -163,13 +196,13 @@ const Room = () => {
   return (
     <>
       {/* Animation Presence for Exit Animations */}
-      <AnimatePresence>
+      {buttons && <AnimatePresence>
         <motion.div
           className="flex justify-between"
           style={{
             width: "100vw",
             position: 'absolute',  // Position absolute to the viewport
-            top: '50%',            // Position vertically in the center
+            top: '70%',            // Position vertically in the center
             left: '50%',           // Position horizontally in the center
             transform: 'translate(-50%, -50%)',  // Offset by half width/height to truly center it
             padding: '10px',
@@ -189,8 +222,9 @@ const Room = () => {
           <button onClick={() => turn("right")} className="bg-white text-black p-4 rounded-full shadow-lg hover:bg-gray-200">
             <FontAwesomeIcon icon={faArrowRight} className="text-4xl" />
           </button>
-      </motion.div>
-    </AnimatePresence >
+        </motion.div>
+      </AnimatePresence >
+      }
       <AnimatePresence>
         {blur && (
           <motion.div
@@ -228,98 +262,94 @@ const Room = () => {
                 objectFit: "contain",
               }}
             />
-            <button onClick={Move} className="h-[5vh] w-[5vw] bg-fuchsia-700">
-              CLICK
+            <button onClick={Move} className={`${ismobile?'h-[5vh]':'h-[5vh] w-[5vw]'} bg-transparent text-white`}>
+              ENTER
             </button>
           </motion.div>
         )}
       </AnimatePresence>
 
-  {/* 3D Scene */ }
+      {/* 3D Scene */}
 
-  <Canvas
-    style={{
-      background: "linear-gradient(to bottom right, skyblue, black)",
-      height: "100vh",
-      width: "100vw",
-    }}
-  >
-    {/* 3D Model */}
-    <Model
-      ref={RoomRef}
-      rotation={[0, 0.9, 0]}
-      position={ismobile ? [0, -9, -70] : [0, -25, -120]}
-      scale={ismobile ? [0.5, 0.5, 0.5] : [1.5, 1.5, 1.5]}
-      url={"models/roomTest.glb"}
-    />
-
-    {/* Camera */}
-    <PerspectiveCamera
-      fov={75}
-      ref={cameraRef}
-      makeDefault
-      position={[0, 0, 10]}
-      aspect={window.innerWidth / window.innerHeight}
-      far={1000}
-      near={0.1}
-    />
-
-    <Environment preset="sunset" />
-    <Html transform occlude={true} position={[5, 1, -150]} className="bg-beige" rotation={[0, -1, 0]}>
-      <button onClick={Move} className={`text-white ${isVisible ? 'flex' : 'hidden'}`}>BACK</button>
-    </Html>
-    <Html transform occlude={true} position={[-4, 1, -106]} rotation={[0, 1, 0]}>
-      <div
-        className={`flex flex-col items-center justify-center font-hindi text-white h-[15vh] w-[15vw] ${isVisible ? 'flex' : 'hidden'}`}
+      <Canvas
         style={{
-          background: "linear-gradient(90deg, #ffcc00, #33cc99, #6699ff)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
+          background: "linear-gradient(to bottom right, skyblue, black)",
+          height: "100vh",
+          width: "100vw",
         }}
       >
-        {/* <div className="text-[2vw]">
-              RANGREZ
+        {/* 3D Model */}
+        <Model
+          ref={RoomRef}
+          rotation={ismobile?[0,0.8,0]:[0, 0.9, 0]}
+          position={ismobile ? [0, -9, -70] : [0, -25, -120]}
+          scale={ismobile ? [0.5, 0.5, 0.5] : [1.5, 1.5, 1.5]}
+          url={"models/roomTest.glb"}
+        />
+
+        {/* Camera */}
+        <PerspectiveCamera
+          fov={75}
+          ref={cameraRef}
+          makeDefault
+          position={[0, 0, 10]}
+          aspect={window.innerWidth / window.innerHeight}
+          far={1000}
+          near={0.1}
+        />
+
+        <Environment preset="sunset" />
+        <Html transform occlude={true} position={ismobile?[0,2,-80]:[5, 1, -150]} className="bg-beige" rotation={ismobile?[0,0,0]:[0, -1, 0]}>
+          <button onClick={Move} className={`text-white ${isVisible ? 'flex' : 'hidden'}`}>BACK</button>
+        </Html>
+        <Html transform occlude={true} position={ismobile?[-3,0.5,-70]:[-5, 1, -110]} rotation={[0, 1, 0]}>
+          <div
+            className={`${isVisible1?'flex':'hidden'} items-center justify-center font-hindi text-white h-[15vh] w-[15vw] text-[2em]`}
+          >
+            {timeLeft.days + ":" + timeLeft.hours + ":" + timeLeft.minutes + ":" + timeLeft.seconds }
+          </div>
+        </Html>
+        <Html
+          occlude={true}
+          transform
+          position={ismobile?[0.2,0.5,-80]:[-2, 2, -140]}
+          className="flex justify-center items-center w-full h-full"
+        >
+          <button
+            onClick={Move}
+            className={`${isVisible1 ? 'block' : 'hidden'} text-center ${ismobile?'h-[10vh]':'h-[15vh] w-[15vw] text-[3vh]'} bg-transparent text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 ease-in-out`}
+          >
+            ENTER WITHIN
+          </button>
+        </Html>
+
+        <Html transform occlude={true} position={ismobile?[0,-0.5,-80]:[-2.5, 0.5, -160]} rotation={[-0.25, 0.15, 0]} center>
+          <div
+            style={{
+              width: ismobile?"20vw":"25vw",
+              height: ismobile?"10vh":"40vh",
+              borderRadius: "20px",
+              // boxShadow: "0px 4px 10px rgba(0,0,0,0.3)",
+              padding: "10px",
+              fontFamily: "'Brush Script MT', cursive",
+              textAlign: "center",
+              color: "#333",
+              display: isVisible ? "flex" : "none",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "10px",
+            }}
+          >
+            <h1 style={{ margin: 0, fontSize: ismobile?"5px":"4em" }}>🎨 Drawing Board</h1>
+            <div style={{ fontSize: ismobile?"5px":"3em", zIndex: "1" }} className="cursor-pointer flex flex-col">
+              <a href="/events">📜 Events</a>
+              <a href="/team">🤝 Teams</a>
+              <a href="/about">📖 About Us</a>
             </div>
-            <div className="text-[2vh]">
-              The Artist Within
-            </div> */}
-        <div className="text-[2vh]">
-          COMING SOON
-        </div>
-      </div>
-    </Html>
-    <Html position={[0, 5, -140]}>
-      <button onClick={Move}>
-        EXPLORE PAGES
-      </button>
-    </Html>
-    <Html transform occlude={true} position={[-2.5, 0.5, -160]} rotation={[-0.25, 0.15, 0]} center>
-      <div
-        style={{
-          width: "25vw",
-          height: "40vh",
-          borderRadius: "20px",
-          boxShadow: "0px 4px 10px rgba(0,0,0,0.3)",
-          padding: "10px",
-          fontFamily: "'Brush Script MT', cursive",
-          textAlign: "center",
-          color: "#333",
-          display: isVisible ? "flex" : "none",
-          flexDirection: "column",
-          justifyContent: "center",
-          gap: "10px",
-        }}
-      >
-        <h1 style={{ margin: 0, fontSize: "24px" }}>🎨 Drawing Board</h1>
-        <div style={{ fontSize: "50px" ,zIndex:"1"}}>
-          <p>📜 Events</p>
-          <p>🤝 Teams</p>
-          <p>📖 About Us</p>
-        </div>
-      </div>
-    </Html>
+          </div>
+        </Html>
 
-  </Canvas>
+      </Canvas>
     </>
   );
 };
