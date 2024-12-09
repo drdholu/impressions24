@@ -10,6 +10,7 @@ import Navbar from './components/Navbar';
 import BackToTop from "./components/ui/BackToTop"
 import EventsPage from './components/EventsPage';
 import Explore from './components/Explore';
+// import BackToTop from "./components/ui/BackToTop"
 // import Footer from './components/ui/Footer';
 
 // import VolunteerForm from './components/VolunteerForm';
@@ -19,6 +20,7 @@ import ErrorPage from './components/ui/ErrorPage';
 // import gsap from 'gsap';
 // import Preloader from './components/ui/Preloader';
 import TransitionWrapper from './components/ui/TransitionWrapper';
+// import TransitionWrapper from './components/ui/TransitionWrapper';
 // import CustomCursor from './components/ui/CustomeCursor';
 // import AnimatedBackground from './components/ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';

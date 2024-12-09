@@ -1,0 +1,305 @@
+{
+    "events": [
+      {
+            "title": "Colour Splash",
+            "sections": [
+              {
+                "id": "details",
+                "title": "Details",
+                "content": [
+                ]   
+              },
+              {
+                "id": "structure",
+                "title": "Structure",
+                "content": [
+                  "Themes will be disclosed at the time of the competition by the judges.",
+                  "Participants have to bring their own material- the necessary art supplies and a drawing board.",
+                  "Participants will be provided with A3 sheet of good quality.",
+                  "Participants will be given 15 minutes to set up their table. 3 hours will be given to complete the painting using mentioned media only.",
+                  "Coordinators will be present at the AnC Arena all the time if any queries or requirements other than mentioned."
+                ],
+                "list": [
+                ]
+              },
+              {
+                "id": "guidelines",
+                "title": "Guidelines",
+                "content": [
+                  "The competition is open to all college students of the age group 16-25 strictly. If participant is found out of the age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+                  "Only use of mentioned medium of painting is permissible. (Watercolor, Poster colors, Acrylic Colors, Oil Paints, Gouache Colors)",
+                  "The use of virtual sources, cell phones, or any other kind of malpractices will lead to immediate disqualification if not permitted by the judges.",
+                  "Borrowing or sharing of the art supplies amongst the participants is at their own risk. Any authority of Impressions or COEP Tech will not be responsible for the loss or damage to the supplies borrowed or shared.",
+                  "The artwork must be submitted in the given time only. No requests for extra time will be entertained."
+                ]
+              },
+              {
+                "id": "contact",
+                "title": "Contact Us",
+                "coordinator": "Deep Narkhede",
+                "phone": "+91 7045407123",
+                "email": "events23.impressions@gmail.com"
+              }
+            ],
+            "footer": {
+              "text": "© 2023 Impressions. All Rights Reserved."
+            },
+            "buttonLink": "https://example.com/learn-more"
+      },
+      {
+        "title": "DoodlyDoo",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+            ]   
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+              "Participants will submit their Doodles through the drive link which will be provided on Whatsapp of the participant after the registration.",
+              "Top entries shortlisted by the judge will be displayed in an 'Exhibition' on the college campus on the day of the main fest along with the name of the artist."
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Guidelines",
+            "content": [
+              "The competition is open to college students of the age group 16-25 strictly. If the participant is found out of the mentioned age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+              "Black and White as well as Colored Doodles are allowed.",
+              "Participants must draw their Doodle on an A4 sheet paper.",
+              "Doodles can be drawn in any of the following medium: Pastels, Pens, Pencils, Paints and Markers.",
+              "Vulgarity and obscenity at any point are strictly not allowed."
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Mihika Khade",
+            "phone": "+91 9975639315",
+            "email": "events23.impressions@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2023 Impressions. All Rights Reserved."
+        }
+      },
+
+      {
+        "title": "Game of Shades",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+              "It is a sketching competition."
+            ]   
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+              "Themes will be disclosed at the time of the competition by the judges.",
+              "Participants have to bring their own material - the necessary art supplies and a drawing board.",
+              "Participants will be provided with A3 sheet of good quality.",
+              "Participants will be given 15 minutes to set up their table. 3 hours will be given to complete the sketch, using mentioned media only.",
+              "Coordinators will be present at the AnC arena all the time if any queries or requirement other than the mentioned",
+              "The following mediums of sketching are allowed: Pencil, Graphite, Charcoal, Color Pencils."
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Rules & Guidelines",
+            "content": [
+              "The Competition is open to college students of age 16-25 strictly.",
+              "Only use of mentioned medium of sketching is permissible. (Pencil, Graphite, Charcoal, Color Pencils)",
+              "The use of virtual sources, cellphones, or any other kind of malpractice will lead to immediate disqualification.",
+              "Vulgarity and obscenity at any point are strictly not allowed.",
+              "Borrowing or sharing of the art supplies amongst the participants is at their own risk. Any authority of Impressions or COEP Tech will not be responsible foe the loss or damage to the supplies borrowed or shared.",
+              "The artwork must be submitted in the given time only. No request for extra time will be entertained."
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Deep Narkhede",
+            "phone": "+91 7045407123",
+            "email": "events23.impressions@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2023 Impressions. All Rights Reserved."
+        }
+    },
+    {
+      "title": "Graphix AI",
+      "sections": [
+        {
+          "id": "details",
+          "title": "Details",
+          "content": [
+          ]   
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "content": [
+              "Themes will be disclosed after registration.",
+              "No live presence will be required for this competition.",
+              "The top 10 entries shortlisted by the judge will be displayed in an 'Exhibition' on the college campus on the day of the main fest along with the name of the artist."
+          ],
+          "list": [
+          ]
+        },
+        {
+          "id": "guidelines",
+          "title": "Rules & Guidelines",
+          "content": [
+            "The competition is open to all college students of the age group 16-25 strictly. If participant is found out of the mentioned age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+            "All entries must be in digital form and not hand-drawn.",
+            "Any kind of licensed, official designing software is allowed. The name and version of the software must be mentioned during submission.",
+            "Vulgarity and obscenity at any point are strictly not allowed."
+          ]
+        },
+        {
+          "id": "submission",
+          "title": "Image Submission Rules:",
+          "content": [
+            "Participants have to submit a .jpeg or .png file with atleast three stages of their work. All files should be in a single folder.",
+            "File must be named 'Graphix_AI_ParticipantName_ThemeName'.",
+            "The folder should be uploaded to your personal Google Drive. Access permission must be given to 'Anyone with a link can view/edit'.",
+            "The link to your Personal Google Drive should be uploaded to the form shared to you on Whatsapp. The Access permission should be given as stated above.",
+            "The file uploaded must be clearly visible for the judgement of the artwork."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact Us",
+          "coordinator": "Mihika Khade",
+          "phone": "+91 9975639315",
+          "email": "events23.impressions@gmail.com"
+        }
+      ],
+      "footer": {
+        "text": "© 2023 Impressions. All Rights Reserved."
+      }
+    },
+    {
+      "title": "Graphix Digital",
+      "sections": [
+        {
+          "id": "details",
+          "title": "Details",
+          "content": [
+          ]   
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "content": [
+              "Themes will be disclosed after registration.",
+              "No live presence will be required for this competition.",
+              "The top 10 entries shortlisted by the judge will be displayed in an 'Exhibition' on the college campus on the day of the main fest along with the name of the artist."
+          ],
+          "list": [
+          ]
+        },
+        {
+          "id": "guidelines",
+          "title": "Rules & Guidelines",
+          "content": [
+            "The competition is open to college students of age group 16-25 strictly. If participant is found out of the mentioned age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+            "All entries must be in digital form and not hand-drawn.",
+            "Any kind of licensed, official designing software is allowed. The name and version of the software must be mentioned during submission.",
+            "The artwork must be respectful and fit with the decorum of the event and fest, vulgarity and obscenity at any point are strictly not allowed.",
+            "By submitting their artwork, the participants declare that their artwork is original and that they are sole creators of the artwork.",
+            "The sole copyright of the artwork remains with the creators, but Impressions has the right of promoting the content on social media platforms and other print media"
+          ]
+        },
+        {
+          "id": "submission",
+          "title": "Image Submission Rules:",
+          "content": [
+            "Participants have to submit a .jpeg or .png file with atleast three stages of their work. All files should be in a single folder.",
+            "File must be named 'Graphix_DA_ParticipantName_ThemeName'.",
+            "The folder should be uploaded to your personal Google Drive. Access permission must be given to 'Anyone with a link can view/edit'.",
+            "The link to your Personal Google Drive should be uploaded to the form shared to you on Whatsapp. The Access permission should be given as stated above.",
+            "The file uploaded must be clearly visible for the judgement of the artwork."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact Us",
+          "coordinator": "Mihika Khade",
+          "phone": "+91 9975639315",
+          "email": "events23.impressions@gmail.com"
+        }
+      ],
+      "footer": {
+        "text": "© 2023 Impressions. All Rights Reserved."
+      }
+  },
+  {
+    "title": "Cirकला",
+    "sections": [
+      {
+        "id": "details",
+        "title": "Details",
+        "content": [
+          "It is a Mandala Art Competition."
+        ]   
+      },
+      {
+        "id": "structure",
+        "title": "Structure",
+        "content": [
+            "Themes will be disclosed at the time of the registration.",
+            "Participants will submit their Mandala Art through the drive link which will be provided on Whatsapp of the participant after the registration.",
+            "Top entries shortlisted by the judge will be displayed in an 'Exhibition' on the college campus on the day of the main fest along with the name of the artist."
+        ],
+        "list": [
+        ]
+      },
+      {
+        "id": "guidelines",
+        "title": "Rules & Guidelines",
+        "content": [
+          "The competition is open to college students of the age group 16-25 strictly. If the participant is found out of the mentioned age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+          "Black and White as well as Colored Mandalas are allowed.",
+          "Participants must draw their Mandalas on an A4 sheet paper.",
+          "Mandalas can be drawn in any of the following medium: Pastels, Pens, Pencils, Paints and Markers.",
+          "Vulgarity and obscenity at any point are strictly not allowed."
+        ]
+      },
+      {
+        "id": "submission",
+        "title": "Image Submission Rules:",
+        "content": [
+          "Participants have to submit a .jpeg or .png file with atleast three stages of their work. All files should be in a single folder.",
+          "File must be named 'Cirkala_ParticipantName_ThemeName'.",
+          "The folder should be uploaded to your personal Google Drive. Access permission must be given to 'Anyone with a link can view/edit'.",
+          "The link to your Personal Google Drive should be uploaded to the form shared to you on Whatsapp. The Access permission should be given as stated above.",
+          "The file uploaded must be clearly visible for the judgement of the artwork.",
+          "Image editing is stricly prohited."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contact Us",
+        "coordinator": "Mihika Khade",
+        "phone": "+91 9975639315",
+        "email": "events23.impressions@gmail.com"
+      }
+    ],
+    "footer": {
+      "text": "© 2023 Impressions. All Rights Reserved."
+    }
+  }
+ ]
+}

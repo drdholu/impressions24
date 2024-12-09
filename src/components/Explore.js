@@ -184,7 +184,7 @@ const Explore = () => {
                 console.error('Error fetching data:', error);
                 navigate('/');
             });
-    }, [eventTitle, navigate]);
+    }, [eventTitle, moduleName, navigate]);
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -336,9 +336,9 @@ const Explore = () => {
             )}
 
             {/* Footer */}
-            {/* <footer className="py-6 mt-auto text-center text-gray-400 bg-black/80">
+            <footer className="py-6 mt-auto text-center text-gray-400 bg-black/80">
                 {eventData.footer.text}
-            </footer> */}
+            </footer>
         </div>
     );
 };

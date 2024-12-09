@@ -19,12 +19,6 @@
   cursor: none;
 } */
 
-::selection {
-  color: white;
-  background: black;
-  /* text-shadow: 1px 1px 4px #1c1c1ca6; */
-}
-
 
 @keyframes scroll-horizontal {
     0% { transform: translateX(0); }
