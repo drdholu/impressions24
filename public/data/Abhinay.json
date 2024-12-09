@@ -1,57 +1,50 @@
-
 {
-    "events": [
-      {
-            "id": "Scene-Sational",
-            "title": "Scene-Sational",
-            "sections": [
-              {
-                "id": "details",
-                "title": "Details",
-                "content": [
-                  "It is a Street Play competiton." 
-                ]   
-              },
-              {
-                "id": "structure",
-                "title": "Structure",
-                "content": [
-                  "Eligibility:",
-                  "Open exclusively to current students of COEP.",
-                  "Teams must consist of 3-5 members.",
-                  "Event Format:",
-                  "On-the-Spot Scene Assignment:",
-                  "Participants will draw a Bollywood scene and recreate it with a different ending.",
-                  "Each team will receive a different scene",
-                  "Preparation Time:",
-                  "Teams will have Preparation Time (20 minutes) to plan and rehearse their reimagined scene with the new ending.",
-                  "Performance:",
-                  "Perform the reimagined scene live on stage.",
-                  "Each performance should be between 1.5 and 3 minutes long."
-],
-                "list": [
-                ]
-              },
-              {
-                "id": "guidelines",
-                "title": "Guidelines",
-                "content": [
-                  "- All performances must be free of vulgarity and cuss words.",
-                  "Content should be appropriate for a college audience and uphold the values of COEP."
-                ]
-              },
-              {
-                "id": "contact",
-                "title": "Contact Us",
-                "coordinator": "Arnav Bankar",
-                "phone": "+91 7506175550",
-                "email": "events23.impressions@gmail.com"
-              }
-            ],
-            "footer": {
-              "text": "© 2023 Impressions. All Rights Reserved."
+  "events": [
+    {
+          "id": "Scene-Sational",
+          "title": "Scene-Sational",
+          "sections": [
+            {
+              "id": "details",
+              "title": "Details",
+              "content": [
+                "It is a Movie Re-enacting Competition." 
+              ]   
             },
-            "buttonLink": "https://unstop.com/p/scene-sational-coep-technological-university-pune-1275081"
-      }
- ]
+            {
+              "id": "structure",
+              "title": "Structure",
+              "content": [                  
+                "The competition will consist of a single round.",
+                "At the reporting time, each team will be assigned with a movie scene and they will have to re-enact it with a different ending.",
+                "Each team will be given 20 minutes of preparation time for the performance."
+              ],
+              "list": [
+              ]
+            },
+            {
+              "id": "guidelines",
+              "title": "Rules and Guidelines",
+              "content": [
+                "The competition is open to only COEP students.",
+                "A separate space will be allocated to each group to prepare for 20 minutes.",
+                "Teams are allowed to use objects they are carrying with themselves as props (on the discretion of the organisers). The use of such props is the sole responsibility of the participating team.",
+                "Teams must present the synopsis of their skit along with the name of characters corresponding to the team members right after their performance.",
+                "Usage of abusive language, obscenity, direct implications, plagiarism, and racial, religious/ linguistic, sexual, and political views will lead to immediate disqualification." 
+              ]
+            },
+            {
+              "id": "contact",
+              "title": "Contact Us",
+              "coordinator": "Arpit Mutha",
+              "phone": "+91 9529574868",
+              "email": "eventsimpressions24@gmail.com"
+            }
+          ],
+          "footer": {
+            "text": "© 2024 Impressions. All Rights Reserved."
+          },
+          "buttonLink": "https://unstop.com/p/scene-sational-coep-technological-university-pune-1275081"
+    }
+]
 }
