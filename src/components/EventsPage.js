@@ -130,7 +130,7 @@ function Events() {
 
     return (
         <div  className="m-0 font-sans text-gray-200">
-            <Navbar color={"none"} />
+            <Navbar color={"none"} fixed={true}/>
 
             <div className="slider h-[100vh] relative">
                 <div className="relative h-full list">
