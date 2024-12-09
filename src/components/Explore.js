@@ -241,6 +241,13 @@ const Explore = () => {
         <div className="flex flex-col min-h-screen font-sans text-gray-100 bg-gray-900">
             <Navbar color="black" fixed={false} />
 
+            {/* Info Box */}
+            <div className="animate-pulse w-full max-w-[1200px] mx-auto px-4 py-4 mt-6 bg-yellow-500 rounded-lg shadow-lg">
+                <p className="text-lg font-semibold text-center text-gray-900">
+                    Please make sure your organization is set to <span>"Coep" (case-sensitive)</span> when registering on <span>UNSTOP</span>
+                </p>
+            </div>
+
             {/* Event Header - Now separate from Navbar */}
             <header className="w-full">
                 <div className="max-w-[1200px] mx-auto px-4 py-6 flex justify-between items-center">

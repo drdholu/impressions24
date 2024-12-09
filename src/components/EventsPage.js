@@ -139,7 +139,7 @@ function Events() {
                         <div className={`item absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-500 ${index === itemActive ? 'active opacity-100 z-10' : ''}`} key={index}>
                             <img className='object-cover w-full h-full' src={item.img} alt={item.title} />
                             <div className="absolute left-[10%] top-[20%] w-[1300px] max-w-[80%] z-10">
-                                <p className='uppercase tracking-[10px]'>design</p>
+                                {/* <p className='uppercase tracking-[10px]'>design</p> */}
                                 {/* <p className={`uppercase tracking-[10px] ${index === itemActive ? 'animate-showContent delay-[700ms]' : 'translate-y-[30px] blur-[20px] opacity-0'}`}>design</p> */}
                                 <h2 className='lg:text-[100px] text-[50px] m-0' style={{fontSize:window.innerWidth <= 1024 ? (item.title.length > 18 ? '40px' : '50px'): (item.title.length > 20 ? '85px' : '100px')}}>{item.title}</h2>
                                 {/* <h2 className={`text-[100px] m-0 ${index === itemActive ? 'animate-showContent delay-[1s]' : 'translate-y-[30px] blur-[20px] opacity-0'}`}>{item.title}</h2> */}
