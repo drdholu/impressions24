@@ -1,4 +1,5 @@
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
+import { EffectComposer, DepthOfField } from '@react-three/postprocessing';
 import * as THREE from "three";
 import React, { useRef, useEffect, forwardRef, useState, useImperativeHandle } from "react";
 import { PerspectiveCamera, Html, useGLTF, OrbitControls,RectAreaLight,useTexture,MeshReflectorMaterial, CameraControls, Environment   } from "@react-three/drei";
@@ -6,6 +7,7 @@ import { atom } from "jotai";
 import { AmbientLight, Vector3 } from 'three'
 import InProgress from "./ui/InProgress";
 import gsap from 'gsap';
+import logo from "../images/Logos/Name Logo filled.png";
 const ismobile = window.innerWidth < 930;
 
 export const currentPageAtom = atom("intro");
@@ -27,6 +29,17 @@ const worldHeight = ismobile
     ? worldWidth * (window.innerHeight / window.innerWidth) * 0.27
     : worldWidth * (window.innerHeight / window.innerWidth) * 0.8;
 const totalheight = totalwidth * (window.innerHeight / window.innerWidth);
+
+const ImageMesh = forwardRef((props, ref) => {
+  const texture = useLoader(THREE.TextureLoader, logo); // Load texture
+
+  return (
+    <mesh ref={ref} position={[0, 2, -10]} castShadow>
+      <planeGeometry args={[worldWidth, worldHeight]} />
+      <meshStandardMaterial map={texture} transparent={true} />
+    </mesh>
+  );
+});
 
 
 const Model = forwardRef((props, ref) => {
@@ -65,8 +78,8 @@ const Room = () => {
                 });
 
                 timeline
-                    .to(cameraRef.current.position, ismobile ? { z: -50 } : { z: -80, x: 0 })
-                    .to(RoomRef.current.rotation, { y: -0.04 }, "<")
+                    .to(cameraRef.current.position, ismobile ? { z: -50 } : { z: -60, x: 0 })
+                    // .to(RoomRef.current.rotation, { y: -0.04 }, "<")
             }
             else {
                 const timeline = gsap.timeline({
@@ -107,10 +120,10 @@ const Room = () => {
           ref={RoomRef}
           rotation={[0, 0.9, 0]}
           position={
-            ismobile ? [0,-15,-70] : [0, -20, -70]
+            ismobile ? [0,-15,-70] : [0, -25, -70]
           }
           scale={ismobile ? [0.5, 0.5, 0.5] : [1.5, 1.5, 1.5]}
-          url={"models/Room.glb"}
+          url={"models/roomTest.glb"}
         />
         {/* <ambientLight /> */}
         {/* Camera */}
@@ -126,10 +139,23 @@ const Room = () => {
         />
         {/* Room Model */}
         <Environment preset="sunset"/>
-        
+        <ImageMesh/>
+        {/* <EffectComposer>
+        <DepthOfField
+          focusDistance={0.0} // Distance to the focused object
+          focalLength={0}  // Strength of the blur
+          bokehScale={2}      // Bokeh intensity
+        />
+      </EffectComposer> */}
+        {/* <EffectComposer>
+        <DepthOfField
+          focusDistance={0.0} // Distance to the focused object
+          focalLength={0.02}  // Strength of the blur
+          bokehScale={2}      // Bokeh intensity
+        />
+      </EffectComposer> */}
       </Canvas>
     );
 };
 
 export default Room;
-
