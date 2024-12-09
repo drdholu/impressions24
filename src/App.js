@@ -36,7 +36,6 @@ const App = () => {
   return (
     // <Preloader>
       <div className='font-sans'>
-      {homePage && <Navbar />}
       {/* <CustomCursor /> */}
        {/* <TransitionWrapper> */}
           <Routes>
