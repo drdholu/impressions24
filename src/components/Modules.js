@@ -82,7 +82,7 @@ function Modules() {
                     <section class="parallax-4" className="flex items-center w-screen min-h-screen bg-fixed bg-center bg-cover bg-parallax-4">
                         <div className="px-10 py-[10%] text-center sm:text-center ">
                             <h1 className="text-6xl text-right text-white sm:text-7xl lg:text-8xl text-overlay">Camera</h1>
-                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1500px] sm:ml-[0px]">
+                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1300px] sm:ml-[0px]">
                                 <Link
                                     to={`/events/Camera`}
                                     className="text-white"
