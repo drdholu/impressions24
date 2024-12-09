@@ -16,30 +16,34 @@ import { urls } from './url';
 import ErrorPage from './components/ui/ErrorPage';
 // import gsap from 'gsap';
 // import Preloader from './components/ui/Preloader';
-// import TransitionWrapper from './components/ui/TransitionWrapper';
+import TransitionWrapper from './components/ui/TransitionWrapper';
 import CustomCursor from './components/ui/CustomeCursor';
 // import AnimatedBackground from './components/ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';
+import EventsPage from './components/EventsPage'
+import Explore from './components/Explore'
 
 const App = () => {
   return (
     // <Preloader>
-      <div className=''>
-        {/* <Navbar /> */}
-        <CustomCursor />
-       {/* <TransitionWrapper> */}
-          <Routes>
-            {urls.map((url, idx) => {
-              return (
-                <Route key={idx} path={url.url} element={url.element} />
-              )
-            })}
-            <Route path="*" element={<ErrorPage />} />
-          </Routes> 
-        {/* </TransitionWrapper> */}
-        <BackToTop /> 
-        {/* <Footer />  */}
-      </div>
+    <div className=''>
+      {/* <Navbar /> */}
+      <CustomCursor />
+      <TransitionWrapper>
+        <Routes>
+          {urls.map((url, idx) => {
+            return (
+              <Route key={idx} path={url.url} element={url.element} />
+            )
+          })}
+          <Route path='/events/:moduleName' element={<EventsPage />} />
+          <Route path='/events/:moduleName/:eventTitle' element={<Explore />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </TransitionWrapper>
+      <BackToTop />
+      {/* <Footer />  */}
+    </div>
 
 
     // </Preloader>

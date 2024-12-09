@@ -17,7 +17,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { urls } from '../url';
 gsap.registerPlugin(ScrollTrigger);
 
-const Navbar = () => {
+const Navbar = ({ color, fixed }) => {
   const [isOpen, setIsOpen] = useState(false);
   const titleRef = useRef();
   // const navbarRef = useRef();
@@ -69,7 +69,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-30 backdrop-blur-sm h-[10vh]">
+      <nav className={`${fixed ? "fixed" : "sticky"} top-0 left-0 w-full z-30 bg-${color} h-[10vh]`}>
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between px-5">
             <Link 
@@ -79,7 +79,7 @@ const Navbar = () => {
               <img src={smallLogo} alt="Logo" className="w-auto h-20" />
               <span 
                 ref={titleRef} 
-                className="text-xl font-semibold bg-clip-text"
+                className="text-xl font-semibold text-white bg-clip-text"
               >
                 Impressions 24
               </span>

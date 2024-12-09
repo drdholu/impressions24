@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../eventspage.css';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar'
 
 function Events() {
     // const navigate = useNavigate();
@@ -128,22 +129,10 @@ function Events() {
     }, [itemActive]);
 
     return (
-        <div  className="m-0 text-gray-200 bg-black font-poppins">
-            <header className="w-[1200px max-w-[90%] mx-auto grid grid-cols-[50px_1fr_50px] grid-rows-[50px] justify-center items-center relative z-[100]">
-                <div className="w-[110px] font-bold">Impressions</div>
-                <ul className="flex justify-center gap-5 p-0 m-0 font-medium list-none">
-                    <li>Home</li>
-                    <li>Blog</li>
-                    <li>Info</li>
-                </ul>
-                <div className="search">
-                    <svg className='w-[25px]' aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                    </svg>
-                </div>
-            </header>
+        <div  className="m-0 font-sans text-gray-200">
+            <Navbar color={"none"} />
 
-            <div className="slider h-screen -mt-[50px] relative">
+            <div className="slider h-[100vh] relative">
                 <div className="relative h-full list">
                     {items.map((item, index) => (
                         // <div className={`item ${index === itemActive ? 'active' : ''}`} key={index}>
