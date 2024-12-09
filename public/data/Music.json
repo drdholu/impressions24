@@ -1,195 +1,170 @@
 {
-    "events": [
-      {     
-            "id": "StayTuned",
-            "title": "Stay Tuned",
-            "sections": [
-              {
-                "id": "details",
-                "title": "Details",
-                "content": [
-                  "This is a solo musical instrument competition.",
-                  "Participants will showcase their skills by performing a piece of their choice.",
-                  "Open to all types of musical instruments, with no specific categories."
-                ]   
-              },
-              {
-                "id": "structure",
-                "title": "Structure",
-                "content": [
-                  "This competition consists of one round:",
-                  "Performance Round:",
-                  "Time Limit: 3 to 4 minutes for the performance.",
-                  "Participants will have 1 minute for setup before their performance.",
-                  "The performance can be self-composed or a cover.",
-                  "Participants may use a backing track or have a single accompanist for support."
-                ],
-                "list": [
-                  "Mixing",
-                  "Looping",
-                  "Miking"
-                ]
-              },
-              {
-                "id": "guidelines",
-                "title": "Guidelines",
-                "content": [
-                  "Only students of COEP Technological University are allowed to participate.",
-                  "Participants must bring their own instruments; basic setup (e.g., mic stands, amplifiers) will be provided.",
-                  "Pre-recorded loops, software-based assistance, and vulgar or obscene content are strictly prohibited.",
-                  "Each participant must adhere to the given time limits for setup and performance.",
-                  "The use of more than one instrument during the performance is allowed but must stay within the time limit.",
-                  "Accompanist:",
-                  "Participants may bring one accompanist to support them during their performance.",
-                  "The accompanist is not judged as part of the competition.",
-                  "Judges' decisions will be final and binding."
-
-                ]
-              },
-              {
-                "id": "contact",
-                "title": "Contact Us",
-                "coordinator": "Arnav Bankar",
-                "phone": "+91 7506175550",
-                "email": "events23.impressions@gmail.com"
-              }
-            ],
-            "footer": {
-              "text": "© 2023 Impressions. All Rights Reserved."
+  "events": [
+    {     
+          "id": "StayTuned",
+          "title": "Stay Tuned",
+          "sections": [
+            {
+              "id": "details",
+              "title": "Details",
+              "content": [
+                "This is a solo musical instrument competition."
+              ]   
             },
-            "buttonLink": "https://unstop.com/p/stay-tuned-coep-technological-university-pune-1273089"
-      },
-      {
-    "id": "SaavaniClassical",
-    "title": "Saavani Classical",
-    "sections": [
-      {
-        "id": "details",
-        "title": "Details",
-        "content": [
-          "Saavani is a solo singing competition open for all COEP students.",
-          "Categories:",
-          "Saavani Classical: Indian Classical (ragas, bhajans, semi-classical forms).",
-          "Saavani Non-Classical: Bollywood (Hindi/Marathi), Western (English), and other genres outside classical.",
-          "Format: The competition consists of two rounds designed to test technical skill, creativity, and stage presence."
-        ]   
-      },
-      {
-        "id": "structure",
-        "title": "Structure",
-        "content": [
-          "Round 1: Elimination Round",
-          "Time Limit:",
-          "Classical: 2 minutes.",
-          "Non-Classical: 1.5 minutes.",
-          "Participants must perform a relevant song in their chosen category without accompaniment or backing tracks.",
-          "Top performers from each category qualify for the next round.",
-          "Each participant can participate in one or more category",
-          "Participants can perform original compositions if relevant to their category.",
-          "Round 2: Finals Round",
-          "Finalists must prepare a new song which they haven't sung in the earlier rounds. The finalists may be asked to sing specific types of songs, scales, etc., by the judges in this round.",
-          "Time Limit:",
-          "Classical:3 -4 minutes",
-          "Non-Classical: 2.5 - 3.5 minutes"
-          
-        ],
-        "list":[]
-      },
-      {
-        "id": "guidelines",
-        "title": "Rules & Guidelines",
-        "content": [
-          "No backing tracks are allowed for eliminations.",
-          "Participants can play one instrument OR have an accompanist for a musical instrument OR use a backing track for eliminations and finals.",
-          "This competition is open for COEP students.",
-          "Vulgarity and obscenity at any point are strictly not allowed.",
-          "Each participant can sing in one category per registration and can register for multiple categories separately.",
-          "Original compositions are allowed and encouraged.",
-          "No rap music or remixing is allowed in this competition.",
-          "Obscenity of any kind is not allowed and will lead to immediate disqualification.",
-          "For the finals, participants have to sing a song which has not been submitted in the prior rounds.",
-          "The time limit for all rounds should be strictly followed."
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "Contact Us",
-        "coordinator": "Vanshika Bhuyarkar",
-        "phone": "+91 9175898977",
-        "email": "events23.impressions@gmail.com"
-      }
-    ],
-    "footer": {
-      "text": "© 2023 Impressions. All Rights Reserved."
+            {
+              "id": "structure",
+              "title": "Structure",
+              "content": [
+                "This competition consists of a single round.",
+                "Time Limit: 3 to 4 minutes for the performance.",
+                "Participants will have 1 minute for setup before their performance.",
+                "The performance can be self-composed or a cover.",
+                "Participants may use a backing track or have a single accompanist for support."
+              ],
+              "list": [
+              ]
+            },
+            {
+              "id": "guidelines",
+              "title": "Rules and Guidelines",
+              "content": [
+                "Only students of COEP Technological University are allowed to participate.",
+                "Participants must bring their own instruments; basic setup (e.g., mic stands, amplifiers) will be provided.",
+                "Pre-recorded loops, software-based assistance, and vulgar or obscene content are strictly prohibited.",
+                "Each participant must adhere to the given time limits for setup and performance.",
+                "The use of more than one instrument during the performance is allowed but must stay within the time limit.",
+                "Accompanist:",
+                "Participants may bring one accompanist to support them during their performance.",
+                "The accompanist is not judged as part of the competition.",
+                "Judges' decisions will be final and binding."
+              ]
+            },
+            {
+              "id": "contact",
+              "title": "Contact Us",
+              "coordinator": "Gargi Supe",
+              "phone": "+91 9168792442",
+              "email": "eventsimpressions24@gmail.com"
+            }
+          ],
+          "footer": {
+            "text": "© 2024 Impressions. All Rights Reserved."
+          },
+          "buttonLink": "https://unstop.com/p/stay-tuned-coep-technological-university-pune-1273089"
     },
-    "buttonLink": "https://unstop.com/p/saavni-classical-coep-technological-university-pune-1273359"
-
+    {
+  "id": "SaavaniClassical",
+  "title": "Saavani Classical",
+  "sections": [
+    {
+      "id": "details",
+      "title": "Details",
+      "content": [
+        "This is a classical singing competition."
+      ]   
+    },
+    {
+      "id": "structure",
+      "title": "Structure",
+      "content": [
+        "Round 1 : Elimination Round",
+        "Time Limit: 1.5 minutes.",
+        "Participants must perform a relevant song in their chosen category without accompaniment or backing tracks.",
+        "Top performers from this round qualify for the next round.",
+        "Participants can perform original compositions if relevant to their category.",
+        "Round 2 : Finals",
+        "Finalists must prepare a new song which they haven't sung in the earlier rounds.",
+        "The finalists may be asked to sing specific types of songs, scales, etc., by the judges in this round",
+        "Time limit: 2.5 minutes to 3.5 minutes."          
+      ],
+      "list":[]
+    },
+    {
+      "id": "guidelines",
+      "title": "Rules and Guidelines",
+      "content": [
+        "This competition is open for only COEP students.",
+        "No backing tracks are allowed for eliminations.",
+        "Participants can play one instrument OR have an accompanist for a musical instrument OR use a backing track for eliminations and finals.",
+        "Vulgarity and obscenity at any point are strictly not allowed.",
+        "Each participant can sing in one category per registration and can register for both classical and non classical separately.",
+        "Original compositions are allowed and encouraged.",
+        "No rap music or remixing is allowed in this competition.",
+        "Obscenity of any kind is not allowed and will lead to immediate disqualification.",
+        "For the finals, participants have to sing a song which has not been submitted in the prior rounds.",
+        "The time limit for all rounds should be strictly followed."
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contact Us",
+      "coordinator": "Soham Vispute",
+      "phone": "+91 9172070776",
+      "email": "eventsimpressions24@gmail.com"
+    }
+  ],
+  "footer": {
+    "text": "© 2024 Impressions. All Rights Reserved."
   },
-  {
-    "id": "SaavaniNon-Classical",
-    "title": "Saavani Non-Classical",
-    "sections": [
-      {
-        "id": "details",
-        "title": "Details",
-        "content": [
-          "Saavani is a solo singing competition open for all COEP students.",
-          "Categories:",
-          "Saavani Classical: Indian Classical (ragas, bhajans, semi-classical forms).",
-          "Saavani Non-Classical: Bollywood (Hindi/Marathi), Western (English), and other genres outside classical.",
-          "Format: The competition consists of two rounds designed to test technical skill, creativity, and stage presence."
-        ]   
-      },
-      {
-        "id": "structure",
-        "title": "Structure",
-        "content": [
-          "Round 1: Elimination Round",
-          "Time Limit:",
-          "Classical: 2 minutes.",
-          "Non-Classical: 1.5 minutes.",
-          "Participants must perform a relevant song in their chosen category without accompaniment or backing tracks.",
-          "Top performers from each category qualify for the next round.",
-          "Each participant can participate in one or more category",
-          "Participants can perform original compositions if relevant to their category.",
-          "Round 2: Finals Round",
-          "Finalists must prepare a new song which they haven't sung in the earlier rounds. The finalists may be asked to sing specific types of songs, scales, etc., by the judges in this round.",
-          "Time Limit:",
-          "Classical:3 -4 minutes",
-          "Non-Classical: 2.5 - 3.5 minutes"
-          
-        ],
-        "list":[]
-      },
-      {
-        "id": "guidelines",
-        "title": "Rules & Guidelines",
-        "content": [
-          "No backing tracks are allowed for eliminations.",
-          "Participants can play one instrument OR have an accompanist for a musical instrument OR use a backing track for eliminations and finals.",
-          "This competition is open for COEP students.",
-          "Vulgarity and obscenity at any point are strictly not allowed.",
-          "Each participant can sing in one category per registration and can register for multiple categories separately.",
-          "Original compositions are allowed and encouraged.",
-          "No rap music or remixing is allowed in this competition.",
-          "Obscenity of any kind is not allowed and will lead to immediate disqualification.",
-          "For the finals, participants have to sing a song which has not been submitted in the prior rounds.",
-          "The time limit for all rounds should be strictly followed."
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "Contact Us",
-        "coordinator": "Vanshika Bhuyarkar",
-        "phone": "+91 9175898977",
-        "email": "events23.impressions@gmail.com"
-      }
-    ],
-    "footer": {
-      "text": "© 2023 Impressions. All Rights Reserved."
-    },
-    "buttonLink": "https://unstop.com/p/saavni-non-classical-coep-technological-university-pune-1273528"
+  "buttonLink": "https://unstop.com/p/saavni-classical-coep-technological-university-pune-1273359"
 
-  }
- ]
+},
+{
+  "id": "SaavaniNon-Classical",
+  "title": "Saavani Non-Classical",
+  "sections": [
+    {
+      "id": "details",
+      "title": "Details",
+      "content": [
+        "This is a non-classical singing competition."
+      ]   
+    },
+    {
+      "id": "structure",
+      "title": "Structure",
+      "content": [
+        "Round 1 : Elimination Round",
+        "Time Limit: 1.5 minutes.",
+        "Participants must perform a relevant song in their chosen category without accompaniment or backing tracks.",
+        "Top performers from this round qualify for the next round.",
+        "Participants can perform original compositions if relevant to their category.",
+        "Round 2 : Finals",
+        "Finalists must prepare a new song which they haven't sung in the earlier rounds.",
+        "The finalists may be asked to sing specific types of songs, scales, etc., by the judges in this round",
+        "Time limit: 2.5 minutes to 3.5 minutes."                    
+      ],
+      "list":[]
+    },
+    {
+      "id": "guidelines",
+      "title": "Rules and Guidelines",
+      "content": [
+        "This competition is open for only COEP students.",
+        "No backing tracks are allowed for eliminations.",
+        "Participants can play one instrument OR have an accompanist for a musical instrument OR use a backing track for eliminations and finals.",
+        "Vulgarity and obscenity at any point are strictly not allowed.",
+        "Each participant can sing in one category per registration and can register for both classical and non classical separately.",
+        "Original compositions are allowed and encouraged.",
+        "No rap music or remixing is allowed in this competition.",
+        "Obscenity of any kind is not allowed and will lead to immediate disqualification.",
+        "For the finals, participants have to sing a song which has not been submitted in the prior rounds.",
+        "The time limit for all rounds should be strictly followed."
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contact Us",
+      "coordinator": "Soham Vispute",
+      "phone": "+91 9172070776",
+      "email": "eventsimpressions24@gmail.com"
+    }
+  ],
+  "footer": {
+    "text": "© 2024 Impressions. All Rights Reserved."
+  },
+  "buttonLink": "https://unstop.com/p/saavni-non-classical-coep-technological-university-pune-1273528"
+
+}
+]
 }
