@@ -1,0 +1,54 @@
+{
+    "events": [
+      {
+            "id": "TheCOEPOpenMic",
+            "title": "The COEP Open Mic",
+            "sections": [
+              {
+                "id": "details",
+                "title": "Details",
+                "content": [
+                  "It is a Slam poetry Competition."
+                ]   
+              },
+              {
+                "id": "structure",
+                "title": "Structure",
+                "content": [
+                  "Registration Fee: Rs 79/-",
+                  "Eliminations:",
+                  "Finals:",
+                  "12 Shortlisted Contestants"
+                ],
+                "list": [
+                ]
+              },
+              {
+                "id": "guidelines",
+                "title": "Guidelines",
+                "content": [
+                  "Eliminations:",
+                  "Each contestant performs for 2 minutes maximum.",
+                  "Performances judged by 4 judges.",
+                  "Themes may include storytelling , poetry ,stand-up, shayaris , monologue , a lyrical performance ( poem with an instrument as a prop)",                  "The organisers will contact the participants only via the email address and contact numbers given during registration.",
+                  "Finals:",
+                  "2-3 minutes per contestant, each performing a different set from the elimination round.",
+                  "4 judges will provide feedback and scores.",
+                  "Themes may include story telling , poetry ,stand-up, shayaris , monologue , a lyrical performance ( poem with an instrument as a prop)."
+                ]
+              },
+              {
+                "id": "contact",
+                "title": "Contact Us",
+                "coordinator": "Madhura Godale",
+                "phone": "+91 8767965272",
+                "email": "events23.impressions@gmail.com"
+              }
+            ],
+            "footer": {
+              "text": "© 2023 Impressions. All Rights Reserved."
+            },
+            "buttonLink": "https://unstop.com/p/the-coep-open-mic-coep-technological-university-pune-1272422"
+      }
+ ]
+}

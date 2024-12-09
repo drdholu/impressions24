@@ -1,0 +1,45 @@
+{
+    "Shoutout": {
+        "title": "Shoutout",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "The COEP Open Mic", "content": "Lorem ipsum dolor sit amet..." }
+        ]
+    },
+    "Music": {
+        "title": "Music",
+        "items": [
+            { "img": "/image/shoutout-stage.jpg", "title": "Saavani Classical", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/main-bg.jpg", "title": "Stay Tuned", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Saavani Non-Classical", "content": "Lorem ipsum dolor sit amet..." }
+        ]
+    },
+    "Dance": {
+        "title": "Dance",
+        "items": [
+            { "img": "/image/dance-stage.jpg", "title": "Nrityangana Classical", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/main-bg.jpg", "title": "Step it Up", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Dance Dil Se", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Nrityangana Semi-Classical", "content": "Lorem ipsum dolor sit amet..." }
+        ]
+    },
+    "Camera": {
+        "title": "Camera",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Reelscapes", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Lens Art", "content": "Lorem ipsum dolor sit amet..." }
+        ]
+    },
+    "Arts&Craft": {
+        "title": "Arts & Craft",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Colour Splash", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/shoutout-stage.jpg", "title": "Game of Shades", "content": "Lorem ipsum dolor sit amet..." },
+            { "img": "/image/dance-stage.jpg", "title": "Cirकला", "content": "Lorem ipsum dolor sit amet..." }
+        ]
+    },
+    "Abhinay": {
+        "title": "Abhinay",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Scene-Sational", "content": "Lorem ipsum dolor sit amet..." }        ]
+    }
+}

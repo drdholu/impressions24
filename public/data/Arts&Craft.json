@@ -1,0 +1,159 @@
+{
+    "events": [
+      {     
+            "id": "ColourSplash",
+            "title": "Colour Splash",
+            "sections": [
+              {
+                "id": "details",
+                "title": "Details",
+                "content": [
+                  "Registration Fee: Rs 79/-"
+                ]   
+              },
+              {
+                "id": "structure",
+                "title": "Structure",
+                "content": [
+                  "Themes will be disclosed at the time of the competition by the judges.",
+                  "Participants have to bring their own material- the necessary art supplies and a drawing board.",
+                  "Participants will be provided with A3 sheet of good quality.",
+                  "Participants will be given 15 minutes to set up their table. 3 hours will be given to complete the painting using mentioned media only.",
+                  "Coordinators will be present at the AnC Arena all the time if any queries or requirements other than mentioned."
+                ],
+                "list": [
+                ]
+              },
+              {
+                "id": "guidelines",
+                "title": "Guidelines",
+                "content": [
+                  "Eligibility: College Students of the age 16-25 ",
+                  "Allowed Media: Watercolor, poster colors, acrylics, oils, gouache.",
+                  "Format:Drawings should be done on A3 sheet.",
+                  "Submission: JPEG/JPG/PNG file with three stages of progress, named as 'Coloursplash_ParticipantName_ThemeName.'",
+                  "Folder Access: Ensure Google Drive folder has 'Anyone with link can view/edit' permission.",      
+                  "Prohibited: Image editing, vulgarity, obscenity."
+                  ]
+              },
+              {
+                "id": "contact",
+                "title": "Contact Us",
+                "coordinator": "Deep Narkhede",
+                "phone": "+91 7045407123",
+                "email": "events23.impressions@gmail.com"
+              }
+            ],
+            "footer": {
+              "text": "© 2023 Impressions. All Rights Reserved."
+            },
+            "buttonLink": "https://unstop.com/p/coloursplash-coep-technological-university-pune-1267884"
+      },
+      
+      {
+        "id": "GameofShades",
+        "title": "Game of Shades",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+              "It is a sketching competition."
+            ]   
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+              "Themes will be disclosed via Whatsapp after registration.",
+              "Materials: Only use of mentioned medium of sketching is permissible. (Pencil, Graphite, Charcoal, Colour pencils.)"
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Rules & Guidelines",
+            "content": [
+              "Rules & Guidelines:",
+              "Eligibility: College students, ages 16-25.",
+              "Allowed Media: Pencil, graphite, charcoal, color pencils.",
+              "Format:Drawings should be done on A3 sheet.",
+              "Submission: JPEG/JPG/PNG file with three stages of progress, named as 'GOS_ParticipantName_ThemeName.'",
+              "Folder Access: Ensure Google Drive folder has 'Anyone with link can view/edit' permission.", 
+              "Prohibited: Image editing, vulgarity, obscenity."
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Deep Narkhede",
+            "phone": "+91 7045407123",
+            "email": "events23.impressions@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2023 Impressions. All Rights Reserved."
+        },
+        "buttonLink":"https://unstop.com/p/game-of-shades-coep-technological-university-pune-1277173"
+    },
+  {
+    "id": "Cirकला",
+    "title": "Cirकला",
+    "sections": [
+      {
+        "id": "details",
+        "title": "Details",
+        "content": [
+          "It is a Mandala Art Competition."
+        ]   
+      },
+      {
+        "id": "structure",
+        "title": "Structure",
+        "content": [
+            "Themes will be disclosed at the time of the registration.",
+            "Participants will submit their Mandala Art through the drive link which will be provided on Whatsapp of the participant after the registration.",
+            "Top entries shortlisted by the judge will be displayed in an 'Exhibition' on the college campus on the day of the main fest along with the name of the artist."
+        ],
+        "list": [
+        ]
+      },
+      {
+        "id": "guidelines",
+        "title": "Rules & Guidelines",
+        "content": [
+          "The competition is open to college students of the age group 16-25 strictly. If the participant is found out of the mentioned age bracket, he/she/they will not be eligible for the judgement of their artwork.",
+          "Black and White as well as Colored Mandalas are allowed.",
+          "Participants must draw their Mandalas on an A4 sheet paper.",
+          "Mandalas can be drawn in any of the following medium: Pastels, Pens, Pencils, Paints and Markers.",
+          "Vulgarity and obscenity at any point are strictly not allowed."
+        ]
+      },
+      {
+        "id": "submission",
+        "title": "Image Submission Rules:",
+        "content": [
+          "Participants have to submit a .jpeg or .png file with atleast three stages of their work. All files should be in a single folder.",
+          "File must be named 'Cirkala_ParticipantName_ThemeName'.",
+          "The folder should be uploaded to your personal Google Drive. Access permission must be given to 'Anyone with a link can view/edit'.",
+          "The link to your Personal Google Drive should be uploaded to the form shared to you on Whatsapp. The Access permission should be given as stated above.",
+          "The file uploaded must be clearly visible for the judgement of the artwork.",
+          "Image editing is stricly prohited."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contact Us",
+        "coordinator": "Mihika Khade",
+        "phone": "+91 9975639315",
+        "email": "events23.impressions@gmail.com"
+      }
+    ],
+    "footer": {
+      "text": "© 2023 Impressions. All Rights Reserved."
+    },
+    "buttonLink":"https://unstop.com/p/cirkal-coep-technological-university-pune-1266184"
+  }
+ ]
+}
