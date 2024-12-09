@@ -56,7 +56,7 @@ function Modules() {
                     <section class="parallax-2" className="flex items-center w-screen min-h-screen bg-fixed bg-center bg-cover bg-parallax-2">
                         <div className="px-10 py-[10%] text-center sm:text-left">
                             <h1 className="text-6xl text-right text-white sm:text-7xl lg:text-8xl text-overlay">Dance</h1>
-                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1500px] sm:ml-[0px]">
+                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1300px] sm:ml-[0px]">
                                 <Link
                                     to={`/events/Dance`}
                                     className="text-white"
@@ -108,7 +108,7 @@ function Modules() {
                     <section class="parallax-6" className="flex items-center w-screen min-h-screen bg-fixed bg-center bg-cover bg-parallax-6">
                         <div className="px-10 py-[10%] text-center sm:text-left">
                             <h1 className="text-6xl text-right text-white sm:text-7xl lg:text-8xl text-overlay">Abhinay</h1>
-                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1500px] sm:ml-[0px]">
+                            <button className="mt-4 px-6 py-3 text-white bg-blue-500 border-none rounded-md hover:bg-blue-700 lg:ml-[1300px] sm:ml-[0px]">
                                 <Link
                                     to={`/events/Abhinay`}
                                     className="text-white"

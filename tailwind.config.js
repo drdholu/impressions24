@@ -25,8 +25,8 @@ module.exports = {
       },
       keyframes: {
         float: {
-            '0%, 100%': { transform: 'translateY(0)' },
-            '50%': { transform: 'translateY(-5px)' },
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
         },
         float1: {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -46,7 +46,7 @@ module.exports = {
         glow: {
           '0%, 100%': { textShadow: '0 0 8px #ff0000, 0 0 10px #ff0000, 0 0 12px #ff0000' }, // Red
           '33%': { textShadow: '0 0 8px #00ff00, 0 0 10px #00ff00, 0 0 12px #00ff00' }, // Green
-          
+
           '66%': { textShadow: '0 0 8px #ff00ff, 0 0 10px #ff00ff, 0 0 12px #ff00ff' }, // Magenta
         },
         'scroll-horizontal': {
@@ -57,14 +57,24 @@ module.exports = {
 
       animation: {
         'unfold': 'unfold 3s ease-out forwards',
-          float: 'float 3s ease-in-out infinite',
-          float1: 'float1 3s ease-in-out infinite',
-          stretchX: 'stretchX 2s ease-in-out infinite',
-          vibrate: 'vibrate 0.2s linear infinite',
-          glow: 'glow 1.5s ease-in-out infinite', // optional custom glow animation
-          'scroll-horizontal': 'scroll-horizontal 20s linear infinite',
+        float: 'float 3s ease-in-out infinite',
+        float1: 'float1 3s ease-in-out infinite',
+        stretchX: 'stretchX 2s ease-in-out infinite',
+        vibrate: 'vibrate 0.2s linear infinite',
+        glow: 'glow 1.5s ease-in-out infinite', // optional custom glow animation
+        'scroll-horizontal': 'scroll-horizontal 20s linear infinite',
       },
-  
+
+
+      backgroundImage: {
+        "parallax-1": "url('/public/banner.png')",
+        "parallax-2": "url('/public/dancing-visual-ai-generated.jpg')",
+        "parallax-3": "url('/public/arts.png')",
+        "parallax-4": "url('/public/camera_new.jpg')",
+        "parallax-5": "url('/public/standup.jpeg')",
+        "parallax-6": "url('/public/abhinay.jpg')",
+
+      },
 
       backdropFilter: {
         'blur-sm': 'blur(10px)',
