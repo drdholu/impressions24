@@ -18,7 +18,7 @@ import { urls } from './url';
 import ErrorPage from './components/ui/ErrorPage';
 // import gsap from 'gsap';
 // import Preloader from './components/ui/Preloader';
-// import TransitionWrapper from './components/ui/TransitionWrapper';
+import TransitionWrapper from './components/ui/TransitionWrapper';
 // import CustomCursor from './components/ui/CustomeCursor';
 // import AnimatedBackground from './components/ui/AnimatedBackground';
 // import Spline from '@splinetool/react-spline';
@@ -38,7 +38,7 @@ const App = () => {
       <div className='font-sans'>
       {homePage && <Navbar />}
       {/* <CustomCursor /> */}
-       {/* <TransitionWrapper> */}
+       <TransitionWrapper>
           <Routes>
             {urls.map((url, idx) => {
               return (
@@ -49,7 +49,7 @@ const App = () => {
             <Route path='/events/:moduleName/:eventTitle' element={<Explore />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes> 
-        {/* </TransitionWrapper> */}
+        </TransitionWrapper>
         <BackToTop /> 
         {/* <Footer />  */}
       </div>
