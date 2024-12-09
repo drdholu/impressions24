@@ -8,16 +8,18 @@
     "Music": {
         "title": "Music",
         "items": [
+            { "img": "/image/shoutout-stage.jpg", "title": "Saavani Classical", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/main-bg.jpg", "title": "Stay Tuned", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/shoutout-stage.jpg", "title": "Saavani", "content": "Lorem ipsum dolor sit amet..." }
+            { "img": "/image/shoutout-stage.jpg", "title": "Saavani Non-Classical", "content": "Lorem ipsum dolor sit amet..." }
         ]
     },
     "Dance": {
         "title": "Dance",
         "items": [
+            { "img": "/image/dance-stage.jpg", "title": "Nrityangana Classical", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/main-bg.jpg", "title": "Step it Up", "content": "Lorem ipsum dolor sit amet..." },
             { "img": "/image/shoutout-stage.jpg", "title": "Dance Dil Se", "content": "Lorem ipsum dolor sit amet..." },
-            { "img": "/image/dance-stage.jpg", "title": "Nrityangana", "content": "Lorem ipsum dolor sit amet..." }
+            { "img": "/image/dance-stage.jpg", "title": "Nrityangana Semi-Classical", "content": "Lorem ipsum dolor sit amet..." }
         ]
     },
     "Camera": {

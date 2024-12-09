@@ -51,11 +51,11 @@
             "footer": {
               "text": "© 2023 Impressions. All Rights Reserved."
             },
-            "buttonLink": "https://forms.gle/Zbk5ZCqbXUe8Vsr17"
+            "buttonLink": "https://unstop.com/p/step-it-up-coep-technological-university-pune-1267645"
       },
       {
-        "id": "Nrityangana",
-        "title": "Nrityangana",
+        "id": "NrityanganaClassical",
+        "title": "Nrityangana Classical",
         "sections": [
           {
             "id": "details",
@@ -103,7 +103,59 @@
         "footer": {
           "text": "© 2023 Impressions. All Rights Reserved."
         },
-        "buttonLink":"https://forms.gle/JZwiZARCj7TZMMEm7"
+        "buttonLink":"https://unstop.com/p/nrityangana-classical-coep-technological-university-pune-1273561"
+      },
+      {
+        "id": "NrityanganaSemi-Classical",
+        "title": "Nrityangana Semi-Classical",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+              "Team Size: Solo.",
+              "Venue: COEP Technological University",
+              "Style Permitted : Semi classical, Classical"
+            ]   
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+              "Registration Fee: Rs 79/-.",
+              "The competition will consist of a single round.",
+              "The contestants will be given 3 - 5 mins including setup time to perform in front of the judges.",
+              "2 winners one from classical and one from semi-classical"
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Guidelines",
+            "content": [
+              "This competition is open for all COEP students.",
+              "All classical dance forms and semi classical dance forms are allowed.",
+              "Folk dances are not permitted.",
+              "Vulgarity and obscenity at any point are strictly not allowed.",
+              "Props (except hazardous and dangerous materials) are allowed. A list of all the props should be given 4 days prior to the fest. Only the props mentioned in the list are allowed",
+              "Participants can have one accompanist supporting their performance with live music. Only the registered participant is eligible for the prize.",
+              "The music track should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue."
+
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Shrawani Gosavi",
+            "phone": "+91 9028428001",
+            "email": "events23.impressions@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2023 Impressions. All Rights Reserved."
+        },
+        "buttonLink":"https://unstop.com/p/nrityangana-semi-classical-coep-technological-university-pune-1275073"
       },
       {
         "id": "DanceDilSe",
@@ -151,7 +203,7 @@
         "footer": {
           "text": "© 2023 Impressions. All Rights Reserved."
         },
-        "buttonLink":"https://forms.gle/NR3wTbPCvy1wH7pZ9"
+        "buttonLink":"https://unstop.com/p/dance-dil-se-coep-technological-university-pune-1273292"
     }
  ]
 }
