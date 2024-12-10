@@ -1,0 +1,83 @@
+{
+    "multiDayEvents": {
+      "day1": [
+        {
+          "id": 1,
+          "title": "Project Launch",
+          "time": "10:00 AM",
+          "description": "Kickoff meeting for our exciting new project",
+          "location": "Conference Room A",
+          "direction": "left",
+          "type": "meeting",
+          "venue": "Conference Room A"
+        },
+        {
+          "id": 2,
+          "title": "Team Strategy Session",
+          "time": "2:00 PM",
+          "description": "Detailed project planning and goal setting",
+          "location": "Meeting Room B",
+          "direction": "right",
+          "type": "strategy",
+          "venue": "Meeting Room B"
+        },
+        {
+          "id": 3,
+          "title": "Initial Requirements Review",
+          "time": "4:30 PM",
+          "description": "Discuss and finalize project requirements",
+          "location": "Executive Boardroom",
+          "direction": "left",
+          "type": "review",
+          "venue": "Executive Boardroom"
+        }
+      ],
+      "day2": [
+        {
+          "id": 1,
+          "title": "Workshop on Development",
+          "time": "11:00 AM",
+          "description": "Interactive session with industry experts",
+          "location": "Tech Hall",
+          "direction": "left",
+          "type": "workshop",
+          "venue": "Tech Hall"
+        },
+        {
+          "id": 2,
+          "title": "Code Review Session",
+          "time": "3:00 PM",
+          "description": "Improving project code quality",
+          "location": "Lab Room C",
+          "direction": "right",
+          "type": "presentation",
+          "venue": "Lab Room C"
+        }
+      ],
+      "day3": [
+        {
+          "id": 1,
+          "title": "Final Presentation",
+          "time": "9:30 AM",
+          "description": "Showcasing project outcomes to stakeholders",
+          "location": "Auditorium",
+          "direction": "left",
+          "type": "presentation",
+          "venue": "Auditorium"
+        },
+        {
+          "id": 2,
+          "title": "Feedback & Closing",
+          "time": "12:00 PM",
+          "description": "Collecting feedback and concluding the event",
+          "location": "Main Hall",
+          "direction": "right",
+          "type": "closing",
+          "venue": "Main Hall"
+        }
+      ]
+    },
+    "eventTypes": ["All", "meeting", "strategy", "review", "workshop", "presentation", "closing"],
+    "venues": ["All", "Conference Room A", "Meeting Room B", "Executive Boardroom", "Tech Hall", "Lab Room C", "Auditorium", "Main Hall"]
+  }
+  
