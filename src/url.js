@@ -8,7 +8,7 @@
 // import Mmifinal from './components/Mmifinal';
 // import Voting from './components/VotingForm';
 import Modules from './components/Modules'
-import Landingroom from './components/Landingroom';
+import Landingroom from './components/LandingRoom';
 
 
 export const urls = [
