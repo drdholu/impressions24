@@ -9,9 +9,12 @@ import InProgress from "./ui/InProgress";
 import gsap from 'gsap';
 import logo from "../images/Logos/Name Logo filled.png";
 import { AnimatePresence, motion } from 'framer-motion';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-const ismobile = window.innerWidth < 930;
+import { Suspense } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { urls } from "../url";
+var ismobile = window.innerWidth < 930;
 
 export const currentPageAtom = atom("intro");
 const fov = 75;
@@ -125,6 +128,7 @@ const Room = () => {
   // }, [blur]);
 
   useEffect(() => {
+
     const targetDate = new Date('2024-12-17');
 
     const timer = setInterval(() => {
@@ -152,6 +156,9 @@ const Room = () => {
       } else if (event.key === 'ArrowRight') {
         turn('right');
         setActiveButton('right');
+      }
+      else if (event.key === "Enter" && blur) {
+        Move();
       }
     };
 
@@ -183,6 +190,24 @@ const Room = () => {
     };
   }, [blur]); // Add blur as dependency
 
+  useEffect(() => {
+    const targetDate = new Date('2024-12-17');
+
+    const timer = setInterval(() => {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      setTimeLeft({ days, hours, minutes, seconds });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const turn = (dir) => {
     if (isAnimating) return;
     console.log("HERE2");
@@ -213,7 +238,28 @@ const Room = () => {
     });
   };
 
+  const MoveToPhotos = () => {
+    if (cameraRef.current && RoomRef && !isAnimating) {
+      if (ismobile ? cameraRef.current.position.z >= -65 : cameraRef.current.position.z > -110) {
+        setIsAnimating(true);
+        setbuttons(false);
+        setShowBackButton(false);
+        setIsVisible1(false);
+        const timeline = gsap.timeline({
+          defaults: { duration: 2.5, ease: "power4.inOut" },
+          onComplete: () => {
 
+            setIsAnimating(false);  // Set flag to false when animation completes
+            setIsVisible(true);
+          },
+        });
+
+        timeline
+          .to(cameraRef.current.position, { z: ismobile ? -70 : -135, x: ismobile ? 5 : 15, y: ismobile ? 4 : 6 })
+          .to(cameraRef.current.rotation, { y: -0.72, x: 0 }, "<")
+      }
+    }
+  }
   const Move = (event) => {
     console.log("herem");
 
@@ -235,23 +281,25 @@ const Room = () => {
         });
 
         timeline
-          .to(cameraRef.current.position, { z: ismobile ? -65 : -105, x: 0 })
+          .to(cameraRef.current.position, { z: ismobile ? -65 : -105, x: 0, y: 0 })
           .to(cameraRef.current.rotation, { y: 0, x: 0 }, "<")
       }
       else if (ismobile ? cameraRef.current.position.z >= -65 : cameraRef.current.position.z > -110) {
         console.log("OKKK");
+        setbuttons(false);
         setIsVisible1(false);
+        setShowBackButton(false);
         const timeline = gsap.timeline({
           defaults: { duration: 2.5, ease: "power4.inOut" },
           onComplete: () => {
-            setbuttons(false);
+
             setIsAnimating(false);  // Set flag to false when animation completes
             setIsVisible(true);
           },
         });
 
         timeline
-          .to(cameraRef.current.position, { z: ismobile ? -75 : -140, x: 0 })
+          .to(cameraRef.current.position, { z: ismobile ? -70 : -140, x: 0, y: 0 })
           .to(cameraRef.current.rotation, { y: 0, x: 0 }, "<")
       }
       else {
@@ -259,6 +307,7 @@ const Room = () => {
         const timeline = gsap.timeline({
           defaults: { duration: 2.5, ease: "power4.inOut" },
           onComplete: () => {
+            setShowBackButton(true);
             setIsVisible1(true);
             setbuttons(true);
             setIsAnimating(false);  // Set flag to false when animation completes
@@ -266,7 +315,7 @@ const Room = () => {
         });
 
         timeline
-          .to(cameraRef.current.position, { z: ismobile ? -65 : -105, x: 0 })
+          .to(cameraRef.current.position, { z: ismobile ? -65 : -105, x: 0, y: 0 })
           .to(cameraRef.current.rotation, { y: 0, x: 0 }, "<")
 
       }
@@ -290,9 +339,22 @@ const Room = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          ESC to Return
+          Return
         </motion.button>
       )}
+      {isVisible && !blur && (
+        <motion.button
+          onClick={Move}
+          className="fixed top-5 right-5 p-3 text-white bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 z-[1000]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          BACK
+        </motion.button>
+      )}
+
       {/* Animation Presence for Exit Animations */}
       {buttons && <AnimatePresence>
         <motion.div
@@ -323,7 +385,7 @@ const Room = () => {
             }}
             transition={{ duration: 0.1 }}
           >
-            Left
+            <ArrowLeft />
           </motion.button>
           <motion.button
             onClick={() => turn("right")}
@@ -334,7 +396,7 @@ const Room = () => {
             }}
             transition={{ duration: 0.1 }}
           >
-            Right
+            <ArrowRight />
           </motion.button>
         </motion.div>
       </AnimatePresence >}
@@ -375,8 +437,8 @@ const Room = () => {
                 objectFit: "contain",
               }}
             />
-            <button onClick={Move} className={`${ismobile ? 'h-[5vh]' : 'h-[5vh] w-[5vw]'} bg-transparent text-white hover:scale-105 transition-transform`}>
-              ENTER (↵)
+            <button onClick={Move} className={`${ismobile ? 'h-[5vh]' : 'h-[5vh] w-[5vw]'} bg-transparent text-white`}>
+              {RoomRef.current ? "ENTER" : "LOADING"}
             </button>
           </motion.div>
         )}
@@ -402,6 +464,8 @@ const Room = () => {
           url={"models/roomTest.glb"}
         />
 
+
+
         {/* Camera */}
         <PerspectiveCamera
           fov={75}
@@ -413,75 +477,261 @@ const Room = () => {
           near={0.1}
         />
 
-        {/* Lighting */}
-        <ambientLight intensity={0.7} />
-        <directionalLight
-          castShadow
-          intensity={1.5}
-          position={[10, 20, 5]}
-        // shadow-mapSize={[2048, 2048]}
-        />
-        <directionalLight
-          castShadow
-          position={[0, 20, 5]}
-          intensity={1}
-        // shadow-mapSize={[2048, 2048]}
-        />
+        <Environment preset="sunset" />
+        <Html transform occlude={true} position={ismobile ? [0, 2, -80] : [20, 15, -135]} rotation={ismobile ? [0, 0, 0] : [0, -0.8, 0]}>
+          <button
+            onClick={MoveToPhotos}
+            style={{
 
-
-        <mesh receiveShadow position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <planeGeometry args={[100, 100]} />
-          <shadowMaterial opacity={0.5} />
-        </mesh>
-
-        {/* <Environment preset="sunset" /> */}
-        <Html transform occlude={true} position={ismobile ? [0, 2, -80] : [4, 5.5, -150]} className="bg-beige" rotation={ismobile ? [0, 0, 0] : [0, -1, 0]}>
-          <button onClick={Move} className={`text-white ${isVisible ? 'flex' : 'hidden'}`}>BACK</button>
+              height: '8vh',
+              position: 'relative',
+              padding: '10px 20px',
+              backgroundColor: '#4A2C1D', // Dark brown base color
+              color: '#F5E6D3', // Warm off-white text
+              border: '3px solid #8B4513', // Wooden frame brown border
+              borderRadius: '15px',
+              // fontFamily: "'Comic Sans MS', cursive, sans-serif",
+              fontSize: '1.5em',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 6px 12px rgba(0,0,0,0.2)', // Subtle shadow
+              transform: 'perspective(300px) rotateX(10deg)', // Slight 3D tilt
+              overflow: 'hidden',
+              display: ismobile ? 'none' : isVisible1 ? 'flex' : 'none',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '10px',
+              // Paint splatter overlay effect
+              backgroundImage: 'linear-gradient(135deg, rgba(255,99,71,0.2) 0%, rgba(65,105,225,0.2) 100%)',
+              backgroundBlendMode: 'overlay'
+            }}
+            className="hover:scale-105 hover:brightness-110 active:scale-95 animate-pulse"
+          >
+            {/* Camera icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{
+                marginRight: '10px',
+                transform: 'translateZ(10px)' // Slight 3D effect
+              }}
+            >
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+              <circle cx="12" cy="13" r="4" />
+            </svg>
+            See Photos
+          </button>
         </Html>
-        <Html transform occlude={true} position={ismobile ? [-3, 0.5, -70] : [-8, 1.5, -115]} rotation={[0, 1, 0]}>
-          <div
-            className={`${isVisible1 ? 'flex' : 'hidden'} items-center justify-center font-hindi text-white h-[15vh] w-[15vw] text-[4em]`}
+        <Html transform occlude={true} position={ismobile ? [-6.6, 1.4, -75] : [-28, 5, -140]} rotation={[0, 0.8, 0]}>
+          {/* <div
+            className={`${isVisible1 ? 'flex' : 'hidden'} items-center justify-center font-hindi text-white h-[15vh] w-[15vw] text-[2em]`}
           >
             {timeLeft.days + ":" + timeLeft.hours + ":" + timeLeft.minutes + ":" + timeLeft.seconds}
+          </div> */}
+          <div
+            className={`${isVisible1?'flex':'hidden'} flex-col items-center justify-center font-hindi opacity-1`}
+            style={{
+              background: "linear-gradient(90deg, #ffcc00, #33cc99, #6699ff)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              
+            }}
+          >
+            <div className="text-[20vw]">
+              RANGREZ
+            </div>
+            <div className="text-[8vw]">
+              The Artist Within
+            </div>
           </div>
+
         </Html>
         <Html
           occlude={true}
           transform
-          position={ismobile ? [0.2, 0.5, -80] : [-3, 2, -140]}
-          className="flex items-center justify-center w-full h-full"
+          position={ismobile ? [-0.5, 0.5, -80] : [-4, 2, -140]}
+          className="flex justify-center items-center w-full h-full"
         >
           <button
             onClick={Move}
-            className={`animate-pulse ${isVisible1 ? 'block' : 'hidden'} text-center ${ismobile ? 'h-[10vh]' : 'h-[6em] w-[10em] text-[3vh]'} bg-black/50 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 ease-in-out`}
+            style={{
+              position: 'relative',
+              display: isVisible1 ? 'block' : 'none',
+              height: ismobile ? '10vh' : '15vh',
+              width: ismobile ? '45vw' : '15vw',
+              fontSize: ismobile ? '2vh' : '3vh',
+              backgroundColor: 'transparent',
+              color: '#4A2C1D', // Dark brown text to match our theme
+              // fontFamily: "'Comic Sans MS', cursive, sans-serif",
+              fontWeight: 600,
+              border: '3px solid #8B4513', // Wooden frame brown
+              borderRadius: '50px', // Extra rounded to feel hand-drawn
+              padding: '10px 20px',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              cursor: 'pointer',
+              boxShadow: '0 10px 20px rgba(0,0,0,0.2)', // Subtle shadow
+              transform: 'perspective(300px) rotateX(5deg)', // Slight 3D tilt
+              transition: 'all 0.3s ease',
+              overflow: 'hidden',
+              backgroundImage: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(139,69,19,0.1) 100%)', // Subtle gradient overlay
+              backgroundBlendMode: 'overlay'
+            }}
+            className="hover:scale-105 hover:brightness-110 active:scale-95 focus:outline-none"
           >
-            EXPLORE PAGES
+            {/* Decorative paint splatter */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '-10px',
+                left: '-10px',
+                width: '40px',
+                height: '40px',
+                backgroundColor: 'rgba(255,99,71,0.3)', // Soft red
+                borderRadius: '50%',
+                transform: 'rotate(45deg)',
+                zIndex: -1
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '-10px',
+                right: '-10px',
+                width: '50px',
+                height: '50px',
+                backgroundColor: 'rgba(65,105,225,0.3)', // Soft blue
+                borderRadius: '50%',
+                transform: 'rotate(-45deg)',
+                zIndex: -1
+              }}
+            />
+
+            Explore Pages
+
+            {/* Subtle underline effect */}
+            <span
+              style={{
+                position: 'absolute',
+                bottom: '5px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80%',
+                height: '3px',
+                backgroundColor: '#4A2C1D',
+                opacity: 0.5
+              }}
+            />
           </button>
         </Html>
 
-        <Html transform occlude={true} position={ismobile ? [0, -0.5, -80] : [-4.5, 0.5, -155]} rotation={[-0.25, 0.15, 0]} center>
+        <Html transform occlude={true} position={ismobile ? [-0.5, -0.5, -80] : [-4.5, 0.5, -155]} rotation={ismobile ? [-0.25, 0.15, -0.05] : [-0.25, 0.15, 0]} center>
           <div
             style={{
-              width: ismobile ? "20vw" : "25vw",
-              height: ismobile ? "10vh" : "40vh",
+              width: ismobile ? "42vw" : "25vw",
+              // height: ismobile ? "20vh" : "40vh",
               borderRadius: "20px",
-              // boxShadow: "0px 4px 10px rgba(0,0,0,0.3)",
-              padding: "10px",
-              fontFamily: "'Brush Script MT', cursive",
+              padding: "20px",
+              fontFamily: "'Comic Sans MS', cursive, sans-serif", // Handwritten-style font
               textAlign: "center",
-              color: "#333",
+              color: "#4A2C1D", // Dark brown for text
               display: isVisible ? "flex" : "none",
               flexDirection: "column",
-              justifyContent: "center",
-              gap: "10px",
+              justifyContent: "space-between",
+              gap: "15px",
+              boxShadow: "0 10px 20px rgba(0,0,0,0.2)", // Subtle shadow for depth
+              transform: "rotate(-2deg)", // Slight tilt for hand-drawn feel
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)", // Canvas texture
+              backgroundSize: "20px 20px",
+              position: "relative",
+              overflow: "hidden"
+
             }}
           >
-            <h1 style={{ margin: 0, fontSize: ismobile ? "5px" : "4em" }}>🎨 Drawing Board</h1>
-            <div style={{ fontSize: ismobile ? "5px" : "3em", zIndex: "1" }} className="flex flex-col cursor-pointer">
-              <a href="/events">📜 Events</a>
-              <a href="/team">🤝 Teams</a>
-              <a href="/about">📖 About Us</a>
+            {/* Paint splatter effect */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '-20px',
+                left: '-20px',
+                width: '50px',
+                height: '50px',
+                backgroundColor: '#FF6347',
+                borderRadius: '50%',
+                opacity: 0.5,
+                transform: 'rotate(45deg)',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            />
+            <h1
+              style={{
+                margin: 0,
+                top: 0,
+                fontSize: ismobile ? "0.9em" : "3em",
+                fontWeight: 'bold',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.2)' // Pencil-like shadow
+              }}
+            >
+              🎨 Drawing Board
+            </h1>
+
+            <div
+              style={{
+                fontSize: ismobile ? "1em" : "2em",
+                zIndex: "1",
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '10px'
+              }}
+              className="cursor-pointer"
+            >
+              {urls.map((url, idx) => {
+                return (
+                  <a
+                    href={url.url}
+                    style={{
+                      textDecoration: 'none',
+                      color: '#4A2C1D',
+                      transition: 'transform 0.2s',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      transform: 'skew(-5deg)' // Hand-drawn, slightly askew look
+                    }}
+                    className="hover:scale-105"
+                  >
+                    {url.name === "Landing" ? null : url.name}
+                  </a>
+                )
+              })}
+
             </div>
+
+            {/* Additional paint splatter effect */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '-20px',
+                right: '-20px',
+                width: '70px',
+                height: '70px',
+                backgroundColor: '#4169E1',
+                borderRadius: '50%',
+                opacity: 0.3,
+                transform: 'rotate(-45deg)'
+              }}
+            />
           </div>
         </Html>
 

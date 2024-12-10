@@ -6,6 +6,7 @@ module.exports = {
       // cursor: {
       //   custom: 'url(../src/images/brush.png), auto',
       // },
+      
       colors: {
         glow: '#00ffcc',
       },
