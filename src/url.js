@@ -11,7 +11,7 @@ import Explore from './components/Explore';
 // import MainCards from './components/MainCards';
 import Modules from "./components/Modules";
 import Sponsors from './components/Sponsors.jsx';
-import Teams from './components/team.js';import Timeline from './components/Timeline.js';
+import Teams from './components/team.js';import Showflow from './components/Showflow.js';
 ;
 export const urls = [
     // {url: '/', name: "Home", element:<ImpressionsNewspaper/> },
@@ -24,5 +24,5 @@ export const urls = [
     {url: '/', name: "Module's Page", element: <Modules />},
     {url: '/events/:moduleName', name: "Events Page", element: <EventsPage />},
     {url: '/events/:moduleName/:eventTitle', name: "Explore Page", element: <Explore />},
-    {url : '/timeline', name:"Timeline Page", element : <Timeline/>}
+    {url : '/showflow', name:"Showflow Page", element : <Showflow/>}
 ]

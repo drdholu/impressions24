@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 // import { Link } from 'react-router-dom';
 // import { Menu, X } from 'lucide-react';
-import smallLogo from '../images/z.png';
+import smallLogo from './impFootLogo.ico';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { urls } from '../url';
