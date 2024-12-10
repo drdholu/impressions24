@@ -1,12 +1,15 @@
-import { Canvas} from "@react-three/fiber";
-import React, { useRef, useEffect, forwardRef, useState,} from "react";
-import { PerspectiveCamera, Html, useGLTF, Environment } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import React, { useRef, useEffect, forwardRef, useState} from "react";
+import { PerspectiveCamera, Html, useGLTF,  Environment } from "@react-three/drei";
 import gsap from 'gsap';
 import logo from "../images/Logos/Name Logo filled.png";
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { urls } from "../url";
 var ismobile = window.innerWidth < 930;
+
+
+
 const Model = forwardRef((props, ref) => {
   const { scene } = useGLTF(process.env.PUBLIC_URL + props.url);
   const clonedScene = scene.clone();
@@ -35,7 +38,7 @@ const Model = forwardRef((props, ref) => {
 
 
 
-const Landingroom = () => {
+const Room = () => {
 
   const RoomRef = useRef();
   const cameraRef = useRef();
@@ -47,6 +50,32 @@ const Landingroom = () => {
   const [activeButton, setActiveButton] = useState(null);
   const [showBackButton, setShowBackButton] = useState(false);
 
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+  
+  useEffect(() => {
+
+    const targetDate = new Date('2024-12-17');
+
+    const timer = setInterval(() => {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      setTimeLeft({ days, hours, minutes, seconds });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+  console.log(timeLeft);
   const returnToStart = () => {
     if (isAnimating || blur) return;
 
@@ -68,60 +97,7 @@ const Landingroom = () => {
       .to(cameraRef.current.rotation, { y: 0, x: 0 }, "<");
   };
 
-  // Add ESC key listener
-  // useEffect(() => {
-  //   const handleKeyDown = (event) => {
-  //       returnToStart();
-  //   };
-
-  //   window.addEventListener('keydown', handleKeyDown);
-  //   return () => window.removeEventListener('keydown', handleKeyDown);
-  // }, [blur]);
-
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (!buttons) return;
-
-      if (event.key === 'ArrowLeft') {
-        turn('left');
-        setActiveButton('left');
-      } else if (event.key === 'ArrowRight') {
-        turn('right');
-        setActiveButton('right');
-      }
-      else if (event.key === "Enter" && blur) {
-        Move();
-      }
-    };
-
-    const handleKeyUp = (event) => {
-      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-        setActiveButton(null);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('keyup', handleKeyUp);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('keyup', handleKeyUp);
-    };
-  });
-
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      if (event.key === 'Enter' && blur) {  // Only handle Enter key when blur overlay is visible
-        Move();
-      }
-    };
-
-    window.addEventListener('keypress', handleKeyPress);
-    return () => {
-      window.removeEventListener('keypress', handleKeyPress);
-    };
-  }); // Add blur as dependency
-
+  
   const turn = (dir) => {
     if (isAnimating) return;
     console.log("HERE2");
@@ -175,6 +151,9 @@ const Landingroom = () => {
     }
   }
   const Move = (event) => {
+    console.log("herem");
+
+
     if (cameraRef.current && RoomRef && !isAnimating) {  // Check if not animating
       setIsAnimating(true);  // Set the flag to true when animation starts
       console.log(cameraRef.current.position.z);
@@ -196,7 +175,7 @@ const Landingroom = () => {
           .to(cameraRef.current.rotation, { y: 0, x: 0 }, "<")
       }
       else if (ismobile ? cameraRef.current.position.z >= -65 : cameraRef.current.position.z > -110) {
-
+        console.log("OKKK");
         setbuttons(false);
         setIsVisible1(false);
         setShowBackButton(false);
@@ -232,6 +211,52 @@ const Landingroom = () => {
       }
     }
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (!buttons) return;
+
+      if (event.key === 'ArrowLeft') {
+        turn('left');
+        setActiveButton('left');
+      } else if (event.key === 'ArrowRight') {
+        turn('right');
+        setActiveButton('right');
+      }
+      else if (event.key === "Enter" && blur) {
+        Move();
+      }
+    };
+
+    const handleKeyUp = (event) => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        setActiveButton(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+    };
+  });
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === 'Enter' && blur) {  // Only handle Enter key when blur overlay is visible
+        Move();
+      }
+    };
+
+    window.addEventListener('keypress', handleKeyPress);
+    return () => {
+      window.removeEventListener('keypress', handleKeyPress);
+    };
+  }); // Add blur as dependency
+
+
 
   useEffect(() => {
     return () => {
@@ -330,6 +355,7 @@ const Landingroom = () => {
               backgroundColor: "rgba(0,0,0,0.7)",
               backdropFilter: 'blur(10px)',
               zIndex: 1000,
+
               flexDirection: 'column',
               justifyItems: 'center'
             }}
@@ -470,7 +496,7 @@ const Landingroom = () => {
           occlude={true}
           transform
           position={ismobile ? [-0.5, 0.5, -80] : [-4, 2, -140]}
-          className="flex items-center justify-center w-full h-full"
+          className="flex justify-center items-center w-full h-full"
         >
           <button
             onClick={Move}
@@ -621,7 +647,7 @@ const Landingroom = () => {
                     }}
                     className="hover:scale-105"
                   >
-                    {url.name === "Home" ? null : url.name}
+                    {url.name === "Landing" ? null : url.name}
                   </a>
                 )
               })}
@@ -652,4 +678,4 @@ const Landingroom = () => {
 
 useGLTF.preload("models/roomTest.glb");
 useGLTF.preload("../images/Logos/Name Logo filled.png");
-export default Landingroom;
+export default Room;
