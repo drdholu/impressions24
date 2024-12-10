@@ -1,178 +1,673 @@
 {
   
 
-  "name": "impressions24",
+
+
+
+
+
+
+"name": "impressions24",
   
 
-  "version": "0.1.0",
+
+
+
+
+
+
+"version": "0.1.0",
   
 
-  "private": true,
+
+
+
+
+
+
+"private": true,
   
+
+
+
+
+
+
 
   "dependencies": {
-    "@chakra-ui/react": "^2.10.3",
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
-    "@gsap/react": "^2.1.1",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "framer-motion": "^11.11.9",
-    "gsap": "^3.12.5",
-    "lucide-react": "^0.453.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-multi-carousel": "^2.8.5",
-    "react-router-dom": "^6.27.0",
-    "react-scripts": "5.0.1",
-    "react-toastify": "^10.0.6",
-    "three": "^0.169.0",
-    "web-vitals": "^2.1.4"
+  
+
+    
+
+  "@chakra-ui/react": "^2.10.3",
+  
+
+    
+
+  "@emotion/react": "^11.13.3",
+  
+
+    
+
+  "@emotion/styled": "^11.13.0",
+  
+
+    
+
+  "@gsap/react": "^2.1.1",
+  
+
+    
+
+  "@mediapipe/tasks-vision": "^0.10.18",
+  
+
+    
+
+  "@react-three/drei": "^9.115.0",
+  
+
+    
+
+  "@react-three/fiber": "^8.17.10",
+  
+
+    
+
+  "@react-three/postprocessing": "^2.16.3",
+  
+
+    
+
+  "@splinetool/react-spline": "^4.0.0",
+  
+
+    
+
+  "@splinetool/runtime": "^1.9.35",
+  
+
+    
+
+  "@testing-library/jest-dom": "^5.17.0",
+  
+
+    
+
+  "@testing-library/react": "^13.4.0",
+  
+
+    
+
+  "@testing-library/user-event": "^13.5.0",
+  
+
+    
+
+  "@types/three": "^0.170.0",
+  
+
+    
+
+  "clsx": "^2.1.1",
+  
+
+    
+
+  "dat.gui": "^0.7.9",
+  
+
+    
+
+  "framer-motion": "^11.11.10",
+  
+
+    
+
+  "gsap": "^3.12.5",
+  
+
+    
+
+  "jotai": "^2.10.3",
+  
+
+    
+
+  "lucide-react": "^0.453.0",
+  
+
+    
+
+  "react": "^18.3.1",
+  
+
+    
+
+  "react-dom": "^18.3.1",
+  
+
+    
+
+  "react-multi-carousel": "^2.8.5",
+  
+
+    
+
+  "react-router-dom": "^6.28.0",
+  
+
+    
+
+  "react-scripts": "5.0.1",
+  
+
+    
+
+  "react-toastify": "^10.0.6",
+  
+
+    
+
+  "tailwind-merge": "^2.5.4",
+  
+
+    
+
+  "three": "^0.169.0",
+  
+
+    
+
+  "web-vitals": "^2.1.4"
+  
+
   },
   
 
-  "scripts": {
+"scripts": {
   
 
-    
 
-  "start": "react-scripts start --no-source-maps",
+
+
+
+
+
   
 
-    
 
-  "build": "react-scripts build",
+
+
+
+
+
+"start": "react-scripts start --no-source-maps",
   
 
-    
 
-  "test": "react-scripts test",
+
+
+
+
+
   
 
-    
 
-  "eject": "react-scripts eject"
+
+
+
+
+
+"build": "react-scripts build",
   
 
-  },
+
+
+
+
+
+
   
 
-  "eslintConfig": {
+
+
+
+
+
+
+"test": "react-scripts test",
   
 
-    
 
-  "extends": [
+
+
+
+
+
   
 
-    
 
-    
 
-  "react-app",
+
+
+
+
+"eject": "react-scripts eject"
   
 
-    
 
-    
 
-  "react-app/jest"
+
+
+
+
+},
   
 
-    
 
-  ]
+
+
+
+
+
+"eslintConfig": {
   
 
-  },
+
+
+
+
+
+
   
 
-  "browserslist": {
+
+
+
+
+
+
+"extends": [
   
 
-    
 
-  "production": [
+
+
+
+
+
   
 
-    
 
-    
 
-  ">0.2%",
+
+
+
+
   
 
-    
 
-    
 
-  "not dead",
+
+
+
+
+"react-app",
   
 
-    
 
-    
 
-  "not op_mini all"
+
+
+
+
   
 
-    
 
-  ],
+
+
+
+
+
   
 
-    
 
-  "development": [
+
+
+
+
+
+"react-app/jest"
   
 
-    
 
-    
 
-  "last 1 chrome version",
+
+
+
+
   
 
-    
 
-    
 
-  "last 1 firefox version",
+
+
+
+
+]
   
 
-    
 
-    
 
-  "last 1 safari version"
+
+
+
+
+},
   
 
-    
 
-  ]
+
+
+
+
+
+"browserslist": {
   
 
-  },
+
+
+
+
+
+
   
 
-  "devDependencies": {
+
+
+
+
+
+
+"production": [
   
 
-    
 
-  "autoprefixer": "^10.4.20",
+
+
+
+
+
   
 
-    
 
-  "postcss": "^8.4.47",
+
+
+
+
+
   
 
-    
 
-  "tailwindcss": "^3.4.14"
+
+
+
+
+
+">0.2%",
   
 
-  }
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"not dead",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"not op_mini all"
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+],
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"development": [
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"last 1 chrome version",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"last 1 firefox version",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"last 1 safari version"
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+]
+  
+
+
+
+
+
+
+
+},
+  
+
+
+
+
+
+
+
+"devDependencies": {
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"autoprefixer": "^10.4.20",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"postcss": "^8.4.47",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"tailwindcss": "^3.4.14"
+  
+
+
+
+
+
+
+
+}
 }
