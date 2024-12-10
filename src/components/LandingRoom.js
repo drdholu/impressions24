@@ -397,7 +397,7 @@ const Room = () => {
           rotation={ismobile ? [0, 0.8, 0] : [0, 0.9, 0]}
           position={ismobile ? [0, -9, -70] : [0, -25, -120]}
           scale={ismobile ? [0.5, 0.5, 0.5] : [1.5, 1.5, 1.5]}
-          url={"models/roomTest.glb"}
+          url={"models/roomTest1.glb"}
         />
 
 
@@ -676,6 +676,6 @@ const Room = () => {
   );
 };
 
-useGLTF.preload("models/roomTest.glb");
+useGLTF.preload("models/roomTest1.glb");
 useGLTF.preload("../images/Logos/Name Logo filled.png");
 export default Room;
