@@ -107,7 +107,7 @@ const Landingroom = () => {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
     };
-  }, [buttons]);
+  });
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -120,7 +120,7 @@ const Landingroom = () => {
     return () => {
       window.removeEventListener('keypress', handleKeyPress);
     };
-  }, [blur]); // Add blur as dependency
+  }); // Add blur as dependency
 
   const turn = (dir) => {
     if (isAnimating) return;
@@ -470,7 +470,7 @@ const Landingroom = () => {
           occlude={true}
           transform
           position={ismobile ? [-0.5, 0.5, -80] : [-4, 2, -140]}
-          className="flex justify-center items-center w-full h-full"
+          className="flex items-center justify-center w-full h-full"
         >
           <button
             onClick={Move}
