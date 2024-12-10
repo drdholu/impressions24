@@ -4,14 +4,15 @@
 // import CoordinatorForm from "./components/CoordinatorForm";
 // import InProgress from "./components/ui/InProgress";
 // import Landing from "./components/Landing";
-import  Newspaper  from './components/Newspaper';
 // import VolunteerForm from "./components/VolunteerForm";
 // import Mmifinal from './components/Mmifinal';
 // import Voting from './components/VotingForm';
 import Modules from './components/Modules'
+import Landingroom from './components/Landingroom';
+
 
 export const urls = [
-    { url: '/', name: "Home", element: <Newspaper /> },
+    { url: '/', name: "Home", element: <Landingroom /> },
     // {url: '/', name: "Home", element:<LandingPage/> },
     // { url: '/mmi-finalists', name: "mmi-finalists", element: <Mmifinal />, className: "" },
     // { url: '/voting', name: "mmi-voting", element: <Voting /> },
