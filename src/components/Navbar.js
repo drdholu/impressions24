@@ -69,7 +69,7 @@ const Navbar = ({ color, fixed }) => {
 
   return (
     <>
-      <nav className={`${fixed ? "fixed" : "sticky"} top-0 left-0 w-full z-30 bg-${color} h-[10vh]`}>
+      <nav className={`${fixed ? "fixed" : "sticky"} top-0 left-0 w-full z-30 bg-${color} h-[10vh] backdrop-blur-sm`}>
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between px-5">
             <Link 

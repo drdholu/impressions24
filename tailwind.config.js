@@ -67,12 +67,12 @@ module.exports = {
 
 
       backgroundImage: {
-        "parallax-1": "url('/public/banner.png')",
-        "parallax-2": "url('/public/dancing-visual-ai-generated.jpg')",
-        "parallax-3": "url('/public/arts.png')",
-        "parallax-4": "url('/public/camera_new.jpg')",
-        "parallax-5": "url('/public/standup.jpeg')",
-        "parallax-6": "url('/public/abhinay.jpg')",
+        "parallax-1": "url('/public/MUSIC.jpg')",
+        "parallax-2": "url('/public/DANCE.jpeg')",
+        "parallax-3": "url('/public/ANC.jpg')",
+        "parallax-4": "url('/public/CAMERA.jpg')",
+        "parallax-5": "url('/public/SHOUTOUT.jpg')",
+        "parallax-6": "url('/public/ABHINAY.jpg')",
 
       },
 

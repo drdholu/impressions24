@@ -90,4 +90,7 @@ p:nth-of-type(3) {
 @media (max-width: 768px){
     
 } */
-
+.module{
+    position: sticky;
+    top: 0;
+}

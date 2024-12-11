@@ -80,9 +80,9 @@ function Modules() {
     ];
 
     return (
-        <div className="box-border p-0 m-0 overflow-x-hidden font-sans bg-gray-200">
-            <Navbar color={"black"} fixed={"fixed"}/>
-            <section>
+        <div className="box-border p-0 m-0 overflow-x-hidden font-sans bg-gray-200 scroll-sti">
+            <Navbar color={"black/50"} fixed={"fixed"}/>
+            <section class="module">
                 {modules.map((module, index) => (
                     <section 
                         key={module.title} 
