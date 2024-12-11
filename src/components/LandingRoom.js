@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import React, { useRef, useEffect, forwardRef, useState} from "react";
-import { PerspectiveCamera, Html, useGLTF,  Environment } from "@react-three/drei";
+import React, { useRef, useEffect, forwardRef, useState } from "react";
+import { PerspectiveCamera, Html, useGLTF, Environment } from "@react-three/drei";
 import gsap from 'gsap';
 import logo from "../images/Logos/Name Logo filled.png";
 import { AnimatePresence, motion } from 'framer-motion';
@@ -56,7 +56,60 @@ const Room = () => {
     minutes: 0,
     seconds: 0
   });
-  
+  let startX = 0; // Track the starting X position of the touch
+  let isTouchScrolling = false; // To ensure a touch scroll is in progress
+
+  // Touch Start Event
+  const onTouchStart = (event) => {
+    if (event.touches && event.touches.length === 1) {
+      startX = event.touches[0].clientX; // Record the initial touch position
+      isTouchScrolling = true; // Enable scrolling flag
+    }
+  };
+
+  // Touch Move Event
+  const onTouchMove = (event) => {
+    if (isTouchScrolling) {
+      const currentX = event.touches[0].clientX; // Current touch position
+      const deltaX = startX - currentX; // Calculate the horizontal movement
+      if (Math.abs(deltaX) > 5) {
+        startX = currentX; // Update the start position for smooth movement
+
+        // Call a function to update the camera
+        onCameraMove({ type: "touch", deltaX });
+      }
+    }
+  };
+
+  // Touch End Event
+  const onTouchEnd = () => {
+    isTouchScrolling = false; // Reset scrolling flag
+  };
+
+  // Example Camera Movement Function
+  const onCameraMove = ({ deltaX }) => {
+    if(!cameraRef.current) return;
+    const moveSpeed = 0.0000; // Adjust sensitivity
+    console.log(cameraRef.current.rotation.y -deltaX * moveSpeed);
+    const newRotationY=cameraRef.current.rotation.y -deltaX * moveSpeed;
+    if(ismobile ? newRotationY < -2 : newRotationY < -1.5){
+      console.log("1");
+      return;
+    }
+    if(ismobile ? newRotationY > 1.5 : newRotationY > 1.17){
+      console.log("2");
+      return;
+    }
+    cameraRef.current.rotation.y -= deltaX * moveSpeed;
+    cameraRef.current.updateProjectionMatrix(); // Ensure the camera updates
+  };
+
+  // Add Event Listeners
+  document.addEventListener("touchstart", onTouchStart, { passive: true });
+  document.addEventListener("touchmove", onTouchMove, { passive: true });
+  document.addEventListener("touchend", onTouchEnd, { passive: true });
+
+
   useEffect(() => {
 
     const targetDate = new Date('2024-12-17');
@@ -97,7 +150,7 @@ const Room = () => {
       .to(cameraRef.current.rotation, { y: 0, x: 0 }, "<");
   };
 
-  
+
   const turn = (dir) => {
     if (isAnimating) return;
     console.log("HERE2");
@@ -475,12 +528,12 @@ const Room = () => {
             {timeLeft.days + ":" + timeLeft.hours + ":" + timeLeft.minutes + ":" + timeLeft.seconds}
           </div> */}
           <div
-            className={`${isVisible1?'flex':'hidden'} flex-col items-center justify-center font-hindi opacity-1`}
+            className={`${isVisible1 ? 'flex' : 'hidden'} flex-col items-center justify-center font-hindi opacity-1`}
             style={{
               background: "linear-gradient(90deg, #ffcc00, #33cc99, #6699ff)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              
+
             }}
           >
             <div className="text-[20vw]">
