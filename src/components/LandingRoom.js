@@ -89,7 +89,7 @@ const Room = () => {
   // Example Camera Movement Function
   const onCameraMove = ({ deltaX }) => {
     if(!cameraRef.current) return;
-    const moveSpeed = 0.0000; // Adjust sensitivity
+    const moveSpeed = 0.00005; // Adjust sensitivity
     console.log(cameraRef.current.rotation.y -deltaX * moveSpeed);
     const newRotationY=cameraRef.current.rotation.y -deltaX * moveSpeed;
     if(ismobile ? newRotationY < -2 : newRotationY < -1.5){
