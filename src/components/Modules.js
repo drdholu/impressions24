@@ -84,16 +84,25 @@ function Modules() {
     ];
 
     return (
-        <div className="box-border p-0 m-0 overflow-x-hidden font-sans bg-gray-200 scroll-sti">
+        <div className="box-border p-0 m-0 overflow-x-hidden font-sans bg-gray-200">
             <Navbar color={"black/50"} fixed={"fixed"} />
-            <section class="module">
+            <section 
+                className="w-screen h-screen overflow-y-scroll snap-y snap-mandatory"
+                style={{ 
+                    scrollSnapType: 'y mandatory',
+                    WebkitOverflowScrolling: 'touch' 
+                }}
+            >
                 {modules.map((module, index) => (
                     <section
                         key={module.title}
-
                         style={isIphone() ? { backgroundAttachment: "scroll" } : { backgroundAttachment: "fixed" }}
-
-                        className={`flex items-center w-screen min-h-screen bg-fixed bg-center bg-cover ${module.bgClass}`}
+                        className={`
+                            flex items-center w-full h-screen 
+                            bg-fixed bg-center bg-cover 
+                            snap-start
+                            ${module.bgClass}
+                        `}
                     >
                         <div className={`w-full px-10 py-[10%] ${module.textAlign === 'text-right' ? 'text-right' : 'text-left'}`}>
                             <h1
