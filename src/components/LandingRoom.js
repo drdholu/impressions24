@@ -86,22 +86,21 @@ const Room = () => {
     isTouchScrolling = false; // Reset scrolling flag
   };
 
-  // Example Camera Movement Function
+
   const onCameraMove = ({ deltaX }) => {
-    if(!cameraRef.current) return;
+    if(!cameraRef.current || blur || isVisible) return;
     const moveSpeed = 0.00005; // Adjust sensitivity
     console.log(cameraRef.current.rotation.y -deltaX * moveSpeed);
     const newRotationY=cameraRef.current.rotation.y -deltaX * moveSpeed;
     if(ismobile ? newRotationY < -2 : newRotationY < -1.5){
-      console.log("1");
       return;
     }
     if(ismobile ? newRotationY > 1.5 : newRotationY > 1.17){
-      console.log("2");
+      // console.log("2");
       return;
     }
-    cameraRef.current.rotation.y -= deltaX * moveSpeed;
-    cameraRef.current.updateProjectionMatrix(); // Ensure the camera updates
+    cameraRef.current.rotation.y = newRotationY;
+    // cameraRef.current.updateProjectionMatrix(); // Ensure the camera updates
   };
 
   // Add Event Listeners
@@ -521,7 +520,7 @@ const Room = () => {
             See Photos
           </button>
         </Html>
-        <Html transform occlude={true} position={ismobile ? [-6.6, 1.4, -75] : [-28, 5, -140]} rotation={[0, 0.8, 0]}>
+        <Html transform occlude={true} position={ismobile ? [-6.6, 1.4, -75] : [-35, 7, -145]} rotation={[0, 1, 0]}>
           {/* <div
             className={`${isVisible1 ? 'flex' : 'hidden'} items-center justify-center font-hindi text-white h-[15vh] w-[15vw] text-[2em]`}
           >
