@@ -1,0 +1,50 @@
+{
+  "events": [
+    {
+          "id": "Scene-Sational",
+          "title": "Scene-Sational",
+          "sections": [
+            {
+              "id": "details",
+              "title": "Details",
+              "content": [
+                "It is a Movie Re-enacting Competition." 
+              ]   
+            },
+            {
+              "id": "structure",
+              "title": "Structure",
+              "content": [                  
+                "The competition will consist of a single round.",
+                "At the reporting time, each team will be assigned with a movie scene and they will have to re-enact it with a different ending.",
+                "Each team will be given 20 minutes of preparation time for the performance."
+              ],
+              "list": [
+              ]
+            },
+            {
+              "id": "guidelines",
+              "title": "Rules and Guidelines",
+              "content": [
+                "The competition is open to only COEP students.",
+                "A separate space will be allocated to each group to prepare for 20 minutes.",
+                "Teams are allowed to use objects they are carrying with themselves as props (on the discretion of the organisers). The use of such props is the sole responsibility of the participating team.",
+                "Teams must present the synopsis of their skit along with the name of characters corresponding to the team members right after their performance.",
+                "Usage of abusive language, obscenity, direct implications, plagiarism, and racial, religious/ linguistic, sexual, and political views will lead to immediate disqualification." 
+              ]
+            },
+            {
+              "id": "contact",
+              "title": "Contact Us",
+              "coordinator": "Arpit Mutha",
+              "phone": "+91 9529574868",
+              "email": "eventsimpressions24@gmail.com"
+            }
+          ],
+          "footer": {
+            "text": "© 2024 Impressions. All Rights Reserved."
+          },
+          "buttonLink": "https://unstop.com/p/scene-sational-coep-technological-university-pune-1275081"
+    }
+]
+}

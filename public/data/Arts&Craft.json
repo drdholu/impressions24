@@ -1,0 +1,160 @@
+{
+    "events": [
+      {     
+            "id": "ColourSplash",
+            "title": "Colour Splash",
+            "sections": [
+              {
+                "id": "details",
+                "title": "Details",
+                "content": [
+                  "It is a Painting competition.",
+                  "Submission: 14th-19th December."
+                ]   
+              },
+              {
+                "id": "structure",
+                "title": "Structure",
+                "content": [
+                  "Participants will submit their paintings through the Drive link which will be provided on Whatsapp of the participant after the registration.",
+                  "Top entries shortlisted by the judge will be put on a story by the official account of Impressions COEP."
+                ],
+                "list": [
+                ]
+              },
+              {
+                "id": "guidelines",
+                "title": "Rules and Guidelines",
+                "content": [
+                  "Allowed for only college students.",
+                  "Only use of mentioned medium of painting is permissible- Watercolor, Poster colors, Acrylic Colors, Oil Paints, Gouache Colors.",
+                  "Participants must paint on an A3 sheet paper.",
+                  "Vulgarity and obscenity at any point are strictly not allowed.",
+                  "Image Submission Rules:",      
+                  "Participants have to submit a jpeg/ jpg/ png file with their signature on the drawing and date.",
+                  "File must be named 'Coloursplash_ParticipantName'.",
+                  "The folder should be uploaded to your personal Google Drive. Access permission must be given to 'Anyone with link can view/edit'",
+                  "The link to your Personal Google Drive should be uploaded to the form shared to you on Whatsapp. The Access permission should be given as stated above.",
+                  "The file uploaded must be clearly visible for the judgement of the artwork.",
+                  "Image editing is strictly prohibited."
+                  ]
+              },
+              {
+                "id": "contact",
+                "title": "Contact Us",
+                "coordinator": "Yash Patil",
+                "phone": "+918796182100",
+                "email": "eventsimpressions24@gmail.com"
+              }
+            ],
+            "footer": {
+              "text": "© 2024 Impressions. All Rights Reserved."
+            },
+            "buttonLink": "https://unstop.com/p/coloursplash-coep-technological-university-pune-1267884"
+      },
+      
+      {
+        "id": "GameofShades",
+        "title": "Game of Shades",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+              "It is an online sketching competition."
+            ]   
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+              "Participants will have to draw on an A3 sheet.",
+              "The following mediums of sketching are allowed: Pencil, Graphite, Charcoal, and Color Pencils.",
+              "Top entries shortlisted by the judge will be put on the story of Impressions COEP official page"
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Rules and Guidelines",
+            "content": [
+              "The competition is open to all college students. If the participant is not a college student, he/she/they will not be eligible for the judgment of their artwork.",
+              "The artwork must be submitted in the given time only. No requests for extra time will be entertained.",
+              "Vulgarity and obscenity at any point are strictly not allowed.",
+              "Image Submission Rules:",
+              "Participants have to submit a jpeg/ jpg/ png file with at least three stages of their work. All files should be in a single folder.'",
+              "The folder should be uploaded to your personal Google Drive. Access permission must be given to 'Anyone with a link can view/edit'", 
+              "The link to your Personal Google Drive should be uploaded to the form shared to you on WhatsApp. Access permission should be given as stated above.",
+              "The file uploaded must be clearly visible for the judgment of the artwork.",
+              "Image editing is strictly prohibited."
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Arnav Bankar",
+            "phone": "+917506175550",
+            "email": "eventsimpressions24@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2024 Impressions. All Rights Reserved."
+        },
+        "buttonLink":"https://unstop.com/p/game-of-shades-coep-technological-university-pune-1277173"
+    },
+  {
+    "id": "Cirकला",
+    "title": "Cirकला",
+    "sections": [
+      {
+        "id": "details",
+        "title": "Details",
+        "content": [
+          "It is a Mandala Drawing competition.",
+          "Submission: 14th-19th December."
+        ]   
+      },
+      {
+        "id": "structure",
+        "title": "Structure",
+        "content": [
+            "Participants will submit their Mandala Art through the Drive link which will be provided on Whatsapp of the participant after the registration.",
+            "Top entries shortlisted by the judge will be put on a story by the official account of Impressions COEP."
+        ],
+        "list": [
+        ]
+      },
+      {
+        "id": "guidelines",
+        "title": "Rules and Guidelines",
+        "content": [
+          "Allowed for only college students.",
+          "Black and White as well as Colored Mandalas are allowed.",
+          "Participants must draw their Mandalas on an A4 sheet paper.",
+          "Mandalas can be drawn in any of the following medium: Pastels, Pens, Pencils, Paints and Markers.",
+          "Vulgarity and obscenity at any point are strictly not allowed.",
+          "Image Submission Rules:",
+          "Participants have to submit a jpeg/ jpg/ png file with their signature on the drawing and date.",
+          "File must be named 'Cirkala_ParticipantName'.",
+          "The folder should be uploaded to your personal Google Drive. Access permission must be given to 'Anyone with link can view/edit'",
+          "The link to your Personal Google Drive should be uploaded to the form shared to you on Whatsapp. The Access permission should be given as stated above.",
+          "The file uploaded must be clearly visible for the judgement of the artwork.",
+          "Image editing is strictly prohibited."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contact Us",
+        "coordinator": "Arnav Waske",
+        "phone": "+918669020959",
+        "email": "eventsimpressions24@gmail.com"
+      }
+    ],
+    "footer": {
+      "text": "© 2024 Impressions. All Rights Reserved."
+    },
+    "buttonLink":"https://unstop.com/p/cirkal-coep-technological-university-pune-1266184"
+  }
+ ]
+}

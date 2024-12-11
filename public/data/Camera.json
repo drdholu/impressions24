@@ -1,0 +1,123 @@
+{
+  "events": [
+    {
+          "id": "LensArt",
+          "title": "Lens Art",
+          "sections": [
+            {
+              "id": "details",
+              "title": "Details",
+              "content": [
+                "It is a Solo Photography Competition."
+              ]   
+            },
+            {
+              "id": "structure",
+              "title": "Structure",
+              "content": [                  
+                "The competition will be conducted and judged completely online, no live presence will be required for this competition.",
+                "Participants will submit their photographs via the official Impressions website or through the drive link which will be provided on Whatsapp of the participant after the registration."
+              ],
+              "list": [
+              ]
+            },
+            {
+              "id": "guidelines",
+              "title": "Rules and Guidelines",
+              "content": [
+                "The competition is open to all college students. If participant is found out of college, he/she/they will not be eligible for the judgement of their artwork.",
+                "Photography can be done using any device available (Mobile phone, DSLR or point-and-shoot).",
+                "Usage of filters or editing software or plagiarism will result in disqualification.",
+                "The photo must be of a standard aspect ratio (1:1, 1:2, 3:4, 9:16) with no more than 2048 pixels on the longer side.",
+                "Vulgarity and obscenity at any point are strictly not allowed.",
+                "By submitting their artwork, the participants declare that their artwork is original and that they are the sole creators of the artwork. A provision will be made on the submission link to sign a declaration ensuring the same.",
+                "The sole copyright of the artwork remains with the creators, but Impressions has the right of promoting the content on social media platforms and other print media.",
+                "Image Submission Rule:",
+                "Images should be submitted in JPEG/JPG/PNG format.",
+                "Photos must be named “Lensart_ParticipantName”.",
+                "Image size should not exceed 10MB.",
+                "If the submission is via Drive link, Folder should be uploaded to your personal Google Drive. Access permission must be given to “Anyone with a link can view/edit”.",
+                "The link to your Personal Google Drive should be uploaded to the form shared to you on Whatsapp. The Access permission should be given as stated above.",
+                "Photo editing and the use of filters are strictly prohibited.",
+                "Photos submitted should be clearly visible for judging.",
+                "The artwork provided should not have any glass frames.",
+                "Submissions for multiple themes shall require multiple registrations."
+              ]
+            },
+            {
+              "id": "contact",
+              "title": "Contact Us",
+              "coordinator": "Priyanshu Tamgade",
+              "phone": "+91 9356728789",
+              "email": "eventsimpressions24@gmail.com"
+            }
+          ],
+          "footer": {
+            "text": "© 2024 Impressions. All Rights Reserved."
+          },
+          "buttonLink": "https://unstop.com/p/lensart-coep-technological-university-pune-1275462"
+    },
+    { 
+      "id": "Reelscapes",
+      "title": "Reelscapes",
+      "sections": [
+            {
+              "id": "details",
+              "title": "Details",
+              "content": [
+                "It is an offline reel making competition."
+              ]   
+            },
+            {
+              "id": "structure",
+              "title": "Structure",
+              "content": [
+                "Team Size: 1-3 Members",
+                "The competition will be conducted throughout the 3 days of Impressions, live presence of participant is required on day of shooting.",
+                "Participants will submit their Reels via the official Impressions website or through the drive link which will be provided on Whatsapp of the participant after registration.",
+                "Results will be declared after the fest."
+              ],
+              "list": [
+              ]
+            },
+            {
+              "id": "guidelines",
+              "title": "Rules and Guidelines",
+              "content": [
+                "This competition is strictly for the students of COEP Technological University.",
+                "All the contacting about the event and the communication will be done via Whatsapp with Team Leaders only.",
+                "The content for the video can be shot using any device. Eg. Mobile phone, DSLR, etc.",
+                "Plagiarism will result in disqualification.",
+                "Vulgarity and obscenity will result in disqualification.",
+                "Participants can shoot their reel on any or all of the fest days.",
+                "All the content in the reels including the clips should be original and that the participants should be their sole creators. A declaration will be required during submission.",
+                "Content can be shot in any arena without disturbing ongoing competitions. Inclusion of participants can only be done with their consent.",
+                "The Team Name should be that of the Team Leader.",
+                "Reel Submission Guidelines:",
+                "The video submitted should be less than 1.5 minutes",
+                "Video Format: MP4, MKV.",
+                "The aspect ratio of the reels should be 9:16 or 16:9",
+                "Name of the Video: ‘Reelscape_TeamLeaderName’",
+                "Submitted reel should be clear enough for judging.",
+                "Reel size should be less than 150MB.",
+                "The reels should be submitted in a folder. The folder should also contain a document(pdf or word document) specifying the technology used( like softwares used, camera, etc.). The pdf may also contain a small description explaining the theme or concept behind the reel.",
+                "Name of the folder: ‘Reelscape_TeamLeaderName",
+                "Name of the document: ‘Reelscape_TeamLeaderName’",
+                "Only one reel per team should be uploaded. Submission of more than one reel will result in disqualification."
+              ]
+            },
+            {
+              "id": "contact",
+              "title": "Contact Us",
+              "coordinator": "Arnav Waske",
+              "phone": "+91 8669020959",
+              "email": "eventsimpressions24@gmail.com"
+            }
+      ],
+      "footer": {
+        "text": "© 2024 Impressions. All Rights Reserved."
+      },
+      "buttonLink":"https://unstop.com/p/reelscape-coep-technological-university-pune-1270864"
+    }
+  ]
+}

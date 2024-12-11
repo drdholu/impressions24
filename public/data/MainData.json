@@ -1,0 +1,45 @@
+{
+    "Shoutout": {
+        "title": "Shoutout",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "The COEP Open Mic", "content": "" }
+        ]
+    },
+    "Music": {
+        "title": "Music",
+        "items": [
+            { "img": "/image/shoutout-stage.jpg", "title": "Saavani Classical", "content": "" },
+            { "img": "/image/main-bg.jpg", "title": "Stay Tuned", "content": "" },
+            { "img": "/image/shoutout-stage.jpg", "title": "Saavani Non-Classical", "content": "" }
+        ]
+    },
+    "Dance": {
+        "title": "Dance",
+        "items": [
+            { "img": "/image/dance-stage.jpg", "title": "Nrityangana Classical", "content": "" },
+            { "img": "/image/main-bg.jpg", "title": "Step it Up", "content": "" },
+            { "img": "/image/shoutout-stage.jpg", "title": "Dance Dil Se", "content": "" },
+            { "img": "/image/dance-stage.jpg", "title": "Nrityangana Semi-Classical", "content": "" }
+        ]
+    },
+    "Camera": {
+        "title": "Camera",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Reelscapes", "content": "" },
+            { "img": "/image/shoutout-stage.jpg", "title": "Lens Art", "content": "" }
+        ]
+    },
+    "Arts&Craft": {
+        "title": "Arts & Craft",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Colour Splash", "content": "" },
+            { "img": "/image/shoutout-stage.jpg", "title": "Game of Shades", "content": "" },
+            { "img": "/image/dance-stage.jpg", "title": "Cirकला", "content": "" }
+        ]
+    },
+    "Abhinay": {
+        "title": "Abhinay",
+        "items": [
+            { "img": "/image/main-bg.jpg", "title": "Scene-Sational", "content": "" }        ]
+    }
+}

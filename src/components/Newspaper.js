@@ -1,5 +1,5 @@
 // import React, { useState, useEffect } from 'react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Instagram, Linkedin } from 'lucide-react';
 // import { Clock, Instagram, Linkedin } from 'lucide-react';
 import image1 from '../images/memories/6.webp'
@@ -7,38 +7,6 @@ import overlay from '../images/overlay2.png'
 import overlay2 from '../images/overlay3.jpg'
 import shalu from '../images/3.webp'
 import dance from '../images/dance.webp'
-
-
-// const EndlessScrollNews = () => {
-//     const newsItems = [
-//         "Is Impressions really back?",
-//         "Behind the scenes of Impressions 2024.",
-//         "Exclusive interviews with the organizers.",
-//         "New events to look out for.",
-//         "How to participate this year.",
-//         "Artist spotlight: Meet the performers.",
-//         "Volunteer opportunities at Impressions.",
-//         "Sneak peek into the grand performances.",
-//         "Throwback to Impressions 2023 highlights.",
-//     ];
-
-//     const duplicatedNewsItems = [...newsItems, ...newsItems];
-
-//     return (
-//         <div className="w-full overflow-hidden">
-//             <div className="flex gap-8 animate-scroll-horizontal">
-//                 {duplicatedNewsItems.map((item, index) => (
-//                     <div key={index} className="whitespace-nowrap">
-//                         {item}
-//                     </div>
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// };
-
-
-// Event descriptions object
 
 const eventDescriptions = {
     "Swa(g)Desi": "A high-energy Bollywood group dance competition showcasing choreography and cultural expression.",
@@ -131,53 +99,39 @@ const FeatureBox = ({ title, content, isHighlight = false }) => {
 };
 
 const CountdownTimer = () => {
-    // const [timeLeft, setTimeLeft] = useState({
-    //     days: 0,
-    //     hours: 0,
-    //     minutes: 0,
-    //     seconds: 0
-    // });
+    const [timeLeft, setTimeLeft] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+    });
 
-    // useEffect(() => {
-    //     const targetDate = new Date('2024-12-25');
+    useEffect(() => {
+        const targetDate = new Date('2024-12-17');
 
-    //     const timer = setInterval(() => {
-    //         const now = new Date();
-    //         const difference = targetDate - now;
+        const timer = setInterval(() => {
+            const now = new Date();
+            const difference = targetDate - now;
 
-    //         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    //         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    //         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    //         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    //         setTimeLeft({ days, hours, minutes, seconds });
-    //     }, 1000);
+            setTimeLeft({ days, hours, minutes, seconds });
+        }, 1000);
 
-    //     return () => clearInterval(timer);
-    // }, []);
-
+        return () => clearInterval(timer);
+    }, []);
     return (
-        <div className="flex items-center justify-center gap-4 p-4 text-gray-100 transition-colors duration-300 bg-black bg-blend-color-burn">
-            {/* <Clock className="w-6 h-6" />
-            <div className="flex gap-4 group-hover:animate-vibrate">
-                <div className="text-center">
-                    <div className="text-2xl font-bold">{timeLeft.days}</div>
-                    <div className="text-xs">DAYS</div>
-                </div>
-                <div className="text-center">
-                    <div className="text-2xl font-bold">{timeLeft.hours}</div>
-                    <div className="text-xs">HOURS</div>
-                </div>
-                <div className="text-center">
-                    <div className="text-2xl font-bold">{timeLeft.minutes}</div>
-                    <div className="text-xs">MINS</div>
-                </div>
-                <div className="text-center">
-                    <div className="text-2xl font-bold">{timeLeft.seconds}</div>
-                    <div className="text-xs">SECS</div>
-                </div>
-            </div> */}
-            <text className='text-2xl font-normal sm:text-5xl font-paperAttention'>IMPRESSIONS IS BACK</text>
+        <div className="flex flex-col items-center justify-center gap-4 p-4 text-gray-100 transition-colors duration-300 bg-black bg-blend-color-burn">
+            <text className='text-2xl font-normal sm:text-5xl font-paperAttention'>{timeLeft.days + ":" + timeLeft.hours + ":" + timeLeft.minutes + ":" + timeLeft.seconds} days left</text>
+            <a
+                href="/events"
+                className="px-4 py-2 text-sm font-bold text-black transition-all duration-300 bg-white border-2 border-white hover:bg-transparent hover:text-white font-paperNote"
+            >
+                REGISTER NOW
+            </a>
         </div>
     );
 };

@@ -1,0 +1,57 @@
+{
+  "events": [
+    {
+          "id": "TheCOEPOpenMic",
+          "title": "The COEP Open Mic",
+          "sections": [
+            {
+              "id": "details",
+              "title": "Details",
+              "content": [
+                "It is a shayari, poetry, storytelling, monologue and standup comedy competition."
+              ]   
+            },
+            {
+              "id": "structure",
+              "title": "Structure",
+              "content": [
+                "Eliminations:",
+                "The contestants are required to perform a set of 2 minutes maximum.",
+                "The performers who get selected will move on to the next round.",
+                "Participants can perform their set with an instrument with a prop.",
+                "Finals:",                  
+                "Shortlisted participants in this round will have to perform in front of the judges.",
+                "They can perform their old version or can perform a new one altogether.",
+                "Time limit: 2-3 minutes + 1 minute setup."
+              ],
+              "list": [
+              ]
+            },
+            {
+              "id": "guidelines",
+              "title": "Rules and Guidelines",
+              "content": [
+                "This competition is strictly for the students of COEP Technological University.",
+                "Exceeding the allotted time may result in a penalty or disqualification.",
+                "Content must be respectful and suitable for a college audience.",
+                "Profanity, hate speech, or offensive remarks of any kind will not be tolerated.",
+                "Performances promoting political, religious, or controversial views should be avoided.",
+                "Participants must report at least [30 minutes] prior to the event start time to confirm attendance.",
+                "The decision of the judges will be final and binding. Participation implies acceptance of all event rules and guidelines."
+              ]
+            },
+            {
+              "id": "contact",
+              "title": "Contact Us",
+              "coordinator": "Yashvardhan Abhale and Priyanshu Tamgade",
+              "phone": "+91 7058350815  +91 9356728789",
+              "email": "eventsimpressions24@gmail.com   events.coepimpressions24@gmail.com"
+            }
+          ],
+          "footer": {
+            "text": "© 2024 Impressions. All Rights Reserved."
+          },
+          "buttonLink": "https://unstop.com/p/the-coep-open-mic-coep-technological-university-pune-1272422"
+    }
+]
+}

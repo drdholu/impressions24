@@ -1,0 +1,202 @@
+{
+    "events": [
+      {
+            "id": "StepitUp",
+            "title": "Step it Up",
+            "sections": [
+              {
+                "id": "details",
+                "title": "Details",
+                "content": [
+                  " It is an open genre (except classical, semi-classical and folk) solo dance competition."
+                ]   
+              },
+              {
+                "id": "structure",
+                "title": "Structure",
+                "content": [
+                  "Eliminations:",
+                  "The solo contestants are required to present a 90 seconds dance performance in front of the judges.",
+                  "The participants who get selected will move to the next round.",
+                  "No props are allowed.",
+                  "Finals:",
+                  "Participants shortlisted for this round will perform in front of the judges.",
+                  "Participants can perform an extended version of their eliminations performance or a new one altogether.", 
+                  "Time Limit: 3 - 5 minutes + 1 min setup",
+                  "Props are allowed."
+                ],
+                "list": [
+                ]
+              },
+              {
+                "id": "guidelines",
+                "title": "Rules and Guidelines",
+                "content": [
+                  "This competition is open for all COEP students.",
+                  "Classical and Folk dances are not a part of this competition. (Please refer to the rules of the classical dance competition, Nrityangana).",
+                  "Vulgarity and obscenity at any point in the choreography are strictly not allowed.", 
+                  "Props (except hazardous and dangerous materials) are allowed. List of all the props should be given 2 days prior to the fest. Only the props mentioned in the list are allowed.",
+                  "The music track for elimination and finals both should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue.",
+                  "Points will be deducted for exceeding the time limit."
+                ]
+              },
+              {
+                "id": "contact",
+                "title": "Contact Us",
+                "coordinator": "Alisha Mhatre",
+                "phone": "+918446528846",
+                "email": "eventsimpressions24@gmail.com"
+              }
+            ],
+            "footer": {
+              "text": "© 2024 Impressions. All Rights Reserved."
+            },
+            "buttonLink": "https://unstop.com/p/step-it-up-coep-technological-university-pune-1267645"
+      },
+      {
+        "id": "NrityanganaClassical",
+        "title": "Nrityangana Classical",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+              "This is a solo classical dancing competition."
+            ]   
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+              "The competition will consist of a single round.",
+              "The contestants will be given 3 - 5 mins including setup time to perform in front of the judges.",
+              "There will be 2 winners, one from classical and semi-classical."
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Rules and Guidelines",
+            "content": [
+              "This competition is open for all COEP students.",
+              "All classical dance forms and semi classical dance forms are allowed.",
+              "Folk dances are not permitted.",
+              "Vulgarity and obscenity at any point are strictly not allowed.",
+              "Props (except hazardous and dangerous materials) are allowed. A list of all the props should be given 4 days prior to the fest. Only the props mentioned in the list are allowed",
+              "Participants can have one accompanist supporting their performance with live music. Only the registered participant is eligible for the prize.",
+              "The music track should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue."
+
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Anupriya Karn",
+            "phone": "+917385553788",
+            "email": "eventsimpressions24@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2024 Impressions. All Rights Reserved."
+        },
+        "buttonLink":"https://unstop.com/p/nrityangana-classical-coep-technological-university-pune-1273561"
+      },
+      {
+        "id": "NrityanganaSemi-Classical",
+        "title": "Nrityangana Semi-Classical",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+              "This is a solo semi-classical dancing competition."
+            ]   
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+              "The competition will consist of a single round.",
+              "The contestants will be given 3 - 5 mins including setup time to perform in front of the judges.",
+              "There will be 2 winners, one from classical and semi-classical."
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Rules and Guidelines",
+            "content": [
+              "This competition is open for all COEP students.",
+              "All classical dance forms and semi classical dance forms are allowed.",
+              "Folk dances are not permitted.",
+              "Vulgarity and obscenity at any point are strictly not allowed.",
+              "Props (except hazardous and dangerous materials) are allowed. A list of all the props should be given 4 days prior to the fest. Only the props mentioned in the list are allowed",
+              "Participants can have one accompanist supporting their performance with live music. Only the registered participant is eligible for the prize.",
+              "The music track should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue."
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Anupriya Karn",
+            "phone": "+917385553788",
+            "email": "eventsimpressions24@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2024 Impressions. All Rights Reserved."
+        },
+        "buttonLink":"https://unstop.com/p/nrityangana-semi-classical-coep-technological-university-pune-1275073"
+      },
+      {
+        "id": "DanceDilSe",
+        "title": "Dance Dil Se",
+        "sections": [
+          {
+            "id": "details",
+            "title": "Details",
+            "content": [
+              "It is a Bollywood Dance Competition."
+            ]   
+          },
+          {
+            "id": "structure",
+            "title": "Structure",
+            "content": [
+              "Team size: 2 - 10 members.",
+              "The competition will consist of a single round.",
+              "Time Duration: 3-5 minutes +1 min setup time",
+              "Participants may use more than one song.",
+              "Usage of English songs shouldn’t be more than 1 min."
+            ],
+            "list": [
+            ]
+          },
+          {
+            "id": "guidelines",
+            "title": "Rules and Guidelines",
+            "content": [
+              "This competition is open for all COEP students.",
+              "Vulgarity and obscenity at any point are strictly not allowed.",
+              "Props (except hazardous and dangerous materials) are allowed but will be based on the organisers' discretion. A list of all the props should be given 4 days prior to the fest. Only the props mentioned in the list are allowed.",
+              "The music track should be submitted to the Event Head two days prior to the event. Also, the participants are requested to bring their tracks in a pen drive at the Impressions venue.",
+              "Participants may use more than one song in their performance."
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "Contact Us",
+            "coordinator": "Yash Patil",
+            "phone": "+918796182100",
+            "email": "eventsimpressions24@gmail.com"
+          }
+        ],
+        "footer": {
+          "text": "© 2024 Impressions. All Rights Reserved."
+        },
+        "buttonLink":"https://unstop.com/p/dance-dil-se-coep-technological-university-pune-1273292"
+    }
+ ]
+}

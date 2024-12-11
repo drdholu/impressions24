@@ -6,13 +6,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 // import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 // import { Link } from 'react-router-dom';
 // import { Menu, X } from 'lucide-react';
+// import { useLocation } from 'react-router-dom';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+// import { Link } from 'react-router-dom';
+// import { Menu, X } from 'lucide-react';
 import smallLogo from '../images/z.png';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { urls } from '../url';
 gsap.registerPlugin(ScrollTrigger);
 
-const Navbar = () => {
+const Navbar = ({ color, fixed }) => {
   const [isOpen, setIsOpen] = useState(false);
   const titleRef = useRef();
   // const navbarRef = useRef();
@@ -64,7 +69,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-30 bg-black backdrop-blur-sm h-[10vh]">
+      <nav className={`${fixed ? "fixed" : "sticky"} top-0 left-0 w-full z-30 bg-${color} h-[10vh] backdrop-blur-sm`}>
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between px-5">
             <Link 
@@ -74,7 +79,7 @@ const Navbar = () => {
               <img src={smallLogo} alt="Logo" className="w-auto h-20" />
               <span 
                 ref={titleRef} 
-                className="text-xl font-semibold text-transparent bg-gradient-to-r from-white to-gray-300 bg-clip-text"
+                className="text-xl font-semibold text-white bg-clip-text"
               >
                 Impressions 24
               </span>
@@ -161,7 +166,6 @@ const NavLink = ({ to, children, mobile = false, onClick }) => {
       onClick={onClick}
       className={`
         relative 
-        text-white 
         no-underline 
         transition-colors
         ${mobile ? 'block text-lg' : 'inline-block'}

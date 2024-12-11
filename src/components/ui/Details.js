@@ -141,9 +141,9 @@ const portfolios = [
         <div className="p-4 mb-6 bg-white rounded-lg shadow-md sm:p-6 sm:mb-8">
           <h2 className="mb-4 text-xl font-bold text-gray-800 sm:text-2xl">Event Details</h2>
           <div className="space-y-2 text-sm text-gray-600 sm:text-base">
-            <p className="flex items-center"><span className="mr-2">📅</span> Dates: 27th October</p>
-            <p className="flex items-center"><span className="mr-2">⏰</span> Timing: 5 pm onwards</p>
-            <p className="flex items-center"><span className="mr-2">📍</span> Venue: Online Mode</p>
+            <p className="flex items-center"><span className="mr-2">📅</span> Date: 5th Dec</p>
+            <p className="flex items-center"><span className="mr-2">⏰</span> Timing: 6:30pm onwards</p>
+            <p className="flex items-center"><span className="mr-2">📍</span> Venue: Academic Complex</p>
             {/* <p className="flex items-center"><span className="mr-2">⚠️</span> Deadline: 23rd October, 11 a.m.</p> */}
           </div>
         </div>

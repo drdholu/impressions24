@@ -3,18 +3,30 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      // cursor: {
+      //   custom: 'url(../src/images/brush.png), auto',
+      // },
+      colors: {
+        glow: '#00ffcc',
+      },
+      boxShadow: {
+        boxShadow: '0 0 20px rgba(128, 0, 128, 0.7)',
+      },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
         paperHeader: ['"Pirata One"', "sans-serif"],
         paperSubHead: ['"IM Fell French Canon"'],
         paperAttention: ['"Rye"'],
         paperNote: ['"Special Elite"'],
-        paperMain: ['"IM Fell English"']
+        paperMain: ['"IM Fell English"'],
+        panelFont: ['"Lacquer"'],
+        hindi: ['"Samarkan"'],
+        hindi2: ['"Ananda Akchyar"']
       },
       keyframes: {
         float: {
-            '0%, 100%': { transform: 'translateY(0)' },
-            '50%': { transform: 'translateY(-5px)' },
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
         },
         float1: {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -34,7 +46,7 @@ module.exports = {
         glow: {
           '0%, 100%': { textShadow: '0 0 8px #ff0000, 0 0 10px #ff0000, 0 0 12px #ff0000' }, // Red
           '33%': { textShadow: '0 0 8px #00ff00, 0 0 10px #00ff00, 0 0 12px #00ff00' }, // Green
-          
+
           '66%': { textShadow: '0 0 8px #ff00ff, 0 0 10px #ff00ff, 0 0 12px #ff00ff' }, // Magenta
         },
         'scroll-horizontal': {
@@ -45,14 +57,23 @@ module.exports = {
 
       animation: {
         'unfold': 'unfold 3s ease-out forwards',
-          float: 'float 3s ease-in-out infinite',
-          float1: 'float1 3s ease-in-out infinite',
-          stretchX: 'stretchX 2s ease-in-out infinite',
-          vibrate: 'vibrate 0.2s linear infinite',
-          glow: 'glow 1.5s ease-in-out infinite', // optional custom glow animation
-          'scroll-horizontal': 'scroll-horizontal 20s linear infinite',
+        float: 'float 3s ease-in-out infinite',
+        float1: 'float1 3s ease-in-out infinite',
+        stretchX: 'stretchX 2s ease-in-out infinite',
+        vibrate: 'vibrate 0.2s linear infinite',
+        glow: 'glow 1.5s ease-in-out infinite', // optional custom glow animation
+        'scroll-horizontal': 'scroll-horizontal 20s linear infinite',
       },
-  
+
+
+      backgroundImage: {
+        "parallax-1": "url('/public/MUSIC.jpg')",
+        "parallax-2": "url('/public/DANCE.jpeg')",
+        "parallax-3": "url('/public/ANC.jpg')",
+        "parallax-4": "url('/public/CAMERA.jpg')",
+        "parallax-5": "url('/public/SHOUTOUT.jpg')",
+        "parallax-6": "url('/public/abhinay.jpg')",
+      },
 
       backdropFilter: {
         'blur-sm': 'blur(10px)',
