@@ -496,7 +496,7 @@ const Room = () => {
           occlude={true}
           transform
           position={ismobile ? [-0.5, 0.5, -80] : [-4, 2, -140]}
-          className="flex justify-center items-center w-full h-full"
+          className="flex items-center justify-center w-full h-full"
         >
           <button
             onClick={Move}
@@ -647,7 +647,7 @@ const Room = () => {
                     }}
                     className="hover:scale-105"
                   >
-                    {url.name === "Landing" ? null : url.name}
+                    {url.name === "Home" ? null : url.name}
                   </a>
                 )
               })}
