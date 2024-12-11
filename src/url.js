@@ -20,6 +20,7 @@ export const urls = [
     // { url: '/test', name: "Home", element: <Landing /> },
     // { url: '/team', name: "Team", element: <InProgress />, position: [-3, 4, 2], className: "" },
     {url: '/events', name: "Events", element: <Modules />},
+    
     // { url: '/sponsors', name: "Sponsors", element: <InProgress />, position: [-2.25, 4, 0], className: "" },
     // { url: '/showflow', name: "Showflow", element: <InProgress />, position: [-0.35, 4.25, 0], className: "" },
     // { url: '/proshow', name: "Proshows", element: <InProgress />, position: [0.7, 4, 0], className: "" },
