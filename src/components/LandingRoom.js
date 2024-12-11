@@ -520,7 +520,7 @@ const Room = () => {
             See Photos
           </button>
         </Html>
-        <Html transform occlude={true} position={ismobile ? [-6.6, 1.4, -75] : [-35, 7, -145]} rotation={[0, 1, 0]}>
+        <Html transform occlude={true} position={ismobile ? [-6.6, 1.4, -75] : [-35, 7, -145]} rotation={[0, 0.8, 0]}>
           {/* <div
             className={`${isVisible1 ? 'flex' : 'hidden'} items-center justify-center font-hindi text-white h-[15vh] w-[15vw] text-[2em]`}
           >
