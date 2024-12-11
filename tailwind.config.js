@@ -73,7 +73,6 @@ module.exports = {
         "parallax-4": "url('/public/CAMERA.jpg')",
         "parallax-5": "url('/public/SHOUTOUT.jpg')",
         "parallax-6": "url('/public/ABHINAY.jpg')",
-
       },
 
       backdropFilter: {
