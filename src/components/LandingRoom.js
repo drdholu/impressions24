@@ -722,7 +722,6 @@ const Room = () => {
             />
           </div>
         </Html>
-
       </Canvas>
     </>
   );
