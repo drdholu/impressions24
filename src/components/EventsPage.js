@@ -4,6 +4,10 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar'
 
+function isIphone() {
+    return /iPhone/i.test(navigator.userAgent);
+}
+
 function Events() {
     // const navigate = useNavigate();
     const { moduleName } = useParams();
@@ -173,8 +177,13 @@ function Events() {
                             key={index}
                             onClick={() => handleThumbnailClick(index)}
                         >
-                            <img src={thumbnail.img} alt={thumbnail.title} className="w-full h-full object-cover rounded-[10px]" />
-                            <div className="content p-0 m-0 absolute inset-x-2 bottom-0 left-0 w-full bg-blue-500 text-white text-center py-1 rounded-b-[10px]">{thumbnail.title}</div>
+                            <img src={thumbnail.img} alt={thumbnail.title} className="w-full h-full object-cover rounded-t-[10px]" />
+                            <div
+                                style={isIphone()?{position:"relative"}:{position:"absolute"}}                        
+                                className="content p-0 m-0 inset-x-2 bottom-0 left-0 w-full bg-blue-500 text-white text-center py-1 rounded-b-[10px]"
+                            >
+                                {thumbnail.title}
+                            </div>
                         </div>
                     ))}
                 </div>

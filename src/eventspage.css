@@ -46,7 +46,8 @@
     animation-duration: 1.5s; /* Ensure the button animates last */
 }
 .thumbnail::-webkit-scrollbar{
-    width: 0;
+    /* width: 0; */
+    display: none;
 }
 .thumbnail .item.active{
     filter: brightness(1.5);
