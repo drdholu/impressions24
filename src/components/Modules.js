@@ -36,6 +36,10 @@ import { Link } from 'react-router-dom';
 import "./Modules.css";
 import Navbar from "./Navbar";
 
+function isIphone(){
+    return /iPhone/i.test(navigator.userAgent);
+}
+
 function Modules() {
     const modules = [
         {
@@ -86,6 +90,9 @@ function Modules() {
                 {modules.map((module, index) => (
                     <section 
                         key={module.title} 
+                        
+                            style={isIphone()?{backgroundAttachment:"scroll"}:{backgroundAttachment:"fixed"}}
+                        
                         className={`flex items-center w-screen min-h-screen bg-fixed bg-center bg-cover ${module.bgClass}`}
                     >
                         <div className={`w-full px-10 py-[10%] ${module.textAlign === 'text-right' ? 'text-right' : 'text-left'}`}>
