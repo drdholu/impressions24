@@ -542,7 +542,7 @@ const Room = () => {
             See Photos
           </button>
         </Html>
-        <Html transform occlude={true} position={ismobile ? [-6.6, 1.4, -75] : [-35, 7, -145]} rotation={[0, 0.8, 0]}>
+        <Html transform occlude={true} position={ismobile ? [-6.6, 1.4, -75] : [-35, 7, -145]} rotation={[0, 0.86, 0]}>
           {/* <div
             className={`${isVisible1 ? 'flex' : 'hidden'} items-center justify-center font-hindi text-white h-[15vh] w-[15vw] text-[2em]`}
           >
@@ -578,8 +578,8 @@ const Room = () => {
               position: 'relative',
               display: isVisible1 ? 'block' : 'none',
               height: ismobile ? '10vh' : '15vh',
-              width: ismobile ? '45vw' : '15vw',
-              fontSize: ismobile ? '2vh' : '3vh',
+              width: ismobile ? '45vw' : '25vw',
+              fontSize: ismobile ? '2vh' : '4vh',
               backgroundColor: 'transparent',
               color: '#4A2C1D', // Dark brown text to match our theme
               // fontFamily: "'Comic Sans MS', cursive, sans-serif",
@@ -627,7 +627,7 @@ const Room = () => {
               }}
             />
 
-            Explore Pages
+            ENTER WITHIN
 
             {/* Subtle underline effect */}
             <span
