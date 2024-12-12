@@ -76,36 +76,38 @@ const Room = () => {
     // Check if scrolling is enabled (whether it's from touch or mouse)
     if (isTouchScrolling) {
       let currentX;
-
+  
       // Handle touch move
       if (event.type === "touchmove") {
         currentX = event.touches[0].clientX; // Get the current touch position
-      }
+      } 
       // Handle mouse move
       else if (event.type === "mousemove") {
         currentX = event.clientX; // Get the current mouse position
       }
-
+  
       const deltaX = startX - currentX; // Calculate the horizontal movement
       console.log("Moving:", deltaX);
-
+  
       if (Math.abs(deltaX) > 5) {
         startX = currentX; // Update the start position for smooth movement
-
+  
         // Call a function to update the camera
         onCameraMove({ type: event.type, deltaX });
       }
     }
   };
-
+  
   const onTouchEnd = (event) => {
     // Reset scrolling flag when touch or mouse ends
-    isTouchScrolling = false;
+    isTouchScrolling = false; 
+    startX=null;
   };
-
+  
 
 
   const onCameraMove = ({ deltaX }) => {
+    console.log("deltax="+deltaX);
     if (!cameraRef.current || blur || isVisible) return;
     const moveSpeed = 0.00005; // Adjust sensitivity
     console.log(cameraRef.current.rotation.y - deltaX * moveSpeed);
