@@ -61,41 +61,59 @@ const Room = () => {
 
   // Touch Start Event
   const onTouchStart = (event) => {
-    if (event.touches && event.touches.length === 1) {
+    // Check if the event is a touch or mouse event
+    if (event.type === "touchstart" && event.touches && event.touches.length === 1) {
       startX = event.touches[0].clientX; // Record the initial touch position
+      isTouchScrolling = true; // Enable scrolling flag
+    } else if (event.type === "mousedown") {
+      startX = event.clientX; // Record the initial mouse position
       isTouchScrolling = true; // Enable scrolling flag
     }
   };
 
   // Touch Move Event
   const onTouchMove = (event) => {
+    // Check if scrolling is enabled (whether it's from touch or mouse)
     if (isTouchScrolling) {
-      const currentX = event.touches[0].clientX; // Current touch position
+      let currentX;
+
+      // Handle touch move
+      if (event.type === "touchmove") {
+        currentX = event.touches[0].clientX; // Get the current touch position
+      }
+      // Handle mouse move
+      else if (event.type === "mousemove") {
+        currentX = event.clientX; // Get the current mouse position
+      }
+
       const deltaX = startX - currentX; // Calculate the horizontal movement
+      console.log("Moving:", deltaX);
+
       if (Math.abs(deltaX) > 5) {
         startX = currentX; // Update the start position for smooth movement
 
         // Call a function to update the camera
-        onCameraMove({ type: "touch", deltaX });
+        onCameraMove({ type: event.type, deltaX });
       }
     }
   };
 
-  // Touch End Event
-  const onTouchEnd = () => {
-    isTouchScrolling = false; // Reset scrolling flag
+  const onTouchEnd = (event) => {
+    // Reset scrolling flag when touch or mouse ends
+    isTouchScrolling = false;
   };
 
 
+
   const onCameraMove = ({ deltaX }) => {
-    if(!cameraRef.current || blur || isVisible) return;
+    if (!cameraRef.current || blur || isVisible) return;
     const moveSpeed = 0.00005; // Adjust sensitivity
-    console.log(cameraRef.current.rotation.y -deltaX * moveSpeed);
-    const newRotationY=cameraRef.current.rotation.y -deltaX * moveSpeed;
-    if(ismobile ? newRotationY < -2 : newRotationY < -1.5){
+    console.log(cameraRef.current.rotation.y - deltaX * moveSpeed);
+    const newRotationY = cameraRef.current.rotation.y - deltaX * moveSpeed;
+    if (ismobile ? newRotationY < -2 : newRotationY < -1.5) {
       return;
     }
-    if(ismobile ? newRotationY > 1.5 : newRotationY > 1.17){
+    if (ismobile ? newRotationY > 1.5 : newRotationY > 1.17) {
       // console.log("2");
       return;
     }
@@ -107,6 +125,9 @@ const Room = () => {
   document.addEventListener("touchstart", onTouchStart, { passive: true });
   document.addEventListener("touchmove", onTouchMove, { passive: true });
   document.addEventListener("touchend", onTouchEnd, { passive: true });
+  document.addEventListener("mousedown", onTouchStart, { passive: true });
+  document.addEventListener("mousemove", onTouchMove, { passive: true });
+  document.addEventListener("mouseup", onTouchEnd, { passive: true });
 
 
   useEffect(() => {
@@ -470,7 +491,6 @@ const Room = () => {
           <button
             onClick={MoveToPhotos}
             style={{
-
               height: '8vh',
               position: 'relative',
               padding: '10px 20px',
