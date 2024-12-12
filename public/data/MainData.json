@@ -9,17 +9,18 @@
         "title": "Music",
         "items": [
             { "img": "/image/shoutout-stage.jpg", "title": "Saavani Classical", "content": "" },
-            { "img": "/image/main-bg.jpg", "title": "Stay Tuned", "content": "" },
-            { "img": "/image/shoutout-stage.jpg", "title": "Saavani Non-Classical", "content": "" }
+            { "img": "/image/shoutout-stage.jpg", "title": "Saavani Non-Classical", "content": "" },
+            { "img": "/image/main-bg.jpg", "title": "Stay Tuned", "content": "" }
         ]
     },
     "Dance": {
         "title": "Dance",
         "items": [
             { "img": "/image/dance-stage.jpg", "title": "Nrityangana Classical", "content": "" },
+            { "img": "/image/dance-stage.jpg", "title": "Nrityangana Semi-Classical", "content": "" },
             { "img": "/image/main-bg.jpg", "title": "Step it Up", "content": "" },
-            { "img": "/image/shoutout-stage.jpg", "title": "Dance Dil Se", "content": "" },
-            { "img": "/image/dance-stage.jpg", "title": "Nrityangana Semi-Classical", "content": "" }
+            { "img": "/image/shoutout-stage.jpg", "title": "Dance Dil Se", "content": "" }
+            
         ]
     },
     "Camera": {

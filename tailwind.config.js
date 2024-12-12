@@ -21,7 +21,6 @@ module.exports = {
         paperMain: ['"IM Fell English"'],
         panelFont: ['"Lacquer"'],
         hindi: ['"Samarkan"'],
-        hindi2: ['"Ananda Akchyar"']
       },
       keyframes: {
         float: {
