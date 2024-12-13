@@ -107,7 +107,7 @@ const MMIForm = () => {
 
     const options = [
         'Manufacturing', 'Civil', 'Computer', 'Robotics & AI', 'EnTC', 'Electrical',
-        'Instrumentation', 'Metallurgy', 'Mechanical'
+        'Instrumentation', 'Metallurgy', 'Mechanical', 'B Planning'
     ];
     const options1 = [
         1,2,3,4,5,6,7,8,9,10

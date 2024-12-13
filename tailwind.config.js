@@ -56,16 +56,15 @@ module.exports = {
           glow: 'glow 1.5s ease-in-out infinite', // optional custom glow animation
           'scroll-horizontal': 'scroll-horizontal 20s linear infinite',
       },
+  
       backgroundImage: {
-        "parallax-1": "url('/public/banner.png')",
-        "parallax-2": "url('/public/dancing-visual-ai-generated.jpg')",
-        "parallax-3": "url('/public/arts.png')",
-        "parallax-4": "url('/public/camera_new.jpg')",
-        "parallax-5": "url('/public/standup.jpeg')",
+        "parallax-1": "url('/public/MUSIC.jpg')",
+        "parallax-2": "url('/public/DANCE.jpeg')",
+        "parallax-3": "url('/public/ANC.jpg')",
+        "parallax-4": "url('/public/CAMERA.jpg')",
+        "parallax-5": "url('/public/SHOUTOUT.jpg')",
         "parallax-6": "url('/public/abhinay.jpg')",
-        
       },
-
       backdropFilter: {
         'blur-sm': 'blur(10px)',
       },

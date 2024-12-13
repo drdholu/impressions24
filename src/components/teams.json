@@ -1,0 +1,296 @@
+{
+    "teamSections": [
+      {
+        "title": "Our Team",
+        "members": [
+          {
+            "image": "",
+            "name": "Chetan Patil",
+            "role": "Secretary",
+            "instagram": "",
+            "linkedin": ""
+          },
+          {
+            "image": "",
+            "name": "", 
+            "role": "Assistant Secretary",
+            "instagram": "",
+            "linkedin": ""
+          }
+        ]
+      },
+      {
+        "title": "Accounts",
+        "members": [
+          {
+            "image": "/teams_images/Megha_Joshi.HEIC",
+            "name": "Megha Joshi",
+            "role": "Head",
+            "instagram": "https://www.instagram.com/meghaaaaa_j?igsh=d29tNTJqdmkybHZy&utm_source=qr",
+            "linkedin": "https://www.linkedin.com/in/megha-joshi-19122425b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          },
+          {
+            "image": "",
+            "name": "Rohan Langar",
+            "role": "Head", 
+            "instagram": "",
+            "linkedin": ""
+          }
+        ]
+      },
+      {
+        "title": "Corporate Outreach Group",
+        "members": [
+          {
+            "image": "/teams_images/Soham_Laghate.HEIC",
+            "name": "Soham Laghate",
+            "role": "Head",
+            "instagram": "https://www.instagram.com/sohamlaghatee/profilecard/?igsh=MWs2bjhzeW93Nmc2bQ==",
+            "linkedin": "http://linkedin.com/in/soham-laghate-3b4597262"
+          },
+          {
+            "image": "",
+            "name": "Sakshi Morge",
+            "role": "Head", 
+            "instagram": "",
+            "linkedin": ""
+          }
+        ]
+      },
+      {
+        "title": "Decor",
+        "members": [
+          {
+            "image": "/teams_images/Mansi_Harshe.jpg",
+            "name": "Mansi Harshe",
+            "role": "Head",
+            "instagram": "https://www.instagram.com/mansiharshe02/profilecard/?igsh=dXNtYTJ2bGo4NGx0",
+            "linkedin": ""
+          },
+          {
+            "image": "",
+            "name": "Manali Joshi",
+            "role": "Head", 
+            "instagram": "",
+            "linkedin": ""
+          }
+        ]
+      },
+      {
+        "title": "Documentation",
+        "members": [
+          {
+            "image": "/teams_images/Janhvi_Thul.jpg",
+            "name": "Janvi Thul",
+            "role": "Head",
+            "instagram": "",
+            "linkedin": "https://www.linkedin.com/in/janvi-thul-9881a0248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          },
+          {
+            "image": "/teams_images/Ishita.jpg",
+            "name": "Ishita Gaikwad",
+            "role": "Head", 
+            "instagram": "https://www.instagram.com/ishita.g.8/profilecard/?igsh=enN2MzkyMW1iN2xy",
+            "linkedin": "https://www.linkedin.com/in/ishita-gaikwad-092960255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          }
+        ]
+      },
+      {
+        "title": "Events & Proshows",
+        "members": [
+          {
+            "image": "/teams_images/Parth_Farkade.jpg",
+            "name": "Parth Farkade",
+            "role": "Head",
+            "instagram": "https://www.instagram.com/parthfarkade/profilecard/?igsh=YXhzajZobDB2NnRh",
+            "linkedin": "https://www.linkedin.com/in/parth-farkade-9b6034316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          },
+          {
+            "image": "",
+            "name": "Madhura Godale",
+            "role": "Head", 
+            "instagram": "",
+            "linkedin": ""
+          },
+          {
+            "image": "/teams_images/Arnav_Bankar.jpg",
+            "name": "Arnav Bankar",
+            "role": "Head", 
+            "instagram": "https://www.instagram.com/arnav_bankar_/profilecard/?igsh=djZ1bHMycGg0OWpy",
+            "linkedin": "https://www.linkedin.com/in/arnav-bankar-a3292025b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          }
+        ]
+      },
+      {
+        "title": "Finance & Sponsorships",
+        "members": [
+          {
+            "image": "/teams_images/Adit_Ghorpade.jpeg",
+            "name": "Adit Ghorpade",
+            "role": "Head", 
+            "instagram": "https://www.instagram.com/aditt_ghorpade/profilecard/?igsh=MTBwdmd2Z3NlN2M4OA==",
+            "linkedin": "https://www.linkedin.com/in/adit-ghorpade-a57861266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          }
+        ]
+      },
+      {
+        "title": "Graphic Design",
+        "members": [
+          {
+            "image": "",
+            "name": "Riya Vankani",
+            "role": "Head",
+            "instagram": "https://www.instagram.com/riya.vankani/",
+            "linkedin": "https://www.linkedin.com/in/riya-vankani-aa440125b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          },
+          {
+            "image": "",
+            "name": "Sanchit Shahare",
+            "role": "Head", 
+            "instagram": "",
+            "linkedin": ""
+          }
+        ]
+      },
+      {
+        "title": "Marketing",
+        "members": [
+          {
+            "image": "/teams_images/Chinmay_mulmule.HEIC",
+            "name": "Chinmay Mulmule",
+            "role": "Head",
+            "instagram": "https://www.instagram.com/m.chinmay10/",
+            "linkedin": "https://www.linkedin.com/in/chinmay-m-996195254/"
+          },
+          {
+            "image": "/teams_images/Diya_P.jpg",
+            "name": "Diya Panchasara",
+            "role": "Head", 
+            "instagram": "https://www.instagram.com/diya_3105/profilecard/?igsh=bnl0cG93bmMxaG50",
+            "linkedin": ""
+          }
+        ]
+      },
+      {
+        "title": "Media",
+        "members": [
+          {
+            "image": "",
+            "name": "Prithviraj Deshmukh",
+            "role": "Head",
+            "instagram": "",
+            "linkedin": ""
+          },
+          {
+            "image": "",
+            "name": "Smruti Chaudhari",
+            "role": "Head", 
+            "instagram": "",
+            "linkedin": ""
+          }
+        ]
+      },
+      {
+        "title": "Publicity & Registrations",
+        "members": [
+          {
+            "image": "/teams_images/Payal_Latane.jpg",
+            "name": "Payal Latane",
+            "role": "Head",
+            "instagram": "https://www.instagram.com/payal_latane?igsh=cjJxamZ4czNrcDh0",
+            "linkedin": "https://www.linkedin.com/in/payal-latane-65518325b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          },
+          {
+            "image": "./teams_images/Amogh_Kulkarni.jpg",
+            "name": "Amogh Kulkarni",
+            "role": "Head", 
+            "instagram": "https://www.instagram.com/amogh_1311/ ",
+            "linkedin": "https://www.linkedin.com/in/amogh-kulkarni-3a0912273/"
+          },
+          {
+            "image": "",
+            "name": "Tanvi Patil",
+            "role": "Head", 
+            "instagram": "https://www.instagram.com/tan._.vii/",
+            "linkedin": "https://www.linkedin.com/in/tanvi-deshmukh-a12005259/"
+          }
+        ]
+      },
+      {
+        "title": "Print & Purchase",
+        "members": [
+          {
+            "image": "",
+            "name": "Purva Hingane",
+            "role": "Head",
+            "instagram": "",
+            "linkedin": ""
+          },
+          {
+            "image": "",
+            "name": "Shubham Dadge",
+            "role": "Head", 
+            "instagram": "",
+            "linkedin": ""
+          }
+        ]
+      },
+      {
+        "title": "Production",
+        "members": [
+          {
+            "image": "/teams_images/Idris_Adeeb.jpg",
+            "name": "Idris Adeeb",
+            "role": "Head",
+            "instagram": "https://www.instagram.com/__idris_234?igsh=ZXVnZmx4ZXJwZ2gz&utm_source=qr",
+            "linkedin": "https://www.linkedin.com/in/idris-adeeb-257816227/"
+          },
+          {
+            "image": "./teams_images/Yash_Parekh.jpg",
+            "name": "Yash Parekh",
+            "role": "Head", 
+            "instagram": "https://www.instagram.com/yash_parekh_/",
+            "linkedin": "https://www.linkedin.com/in/yash-parekh-bb8879245/"
+          }
+        ]
+      },
+      {
+        "title": "VFX",
+        "members": [
+          {
+            "image": "/teams_images/Ritesh_Patil.jpg",
+            "name": "Ritesh Patil",
+            "role": "Head",
+            "instagram": "https://www.instagram.com/ritzz_vfx?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+            "linkedin": "http://www.linkedin.com/in/ritesh-patil-191b05307"
+          },
+          {
+            "image": "/teams_images/Chinmay_katekhaye.jpg",
+            "name": "Chinmay Katekhaye",
+            "role": "Head",
+            "instagram": "https://www.instagram.com/whotfischinmay?igsh=eXVyOXhscHNqOHM2",
+            "linkedin": "https://www.linkedin.com/in/chinmay-k-1319692b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          }
+        ]
+      },
+      {
+        "title": "WEB",
+        "members": [
+          {
+            "image": "/teams_images/Paras.jpg",
+            "name": "Paras",
+            "role": "Head",
+            "instagram": "",
+            "linkedin": ""
+          },
+          {
+            "image": "/teams_images/Dhruva_T.jpg",
+            "name": "Dhruva Totala",
+            "role": "Head", 
+            "instagram": "",
+            "linkedin": ""
+          }
+        ]
+      }
+    ]
+  }
