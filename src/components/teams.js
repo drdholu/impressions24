@@ -106,7 +106,7 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
 
 const TeamsSection = () => {
   return (
-    <div className="py-16 bg-teamsBackground bg-fixed ">
+    <div className="py-16 bg-teamsBackground bg-no-repeat bg-cover bg-fixed ">
       <div className='mb-12 text-5xl font-extrabold tracking-wider text-center uppercase text-white drop-shadow-md font-paperHeader'><p className='text-[2em]' style={{
                 WebkitTextStroke: "0.1px beige",
                 textShadow:"2px 2px 2px black"
