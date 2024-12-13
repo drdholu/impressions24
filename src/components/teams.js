@@ -53,45 +53,45 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
   }, []);
 
   return (
-    <div 
-      ref={containerRef} 
-      className="w-64 perspective-800 h-96 group"
+    <div
+      ref={containerRef}
+      className="w-64 perspective-800 h-96 group border-black"
     >
-      <div 
+      <div
         ref={cardRef}
         className="relative w-full h-full transition-transform duration-300 ease-out transform-style-3d backface-hidden"
       >
         {/* Card Background */}
-        <div 
+        <div
           className="absolute inset-0 transition-all duration-300 bg-center bg-cover rounded-xl filter brightness-75 group-hover:brightness-50"
           style={{ backgroundImage: `url(${image})` }}
         />
-        
+
         {/* Card Overlay */}
         <div className="absolute inset-0 transition-opacity duration-300 opacity-20 bg-gradient-to-b from-transparent to-black/70 rounded-xl group-hover:opacity-100" />
-        
+
         {/* Card Content */}
         <div className="absolute bottom-0 left-0 right-0 p-6 text-white transition-all duration-300 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
           <h3 className="mb-1 text-xl font-bold">{name}</h3>
           <p className="text-sm text-white/80">{role}</p>
-          
+
           {/* Social Media Links */}
           <div className="flex mt-2 space-x-3">
             {instagram && (
-              <a 
-                href={instagram} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={instagram}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white hover:text-pink-400 transition-colors"
               >
                 <i className="fab fa-instagram text-xl"></i>
               </a>
             )}
             {linkedin && (
-              <a 
-                href={linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white hover:text-blue-500 transition-colors"
               >
                 <i className="fab fa-linkedin text-xl"></i>
@@ -106,17 +106,28 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
 
 const TeamsSection = () => {
   return (
-    <div className="py-16 mb-16 ">
-      <div className="container px-4 mx-auto">
+    <div className="py-16 bg-teamsBackground bg-fixed ">
+      <div className='mb-12 text-5xl font-extrabold tracking-wider text-center uppercase text-white drop-shadow-md font-paperHeader'><p className='text-[2em]' style={{
+                WebkitTextStroke: "0.1px yellow", // Adjust the size and color as needed
+              }}>9th EDITION</p>
+        <p>CORE TEAM</p>
+      </div>
+      <div className="px-4 mx-auto">
         {teamData.teamSections.map((section, sectionIndex) => (
           <div key={sectionIndex} className={sectionIndex < teamData.teamSections.length - 1 ? 'mb-40' : ''}>
-            <h2 className="mb-12 text-5xl font-extrabold tracking-wider text-center uppercase text-white drop-shadow-md">
+            <h2
+              className="mb-12 text-5xl font-extrabold tracking-wider text-center uppercase text-white drop-shadow-md"
+              style={{
+                WebkitTextStroke: "1px grey", // Adjust the size and color as needed
+              }}
+            >
               {section.title}
             </h2>
-            
+
+
             <div className="flex justify-center space-x-8">
               {section.members.map((member, memberIndex) => (
-                <TeamCard 
+                <TeamCard
                   key={`${sectionIndex}-${memberIndex}`}
                   image={member.image}
                   name={member.name}

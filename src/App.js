@@ -1,7 +1,6 @@
 // App.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-<<<<<<< HEAD
 // import CoordinatorForm from './components/CoordinatorForm';
 // import VolunteerForm from './components/VolunteerForm';
 // import LandingPage from './components/LandingPage'; 
@@ -43,12 +42,6 @@ const App = () => {
         {/* <MainCards /> */}
       </div>
     // </Preloader>
-=======
-import Teams from './components/teams';
-const App = () => {
-  return (
-    <Teams/>
->>>>>>> dev_sahil
   );
 };
 

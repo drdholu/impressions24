@@ -1,18 +1,18 @@
 {
     "teamSections": [
       {
-        "title": "Our Team",
+        "title": "Seceratries",
         "members": [
           {
-            "image": "",
+            "image": "/teams_images/Chetan_S.jpg",
             "name": "Chetan Patil",
             "role": "Secretary",
             "instagram": "",
             "linkedin": ""
           },
           {
-            "image": "",
-            "name": "", 
+            "image": "/teams_images/Dhiraj_S.png",
+            "name": "Dhiraj Murmude", 
             "role": "Assistant Secretary",
             "instagram": "",
             "linkedin": ""
@@ -23,7 +23,7 @@
         "title": "Accounts",
         "members": [
           {
-            "image": "/teams_images/Megha_Joshi.HEIC",
+            "image": "/teams_images/Megha_J.jpg",
             "name": "Megha Joshi",
             "role": "Head",
             "instagram": "https://www.instagram.com/meghaaaaa_j?igsh=d29tNTJqdmkybHZy&utm_source=qr",
@@ -42,14 +42,14 @@
         "title": "Corporate Outreach Group",
         "members": [
           {
-            "image": "/teams_images/Soham_Laghate.HEIC",
+            "image": "/teams_images/Soham_Laghate.jpg",
             "name": "Soham Laghate",
             "role": "Head",
             "instagram": "https://www.instagram.com/sohamlaghatee/profilecard/?igsh=MWs2bjhzeW93Nmc2bQ==",
             "linkedin": "http://linkedin.com/in/soham-laghate-3b4597262"
           },
           {
-            "image": "",
+            "image": "/teams_images/Sakshi_M.jpg",
             "name": "Sakshi Morge",
             "role": "Head", 
             "instagram": "",
@@ -68,7 +68,7 @@
             "linkedin": ""
           },
           {
-            "image": "",
+            "image": "/teams_images/Manali_D.jpg",
             "name": "Manali Joshi",
             "role": "Head", 
             "instagram": "",
@@ -130,6 +130,13 @@
             "role": "Head", 
             "instagram": "https://www.instagram.com/aditt_ghorpade/profilecard/?igsh=MTBwdmd2Z3NlN2M4OA==",
             "linkedin": "https://www.linkedin.com/in/adit-ghorpade-a57861266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          },
+          {
+            "image": "/teams_images/Atharva_D.jpg",
+            "name": "Atharva Dhoot",
+            "role": "Head", 
+            "instagram": "https://www.instagram.com/atharv_03_dhoot/",
+            "linkedin": "https://www.linkedin.com/in/atharv-dhoot-613485261/"
           }
         ]
       },
@@ -137,14 +144,14 @@
         "title": "Graphic Design",
         "members": [
           {
-            "image": "",
+            "image": "/teams_images/Riya_V.png",
             "name": "Riya Vankani",
             "role": "Head",
             "instagram": "https://www.instagram.com/riya.vankani/",
             "linkedin": "https://www.linkedin.com/in/riya-vankani-aa440125b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           },
           {
-            "image": "",
+            "image": "/teams_images/Sanchit_S.jpeg",
             "name": "Sanchit Shahare",
             "role": "Head", 
             "instagram": "",
@@ -156,7 +163,14 @@
         "title": "Marketing",
         "members": [
           {
-            "image": "/teams_images/Chinmay_mulmule.HEIC",
+            "image": "/teams_images/Riya_Shinde.jpg",
+            "name": "Riya Shinde",
+            "role": "Head",
+            "instagram": "",
+            "linkedin": ""
+          },
+          {
+            "image": "/teams_images/Chinmay_mulmule.jpg",
             "name": "Chinmay Mulmule",
             "role": "Head",
             "instagram": "https://www.instagram.com/m.chinmay10/",
@@ -175,7 +189,7 @@
         "title": "Media",
         "members": [
           {
-            "image": "",
+            "image": "/teams_images/Prithvi_D.png",
             "name": "Prithviraj Deshmukh",
             "role": "Head",
             "instagram": "",
@@ -220,7 +234,7 @@
         "title": "Print & Purchase",
         "members": [
           {
-            "image": "",
+            "image": "/teams_images/Purva_H.png",
             "name": "Purva Hingane",
             "role": "Head",
             "instagram": "",
@@ -228,6 +242,13 @@
           },
           {
             "image": "",
+            "name": "Devesh Pandey",
+            "role": "Head",
+            "instagram": "",
+            "linkedin": ""
+          },
+          {
+            "image": "/teams_images/Shubham.jpg",
             "name": "Shubham Dadge",
             "role": "Head", 
             "instagram": "",

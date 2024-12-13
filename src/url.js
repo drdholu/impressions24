@@ -11,7 +11,8 @@ import Explore from './components/Explore';
 // import MainCards from './components/MainCards';
 import Modules from "./components/Modules";
 import Sponsors from './components/Sponsors.jsx';
-import Teams from './components/team.js';import Showflow from './components/Showflow.js';
+import TeamsSection from './components/teams.js';
+import Showflow from './components/Showflow.js';
 ;
 export const urls = [
     // {url: '/', name: "Home", element:<ImpressionsNewspaper/> },
@@ -19,7 +20,7 @@ export const urls = [
     // {url: '/mmi-reg', name: "MMI Registration", element: <MMIForm />},
     // {url: '/coordinator-form', name: 'Coordinator Forms', element: <CoordinatorForm />},
     // {url: '/volunteer-form', name: 'Volunteer Forms', element:   <VolunteerForm />},
-    {url: '/teams', name: "Team's Page", element: <Teams />},
+    {url: '/teams', name: "Team's Page", element: <TeamsSection />},
     {url: '/sponsors', name: "Sponsors Page", element: <Sponsors />},
     {url: '/', name: "Module's Page", element: <Modules />},
     {url: '/events/:moduleName', name: "Events Page", element: <EventsPage />},
