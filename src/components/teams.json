@@ -23,7 +23,7 @@
         "title": "Accounts",
         "members": [
           {
-            "image": "./teams_images/Megha_Joshi.HEIC",
+            "image": "/teams_images/Megha_Joshi.HEIC",
             "name": "Megha Joshi",
             "role": "Head",
             "instagram": "https://www.instagram.com/meghaaaaa_j?igsh=d29tNTJqdmkybHZy&utm_source=qr",
@@ -42,7 +42,7 @@
         "title": "Corporate Outreach Group",
         "members": [
           {
-            "image": "./teams_images/Soham_Laghate.HEIC",
+            "image": "/teams_images/Soham_Laghate.HEIC",
             "name": "Soham Laghate",
             "role": "Head",
             "instagram": "https://www.instagram.com/sohamlaghatee/profilecard/?igsh=MWs2bjhzeW93Nmc2bQ==",
@@ -61,7 +61,7 @@
         "title": "Decor",
         "members": [
           {
-            "image": "./teams_images/Mansi_Harshe.jpg",
+            "image": "/teams_images/Mansi_Harshe.jpg",
             "name": "Mansi Harshe",
             "role": "Head",
             "instagram": "https://www.instagram.com/mansiharshe02/profilecard/?igsh=dXNtYTJ2bGo4NGx0",
@@ -80,7 +80,7 @@
         "title": "Documentation",
         "members": [
           {
-            "image": "./teams_images/Janhvi_Thul.jpg",
+            "image": "/teams_images/Janhvi_Thul.jpg",
             "name": "Janvi Thul",
             "role": "Head",
             "instagram": "",
@@ -99,7 +99,7 @@
         "title": "Events & Proshows",
         "members": [
           {
-            "image": "./teams_images/Parth_Farkade.jpg",
+            "image": "/teams_images/Parth_Farkade.jpg",
             "name": "Parth Farkade",
             "role": "Head",
             "instagram": "https://www.instagram.com/parthfarkade/profilecard/?igsh=YXhzajZobDB2NnRh",
@@ -113,7 +113,7 @@
             "linkedin": ""
           },
           {
-            "image": "./teams_images/Arnav_Bankar.jpg",
+            "image": "/teams_images/Arnav_Bankar.jpg",
             "name": "Arnav Bankar",
             "role": "Head", 
             "instagram": "https://www.instagram.com/arnav_bankar_/profilecard/?igsh=djZ1bHMycGg0OWpy",
@@ -125,7 +125,7 @@
         "title": "Finance & Sponsorships",
         "members": [
           {
-            "image": "./teams_images/Adit_Ghorpade.jpeg",
+            "image": "/teams_images/Adit_Ghorpade.jpeg",
             "name": "Adit Ghorpade",
             "role": "Head", 
             "instagram": "https://www.instagram.com/aditt_ghorpade/profilecard/?igsh=MTBwdmd2Z3NlN2M4OA==",
@@ -156,14 +156,14 @@
         "title": "Marketing",
         "members": [
           {
-            "image": "./teams_images/Chinmay_mulmule.HEIC",
+            "image": "/teams_images/Chinmay_mulmule.HEIC",
             "name": "Chinmay Mulmule",
             "role": "Head",
             "instagram": "https://www.instagram.com/m.chinmay10/",
             "linkedin": "https://www.linkedin.com/in/chinmay-m-996195254/"
           },
           {
-            "image": "./teams_images/Diya_P.jpg",
+            "image": "/teams_images/Diya_P.jpg",
             "name": "Diya Panchasara",
             "role": "Head", 
             "instagram": "https://www.instagram.com/diya_3105/profilecard/?igsh=bnl0cG93bmMxaG50",
@@ -194,7 +194,7 @@
         "title": "Publicity & Registrations",
         "members": [
           {
-            "image": "./teams_images/Payal_Latane.jpg",
+            "image": "/teams_images/Payal_Latane.jpg",
             "name": "Payal Latane",
             "role": "Head",
             "instagram": "https://www.instagram.com/payal_latane?igsh=cjJxamZ4czNrcDh0",
@@ -239,7 +239,7 @@
         "title": "Production",
         "members": [
           {
-            "image": "./teams_images/Idris_Adeeb.jpg",
+            "image": "/teams_images/Idris_Adeeb.jpg",
             "name": "Idris Adeeb",
             "role": "Head",
             "instagram": "https://www.instagram.com/__idris_234?igsh=ZXVnZmx4ZXJwZ2gz&utm_source=qr",
@@ -258,14 +258,14 @@
         "title": "VFX",
         "members": [
           {
-            "image": "./teams_images/Ritesh_Patil.jpg",
+            "image": "/teams_images/Ritesh_Patil.jpg",
             "name": "Ritesh Patil",
             "role": "Head",
             "instagram": "https://www.instagram.com/ritzz_vfx?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
             "linkedin": "http://www.linkedin.com/in/ritesh-patil-191b05307"
           },
           {
-            "image": "./teams_images/Chinmay_katekhaye.jpg",
+            "image": "/teams_images/Chinmay_katekhaye.jpg",
             "name": "Chinmay Katekhaye",
             "role": "Head",
             "instagram": "https://www.instagram.com/whotfischinmay?igsh=eXVyOXhscHNqOHM2",
@@ -277,7 +277,7 @@
         "title": "WEB",
         "members": [
           {
-            "image": "./teams_images/Paras.jpg",
+            "image": "/teams_images/Paras.jpg",
             "name": "Paras",
             "role": "Head",
             "instagram": "",

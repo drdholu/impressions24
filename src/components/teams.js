@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import teamData from './teams.json'; // Assume this is the path to the JSON file
 
-
-
 const TeamCard = ({ image, name, role, instagram, linkedin }) => {
   const cardRef = useRef(null);
   const containerRef = useRef(null);
