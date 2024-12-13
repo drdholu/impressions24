@@ -108,17 +108,21 @@ const TeamsSection = () => {
   return (
     <div className="py-16 bg-teamsBackground bg-fixed ">
       <div className='mb-12 text-5xl font-extrabold tracking-wider text-center uppercase text-white drop-shadow-md font-paperHeader'><p className='text-[2em]' style={{
-                WebkitTextStroke: "0.1px yellow", // Adjust the size and color as needed
+                WebkitTextStroke: "0.1px beige",
+                textShadow:"2px 2px 2px black"
               }}>9th EDITION</p>
-        <p>CORE TEAM</p>
+        <p style={{
+                WebkitTextStroke: "0.1px beige",
+                textShadow:"2px 2px 2px black"
+              }}>CORE TEAM</p>
       </div>
       <div className="px-4 mx-auto">
-        {teamData.teamSections.map((section, sectionIndex) => (
+        {teamData.teamSections.map((section, sectionIndex ) => (
           <div key={sectionIndex} className={sectionIndex < teamData.teamSections.length - 1 ? 'mb-40' : ''}>
             <h2
               className="mb-12 text-5xl font-extrabold tracking-wider text-center uppercase text-white drop-shadow-md"
               style={{
-                WebkitTextStroke: "1px grey", // Adjust the size and color as needed
+                WebkitTextStroke: "1px grey",
               }}
             >
               {section.title}
