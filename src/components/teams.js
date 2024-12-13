@@ -55,7 +55,7 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
   return (
     <div
       ref={containerRef}
-      className="w-64 perspective-800 h-96 group border-black"
+      className="w-64 perspective-800 h-96 group border-blackx"
     >
       <div
         ref={cardRef}
@@ -125,7 +125,7 @@ const TeamsSection = () => {
             </h2>
 
 
-            <div className="flex justify-center space-x-8">
+            <div className="flex flex-col md:flex-row items-center md:justify-center space-y-8 md:space-y-0 md:space-x-8 ">
               {section.members.map((member, memberIndex) => (
                 <TeamCard
                   key={`${sectionIndex}-${memberIndex}`}
