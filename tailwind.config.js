@@ -53,7 +53,14 @@ module.exports = {
           'scroll-horizontal': 'scroll-horizontal 20s linear infinite',
       },
   
-
+      backgroundImage: {
+        "parallax-1": "url('/public/MUSIC.jpg')",
+        "parallax-2": "url('/public/DANCE.jpeg')",
+        "parallax-3": "url('/public/ANC.jpg')",
+        "parallax-4": "url('/public/CAMERA.jpg')",
+        "parallax-5": "url('/public/SHOUTOUT.jpg')",
+        "parallax-6": "url('/public/abhinay.jpg')",
+      },
       backdropFilter: {
         'blur-sm': 'blur(10px)',
       },

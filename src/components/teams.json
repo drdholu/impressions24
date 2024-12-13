@@ -87,7 +87,7 @@
             "linkedin": "https://www.linkedin.com/in/janvi-thul-9881a0248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           },
           {
-            "image": "",
+            "image": "/teams_images/Ishita.jpg",
             "name": "Ishita Gaikwad",
             "role": "Head", 
             "instagram": "https://www.instagram.com/ishita.g.8/profilecard/?igsh=enN2MzkyMW1iN2xy",
@@ -204,15 +204,15 @@
             "image": "./teams_images/Amogh_Kulkarni.jpg",
             "name": "Amogh Kulkarni",
             "role": "Head", 
-            "instagram": "",
-            "linkedin": ""
+            "instagram": "https://www.instagram.com/amogh_1311/ ",
+            "linkedin": "https://www.linkedin.com/in/amogh-kulkarni-3a0912273/"
           },
           {
             "image": "",
             "name": "Tanvi Patil",
             "role": "Head", 
-            "instagram": "",
-            "linkedin": ""
+            "instagram": "https://www.instagram.com/tan._.vii/",
+            "linkedin": "https://www.linkedin.com/in/tanvi-deshmukh-a12005259/"
           }
         ]
       },
@@ -249,8 +249,8 @@
             "image": "./teams_images/Yash_Parekh.jpg",
             "name": "Yash Parekh",
             "role": "Head", 
-            "instagram": "",
-            "linkedin": ""
+            "instagram": "https://www.instagram.com/yash_parekh_/",
+            "linkedin": "https://www.linkedin.com/in/yash-parekh-bb8879245/"
           }
         ]
       },
@@ -284,7 +284,7 @@
             "linkedin": ""
           },
           {
-            "image": "",
+            "image": "/teams_images/Dhruva_T.jpg",
             "name": "Dhruva Totala",
             "role": "Head", 
             "instagram": "",

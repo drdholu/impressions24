@@ -68,7 +68,7 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
         />
         
         {/* Card Overlay */}
-        <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-b from-transparent to-black/70 rounded-xl group-hover:opacity-100" />
+        <div className="absolute inset-0 transition-opacity duration-300 opacity-20 bg-gradient-to-b from-transparent to-black/70 rounded-xl group-hover:opacity-100" />
         
         {/* Card Content */}
         <div className="absolute bottom-0 left-0 right-0 p-6 text-white transition-all duration-300 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
@@ -106,11 +106,11 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
 
 const TeamsSection = () => {
   return (
-    <div className="py-16 mb-16">
+    <div className="py-16 mb-16 ">
       <div className="container px-4 mx-auto">
         {teamData.teamSections.map((section, sectionIndex) => (
           <div key={sectionIndex} className={sectionIndex < teamData.teamSections.length - 1 ? 'mb-40' : ''}>
-            <h2 className="mb-12 text-4xl font-bold tracking-wider text-center uppercase text-neutral-800">
+            <h2 className="mb-12 text-5xl font-extrabold tracking-wider text-center uppercase text-white drop-shadow-md">
               {section.title}
             </h2>
             
