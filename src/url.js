@@ -10,10 +10,12 @@
 
 import Modules from './components/Modules'
 import Landingroom from './components/LandingRoom';
+import TeamsSection from './components/teams';
 
 
 export const urls = [
     { url: '/', name: "Home", element: <Landingroom /> },
+    { url: '/teams', name: "Core Team", element: <TeamsSection /> },
     // {url: '/', name: "Home", element:<LandingPage/> },
     // { url: '/mmi-finalists', name: "mmi-finalists", element: <Mmifinal />, className: "" },
     // { url: '/voting', name: "mmi-voting", element: <Voting /> },

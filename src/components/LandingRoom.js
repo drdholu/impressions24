@@ -693,7 +693,7 @@ const Room = () => {
                 textShadow: '2px 2px 4px rgba(0,0,0,0.2)' // Pencil-like shadow
               }}
             >
-              🎨 Drawing Board
+              Navigation Board
             </h1>
 
             <div
