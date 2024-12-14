@@ -106,9 +106,9 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
 
 const TeamsSection = () => {
   return (
-    <div className="py-16 bg-fixed bg-no-repeat bg-cover bg-teamsBackground ">
+    <div className=" py-8 bg-fixed bg-no-repeat bg-cover bg-teamsBackground ">
       <Navbar/>
-      <div className='mb-12 text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md font-paperHeader'><p className='text-[2em]' style={{
+      <div className='mb-12 mt-8  text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md font-paperHeader'><p className='text-[2em]' style={{
                 WebkitTextStroke: "0.01px black",
                 textShadow:"2px 2px 2px black"
               }}>9th EDITION</p>
