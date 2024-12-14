@@ -16,7 +16,6 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
       const rect = container.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-
       const mouseX = e.clientX - centerX;
       const mouseY = e.clientY - centerY;
 
