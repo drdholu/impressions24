@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import teamData from './teams.json'; // Assume this is the path to the JSON file
+import Navbar from './Navbar'
 
 const TeamCard = ({ image, name, role, instagram, linkedin }) => {
   const cardRef = useRef(null);
@@ -63,7 +64,7 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
       >
         {/* Card Background */}
         <div
-          className="absolute inset-0 transition-all duration-300 bg-center bg-cover rounded-xl filter brightness-75 group-hover:brightness-50"
+          className="absolute inset-0 transition-all duration-300 bg-center bg-cover shadow-lg shadow-black rounded-xl filter brightness-75 group-hover:brightness-50"
           style={{ backgroundImage: `url(${image})` }}
         />
 
@@ -82,9 +83,9 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
                 href={instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-pink-400 transition-colors"
+                className="text-white transition-colors hover:text-pink-400"
               >
-                <i className="fab fa-instagram text-xl"></i>
+                <i className="text-xl fab fa-instagram"></i>
               </a>
             )}
             {linkedin && (
@@ -92,9 +93,9 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
                 href={linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-blue-500 transition-colors"
+                className="text-white transition-colors hover:text-blue-500"
               >
-                <i className="fab fa-linkedin text-xl"></i>
+                <i className="text-xl fab fa-linkedin"></i>
               </a>
             )}
           </div>
@@ -106,13 +107,14 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
 
 const TeamsSection = () => {
   return (
-    <div className="py-16 bg-teamsBackground bg-no-repeat bg-cover bg-fixed ">
-      <div className='mb-12 text-5xl font-extrabold tracking-wider text-center uppercase text-white drop-shadow-md font-paperHeader'><p className='text-[2em]' style={{
-                WebkitTextStroke: "0.1px beige",
+    <div className="py-16 bg-fixed bg-no-repeat bg-cover bg-teamsBackground ">
+      <Navbar/>
+      <div className='mb-12 text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md font-paperHeader'><p className='text-[2em]' style={{
+                WebkitTextStroke: "0.01px black",
                 textShadow:"2px 2px 2px black"
               }}>9th EDITION</p>
         <p style={{
-                WebkitTextStroke: "0.1px beige",
+                WebkitTextStroke: "0.01px black",
                 textShadow:"2px 2px 2px black"
               }}>CORE TEAM</p>
       </div>
@@ -120,7 +122,7 @@ const TeamsSection = () => {
         {teamData.teamSections.map((section, sectionIndex ) => (
           <div key={sectionIndex} className={sectionIndex < teamData.teamSections.length - 1 ? 'mb-40' : ''}>
             <h2
-              className="mb-12 text-5xl font-extrabold tracking-wider text-center uppercase text-white drop-shadow-md"
+              className="mb-12 text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md"
               style={{
                 WebkitTextStroke: "1px grey",
               }}
@@ -129,7 +131,7 @@ const TeamsSection = () => {
             </h2>
 
 
-            <div className="flex flex-col md:flex-row items-center md:justify-center space-y-8 md:space-y-0 md:space-x-8 ">
+            <div className="flex flex-col items-center space-y-8 md:flex-row md:justify-center md:space-y-0 md:space-x-8 ">
               {section.members.map((member, memberIndex) => (
                 <TeamCard
                   key={`${sectionIndex}-${memberIndex}`}
