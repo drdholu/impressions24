@@ -4,22 +4,31 @@ import Navbar from './Navbar';
 
 const GallerySection = () => {
   const [images, setImages] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // Fetch the images from the JSON file
     setImages(galleryData.images);
+
+    // Function to check screen size and update isMobile state
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // Typical breakpoint for mobile devices
+    };
+
+    // Check screen size on initial load
+    checkScreenSize();
+
+    // Add event listener to check screen size on resize
+    window.addEventListener('resize', checkScreenSize);
+
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
   }, []);
 
-  return (
-    <div className="bg-fixed bg-no-repeat bg-cover bg-galleryBackground w-full h-full">
-      <Navbar />
-      <div className="mb-4 mt-12 text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md font-paperHeader">
-         <p className="text-[2em]" style={{
-           WebkitTextStroke: "0.01px black",
-           textShadow: "2px 2px 2px black",
-         }}>GALLERY</p>
-       </div>
-      
+
+  const DesktopGallery = () =>(
       <div className="p-10 grid grid-cols-4 grid-rows-4 gap-4 h-screen">
         <div className="relative overflow-hidden rounded-lg shadow-lg group bg-white w-full h-96">
           <div className="flex justify-center items-center w-full h-full">
@@ -102,8 +111,51 @@ const GallerySection = () => {
           </div>
         </div>
       </div>
+  );
+
+  // Mobile Vertical Layout
+  const MobileGallery = () => (
+    <div className="p-4 space-y-4">
+      {images.map((image, index) => (
+        <div 
+          key={index} 
+          className="relative overflow-hidden rounded-lg shadow-lg bg-white w-full"
+        >
+          <div className="flex justify-center items-center w-full">
+            <img 
+              src={image} 
+              alt={`Gallery Image ${index + 1}`} 
+              className="w-full h-auto object-cover" 
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <div className="bg-fixed bg-no-repeat bg-cover bg-galleryBackground w-full h-full">
+      <Navbar />
+      <div className="mb-4 mt-12 text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md font-paperHeader">
+        <p 
+          className="text-[2em]" 
+          style={{
+            WebkitTextStroke: "0.01px black",
+            textShadow: "2px 2px 2px black",
+          }}
+        >
+          GALLERY
+        </p>
+      </div>
+      
+      {/* Conditional rendering based on screen size */}
+      {isMobile ? <MobileGallery /> : <DesktopGallery />}
     </div>
   );
 };
 
 export default GallerySection;
+
+
+
+
