@@ -1,159 +1,161 @@
-import React, { useRef } from 'react';
-import { Palette } from 'lucide-react';
-import photo1 from '../images/impressions_campus_shot.webp'
-import Cleo from '../images/Cleo.png'
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/ui/Footer';
+import { motion } from 'framer-motion';
+import { useNavigate } from "react-router-dom";
+import {
+  PaletteIcon,
+  UsersIcon,
+  CalendarDaysIcon,
+  StarIcon
+} from 'lucide-react';
 
 const AboutUs = () => {
-  const containerRef = useRef(null);
-  const photo1Ref = useRef(null);
-  const cleoRef = useRef(null);
-
-  useGSAP(() => {
-    // Parallax effect for the main photo
-    gsap.to(photo1Ref.current, {
-      yPercent: -18,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top center",
-        end: "bottom center",
-        scrub: 1,
-      }
-    });
-
-    // Parallax effect for Cleo with different speed and direction
-    gsap.to(cleoRef.current, {
-      yPercent: 10,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top center",
-        end: "bottom center",
-        scrub: 0.5,
-      }
-    });
-  }, { scope: containerRef }); // Scope animations to the container
-
-  // const titleRef = useRef(null);
-  // const titleWrapperRef = useRef(null);
-  const descriptionRef = useRef(null);
-
-  
-
-  useGSAP(() => {
-    // Previous title reveal animation code...
-    // const wrapper = titleWrapperRef.current;
-    // const overlay = document.createElement('div');
-    // overlay.style.cssText = `
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background: linear-gradient(to right, #ef4444, #dc2626);
-    //   transform-origin: left;
-    //   z-index: 1;
-    // `;
-    // wrapper.appendChild(overlay);
-
-    // gsap.set(titleRef.current, {
-    //   color: '#1f2937'
-    // });
-
-    // gsap.to(overlay, {
-    //   scaleX: 0,
-    //   transformOrigin: 'left',
-    //   ease: "power2.inOut",
-    //   scrollTrigger: {
-    //     trigger: titleRef.current,
-    //     start: "top center+=100",
-    //     end: "top center",
-    //     scrub: 1
-    //   }
-    // });
-
-    // New description text animation
-    const description = descriptionRef.current;
-    const spans = description.children;
-
-    gsap.from(spans, {
-      fontWeight: 400,
-      color: '#374151', // text-gray-700
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: description,
-        start: "top center+=100",
-        end: "bottom center",
-        scrub: 1,
-      }
-    });
-  });
-
+  const navigate = useNavigate();
   return (
-    <section id="about" className="relative px-4 py-24">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-12 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Palette className="text-red-600" size={28} />
-            <h2 className="text-3xl font-bold">About Impressions</h2>
-          </div>
-          <p className="text-xl font-medium text-red-500">By the Artist, For the Artist</p>
-        </div>
-        
-        <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:items-start">
-          <div className="relative w-full md:w-1/2">
-            <img 
-              src={photo1}
-              alt="Artists at work" 
-              className="object-cover w-full rounded-lg shadow-lg h-80"
-            />
-            <div className="absolute bottom-0 left-0 w-full rounded-b-lg h-1/3 bg-gradient-to-t from-black/30 to-transparent" />
-              <img 
-                src={Cleo} 
-                alt="" 
-                className="absolute h-[8em] -bottom-5 right-0
-                         sm:h-[12em] sm:-bottom-10 sm:right-0
-                         md:h-[18em] md:-bottom-28 md:left-[-8%]
-                         lg:left-[-15%]
-                         xl:left-[-20%]" 
-              />
-          </div>
-          {/* <div>
-            <img src={Cleo} alt="" className='absolute md:h-[20em] bottom-4 md:left-10 right-0 h-[10em]' />
-          </div> */}
-          
-          <div className="w-full md:w-1/2">
-            <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
-              Created by artists who understand the journey, Impressions is your platform to showcase talent, connect with peers, and thrive in a community that speaks your creative language. We believe in empowering artists by providing them with the tools, space, and community they need to flourish. Our platform is more than just a gallery – it's a vibrant ecosystem where creativity meets opportunity, where emerging talents find their voice, and where established artists continue to evolve. Through our curated exhibitions, collaborative spaces, and supportive network, we're fostering an environment where artistic vision can truly come to life.
-            </p>
-          </div>
+    <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
+      {/* Navbar */}
+      <Navbar color="black" />
 
-          <div className="w-full md:w-1/2">
-            <p ref={descriptionRef} className="text-lg leading-relaxed md:text-xl">
-              <span>Created by artists who </span>
-              <span className="font-bold text-red-600">understand the journey</span>
-              <span>, Impressions is your platform to </span>
-              <span className="font-bold text-red-600">showcase talent</span>
-              <span>, connect with peers, and </span>
-              <span className="font-bold text-red-600">thrive in a community</span>
-              <span> that speaks your creative language. We believe in </span>
-              <span className="font-bold text-red-600">empowering artists</span>
-              <span> by providing them with the tools, space, and community they need to flourish. Our platform is more than just a gallery – it's a </span>
-              <span className="font-bold text-red-600">vibrant ecosystem</span>
-              <span> where creativity meets opportunity, where </span>
-              <span className="font-bold text-red-600">emerging talents find their voice</span>
-              <span>, and where established artists continue to evolve. Through our </span>
-              <span className="font-bold text-red-600">curated exhibitions</span>
-              <span>, collaborative spaces, and supportive network, we're fostering an environment where </span>
-              <span className="font-bold text-red-600">artistic vision can truly come to life</span>
-              <span>.</span>
+      {/* Hero Section with Animated Background */}
+      <motion.header
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative h-[20vh] sm:h-[50vh] md:h-[70vh] flex items-center justify-center bg-banner bg-cover bg-no-repeat"
+        style={{
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        {/* <div className="text-center text-white px-4">
+          <motion.h1
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-6xl font-bold mb-4 text-shadow"
+          >
+            Impressions
+          </motion.h1>
+          <motion.p
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="text-xl max-w-2xl mx-auto mb-8"
+          >
+            Rangrez: The Artist Within - A Celebration of Creativity
+          </motion.p>
+        </div> */}
+      </motion.header>
+
+      {/* About Section */}
+      <section className="px-8 py-16 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-center text-gray-800 mb-10"
+          >
+            Welcome to Impressions
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-lg text-gray-700 space-y-6 leading-relaxed"
+          >
+            <p>
+              <strong>Impressions</strong> is the annual cultural fest of COEP TECHNOLOGICAL UNIVERSITY, where creativity, passion, and talent unite to create unforgettable memories. Over the years, Impressions has become a melting pot of music, art, dance, and culture, drawing students and artists from across the region.
             </p>
-          </div>
+            <p>
+              This <strong>9th Edition</strong> celebrates the theme <strong>"Rangrez: The Artist Within"</strong>—a tribute to the boundless creativity of every individual. From dazzling performances to artistic showcases, Impressions is where <strong>every artist finds their canvas</strong>.
+            </p>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Stats Section with Vibrant Design */}
+      <section className="bg-gradient-to-r from-red-400 to-blue-800 text-white py-16">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, staggerChildren: 0.2 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-8 text-center"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              onClick={() => navigate("/teams")}
+              className="bg-white/20 rounded-xl p-8 backdrop-blur-md"
+            >
+              <PaletteIcon className="mx-auto mb-4 text-white" size={48} />
+              <h3 className="text-5xl font-bold mb-2">33</h3>
+              <p className="text-white/80">Core Team Members</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              onClick={() => navigate("/events")}
+              className="bg-white/20 rounded-xl p-8 backdrop-blur-md"
+            >
+              <UsersIcon className="mx-auto mb-4 text-white" size={48} />
+              <h3 className="text-5xl font-bold mb-2">100+</h3>
+              <p className="text-white/80">Overall Events Conducted</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-white/20 rounded-xl p-8 backdrop-blur-md"
+            >
+              <CalendarDaysIcon className="mx-auto mb-4 text-white" size={48} />
+              <h3 className="text-5xl font-bold mb-2">8</h3>
+              <p className="text-white/80">Successful Editions</p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Call to Action with Vibrant Design */}
+      <section className="px-8 py-16 bg-gradient-to-b from-gray-100 to-gray-200 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-bold text-gray-800 mb-6 flex items-center justify-center">
+            <StarIcon className="mr-4 text-red-500" size={36} />
+            Register Now!!
+            <StarIcon className="ml-4 text-red-500" size={36} />
+          </h2>
+          <p className="text-lg mb-8 max-w-3xl mx-auto text-gray-700">
+            Be part of the experience that defines creativity. Witness outstanding performances, connect with fellow artists, and explore the artist within you.
+          </p>
+          <motion.a
+            href="/events"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block px-10 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-500 to-pink-500 rounded-full shadow-lg hover:shadow-xl transition duration-300"
+          >
+            Explore Events
+          </motion.a>
+        </motion.div>
+      </section>
+
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 };
 
