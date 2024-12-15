@@ -13,7 +13,7 @@ import Modules from "./components/Modules";
 import Sponsors from './components/Sponsors.jsx';
 import TeamsSection from './components/teams.js';
 import Showflow from './components/Showflow.js';
-;
+import Gallery from './components/gallery.js'
 export const urls = [
     // {url: '/', name: "Home", element:<ImpressionsNewspaper/> },
     // {url: '/mmi', name: "MMI", element: <VotingForm />},
@@ -25,5 +25,6 @@ export const urls = [
     {url: '/', name: "Module's Page", element: <Modules />},
     {url: '/events/:moduleName', name: "Events Page", element: <EventsPage />},
     {url: '/events/:moduleName/:eventTitle', name: "Explore Page", element: <Explore />},
-    {url : '/showflow', name:"Showflow Page", element : <Showflow/>}
+    {url : '/showflow', name:"Showflow Page", element : <Showflow/>},
+    {url : '/gallery', name:"Gallery Page", element : <Gallery/>}
 ]
