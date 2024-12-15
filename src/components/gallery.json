@@ -1,9 +1,26 @@
 {
-    "images": [
-      "/teams_images/Purva_H.png",
-      "/teams_images/Shubham.jpg",
-      "/teams_images/Smruti_Chaudhari.jpg",
-      "/teams_images/Prithvi_D.png"
-    ]
-  }
-  
+  "images": [
+    "/gallery/concert1.jpg",
+    "/gallery/Arts1.jpg",
+    "/gallery/crowd1.jpg",
+    "/gallery/concert2.jpg",
+    "/gallery/concert3.jpg",
+    "/gallery/Arts4.jpg",
+    "/gallery/Arts5.jpg",
+    "/gallery/Arts2.jpg",
+    "/gallery/crowd3.jpg",
+    "/gallery/crowd2.jpg",
+    "/gallery/Arts3.jpg",
+    "/gallery/concert4.jpg",
+    "/",
+    "/",
+    "/",
+    "/",
+    "/",
+    "/",
+    "/",
+    "/"
+
+    
+  ]
+}
