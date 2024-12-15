@@ -121,7 +121,7 @@ const TeamsSection = () => {
         {teamData.teamSections.map((section, sectionIndex ) => (
           <div key={sectionIndex} className={sectionIndex < teamData.teamSections.length - 1 ? 'mb-40' : ''}>
             <h2
-              className="mb-12 text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md"
+              className="mb-12 text-3xl md:text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md"
               style={{
                 WebkitTextStroke: "1px grey",
               }}
