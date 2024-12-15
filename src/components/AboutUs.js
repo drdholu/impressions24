@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
 import {
   PaletteIcon,
-  UsersIcon,
   CalendarDaysIcon,
   StarIcon
 } from 'lucide-react';
@@ -86,7 +85,7 @@ const AboutUs = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, staggerChildren: 0.2 }}
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-8 text-center"
+            className="flex flex-col md:flex-row gap-8 text-center justify-around"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -100,7 +99,7 @@ const AboutUs = () => {
               <p className="text-white/80">Core Team Members</p>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -110,7 +109,7 @@ const AboutUs = () => {
               <UsersIcon className="mx-auto mb-4 text-white" size={48} />
               <h3 className="text-5xl font-bold mb-2">100+</h3>
               <p className="text-white/80">Overall Events Conducted</p>
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}

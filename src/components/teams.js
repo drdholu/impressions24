@@ -111,7 +111,7 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
 const TeamsSection = () => {
   return (
     <div className="min-h-screen bg-fixed bg-no-repeat bg-cover bg-teamsBackground overflow-hidden ">
-      <Navbar fixed={true}/>
+      <Navbar fixed={true} />
       <div className='mb-12 mt-20  text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md font-paperHeader'><p className='text-[2em]' style={{
         WebkitTextStroke: "0.01px black",
         textShadow: "2px 2px 2px black"
@@ -125,15 +125,13 @@ const TeamsSection = () => {
         {teamData.teamSections.map((section, sectionIndex) => (
           <div key={sectionIndex} className={sectionIndex < teamData.teamSections.length - 1 ? 'mb-40' : 'mb-10'}>
             <h2
-              className="mb-12 text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md"
+              className="mb-12 text-3xl md:text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md"
               style={{
-                WebkitTextStroke: section.title === "Seceratries" ? "2px black" : "1px grey",
+                WebkitTextStroke: "1px grey",
               }}
             >
               {section.title}
             </h2>
-
-
             <div className="flex flex-col items-center space-y-8 md:flex-row md:justify-center md:space-y-0 md:space-x-8 ">
               {section.members.map((member, memberIndex) => (
                 <TeamCard
