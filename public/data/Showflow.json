@@ -157,7 +157,7 @@
         
       ]
     },
-    "eventTypes": ["All", "Inauguration", "Dance", "Music", "Shoutout", "Abhinay","Workshop","Concert"],
-    "venues": ["All", "Main Auditorium", "Prod Arena", "Music Arena"]
+    "eventTypes": ["Inauguration", "Dance", "Music", "Shoutout", "Abhinay","Workshop","Concert"],
+    "venues": ["Main Auditorium", "Prod Arena", "Music Arena"]
   }
   
