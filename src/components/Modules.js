@@ -33,7 +33,7 @@
 
 import React from "react";
 import { Link } from 'react-router-dom';
-import "./Modules.css";
+import '../styles/Modules.css'
 import Navbar from "./Navbar";
 
 function isIphone() {

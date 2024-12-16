@@ -81,7 +81,7 @@ const Navbar = ({ color, fixed }) => {
                 ref={titleRef} 
                 className="text-xl font-semibold text-white bg-clip-text"
               >
-                Impressions 24
+                IMPRESSIONS
               </span>
             </Link>
 

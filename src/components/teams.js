@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import teamData from './teams.json'; // Assume this is the path to the JSON file
+import teamData from '../data/teams.json' 
 import Navbar from './Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -9,6 +9,7 @@ import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 const TeamCard = ({ image, name, role, instagram, linkedin }) => {
   const cardRef = useRef(null);
   const containerRef = useRef(null);
+  
   console.log(instagram);
   useEffect(() => {
     const card = cardRef.current;
@@ -110,9 +111,9 @@ const TeamCard = ({ image, name, role, instagram, linkedin }) => {
 
 const TeamsSection = () => {
   return (
-    <div className="min-h-screen bg-fixed bg-no-repeat bg-cover bg-teamsBackground overflow-hidden ">
+    <div className="min-h-screen overflow-hidden bg-fixed bg-no-repeat bg-cover bg-teamsBackground ">
       <Navbar fixed={true} />
-      <div className='mb-12 mt-20  text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md font-paperHeader'><p className='text-[2em]' style={{
+      <div className='mt-20 mb-12 text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md font-paperHeader'><p className='text-[2em]' style={{
         WebkitTextStroke: "0.01px black",
         textShadow: "2px 2px 2px black"
       }}>9th EDITION</p>
@@ -125,7 +126,7 @@ const TeamsSection = () => {
         {teamData.teamSections.map((section, sectionIndex) => (
           <div key={sectionIndex} className={sectionIndex < teamData.teamSections.length - 1 ? 'mb-40' : 'mb-10'}>
             <h2
-              className="mb-12 text-3xl md:text-5xl font-extrabold tracking-wider text-center text-white uppercase drop-shadow-md"
+              className="mb-12 text-3xl font-extrabold tracking-wider text-center text-white uppercase md:text-5xl drop-shadow-md"
               style={{
                 WebkitTextStroke: "1px grey",
               }}

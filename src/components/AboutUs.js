@@ -6,150 +6,155 @@ import { useNavigate } from "react-router-dom";
 import {
   PaletteIcon,
   CalendarDaysIcon,
-  StarIcon
+  StarIcon,
+  AwardIcon
 } from 'lucide-react';
 
 const AboutUs = () => {
   const navigate = useNavigate();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: {
+        duration: 0.6
+      }
+    }
+  };
+
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
-      {/* Navbar */}
-      <Navbar color="black" />
+    <div className="min-h-screen overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100">
+      <Navbar color="black"/>
 
-      {/* Hero Section with Animated Background */}
-      <motion.header
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative h-[20vh] sm:h-[50vh] md:h-[70vh] flex items-center justify-center bg-banner bg-cover bg-no-repeat"
-        style={{
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        {/* <div className="text-center text-white px-4">
-          <motion.h1
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-6xl font-bold mb-4 text-shadow"
-          >
-            Impressions
-          </motion.h1>
-          <motion.p
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-xl max-w-2xl mx-auto mb-8"
-          >
-            Rangrez: The Artist Within - A Celebration of Creativity
-          </motion.p>
-        </div> */}
-      </motion.header>
+      <section>
+        <motion.header
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative h-[30vh] sm:h-[50vh] md:h-[60vh] flex items-center justify-center 
+          bg-cover bg-center bg-no-repeat bg-banner"
+          style={{
+            // backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/api/placeholder/1920/800)',
+            backgroundBlendMode: 'multiply'
+          }}
+        >
+          <div className="z-10 px-4 text-center text-white">
+            <motion.h1
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              className="mb-4 text-4xl font-extrabold text-transparent sm:text-5xl md:text-6xl bg-clip-text bg-gradient-to-r from-white to-gray-300"
+            >
+              IMPRESSIONS
+            </motion.h1>
+            <motion.p
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              className="max-w-2xl mx-auto mb-8 text-lg font-medium tracking-wide text-gray-200 shadow-xl sm:text-xl"
+            >
+              Rangrez: The Artist Within - A Celebration of Creativity
+            </motion.p>
+          </div>
+        </motion.header>
 
-      {/* About Section */}
-      <section className="px-8 py-16 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <motion.h2
+        <section className="px-8 py-16 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="mb-8 text-3xl font-bold text-center text-red-500">
+              Welcome to IMPRESSIONS
+            </h2>
+
+            <div className="p-6 space-y-4 text-gray-700 rounded-lg bg-gray-50">
+              <p>
+                IMPRESSIONS is the annual cultural fest of COEP TECHNOLOGICAL UNIVERSITY. 
+                It brings together students and artists to celebrate music, art, dance, and culture.
+              </p>
+              <p>
+                This 9th Edition celebrates the theme "Rangrez: The Artist Within" - 
+                where creativity knows no bounds and every artist finds their canvas.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="py-16 text-white bg-gradient-to-r from-red-500 to-purple-600">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid max-w-6xl grid-cols-1 gap-8 px-8 mx-auto md:grid-cols-3"
+          >
+            <motion.div
+              variants={itemVariants}
+              className="p-8 text-center transition-all duration-300 transform cursor-pointer bg-white/20 rounded-2xl backdrop-blur-md hover:scale-105 hover:shadow-2xl"
+              onClick={() => navigate("/teams")}
+            >
+              <PaletteIcon className="mx-auto mb-4 text-white" size={48} />
+              <h3 className="mb-2 text-5xl font-black text-white">33</h3>
+              <p className="font-medium text-white/80">Core Team Members</p>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="p-8 text-center transition-all duration-300 transform cursor-pointer bg-white/20 rounded-2xl backdrop-blur-md hover:scale-105 hover:shadow-2xl"
+            >
+              <CalendarDaysIcon className="mx-auto mb-4 text-white" size={48} />
+              <h3 className="mb-2 text-5xl font-black text-white">8</h3>
+              <p className="font-medium text-white/80">Successful Editions</p>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="p-8 text-center transition-all duration-300 transform cursor-pointer bg-white/20 rounded-2xl backdrop-blur-md hover:scale-105 hover:shadow-2xl"
+            >
+              <AwardIcon className="mx-auto mb-4 text-white" size={48} />
+              <h3 className="mb-2 text-5xl font-black text-white">100+</h3>
+              <p className="font-medium text-white/80">Total Performances</p>
+            </motion.div>
+          </motion.div>
+        </section>
+
+        {/* Enhanced Call to Action */}
+        <section className="px-8 py-16 bg-gradient-to-b from-gray-100 to-gray-200">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold text-center text-gray-800 mb-10"
+            className="max-w-4xl mx-auto text-center"
           >
-            Welcome to Impressions
-          </motion.h2>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-lg text-gray-700 space-y-6 leading-relaxed"
-          >
-            <p>
-              <strong>Impressions</strong> is the annual cultural fest of COEP TECHNOLOGICAL UNIVERSITY, where creativity, passion, and talent unite to create unforgettable memories. Over the years, Impressions has become a melting pot of music, art, dance, and culture, drawing students and artists from across the region.
+            <h2 className="flex items-center justify-center mb-6 text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-600">
+              <StarIcon className="mr-4 text-red-500" size={36} />
+              Register Now!!
+              <StarIcon className="ml-4 text-red-500" size={36} />
+            </h2>
+            <p className="max-w-2xl mx-auto mb-8 text-lg text-gray-700">
+              Be part of the experience that defines creativity. Witness outstanding performances, 
+              connect with fellow artists, and explore the artist within you.
             </p>
-            <p>
-              This <strong>9th Edition</strong> celebrates the theme <strong>"Rangrez: The Artist Within"</strong>—a tribute to the boundless creativity of every individual. From dazzling performances to artistic showcases, Impressions is where <strong>every artist finds their canvas</strong>.
-            </p>
+            <motion.a
+              href="/events"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-12 py-4 text-lg font-bold text-white transition duration-300 transform rounded-full shadow-lg bg-gradient-to-r from-red-500 to-pink-500 hover:shadow-xl hover:-translate-y-1"
+            >
+              Explore Events
+            </motion.a>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Stats Section with Vibrant Design */}
-      <section className="bg-gradient-to-r from-red-400 to-blue-800 text-white py-16">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, staggerChildren: 0.2 }}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row gap-8 text-center justify-around"
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              onClick={() => navigate("/teams")}
-              className="bg-white/20 rounded-xl p-8 backdrop-blur-md"
-            >
-              <PaletteIcon className="mx-auto mb-4 text-white" size={48} />
-              <h3 className="text-5xl font-bold mb-2">33</h3>
-              <p className="text-white/80">Core Team Members</p>
-            </motion.div>
-
-            {/* <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              onClick={() => navigate("/events")}
-              className="bg-white/20 rounded-xl p-8 backdrop-blur-md"
-            >
-              <UsersIcon className="mx-auto mb-4 text-white" size={48} />
-              <h3 className="text-5xl font-bold mb-2">100+</h3>
-              <p className="text-white/80">Overall Events Conducted</p>
-            </motion.div> */}
-
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white/20 rounded-xl p-8 backdrop-blur-md"
-            >
-              <CalendarDaysIcon className="mx-auto mb-4 text-white" size={48} />
-              <h3 className="text-5xl font-bold mb-2">8</h3>
-              <p className="text-white/80">Successful Editions</p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Call to Action with Vibrant Design */}
-      <section className="px-8 py-16 bg-gradient-to-b from-gray-100 to-gray-200 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl font-bold text-gray-800 mb-6 flex items-center justify-center">
-            <StarIcon className="mr-4 text-red-500" size={36} />
-            Register Now!!
-            <StarIcon className="ml-4 text-red-500" size={36} />
-          </h2>
-          <p className="text-lg mb-8 max-w-3xl mx-auto text-gray-700">
-            Be part of the experience that defines creativity. Witness outstanding performances, connect with fellow artists, and explore the artist within you.
-          </p>
-          <motion.a
-            href="/events"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block px-10 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-500 to-pink-500 rounded-full shadow-lg hover:shadow-xl transition duration-300"
-          >
-            Explore Events
-          </motion.a>
-        </motion.div>
+        </section>
       </section>
 
       {/* Footer */}
