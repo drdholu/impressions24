@@ -1,6 +1,6 @@
 {
     "multiDayEvents": {
-      "day1": [
+      "17th Dec": [
         {
           "id": 1,
           "title": "Inauguration",
@@ -12,7 +12,7 @@
           "venue": "Main Auditorium"
         }
       ],
-      "day2": [
+      "18th Dec": [
         {
           "id": 1,
           "title": "Step It Up Elms",
@@ -84,7 +84,7 @@
           "venue": "Main Auditorium"
         }
       ],
-      "day3": [
+      "19th Dec": [
         {
           "id": 1,
           "title": "Stay Tuned",
