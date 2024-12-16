@@ -12,7 +12,6 @@ import {
 
 const AboutUs = () => {
   const navigate = useNavigate();
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
