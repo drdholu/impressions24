@@ -72,7 +72,7 @@ module.exports = {
         "parallax-4": "url('/public/CAMERA.jpg')",
         "parallax-5": "url('/public/SHOUTOUT.jpg')",
         "parallax-6": "url('/public/abhinay.jpg')",
-        "teamsBackground": "url('/public/teams_bg.jpg')",
+        "teamsBackground": "url('/public/teams_bg.webp')",
         "banner": "url('/public/banner.png')",
       },
 
