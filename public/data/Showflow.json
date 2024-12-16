@@ -39,7 +39,7 @@
           "time": "12:30 PM",
           "description": "Elimination Round of the Classical and Semi-Classical Music Competition",
           "location": "Prod Arena",
-          "direction": "right",
+          "direction": "left",
           "type": "Music",
           "venue": "Prod Arena"
         },
@@ -57,9 +57,9 @@
           "id": 5,
           "title": "Workshop",
           "time": "02:30 PM",
-          "description": "",
+          "description": "Experience the rhythm and energy of West African music with the djembe, a versatile hand drum known for its rich tones and dynamic beats.",
           "location": "Music Arena",
-          "direction": "right",
+          "direction": "left",
           "type": "Workshop",
           "venue": "Music Arena"
         },
@@ -79,7 +79,7 @@
           "time": "6:30 PM",
           "description": "A Sufi night of Musical Healing with Impressions.",
           "location": "Main Auditorium",
-          "direction": "right",
+          "direction": "left",
           "type": "Concert",
           "venue": "Main Auditorium"
         }
@@ -109,9 +109,9 @@
           "id": 3,
           "title": "Workshop",
           "time": "10:30 AM",
-          "description": "",
+          "description": "Experience the rhythm and energy of West African music with the djembe, a versatile hand drum known for its rich tones and dynamic beats.",
           "location": "Prod Arena",
-          "direction": "right",
+          "direction": "left",
           "type": "Workshop",
           "venue": "Prod Arena"
         },
@@ -131,7 +131,7 @@
           "time": "1:00 PM",
           "description": "Final Round of Open Genre Dance Competition",
           "location": "Main Auditorium",
-          "direction": "right",
+          "direction": "left",
           "type": "Dance",
           "venue": "Main Auditorium"
         },
@@ -149,9 +149,8 @@
           "id": 7,
           "title": "Maahi",
           "time": "6:00 PM",
-          "description": "",
-          "location": "Music Arena",
-          "direction": "right",
+          "description": "A night full of music, energy, and memories awaits you.",
+          "direction": "left",
           "type": "Concert",
           "venue": "Music Arena"
         }
