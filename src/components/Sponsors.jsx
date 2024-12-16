@@ -23,9 +23,9 @@ import maharashtra from './images/sponsors/Maharashtra-Times-logo.jpg'
 import SponsorsCard from './SponsorsCard';
 const sponsorsData = {
   "Associate Sponsors": [
-    { name: "Emerald", photo: emerald, description: "Jewellery Partner",link:`https://www.cognavi.com/` },
-    { name: "Officials", photo: perfume, description: "Pefume Partner",link:`https://www.cognavi.com/` },
-    { name: "Vrukshavalli", photo: plant, description: "Plant Nursery Partner",link:`https://www.cognavi.com/` },
+    { name: "Emerald", photo: emerald, description: "Jewellery Partner" },
+    { name: "Officials", photo: perfume, description: "Pefume Partner" },
+    { name: "Vrukshavalli", photo: plant, description: "Plant Nursery Partner" },
   ],
   "Media Partners": [
     { name: "Golden Papaya", photo: golden_papaya, description: "Online Media Partner",link:`https://goldenpapaya.in/` },
