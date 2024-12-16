@@ -1,5 +1,5 @@
 // App.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // import CoordinatorForm from './components/CoordinatorForm';
 // import VolunteerForm from './components/VolunteerForm';
@@ -24,6 +24,12 @@ import EventsPage from './components/EventsPage'
 import Explore from './components/Explore'
 
 const App = () => {
+  useEffect(() => {
+    // Preload image
+    const img = new Image();
+    img.src = '/public/teams_bg.webp';
+  }, []);
+
   return (
     // <Preloader>
     <div className=''>
