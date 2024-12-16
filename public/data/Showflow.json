@@ -3,81 +3,162 @@
       "day1": [
         {
           "id": 1,
-          "title": "Project Launch",
-          "time": "10:00 AM",
-          "description": "Kickoff meeting for our exciting new project",
-          "location": "Conference Room A",
+          "title": "Inauguration",
+          "time": "3:00 PM",
+          "description": "Inaguration event of COEP Impressions 2024",
+          "location": "Main Auditorium",
           "direction": "left",
-          "type": "meeting",
-          "venue": "Conference Room A"
-        },
-        {
-          "id": 2,
-          "title": "Team Strategy Session",
-          "time": "2:00 PM",
-          "description": "Detailed project planning and goal setting",
-          "location": "Meeting Room B",
-          "direction": "right",
-          "type": "strategy",
-          "venue": "Meeting Room B"
-        },
-        {
-          "id": 3,
-          "title": "Initial Requirements Review",
-          "time": "4:30 PM",
-          "description": "Discuss and finalize project requirements",
-          "location": "Executive Boardroom",
-          "direction": "left",
-          "type": "review",
-          "venue": "Executive Boardroom"
+          "type": "Inauguration",
+          "venue": "Main Auditorium"
         }
       ],
       "day2": [
         {
           "id": 1,
-          "title": "Workshop on Development",
-          "time": "11:00 AM",
-          "description": "Interactive session with industry experts",
-          "location": "Tech Hall",
+          "title": "Step It Up Elms",
+          "time": "10:00 AM",
+          "description": "Elimination Round of Open Genre Dance Competition",
+          "location": "Prod Arena",
           "direction": "left",
-          "type": "workshop",
-          "venue": "Tech Hall"
+          "type": "Dance",
+          "venue": "Prod Arena"
         },
         {
           "id": 2,
-          "title": "Code Review Session",
-          "time": "3:00 PM",
-          "description": "Improving project code quality",
-          "location": "Lab Room C",
+          "title": "Nrityangana",
+          "time": "11:00 AM",
+          "description": "Classical and Semi-Classical Dance Competition",
+          "location": "Main Auditorium",
           "direction": "right",
-          "type": "presentation",
-          "venue": "Lab Room C"
+          "type": "Dance",
+          "venue": "Main Auditorium"
+        },
+        {
+          "id": 3,
+          "title": "Saavani Elims",
+          "time": "12:30 PM",
+          "description": "Elimination Round of the Classical and Semi-Classical Music Competition",
+          "location": "Prod Arena",
+          "direction": "right",
+          "type": "Music",
+          "venue": "Prod Arena"
+        },
+        {
+          "id": 4,
+          "title": "Dance Dil Se",
+          "time": "01:30 PM",
+          "description": "Bollywood Dance Competition",
+          "location": "Main Auditorium",
+          "direction": "right",
+          "type": "Dance",
+          "venue": "Main Auditorium"
+        },
+        {
+          "id": 5,
+          "title": "Workshop",
+          "time": "02:30 PM",
+          "description": "",
+          "location": "Music Arena",
+          "direction": "right",
+          "type": "Workshop",
+          "venue": "Music Arena"
+        },
+        {
+          "id": 6,
+          "title": "THE COEP Open Mic Elims",
+          "time": "4:00 PM",
+          "description": "Shayari, poetry, storytelling, monologue and standup comedy competition.",
+          "location": "Prod Arena",
+          "direction": "right",
+          "type": "Shoutout",
+          "venue": "Prod Arena"
+        },
+        {
+          "id": 7,
+          "title": "The Jogi Experience",
+          "time": "6:30 PM",
+          "description": "A Sufi night of Musical Healing with Impressions.",
+          "location": "Main Auditorium",
+          "direction": "right",
+          "type": "Concert",
+          "venue": "Main Auditorium"
         }
       ],
       "day3": [
         {
           "id": 1,
-          "title": "Final Presentation",
-          "time": "9:30 AM",
-          "description": "Showcasing project outcomes to stakeholders",
-          "location": "Auditorium",
+          "title": "Stay Tuned",
+          "time": "9:00 AM",
+          "description": "Solo musical instrument Competition",
+          "location": "Music Arena",
           "direction": "left",
-          "type": "presentation",
-          "venue": "Auditorium"
+          "type": "Music",
+          "venue": "Music Arena"
         },
         {
           "id": 2,
-          "title": "Feedback & Closing",
-          "time": "12:00 PM",
-          "description": "Collecting feedback and concluding the event",
-          "location": "Main Hall",
+          "title": "Saavani Finals",
+          "time": "10:00 AM",
+          "description": "Final Round of the Classical and Semi-Classical Music Competition",
+          "location": "Main Auditorium",
           "direction": "right",
-          "type": "closing",
-          "venue": "Main Hall"
+          "type": "Music",
+          "venue": "Main Auditorium"
+        },
+        {
+          "id": 3,
+          "title": "Workshop",
+          "time": "10:30 AM",
+          "description": "",
+          "location": "Prod Arena",
+          "direction": "right",
+          "type": "Workshop",
+          "venue": "Prod Arena"
+        },
+        {
+          "id": 4,
+          "title": "Scene Sational",
+          "time": "12:30 PM",
+          "description": "Movie Re-enacting Competition",
+          "location": "Prod Arena",
+          "direction": "right",
+          "type": "Abhinay",
+          "venue": "Prod Arena"
+        },
+        {
+          "id": 5,
+          "title": "Step It Up Finals",
+          "time": "1:00 PM",
+          "description": "Final Round of Open Genre Dance Competition",
+          "location": "Main Auditorium",
+          "direction": "right",
+          "type": "Dance",
+          "venue": "Main Auditorium"
+        },
+        {
+          "id": 6,
+          "title": "THE COEP Open Mic",
+          "time": "3:30 PM",
+          "description": "Final Round of Shayari, poetry, storytelling, monologue and standup comedy competition.",
+          "location": "Main Auditorium",
+          "direction": "right",
+          "type": "Shoutout",
+          "venue": "Main Auditorium"
+        },
+        {
+          "id": 7,
+          "title": "Maahi",
+          "time": "6:00 PM",
+          "description": "",
+          "location": "Music Arena",
+          "direction": "right",
+          "type": "Concert",
+          "venue": "Music Arena"
         }
+        
       ]
     },
-    "eventTypes": ["All", "meeting", "strategy", "review", "workshop", "presentation", "closing"],
-    "venues": ["All", "Conference Room A", "Meeting Room B", "Executive Boardroom", "Tech Hall", "Lab Room C", "Auditorium", "Main Hall"]
+    "eventTypes": ["All", "Inauguration", "Dance", "Music", "Shoutout", "Abhinay","Workshop","Concert"],
+    "venues": ["All", "Main Auditorium", "Prod Arena", "Music Arena"]
   }
   

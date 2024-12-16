@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, Clock } from 'lucide-react';
 import TimelineNavigation from './TimelineNavigation';
 import Navbar from './Navbar.js';
-
 const Timeline = () => {
   const [activeDay, setActiveDay] = useState('day1');
   const [activeEvent, setActiveEvent] = useState(null);
