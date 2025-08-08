@@ -3,7 +3,7 @@ import bg from '../images/bg-13.png'
 import logo from '../images/impressions text logo.png'
 import paperTexture from '../images/texture-2.png'
 import dividerLine from '../images/divider-3.png'
-import { ChevronRight, Clapperboard, PenLine, Calculator, ChartNoAxesCombined, Palette, BookOpen, Landmark, Briefcase, Brush, FileText, Users, DollarSign, Camera, Globe, ShoppingBag, Settings, Megaphone, Code2, Film } from 'lucide-react'
+import { ChevronRight, Clapperboard, PenLine, ChartNoAxesCombined, Palette, Landmark, Briefcase, FileText, Users, DollarSign, Camera, ShoppingBag, Settings, Megaphone, Code2 } from 'lucide-react'
 
 const iconMap = {
   'Accounts': Landmark,
@@ -257,8 +257,8 @@ const CoordinatorInductionResults = () => {
     {
       title: 'Media',
       names: [
-        'Omsai',
-        'Twinkle',
+        'Omsai Kahalekar',
+        'Twinkle Tahilramani',
         'Manas Chaudhari',
         'Shreya Kuwar',
         'Sonia Pagare'
