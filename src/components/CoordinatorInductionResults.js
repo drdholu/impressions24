@@ -3,6 +3,7 @@ import bg from '../images/bg-13.png'
 import logo from '../images/impressions text logo.png'
 import paperTexture from '../images/texture-2.png'
 import dividerLine from '../images/divider-3.png'
+import { useNavigate } from 'react-router-dom'
 import { ChevronRight, Clapperboard, PenLine, ChartNoAxesCombined, Palette, Landmark, Briefcase, FileText, Users, DollarSign, Camera, ShoppingBag, Settings, Megaphone, Code2 } from 'lucide-react'
 
 const iconMap = {
@@ -102,6 +103,7 @@ const PortfolioSection = ({ title, names, innerWidth }) => {
 }
 
 const CoordinatorInductionResults = () => {
+  const navigate = useNavigate()
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
 
   window.addEventListener('resize', () => {
@@ -204,10 +206,10 @@ const CoordinatorInductionResults = () => {
       names: [
         'Darshan Jadhav',
         'Soham Akolkar',
-        'Parmita Bambarde',
+        'Parmita Bombarde',
         'Dnyaneshwari Phartade',
         'Nikhil Gawade',
-        'Mehek Barapatre',
+        'Mehak Barapatre',
         'Krish Kolhiya',
         'Manan Sharma',
         'Haymashree Gaddhe',
@@ -250,7 +252,7 @@ const CoordinatorInductionResults = () => {
         'Purvansh Patel',
         'Swaraj Nayakawadi',
         'Tanmayi Barde',
-        'Mohd. Mehandi',
+        'Mohd. Mehnadi',
         'Anushka Joshi'
       ]
     },
@@ -267,9 +269,9 @@ const CoordinatorInductionResults = () => {
     {
       title: 'Print and Purchase',
       names: [
-        'Samruddhi Bodke',
+        'Samruddhi Bodkhe',
         'Om Haral',
-        'Saumya Dhere',
+        'Saumya Dere',
         'Naman Tahaliya',
         'Vedant Satao',
         'Rohit Naikwadi',
@@ -371,7 +373,9 @@ const CoordinatorInductionResults = () => {
           className="w-full h-full"
           style={getResponsiveStyles()}
         >
-          <div className="flex justify-center mb-6 mt-6 sm:mt-0">
+          <div className="flex justify-center cursor-pointer mb-6 mt-6 sm:mt-0"
+          onClick={() => window.location.href="https://coepimpressions.org/"}
+          >
             <img src={logo} alt="Impressions Logo" className="h-20" />
           </div>
 
