@@ -1,1 +1,37 @@
 @import './App.css';
+
+/* 
+@font-face {
+  font-family: 'CSBlacken';
+  src: url('./fonts/CS-Blacken-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+} 
+*/
+
+@font-face{
+  font-family: "Marker Font";
+  src: url('./fonts/marker-font.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JMH Typewriter';
+  src: url('./fonts/jmh-typewriter-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'JMH Typewriter Bold';
+  src: url('./fonts/jmh-typewriter-bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NCL Bliss Sureal";
+  src: url('./fonts/ncl-bliss-sureal.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

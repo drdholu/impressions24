@@ -22,6 +22,7 @@ import CustomCursor from './components/ui/CustomeCursor';
 // import Spline from '@splinetool/react-spline';
 import EventsPage from './components/EventsPage'
 import Explore from './components/Explore'
+import CoordinatorInductionResults from './components/CoordinatorInductionResults';
 
 const App = () => {
   useEffect(() => {
@@ -44,7 +45,9 @@ const App = () => {
           })}
           <Route path='/events/:moduleName' element={<EventsPage />} />
           <Route path='/events/:moduleName/:eventTitle' element={<Explore />} />
+          <Route path='/coordinator-induction-results' element={<CoordinatorInductionResults />} />
           <Route path="*" element={<ErrorPage />} />
+       
         </Routes>
       </TransitionWrapper>
       <BackToTop />
