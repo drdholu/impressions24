@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import bg from '../images/bg-13.png'
 import logo from '../images/impressions text logo.png'
 import paperTexture from '../images/texture-2.png'
 import dividerLine from '../images/divider-3.png'
-import { ChevronRight, Clapperboard, PenLine, ChartNoAxesCombined, Palette, Landmark, Briefcase, FileText, Users, DollarSign, Camera, ShoppingBag, Settings, Megaphone, Code2 } from 'lucide-react'
+import { ChevronRight, Calculator, Clapperboard, PenLine, ChartNoAxesCombined, Palette, Briefcase, FileText, Users, DollarSign, Camera, ShoppingBag, Settings, Megaphone, Code2 } from 'lucide-react'
 
 const iconMap = {
-  'Accounts': Landmark,
+  'Accounts': Calculator,
   'Corporate Outreach Group': Briefcase,
   'Decor': Palette,
   'Design': PenLine,
@@ -104,6 +104,10 @@ const PortfolioSection = ({ title, names, innerWidth }) => {
 const CoordinatorInductionResults = () => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
 
+  useEffect(()=> {
+    document.title = "Coordinator Induction Results 2025 | COEP Impressions"
+  }, []);
+
   window.addEventListener('resize', () => {
     setInnerWidth(window.innerWidth)
   })
@@ -183,7 +187,7 @@ const CoordinatorInductionResults = () => {
       names: [
         'Saie Sasankar',
         'Rushikesh Kamble',
-        'Aditi Kumthewar',
+        'Aditi Kunthewar',
         'Devyani Farsole',
         'Dhananjay Jirekar',
         'Aditi Jaiswal',
@@ -224,17 +228,17 @@ const CoordinatorInductionResults = () => {
         'Aman Arora',
         'Arush Koul',
         'Aaroh Joshi',
-        'Vedant Nigam',
+        'Vedang Nikam',
         'Tanvi Kshirsagar',
         'Gunjan Kudmethe',
         'Atulya Anand',
-        'Aryan Rasne',
+        'Aryan Rasane',
         'Bhavesha Sanap',
         'Ashmit Jain',
         'Dhanvi Pethe',
         'Harshal Kokate',
         'Raghav Mehta',
-        'Varad Badve',
+        'Varad Badave',
       ]
     },
     {
@@ -307,7 +311,7 @@ const CoordinatorInductionResults = () => {
         'Om Kolape',
         'Shravani Shinde',
         'Mayur Ganwani',
-        'Chinmayi Alandkar',
+        'Chinmayee Alandkar',
         'Rishma Raj',
       ]
     },
