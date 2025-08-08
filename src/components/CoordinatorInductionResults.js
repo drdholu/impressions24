@@ -322,7 +322,7 @@ const CoordinatorInductionResults = () => {
         'Sahil Gade',
         'Somesh Mistri',
         'Ashwin Tajane',
-        'Samruddhi Badak',
+        'Samruddhi Badakh',
         'Tanishq Gaikwad',
         'Manali Bhalgat',
         'Soham Tonape',
