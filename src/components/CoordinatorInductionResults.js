@@ -166,22 +166,22 @@ const CoordinatorInductionResults = () => {
       names: [
         'Reetisha Gajbhiy',
         'Radhika Rajput',
-        'Yashada Salunke',
+        'Yashada Salunkhe',
         'Rutuja Shinde',
-        'Rutuja Suratkar',
+        'Rutuja Suradkar',
         'Radhika Parkhi',
         'Sanchita Mane',
         'Anuj Pawar',
-        'Prathmesh Awale',
+        'Prathmesh Avale',
         'Vaibhav Kambne',
-        'Prajwal Yadav',
+        'Prajval Yadav',
         'Omkar Kekan'
       ]
     },
     {
       title: 'Design',
       names: [
-        'Sai Shasankar',
+        'Saie Sasankar',
         'Rushikesh Kamble',
         'Aditi Kumthewar',
         'Devyani Farsole',
@@ -205,16 +205,16 @@ const CoordinatorInductionResults = () => {
         'Darshan Jadhav',
         'Soham Akolkar',
         'Parmita Bambarde',
-        'Dnyaneshwari Fartade',
-        'Nikhil Gavde',
+        'Dnyaneshwari Phartade',
+        'Nikhil Gawade',
         'Mehek Barapatre',
         'Krish Kolhiya',
         'Manan Sharma',
-        'Hemashree Gade',
-        'Ayush Rengde',
+        'Haymashree Gaddhe',
+        'Ayush Rengade',
         'Aastha Bhagat',
-        'Arya Ghadge',
-        'Swarali Bhope',
+        'Aarya Ghadge',
+        'Swaralee Bhope',
         'Ankit Gaikwad'
       ]
     },
@@ -222,7 +222,7 @@ const CoordinatorInductionResults = () => {
       title: 'Finance and Sponsorships',
       names: [
         'Aman Arora',
-        'Arush Kaul',
+        'Arush Koul',
         'Aaroh Joshi',
         'Vedant Nigam',
         'Tanvi Kshirsagar',
@@ -248,9 +248,9 @@ const CoordinatorInductionResults = () => {
         'Adarsh Choudhury',
         'Tanushka Gulhane',
         'Purvansh Patel',
-        'Swaraj Nayakwadi',
+        'Swaraj Nayakawadi',
         'Tanmayi Barde',
-        'Mohd. Mehnadi',
+        'Mohd. Mehandi',
         'Anushka Joshi'
       ]
     },
@@ -314,16 +314,16 @@ const CoordinatorInductionResults = () => {
     {
       title: 'VFX',
       names: [
-        'Paras Labde',
+        'Paras Labade',
         'Amey Bonde',
         'Suyash Joshi',
         'Manish Waste',
-        'Pratham Thomre',
+        'Pratham Thombre',
         'Sahil Gade',
         'Somesh Mistri',
         'Ashwin Tajane',
         'Samruddhi Badak',
-        'Tanishk Gaikwad',
+        'Tanishq Gaikwad',
         'Manali Bhalgat',
         'Soham Tonape',
       ]
@@ -331,11 +331,11 @@ const CoordinatorInductionResults = () => {
     {
       title: 'Web',
       names: [
-        'Shrutika Chavan',
-        'Nikhil Sahita',
-        'Shubham Garje',
+        'Shrutika Sanjaykumar Chavan',
+        'Nikhil Dinesh Sahita',
+        'Shubham Vijay Garje',
         'Bramha Lambate',
-        'Tanvi Phadke',
+        'Tanvi Makarand Phadke',
         'Tanishqa Chopade'
       ]
     }
