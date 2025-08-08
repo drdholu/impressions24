@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import bg from '../images/bg-13.png'
+import bg from '../images/bg-15.png'
+import overlay from '../images/bg-17.jpg'
 import logo from '../images/impressions text logo.png'
-import paperTexture from '../images/texture-2.png'
 import dividerLine from '../images/divider-3.png'
-import { ChevronRight, Calculator, Clapperboard, PenLine, ChartNoAxesCombined, Palette, Briefcase, FileText, Users, DollarSign, Camera, ShoppingBag, Settings, Megaphone, Code2 } from 'lucide-react'
+import { ChevronRight, Clapperboard, PenLine, ChartNoAxesCombined, Palette, Briefcase, FileText, Users, DollarSign, Camera, ShoppingBag, Settings, Megaphone, Code2, Wallet } from 'lucide-react'
 
 const iconMap = {
-  'Accounts': Calculator,
+  'Accounts': Wallet,
   'Corporate Outreach Group': Briefcase,
   'Decor': Palette,
   'Design': PenLine,
@@ -104,13 +104,13 @@ const PortfolioSection = ({ title, names, innerWidth }) => {
 const CoordinatorInductionResults = () => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
 
-  useEffect(()=> {
-    document.title = "Coordinator Induction Results 2025 | COEP Impressions"
-  }, []);
-
   window.addEventListener('resize', () => {
     setInnerWidth(window.innerWidth)
   })
+
+    useEffect(()=> {
+    document.title = "Coordinator Induction Results 2025 | COEP Impressions"
+  }, []);
 
   const getResponsiveStyles = () => {
     const baseStyles = {
@@ -122,9 +122,10 @@ const CoordinatorInductionResults = () => {
       boxSizing: 'border-box',
       backgroundColor: '#ffffffff',
       backgroundBlendMode: 'multiply',
-      backgroundImage: `url(${paperTexture})`,
-      backgroundRepeat: 'repeat',
-      backgroundSize: '400px 400px',
+      backgroundImage: `url(${overlay})`,
+      backgroundSize: 'Cover'
+      // backgroundRepeat: 'repeat',
+      // backgroundSize: '400px 400px',
     };
 
     if (innerWidth < 400) {
@@ -156,7 +157,7 @@ const CoordinatorInductionResults = () => {
         'Tejas Kadam',
         'Mansi Gattani',
         'Sakshi Deokar',
-        'Shreya Suryavanshi',
+        'Indira Narke',
         'Ayushi Tidke',
         'Sahas Nayar',
         'Pari More',
@@ -207,7 +208,8 @@ const CoordinatorInductionResults = () => {
       title: 'Events and Proshows',
       names: [
         'Darshan Jadhav',
-        'Soham Akolkar',
+        'Shreya Suryavanshi',
+
         'Parmita Bombarde',
         'Dnyaneshwari Phartade',
         'Nikhil Gawade',
@@ -321,7 +323,6 @@ const CoordinatorInductionResults = () => {
         'Paras Labade',
         'Amey Bonde',
         'Suyash Joshi',
-        'Manish Waste',
         'Pratham Thombre',
         'Sahil Gade',
         'Somesh Mistri',
@@ -343,7 +344,7 @@ const CoordinatorInductionResults = () => {
         'Tanishqa Chopade'
       ]
     }
-  ]
+  ];
 
   return (
     <div
@@ -352,8 +353,8 @@ const CoordinatorInductionResults = () => {
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        // backgroundColor: 'white',
-        // backgroundBlendMode: 'multiply',
+        backgroundColor: 'white',
+        backgroundBlendMode: 'multiply',
         backgroundAttachment: 'fixed'
       }}
     >
@@ -366,7 +367,7 @@ const CoordinatorInductionResults = () => {
           position: 'relative',
           backgroundColor: '#ffffffff',
           backgroundBlendMode: 'multiply',
-          backgroundImage: `url(${paperTexture})`,
+          backgroundImage: `url(${overlay})`,
           backgroundRepeat: 'repeat',
           backgroundSize: '400px 400px',
         }}
@@ -375,9 +376,7 @@ const CoordinatorInductionResults = () => {
           className="w-full h-full"
           style={getResponsiveStyles()}
         >
-          <div className="flex justify-center cursor-pointer mb-6 mt-6 sm:mt-0"
-          onClick={() => window.location.href="https://coepimpressions.org/"}
-          >
+          <div className="flex justify-center mb-6 mt-6 sm:mt-0">
             <img src={logo} alt="Impressions Logo" className="h-20" />
           </div>
 
@@ -396,9 +395,8 @@ const CoordinatorInductionResults = () => {
               COORDINATOR INDUCTION RESULTS 2025
             </h2>
 
-            <img src={dividerLine} alt="Divider Line" className="max-w-[90%] sm:max-w-[400px] mt-5 mx-auto" />
+             <img src={dividerLine} alt="Divider Line" className="max-w-[90%] sm:max-w-[400px] mt-5 mx-auto" />
           </div>
-
           <div className="px-2">
             {portfolios.map((portfolio, idx) => (
               <PortfolioSection
