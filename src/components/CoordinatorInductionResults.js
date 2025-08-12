@@ -209,7 +209,6 @@ const CoordinatorInductionResults = () => {
       names: [
         'Darshan Jadhav',
         'Shreya Suryavanshi',
-
         'Parmita Bombarde',
         'Dnyaneshwari Phartade',
         'Nikhil Gawade',
@@ -257,7 +256,8 @@ const CoordinatorInductionResults = () => {
         'Swaraj Nayakawadi',
         'Tanmayi Barde',
         'Mohd. Mehnadi',
-        'Anushka Joshi'
+        'Anushka Joshi',
+        'Ananya Patil'
       ]
     },
     {
