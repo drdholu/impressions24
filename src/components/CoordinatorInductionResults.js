@@ -177,10 +177,10 @@ const CoordinatorInductionResults = () => {
         'Radhika Parkhi',
         'Sanchita Mane',
         'Anuj Pawar',
-        'Prathmesh Avale',
+        'Pratamesh Avale',
         'Vaibhav Kambne',
         'Prajval Yadav',
-        'Omkar Kekan'
+        'Aditya Thube'
       ]
     },
     {
