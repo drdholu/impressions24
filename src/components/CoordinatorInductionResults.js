@@ -123,9 +123,9 @@ const CoordinatorInductionResults = () => {
       backgroundColor: '#ffffffff',
       backgroundBlendMode: 'multiply',
       backgroundImage: `url(${overlay})`,
-      backgroundSize: 'Cover'
-      // backgroundRepeat: 'repeat',
-      // backgroundSize: '400px 400px',
+      backgroundSize: '400px 400px', // Fixed size instead of cover
+      backgroundRepeat: 'repeat',
+      backgroundPosition: 'top left' // Fixed position
     };
 
     if (innerWidth < 400) {
@@ -413,4 +413,4 @@ const CoordinatorInductionResults = () => {
   )
 }
 
-export default CoordinatorInductionResults
+export default CoordinatorInductionResults;
