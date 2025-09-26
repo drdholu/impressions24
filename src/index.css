@@ -35,3 +35,18 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Rockia Regular";
+  src: url('./fonts/RockiaRegular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url('./fonts/playfair-display.regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Metropolis Regular";
+  src: url('./fonts/metropolis.regular.otf') format('opentype');
+}
