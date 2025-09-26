@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import bannerImage from '../images/MMI/landing.jpg';
-import bg from '../images/MMI/bg-4.jpg';
 import { toast } from 'sonner';
 import { HashLoader } from 'react-spinners';
 
