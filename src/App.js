@@ -9,6 +9,7 @@ import EventsPage from './components/EventsPage'
 import Explore from './components/Explore'
 import CoordinatorInductionResults from './components/CoordinatorInductionResults';
 import MMIForm from './components/MMIForm';
+import { Toaster } from 'sonner';
 
 const App = () => {
   useEffect(() => {
@@ -18,6 +19,7 @@ const App = () => {
 
   return (
     <div className=''>
+      <Toaster position="top-right" richColors />
       <CustomCursor />
       <TransitionWrapper>
         <Routes>
@@ -31,7 +33,7 @@ const App = () => {
           <Route path='/coordinator-induction-results' element={<CoordinatorInductionResults />} />
           <Route path='/mmi-form' element={<MMIForm />} />
           <Route path="*" element={<ErrorPage />} />
-       
+
         </Routes>
       </TransitionWrapper>
       <BackToTop />

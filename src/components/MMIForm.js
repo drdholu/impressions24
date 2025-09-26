@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import bannerImage from '../images/MMI/landing.jpg';
+import titleImage from '../images/MMI/title.png';
 import { toast } from 'sonner';
 import { HashLoader } from 'react-spinners';
 
@@ -17,10 +19,32 @@ const MMIForm = () => {
         followsInstagram: ''
     });
     const [loading, setLoading] = useState(false);
+    const formRef = useRef(null);
+    const [showDock, setShowDock] = useState(true);
 
     useEffect(() => {
-        document.title = "MMI Registration | COEP Impressions";
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    setShowDock(!entry.isIntersecting);
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        const currentForm = formRef.current;
+
+        if (currentForm) {
+            observer.observe(currentForm);
+        }
+
+        return () => {
+            if (currentForm) {
+                observer.unobserve(currentForm);
+            }
+        };
     }, []);
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -107,6 +131,7 @@ const MMIForm = () => {
                     }
                 })
                 .catch(() => {
+                    console.error('Error submitting form');
                     toast.error('There was an error submitting the form. Please try again later.');
                 })
                 .finally(() => setLoading(false));
@@ -140,17 +165,37 @@ const MMIForm = () => {
                 </div>
             )}
 
+            {showDock && (
+                <div className="fixed  inset-x-0 bottom-6 flex justify-center md:inset-auto md:bottom-3 md:left-3/4 md:-translate-y-1/2 md:-translate-x-1/2 z-50">
+                    <button
+                        onClick={() => formRef.current?.scrollIntoView({ behavior: "smooth" })}
+                        className="group w-[150px] justify-center flex items-center gap-2 px-3 cursor-pointer py-2 md:px-4 md:py-2.5 bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-full shadow-md hover:shadow-md hover:bg-white/95 transition-all duration-300 text-sm text-gray-700 hover:text-gray-900"
+                    >
+                        <ChevronDown className="w-4 text-4xl md:w-5  text-red-500 group-hover:text-red-600 transition-colors" />
+                        <span className="font-medium text-md">Register</span>
+                    </button>
+                </div>
+            )}
+
             <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="w-full md:w-1/2 h-64 md:h-screen md:fixed left-0 top-0"
+                className="w-full md:w-1/2 h-64 md:h-screen md:fixed left-0 top-0 flex items-center justify-center p-6 md:p-12"
                 style={{
                     backgroundImage: `url(${bannerImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
-            />
+            >
+                <img
+                    src={titleImage}
+                    alt="Title"
+                    className="w-[350px] h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]"
+                />
+
+
+            </motion.div>
 
             <div
                 style={{ fontFamily: "'Metropolis Regular', serif" }}
@@ -186,7 +231,7 @@ const MMIForm = () => {
                                 Fast and Curious - COEPians Brain Drift
                             </p>
                             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                                "Coep mein aa toh gaye, par kya COEP ko acchese jante ho!" This is an online quiz testing your knowledge about COEP. The top 30 scorers will be selected for the next round.
+                                The first round will be an online quiz based on the campus and Impressions. It will test participants’ knowledge in a fun and engaging way. A maximum of 300 registrations will be allowed for this round, and the top scorers will be shortlisted for the next stage.
                             </p>
                         </motion.div>
 
@@ -205,7 +250,7 @@ const MMIForm = () => {
                                 Discuss Deewane - Voice your Vision
                             </p>
                             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                                Baatein karte hai, gappe ladate hai, tumhare vichaar sunte hai. Selected 30 participants will be divided into groups for open-ended group discussions on various fun, interesting topics. Top 10 participants will be selected for round 3.
+                                The second round will also be conducted online. The shortlisted participants from Round 1 will take part in a tricky group discussion along with a personality test. This round is designed to check confidence, communication, and critical thinking. Based on their performance, the best candidates will move to the final round.
                             </p>
                         </motion.div>
 
@@ -224,15 +269,17 @@ const MMIForm = () => {
                                 Slay the Stage - Performance that WOWS!
                             </p>
                             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                                Talent dikhao apna, pura karo best fresher banne ka sapna. This is a talent showcase round where the top 10 selected participants from round 2 will perform. Only 1 boy and 1 girl will get the crown of Mr. and Ms. Impressions.
+                                The final round will take place offline. Selected participants from the earlier rounds will get the chance to showcase their talents in front of a panel of judges. At the end of this round, the titles of Mr. Impressions 2025, Ms. Impressions 2025, and the People’s Choice Award will be presented.
                             </p>
                         </motion.div>
                     </motion.div>
 
                     <motion.div
+                        ref={formRef}
                         variants={itemVariants}
                         className="bg-white rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl p-6 sm:p-8 md:p-10"
                     >
+
                         <motion.h2
                             variants={itemVariants}
                             className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 md:mb-10 text-yellow-700"
