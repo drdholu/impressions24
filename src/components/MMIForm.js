@@ -69,7 +69,7 @@ const MMIForm = () => {
       }
 
       if (followsInstagram === "No") {
-        toast.error('You must follow Impressions on Instagram to register.');
+        toast.info('Please follow Impressions on Instagram!');
         setLoading(false);
         return;
       }
