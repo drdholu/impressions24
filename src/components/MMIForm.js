@@ -326,7 +326,7 @@ const MMIForm = () => {
                             <p className="text-gray-600 font-bold text-lg sm:text-xl mb-2"
                                 style={{ fontFamily: "'Playfair Display', serif" }}
                             >
-                                Fast and Curious - COEPians Brain Drift
+                                Cope with COEP
                             </p>
                             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                                 The first round will be an online quiz based on the campus and Impressions. It will test participants’ knowledge in a fun and engaging way. A maximum of 300 registrations will be allowed for this round, and the top scorers will be shortlisted for the next stage.
@@ -345,7 +345,7 @@ const MMIForm = () => {
                             <p className="text-gray-600 font-bold text-lg sm:text-xl mb-2"
                                 style={{ fontFamily: "'Playfair Display', serif" }}
                             >
-                                Discuss Deewane - Voice your Vision
+                                Round Table
                             </p>
                             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                                 The second round will also be conducted online. The shortlisted participants from Round 1 will take part in a tricky group discussion along with a personality test. This round is designed to check confidence, communication, and critical thinking. Based on their performance, the best candidates will move to the final round.
@@ -364,7 +364,7 @@ const MMIForm = () => {
                             <p className="text-gray-600 font-bold text-lg sm:text-xl mb-2"
                                 style={{ fontFamily: "'Playfair Display', serif" }}
                             >
-                                Slay the Stage - Performance that WOWS!
+                                Spotlight
                             </p>
                             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                                 The final round will take place offline. Selected participants from the earlier rounds will get the chance to showcase their talents in front of a panel of judges. At the end of this round, the titles of Mr. Impressions 2025, Ms. Impressions 2025, and the People’s Choice Award will be presented.
