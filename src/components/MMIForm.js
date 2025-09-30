@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, X } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import bannerImage from '../images/MMI/landing.jpg';
 import titleImage from '../images/MMI/title-v2.png';
 import sponsor from '../images/MMI/twisted-tiffins-cropped.png'
@@ -21,9 +22,10 @@ const MMIForm = () => {
         followsInstagram: ''
     });
     const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const formRef = useRef(null);
     const [showDock, setShowDock] = useState(true);
-   
+
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -134,6 +136,7 @@ const MMIForm = () => {
                             coepKnowledge: '',
                             followsInstagram: ''
                         });
+                        setShowModal(true);
                     }
                 })
                 .catch(() => {
@@ -164,7 +167,7 @@ const MMIForm = () => {
     return (
         <div className="min-h-screen flex flex-col md:flex-row">
             {loading && (
-                <div className="fixed w-full h-full inset-0 z-50 flex flex-col items-center justify-center bg-black/60 bg-opacity-60">
+                <div className="fixed w-full h-full inset-0 z-[1000] flex flex-col items-center justify-center bg-black/60 bg-opacity-60">
                     <HashLoader color="#ffffff" size={60} />
                     <p className="text-white mt-4 text-lg font-semibold">Please wait...</p>
                 </div>
@@ -182,6 +185,41 @@ const MMIForm = () => {
                 </div>
             )}
 
+            {showModal && (
+                <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+                    <div className="bg-white rounded-2xl shadow-2xl w-[90%] max-w-md p-6 relative animate-fadeIn">
+                        <button
+                            onClick={() => setShowModal(false)}
+                            className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 cursor-pointer"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+
+                        <div className="flex flex-col items-center space-y-4">
+                            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-500 text-white shadow-lg">
+                                <FaWhatsapp className="w-8 h-8" />
+                            </div>
+
+                            <h3 className="text-lg font-bold text-gray-800 text-center">
+                                Registration Successful
+                            </h3>
+                            <p className="text-gray-600 text-center text-sm">
+                                Thanks for registering! Join our WhatsApp group to stay updated.
+                            </p>
+
+                            <a
+                                href="https://chat.whatsapp.com/By1JtbbhZMjJbhtT9zF3FF"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full text-center bg-green-600 hover:bg-green-700 text-white py-3 px-6 cursor-pointer rounded-xl font-semibold transition-all"
+                            >
+                                Join WhatsApp Group
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -194,35 +232,35 @@ const MMIForm = () => {
                 }}
             >
                 {/* <div className="flex justify-center items-center gap-5 mb-2 md:mb-4">
-          <img
-            src={impressionsLogo}
-            alt="Impressions Logo"
-            className="h-20 pl-30 md:h-24 w-auto"
-          />
+                    <img
+                        src={impressionsLogo}
+                        alt="Impressions Logo"
+                        className="h-20 pl-30 md:h-24 w-auto"
+                    />
 
-          <span className="text-white text-md md:text-2xl leading-none"
-            style={{ fontFamily: "'Rockia Regular', sans-serif" }}
-          >
-            &
-          </span>
+                    <span className="text-white text-md md:text-2xl leading-none"
+                        style={{ fontFamily: "'Rockia Regular', sans-serif" }}
+                    >
+                        &
+                    </span>
 
-          <img
-            src={sponsor}
-            alt="Sponsor"
-            className="h-20 md:h-20 w-auto"
-          />
-        </div>
+                    <img
+                        src={sponsor}
+                        alt="Sponsor"
+                        className="h-20 md:h-20 w-auto"
+                    />
+                    </div>
 
-        <p
-          className='text-white text-sm md:text-base mb-1 md:mb-2 font-medium tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]'
-          style={{ fontFamily: "'Metropolis SemiBold', sans-serif" }}
-        >PRESENTS</p>
+                    <p
+                    className='text-white text-sm md:text-base mb-1 md:mb-2 font-medium tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]'
+                    style={{ fontFamily: "'Metropolis SemiBold', sans-serif" }}
+                    >PRESENTS</p>
 
-        <img
-          src={titleImage}
-          alt="Title"
-          className="w-[350px] h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]"
-        /> */}
+                    <img
+                    src={titleImage}
+                    alt="Title"
+                    className="w-[350px] h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]"
+                    /> */}
 
                 <div className="flex md:flex-col items-center justify-center gap-1 mb-2 md:mb-4">
                     <img
