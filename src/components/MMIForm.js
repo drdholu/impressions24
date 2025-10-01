@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, X } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import bannerImage from '../images/MMI/landing.jpg';
-import titleImage from '../images/MMI/title-v2.png';
+import bannerImage from '../images/MMI/bg-v2.png';
+import titleImage from '../images/MMI/title-mmi-v3.png';
 import sponsor from '../images/MMI/twisted-tiffins-cropped.png'
+import sponsor2 from '../images/MMI/nescafe-logo.png'
+import sponsor3 from '../images/MMI/kk-logo.png'
 import impressionsLogo from '../images/MMI/impressions-white-logo.png'
 import { toast } from 'sonner';
 import { HashLoader } from 'react-spinners';
@@ -219,12 +221,11 @@ const MMIForm = () => {
                     </div>
                 </div>
             )}
-
             <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="w-full md:w-1/2 h-64 md:h-screen md:fixed left-0 top-0 flex flex-col items-center justify-center"
+                className="w-full md:w-1/2 h-[17.5rem] md:h-screen md:fixed left-0 top-0 flex flex-col items-center justify-center"
                 style={{
                     backgroundImage: `url(${bannerImage})`,
                     backgroundSize: 'cover',
@@ -232,56 +233,60 @@ const MMIForm = () => {
                 }}
             >
                 {/* <div className="flex justify-center items-center gap-5 mb-2 md:mb-4">
+          <img
+            src={impressionsLogo}
+            alt="Impressions Logo"
+            className="h-20 pl-30 md:h-24 w-auto"
+          />
+
+          <span className="text-white text-md md:text-2xl leading-none"
+            style={{ fontFamily: "'Rockia Regular', sans-serif" }}
+          >
+            &
+          </span>
+
+          <img
+            src={sponsor}
+            alt="Sponsor"
+            className="h-20 md:h-20 w-auto"
+          />
+        </div>
+
+        <p
+          className='text-white text-sm md:text-base mb-1 md:mb-2 font-medium tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]'
+          style={{ fontFamily: "'Metropolis SemiBold', sans-serif" }}
+        >PRESENTS</p>
+
+        <img
+          src={titleImage}
+          alt="Title"
+          className="w-[350px] h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]"
+        /> */}
+
+                <div className="flex flex-col items-center justify-center md:gap-1 md:mb-4">
                     <img
                         src={impressionsLogo}
                         alt="Impressions Logo"
-                        className="h-20 pl-30 md:h-24 w-auto"
-                    />
-
-                    <span className="text-white text-md md:text-2xl leading-none"
-                        style={{ fontFamily: "'Rockia Regular', sans-serif" }}
-                    >
-                        &
-                    </span>
-
-                    <img
-                        src={sponsor}
-                        alt="Sponsor"
-                        className="h-20 md:h-20 w-auto"
-                    />
-                    </div>
-
-                    <p
-                    className='text-white text-sm md:text-base mb-1 md:mb-2 font-medium tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]'
-                    style={{ fontFamily: "'Metropolis SemiBold', sans-serif" }}
-                    >PRESENTS</p>
-
-                    <img
-                    src={titleImage}
-                    alt="Title"
-                    className="w-[350px] h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]"
-                    /> */}
-
-                <div className="flex md:flex-col items-center justify-center gap-1 mb-2 md:mb-4">
-                    <img
-                        src={impressionsLogo}
-                        alt="Impressions Logo"
-                        className="w-20 md:w-40  object-contain"
+                        className="w-20 md:w-40 object-contain"
                     />
 
                     <span className="text-white mt-2 md:mt-0 text-[0.4rem] sm:text-[0.7rem] md:mb-2 font-bold leading-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
                         AND
                     </span>
 
-                    <img
-                        src={sponsor}
-                        alt="Sponsor"
-                        className="w-[3.75rem] md:w-20  object-contain"
-                    />
+                    <div className="flex items-center">
+                        <img src={sponsor} alt="Sponsor 1" className="h-[1.25rem] md:w-20 object-contain" />
+                        <div className="h-[1.25rem] md:h-10 border-l-2 border-white mx-2"></div>
+                        <img src={sponsor2} alt="Sponsor 2" className="w-[3.75rem] md:w-20 object-contain" />
+                        <div className="h-[1.25rem] md:h-10 border-l-2 border-white mx-2"></div>
+                        <img src={sponsor3} alt="Sponsor 3" className="w-[3.75rem] md:w-20 object-contain" />
+                    </div>
+
                 </div>
 
+
                 <p
-                    className="text-white text-xs md:text-base mb-2 font-medium tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
+                    className="text-white text-[0.4rem] md:text-base mb-1 md:mb-2 font-medium tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
                     style={{ fontFamily: "'Metropolis SemiBold', sans-serif" }}
                 >
                     PRESENTS
@@ -290,7 +295,7 @@ const MMIForm = () => {
                 <img
                     src={titleImage}
                     alt="Title"
-                    className="w-[350px] h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]"
+                    className="w-[140px] md:w-[350px] h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]"
                 />
 
             </motion.div>
