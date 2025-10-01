@@ -27,6 +27,7 @@ const MMIForm = () => {
     const [showModal, setShowModal] = useState(false);
     const formRef = useRef(null);
     const [showDock, setShowDock] = useState(true);
+    const registrationsClosed = true;
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -221,6 +222,7 @@ const MMIForm = () => {
                     </div>
                 </div>
             )}
+
             <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -232,37 +234,6 @@ const MMIForm = () => {
                     backgroundPosition: 'center',
                 }}
             >
-                {/* <div className="flex justify-center items-center gap-5 mb-2 md:mb-4">
-          <img
-            src={impressionsLogo}
-            alt="Impressions Logo"
-            className="h-20 pl-30 md:h-24 w-auto"
-          />
-
-          <span className="text-white text-md md:text-2xl leading-none"
-            style={{ fontFamily: "'Rockia Regular', sans-serif" }}
-          >
-            &
-          </span>
-
-          <img
-            src={sponsor}
-            alt="Sponsor"
-            className="h-20 md:h-20 w-auto"
-          />
-        </div>
-
-        <p
-          className='text-white text-sm md:text-base mb-1 md:mb-2 font-medium tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]'
-          style={{ fontFamily: "'Metropolis SemiBold', sans-serif" }}
-        >PRESENTS</p>
-
-        <img
-          src={titleImage}
-          alt="Title"
-          className="w-[350px] h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]"
-        /> */}
-
                 <div className="flex flex-col items-center justify-center md:gap-1 md:mb-4">
                     <img
                         src={impressionsLogo}
@@ -334,7 +305,7 @@ const MMIForm = () => {
                                 Cope with COEP
                             </p>
                             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                                The first round will be an online quiz based on the campus and Impressions. It will test participants’ knowledge in a fun and engaging way. A maximum of 300 registrations will be allowed for this round, and the top scorers will be shortlisted for the next stage.
+                                The first round will be an online quiz based on the campus and Impressions. It will test participants' knowledge in a fun and engaging way. A maximum of 300 registrations will be allowed for this round, and the top scorers will be shortlisted for the next stage.
                             </p>
                         </motion.div>
 
@@ -372,7 +343,7 @@ const MMIForm = () => {
                                 Spotlight
                             </p>
                             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                                The final round will take place offline. Selected participants from the earlier rounds will get the chance to showcase their talents in front of a panel of judges. At the end of this round, the titles of Mr. Impressions 2025, Ms. Impressions 2025, and the People’s Choice Award will be presented.
+                                The final round will take place offline. Selected participants from the earlier rounds will get the chance to showcase their talents in front of a panel of judges. At the end of this round, the titles of Mr. Impressions 2025, Ms. Impressions 2025, and the People's Choice Award will be presented.
                             </p>
                         </motion.div>
                     </motion.div>
@@ -380,132 +351,164 @@ const MMIForm = () => {
                     <motion.div
                         ref={formRef}
                         variants={itemVariants}
-                        className="bg-white rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl p-6 sm:p-8 md:p-10"
+                        className="bg-white rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl p-6 sm:p-8 md:p-10 relative"
                     >
+                        <div className={registrationsClosed ? 'filter blur-sm pointer-events-none select-none' : ''}>
+                            <motion.h2
+                                variants={itemVariants}
+                                className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 md:mb-10 text-yellow-700"
+                                style={{ fontFamily: "'Rockia Regular', sans-serif" }}
+                            >
+                                REGISTRATION FORM
+                            </motion.h2>
 
-                        <motion.h2
-                            variants={itemVariants}
-                            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 md:mb-10 text-yellow-700"
-                            style={{ fontFamily: "'Rockia Regular', sans-serif" }}
-                        >
-                            REGISTRATION FORM
-                        </motion.h2>
+                            <div className="space-y-6 sm:space-y-8">
+                                {[
+                                    { label: "MIS", type: "text", name: "mis" },
+                                    { label: "Name", type: "text", name: "name" },
+                                    { label: "College Email", type: "email", name: "email" },
+                                    { label: "Phone Number", type: "tel", name: "phone" },
+                                    { label: "Describe yourself in three words", type: "text", name: "description" }
+                                ].map((field, idx) => (
+                                    <motion.div key={idx} variants={itemVariants} className="space-y-2">
+                                        <label className="block text-sm font-semibold text-gray-700 mb-1">{field.label}</label>
+                                        <input
+                                            type={field.type}
+                                            name={field.name}
+                                            value={formData[field.name]}
+                                            onChange={handleInputChange}
+                                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                                        />
+                                    </motion.div>
+                                ))}
 
-                        <div className="space-y-6 sm:space-y-8">
-                            {[
-                                { label: "MIS", type: "text", name: "mis" },
-                                { label: "Name", type: "text", name: "name" },
-                                { label: "College Email", type: "email", name: "email" },
-                                { label: "Phone Number", type: "tel", name: "phone" },
-                                { label: "Describe yourself in three words", type: "text", name: "description" }
-                            ].map((field, idx) => (
-                                <motion.div key={idx} variants={itemVariants} className="space-y-2">
-                                    <label className="block text-sm font-semibold text-gray-700 mb-1">{field.label}</label>
-                                    <input
-                                        type={field.type}
-                                        name={field.name}
-                                        value={formData[field.name]}
+                                <motion.div variants={itemVariants} className="space-y-2">
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1">Branch</label>
+                                    <select
+                                        name="branch"
+                                        value={formData.branch}
                                         onChange={handleInputChange}
+                                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                                    >
+                                        <option value="">Select your branch</option>
+                                        <option value="Manufacturing">Manufacturing</option>
+                                        <option value="Civil">Civil</option>
+                                        <option value="Computer">Computer</option>
+                                        <option value="AI ML">AI ML</option>
+                                        <option value="EnTC">EnTC</option>
+                                        <option value="Electrical">Electrical</option>
+                                        <option value="Instrumentation">Instrumentation</option>
+                                        <option value="Metallurgy">Metallurgy</option>
+                                        <option value="Mechanical">Mechanical</option>
+                                        <option value="B Planning">B Planning</option>
+                                    </select>
+                                </motion.div>
+
+                                <motion.div variants={itemVariants} className="space-y-2">
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1">Your Talent</label>
+                                    <textarea
+                                        name="talent"
+                                        value={formData.talent}
+                                        onChange={handleInputChange}
+                                        rows="3"
                                         className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                                     />
                                 </motion.div>
-                            ))}
 
-                            <motion.div variants={itemVariants} className="space-y-2">
-                                <label className="block text-sm font-semibold text-gray-700 mb-1">Branch</label>
-                                <select
-                                    name="branch"
-                                    value={formData.branch}
-                                    onChange={handleInputChange}
-                                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
-                                >
-                                    <option value="">Select your branch</option>
-                                    <option value="Manufacturing">Manufacturing</option>
-                                    <option value="Civil">Civil</option>
-                                    <option value="Computer">Computer</option>
-                                    <option value="AI ML">AI ML</option>
-                                    <option value="EnTC">EnTC</option>
-                                    <option value="Electrical">Electrical</option>
-                                    <option value="Instrumentation">Instrumentation</option>
-                                    <option value="Metallurgy">Metallurgy</option>
-                                    <option value="Mechanical">Mechanical</option>
-                                    <option value="B Planning">B Planning</option>
-                                </select>
-                            </motion.div>
-
-                            <motion.div variants={itemVariants} className="space-y-2">
-                                <label className="block text-sm font-semibold text-gray-700 mb-1">Your Talent</label>
-                                <textarea
-                                    name="talent"
-                                    value={formData.talent}
-                                    onChange={handleInputChange}
-                                    rows="3"
-                                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
-                                />
-                            </motion.div>
-
-                            <motion.div variants={itemVariants} className="space-y-2">
-                                <label className="block text-sm font-semibold text-gray-700 mb-1">How well do you know COEP on scale of 1 to 10</label>
-                                <select
-                                    name="coepKnowledge"
-                                    value={formData.coepKnowledge}
-                                    onChange={handleInputChange}
-                                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
-                                >
-                                    <option value="">Select Rating</option>
-                                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
-                                        <option key={num} value={num}>{num}</option>
-                                    ))}
-                                </select>
-                            </motion.div>
-
-                            <motion.div variants={itemVariants} className="space-y-3">
-                                <label className="block text-sm font-semibold text-gray-700">
-                                    Do you follow Impressions on Instagram?
-                                </label>
-                                <div className="flex space-x-6">
-                                    {["Yes", "No"].map((val) => (
-                                        <label key={val} className="flex items-center">
-                                            <input
-                                                type="radio"
-                                                name="followsInstagram"
-                                                value={val}
-                                                checked={formData.followsInstagram === val}
-                                                onChange={handleInputChange}
-                                                className="mr-2 text-blue-600"
-                                            />
-                                            <span className="text-gray-700">{val}</span>
-                                        </label>
-                                    ))}
-                                </div>
-                                <p className="text-xs sm:text-sm text-gray-600 mt-2">
-                                    Follow us on{" "}
-                                    <a
-                                        href="https://www.instagram.com/impressions_coep/?hl=en"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="font-semibold text-blue-600 underline hover:text-blue-800"
+                                <motion.div variants={itemVariants} className="space-y-2">
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1">How well do you know COEP on scale of 1 to 10</label>
+                                    <select
+                                        name="coepKnowledge"
+                                        value={formData.coepKnowledge}
+                                        onChange={handleInputChange}
+                                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                                     >
-                                        @impressions_coep
-                                    </a>
-                                    , if you don't yet!
-                                </p>
-                            </motion.div>
+                                        <option value="">Select Rating</option>
+                                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
+                                            <option key={num} value={num}>{num}</option>
+                                        ))}
+                                    </select>
+                                </motion.div>
 
-                            <motion.div
-                                variants={itemVariants}
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="pt-4"
-                            >
-                                <button
-                                    onClick={handleSubmit}
-                                    className="w-full cursor-pointer bg-gradient-to-r from-red-900 to-red-600 text-white py-3 sm:py-4 px-6 sm:px-8 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                                <motion.div variants={itemVariants} className="space-y-3">
+                                    <label className="block text-sm font-semibold text-gray-700">
+                                        Do you follow Impressions on Instagram?
+                                    </label>
+                                    <div className="flex space-x-6">
+                                        {["Yes", "No"].map((val) => (
+                                            <label key={val} className="flex items-center">
+                                                <input
+                                                    type="radio"
+                                                    name="followsInstagram"
+                                                    value={val}
+                                                    checked={formData.followsInstagram === val}
+                                                    onChange={handleInputChange}
+                                                    className="mr-2 text-blue-600"
+                                                />
+                                                <span className="text-gray-700">{val}</span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                    <p className="text-xs sm:text-sm text-gray-600 mt-2">
+                                        Follow us on{" "}
+                                        <a
+                                            href="https://www.instagram.com/impressions_coep/?hl=en"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="font-semibold text-blue-600 underline hover:text-blue-800"
+                                        >
+                                            @impressions_coep
+                                        </a>
+                                        , if you don't yet!
+                                    </p>
+                                </motion.div>
+
+                                <motion.div
+                                    variants={itemVariants}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="pt-4"
                                 >
-                                    Submit Registration
-                                </button>
-                            </motion.div>
+                                    <button
+                                        onClick={handleSubmit}
+                                        className="w-full cursor-pointer bg-gradient-to-r from-red-900 to-red-600 text-white py-3 sm:py-4 px-6 sm:px-8 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                                    >
+                                        Submit Registration
+                                    </button>
+                                </motion.div>
+                            </div>
                         </div>
+
+                        {registrationsClosed && (
+                            <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                                <motion.div
+                                    initial={{ scale: 0.8, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    transition={{ duration: 0.5, ease: "easeOut" }}
+                                    className="bg-gradient-to-br from-red-900 via-red-800 to-red-900 text-white p-8 sm:p-10 md:p-12 rounded-3xl shadow-2xl border-4 border-yellow-400 max-w-md mx-4 pointer-events-auto"
+                                >
+                                    <div className="text-center space-y-4">
+                                        <div className="inline-block p-4 bg-yellow-400 rounded-full mb-2">
+                                            <svg className="w-12 h-12 text-red-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </div>
+                                        <h3 
+                                            className="text-3xl sm:text-4xl font-bold text-yellow-400"
+                                            style={{ fontFamily: "'Rockia Regular', sans-serif" }}
+                                        >
+                                            REGISTRATIONS CLOSED
+                                        </h3>
+                                        <p className="text-white text-base sm:text-lg leading-relaxed">
+                                            Thank you for your interest in Mr. & Ms. Impressions 2025
+                                        </p>
+                                        <p className="text-yellow-200 text-sm sm:text-base">
+                                            Stay tuned for more exciting events
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        )}
                     </motion.div>
                 </motion.div>
             </div>
