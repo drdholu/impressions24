@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { ChevronDown, X } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import bannerImage from '../images/MMI/bg-v2.png';
-import titleImage from '../images/MMI/title-mmi-v3.png';
+import titleImage from '../images/MMI/title-mmi-v4.png';
 import sponsor from '../images/MMI/twisted-tiffins-cropped.png'
 import sponsor2 from '../images/MMI/nescafe-logo.png'
-import sponsor3 from '../images/MMI/kk-logo.png'
+import sponsor3 from '../images/MMI/kk-logo-2.png'
 import impressionsLogo from '../images/MMI/impressions-white-logo.png'
 import { toast } from 'sonner';
 import { HashLoader } from 'react-spinners';
@@ -234,7 +234,7 @@ const MMIForm = () => {
                     backgroundPosition: 'center',
                 }}
             >
-                <div className="flex flex-col items-center justify-center md:gap-1 md:mb-4">
+                {/* <div className="flex flex-col items-center justify-center md:gap-1 md:mb-4">
                     <img
                         src={impressionsLogo}
                         alt="Impressions Logo"
@@ -253,8 +253,24 @@ const MMIForm = () => {
                         <img src={sponsor3} alt="Sponsor 3" className="w-[3.75rem] md:w-20 object-contain" />
                     </div>
 
-                </div>
+                </div> */}
+                <div className="flex md:flex-col items-center justify-center gap-3 md:gap-1 mb-2 md:mb-4">
+                    <img
+                        src={impressionsLogo}
+                        alt="Impressions Logo"
+                        className="w-20 md:w-40  object-contain"
+                    />
 
+                    <span className="text-white mt-2 md:mt-0 text-[0.4rem] sm:text-[0.7rem] md:mb-2 font-bold leading-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+                        AND
+                    </span>
+
+                    <img
+                        src={sponsor}
+                        alt="Sponsor"
+                        className="w-[3.75rem] md:w-20  object-contain"
+                    />
+                </div>
 
                 <p
                     className="text-white text-[0.4rem] md:text-base mb-1 md:mb-2 font-medium tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
@@ -266,8 +282,20 @@ const MMIForm = () => {
                 <img
                     src={titleImage}
                     alt="Title"
-                    className="w-[140px] md:w-[350px] h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]"
+                    className="w-[140px] md:w-[350px] md:mt-3 h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]"
                 />
+                <div className="flex items-center justify-between w-[70%] mt-2 md:w-[60%] text-white"
+                    style={{ fontFamily: "'Metropolis SemiBold', sans-serif" }}
+                >
+                    <div className='flex flex-col items-center'>
+                        <p className='text-[0.4rem] md:text-xs text-center'>OFFICIAL RTD COFFEE PARTNER</p>
+                        <img src={sponsor2} alt="Sponsor 2" className="w-[3.75rem] md:w-20 mt-2 md:mt-4 object-contain inline-block" />
+                    </div>
+                    <div className='flex flex-col items-center'>
+                        <p className='text-[0.4rem] md:text-xs text-center mt-3 md:mt-4'>OFFICIAL CHOCOLATES PARTNER</p>
+                        <img src={sponsor3} alt="Sponsor 3" className="w-[2.7rem] md:w-20 mt-2 object-contain inline-block" />
+                    </div>
+                </div>
 
             </motion.div>
 
@@ -493,7 +521,7 @@ const MMIForm = () => {
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                                             </svg>
                                         </div>
-                                        <h3 
+                                        <h3
                                             className="text-3xl sm:text-4xl font-bold text-yellow-400"
                                             style={{ fontFamily: "'Rockia Regular', sans-serif" }}
                                         >
