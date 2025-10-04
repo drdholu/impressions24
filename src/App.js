@@ -9,6 +9,7 @@ import EventsPage from './components/EventsPage'
 import Explore from './components/Explore'
 import CoordinatorInductionResults from './components/CoordinatorInductionResults';
 import MMIForm from './components/MMIForm';
+import MMIResults from './components/MMIResults';
 import { Toaster } from 'sonner';
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
           <Route path='/events/:moduleName/:eventTitle' element={<Explore />} />
           <Route path='/coordinator-induction-results' element={<CoordinatorInductionResults />} />
           <Route path='/mmi-form' element={<MMIForm />} />
+          <Route path='/mmi-results' element={<MMIResults />} />
           <Route path="*" element={<ErrorPage />} />
 
         </Routes>
