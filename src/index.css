@@ -50,3 +50,9 @@
   font-family: "Metropolis Regular";
   src: url('./fonts/metropolis.regular.otf') format('opentype');
 }
+
+@font-face {
+  font-family: "Chocogoose Classic Regular";
+  src: url('./fonts/Cocogoose-Classic-Medium-trial.ttf') format('truetype');
+}
+
